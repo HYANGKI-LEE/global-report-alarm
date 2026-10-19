@@ -270,5 +270,77 @@
    "{71754910-AC4A-406E-8321-580A1259DCAD}"
   ],
   "fails": 0
+ },
+ "fed_cleveland_ec": {
+  "seen": [
+   "https://www.clevelandfed.org/publications/economic-commentary/ec-202623-whos-driving-medicaids-enrollment-growth",
+   "https://www.clevelandfed.org/publications/economic-commentary/ec-202622-will-us-firms-adopt-stablecoins",
+   "https://www.clevelandfed.org/publications/economic-commentary/ec-202621-trends-in-manufacturing-in-the-united-states",
+   "https://www.clevelandfed.org/publications/economic-commentary/ec-202620-how-do-monetary-policy-surprises-affect-household-sentiment",
+   "https://www.clevelandfed.org/publications/economic-commentary/ec-202619-a-fracturing-wage-floor-below-minimum-wages-in-the-twenty-first-century",
+   "https://www.clevelandfed.org/publications/economic-commentary/ec-202618-motivations-for-business-participation-in-voluntary-web-based-business-surveys",
+   "https://www.clevelandfed.org/publications/economic-commentary/ec-202617-the-low-hire-low-fire-labor-market",
+   "https://www.clevelandfed.org/publications/economic-commentary/ec-202616-how-do-consumers-view-future-government-debt",
+   "https://www.clevelandfed.org/publications/economic-commentary/ec-202615-earnings-gaps-in-aftermath-of-covid-19",
+   "https://www.clevelandfed.org/publications/economic-commentary/ec-202614-changes-in-wage-gaps-over-forty-years-in-the-us"
+  ],
+  "fails": 0
+ },
+ "fed_cleveland_wp": {
+  "seen": [
+   "https://www.clevelandfed.org/publications/working-paper/wp-2631-consumers-attention-to-monetary-policy",
+   "https://www.clevelandfed.org/publications/working-paper/wp-2630-a-behavioral-foundation-for-the-investment-wedge",
+   "https://www.clevelandfed.org/publications/working-paper/wp-2629-causal-peer-effects-on-household-spending-beliefs-and-happiness",
+   "https://www.clevelandfed.org/publications/working-paper/wp-2628-stablecoin-on-creditor-violence",
+   "https://www.clevelandfed.org/publications/working-paper/wp-2627-aggression-of-the-weak",
+   "https://www.clevelandfed.org/publications/working-paper/wp-2626-inflation-expectations-and-household-spending",
+   "https://www.clevelandfed.org/publications/working-paper/wp-2625-how-to-reform-us-long-term-care",
+   "https://www.clevelandfed.org/publications/working-paper/wp-2624-the-recent-evolution-of-ai-related-labor-demand",
+   "https://www.clevelandfed.org/publications/working-paper/wp-2623-inflation-inattention-on-the-production-network",
+   "https://www.clevelandfed.org/publications/working-paper/wp-2622-ai-augmented-capital-skill-complementarity"
+  ],
+  "fails": 0
+ },
+ "clevelandfed_data_median_cpi": {
+  "seen": [
+   "text:Last updated October 14, 2026"
+  ],
+  "fails": 0
+ },
+ "clevelandfed_data_median_pce": {
+  "seen": [
+   "text:Last updated September 30, 2026"
+  ],
+  "fails": 0
+ },
+ "clevelandfed_data_inflexp": {
+  "seen": [
+   "text:Last updated October 14, 2026"
+  ],
+  "fails": 0
+ },
+ "clevelandfed_data_sofie": {
+  "seen": [
+   "text:Last updated August 10, 2026"
+  ],
+  "fails": 0
+ },
+ "clevelandfed_data_yieldcurve": {
+  "seen": [
+   "text:Last updated September 30, 2026"
+  ],
+  "fails": 0
+ },
+ "clevelandfed_data_policyrules": {
+  "seen": [
+   "text:Last updated September 4, 2026"
+  ],
+  "fails": 0
+ },
+ "clevelandfed_data_sorce": {
+  "seen": [
+   "text:Last updated September 30, 2026"
+  ],
+  "fails": 0
  }
 }
