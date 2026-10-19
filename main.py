@@ -33,6 +33,8 @@ FAIL_WARN_AFTER = 3        # 연속 실패가 이 횟수가 되면 경고 1회 �
 TG_LIMIT = 3900            # 텔레그램 메시지 길이 제한(4096) 여유분
 
 DRY_RUN = os.environ.get("DRY_RUN") == "1"
+MONTHS = {"January", "February", "March", "April", "May", "June", "July",
+          "August", "September", "October", "November", "December"}
 
 
 # ── 수집 ──────────────────────────────────────────────
@@ -107,10 +109,12 @@ def fetch_nyfed_research(page):
         if not a:
             continue
         meta = h.find_next_sibling("div", class_="catItalic")
-        found = re.findall(r"[,.]\s*([A-Z][A-Za-z’' ]+?)\s+\d", meta.get_text(" ", strip=True)) if meta else []
+        found = [s for s in re.findall(r"[,.]\s*([A-Z][A-Za-z’' ]+?)\s+\d",
+                                       meta.get_text(" ", strip=True) if meta else "")
+                 if s not in MONTHS]  # ", October 2026" 같은 날짜 부분 제외
         link = urljoin(page, a["href"])
         items.append({"id": link, "title": " ".join(a.get_text().split()),
-                      "link": link, "series": found[-1] if found else ""})
+                      "link": link, "series": found[0] if found else ""})
     if not items:
         raise ValueError("항목 0건 (페이지 구조 변경?)")
     return items
