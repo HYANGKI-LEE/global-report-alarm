@@ -1,0 +1,32 @@
+# 구독 대상 목록 — 사용자가 고른 페이지 단위로 하나씩 추가
+#
+#   id      : 내부 구분용 영문 이름 (한 번 정하면 바꾸지 않기 — 바꾸면 '처음 연결'로 취급됨)
+#   name    : 텔레그램 메시지에 표시될 이름
+#   page    : 사용자가 고른 원본 페이지 주소 (참고용 + 일부 type 은 여기서 필터를 읽음)
+#   type    : 읽는 방식
+#               rss       → urls 의 RSS 주소를 위에서부터 시도해 처음 성공한 것 사용
+#               bostonfed → 보스턴 연준 검색 페이지. page 주소의 필터를 그대로 사용
+#   enabled : false 로 두면 잠시 끔
+
+sources:
+  # ── 국제기구 ──────────────────────────────
+  - id: imf
+    name: IMF
+    page: https://www.imf.org/en/publications
+    type: rss
+    urls:
+      - https://www.imf.org/en/Publications/RSS?language=eng
+      - https://www.imf.org/external/rss/feeds.aspx?category=WHATSNEW
+
+  - id: bis
+    name: BIS
+    page: https://www.bis.org/research/index.htm
+    type: rss
+    urls:
+      - https://www.bis.org/doclist/bis_fsi_publs.rss
+
+  # ── 연준 ──────────────────────────────────
+  - id: fed_boston_research
+    name: Boston Fed
+    page: "https://www.bostonfed.org/publications-and-data.aspx#/search?siteTpc=985b7a27053c4d21ab898cb07089a84e&topic=&jel=&type=&series=&dept=&focus=&program=&services=&center="
+    type: bostonfed
