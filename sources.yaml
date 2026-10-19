@@ -8,6 +8,7 @@
 #               bostonfed → 보스턴 연준 검색 페이지. page 주소의 필터를 그대로 사용
 #               nyfed_research → 뉴욕 연준 Research 메인의 Recent Publications 칸
 #               phillyfed_search → 필라델피아 연준 검색 목록 페이지 (최신 30건)
+#               clevelandfed_list → 클리블랜드 연준 출판물 목록 페이지 (최신 10건)
 #               datawatch → 데이터 업데이트 감지 (watch: files / regex / links, 자세한 건 main.py fetch_datawatch)
 #   enabled : false 로 두면 잠시 끔
 
@@ -44,6 +45,16 @@ sources:
     name: Philadelphia Fed
     page: https://www.philadelphiafed.org/search-results/all-work?searchtype=all-work-the-economy
     type: phillyfed_search
+
+  - id: fed_cleveland_ec
+    name: Cleveland Fed
+    page: https://www.clevelandfed.org/publications/economic-commentary
+    type: clevelandfed_list
+
+  - id: fed_cleveland_wp
+    name: Cleveland Fed
+    page: https://www.clevelandfed.org/publications/working-paper
+    type: clevelandfed_list
 
   # ── 뉴욕 연준 데이터 (일간 제외, 주간은 CMDI 만) ─────────
   # type datawatch: 데이터 파일/페이지 문구/새 링크가 바뀌면 알림. 같은 name 끼리 한 블록으로 묶여서 전송
@@ -196,3 +207,61 @@ sources:
     type: datawatch
     watch:
       links: {url: "https://www.federalreserve.gov/monetarypolicy/publications/beige-book-default.htm", pattern: 'beigebook\d{6}-summary\.htm'}
+
+  # ── 클리블랜드 연준 데이터 (페이지의 'Last updated' 날짜가 바뀌면 알림)
+  # 제외: Inflation Nowcasting(일간), Credit Easing(주간), Systemic Risk Indicator·Consumers and COVID-19(업데이트 중단)
+  - id: clevelandfed_data_median_cpi
+    name: Cleveland Fed 데이터
+    title: "Median CPI"
+    page: https://www.clevelandfed.org/indicators-and-data/median-cpi
+    type: datawatch
+    watch:
+      regex: {url: "https://www.clevelandfed.org/indicators-and-data/median-cpi", pattern: 'Last updated:?\s*[A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: clevelandfed_data_median_pce
+    name: Cleveland Fed 데이터
+    title: "Median PCE Inflation"
+    page: https://www.clevelandfed.org/indicators-and-data/median-pce-inflation
+    type: datawatch
+    watch:
+      regex: {url: "https://www.clevelandfed.org/indicators-and-data/median-pce-inflation", pattern: 'Last updated:?\s*[A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: clevelandfed_data_inflexp
+    name: Cleveland Fed 데이터
+    title: "Inflation Expectations"
+    page: https://www.clevelandfed.org/indicators-and-data/inflation-expectations
+    type: datawatch
+    watch:
+      regex: {url: "https://www.clevelandfed.org/indicators-and-data/inflation-expectations", pattern: 'Last updated:?\s*[A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: clevelandfed_data_sofie
+    name: Cleveland Fed 데이터
+    title: "Survey of Firms' Inflation Expectations"
+    page: https://www.clevelandfed.org/indicators-and-data/survey-of-firms-inflation-expectations
+    type: datawatch
+    watch:
+      regex: {url: "https://www.clevelandfed.org/indicators-and-data/survey-of-firms-inflation-expectations", pattern: 'Last updated:?\s*[A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: clevelandfed_data_yieldcurve
+    name: Cleveland Fed 데이터
+    title: "Yield Curve and Predicted GDP Growth"
+    page: https://www.clevelandfed.org/indicators-and-data/yield-curve-and-predicted-gdp-growth
+    type: datawatch
+    watch:
+      regex: {url: "https://www.clevelandfed.org/indicators-and-data/yield-curve-and-predicted-gdp-growth", pattern: 'Last updated:?\s*[A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: clevelandfed_data_policyrules
+    name: Cleveland Fed 데이터
+    title: "Simple Monetary Policy Rules"
+    page: https://www.clevelandfed.org/indicators-and-data/simple-monetary-policy-rules
+    type: datawatch
+    watch:
+      regex: {url: "https://www.clevelandfed.org/indicators-and-data/simple-monetary-policy-rules", pattern: 'Last updated:?\s*[A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: clevelandfed_data_sorce
+    name: Cleveland Fed 데이터
+    title: "Survey of Regional Conditions and Expectations (SORCE)"
+    page: https://www.clevelandfed.org/indicators-and-data/survey-of-regional-conditions-and-expectations
+    type: datawatch
+    watch:
+      regex: {url: "https://www.clevelandfed.org/indicators-and-data/survey-of-regional-conditions-and-expectations", pattern: 'Last updated:?\s*[A-Z][a-z]+ \d{1,2}, \d{4}'}

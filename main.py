@@ -52,6 +52,8 @@ def fetch_source(src):
         return fetch_datawatch(src)
     if kind == "phillyfed_search":
         return fetch_phillyfed_search(src["page"])
+    if kind == "clevelandfed_list":
+        return fetch_clevelandfed_list(src["page"])
     raise ValueError(f"알 수 없는 type: {kind}")
 
 
@@ -70,7 +72,10 @@ def fetch_datawatch(src):
         return [{"id": "sha256:" + h.hexdigest()[:20], "title": f"{title} 업데이트",
                  "link": page, "series": ""}]
     if "regex" in w:
-        m = re.search(w["regex"]["pattern"], http_get(w["regex"]["url"]).text, re.I)
+        # 태그 사이에 끼어 있는 글자도 잡히도록 화면에 보이는 글자만 모아서 검사
+        visible = " ".join(BeautifulSoup(http_get(w["regex"]["url"]).text, "html.parser")
+                           .get_text(" ", strip=True).split())
+        m = re.search(w["regex"]["pattern"], visible, re.I)
         if not m:
             raise ValueError("업데이트 표시 문구를 찾지 못함 (페이지 구조 변경?)")
         found = " ".join(m.group(0).split())
@@ -107,6 +112,28 @@ def fetch_phillyfed_search(page):
         link = urljoin("https://www.philadelphiafed.org", a["url"])
         items.append({"id": r.get("id") or link, "title": " ".join((a.get("title") or "").split()),
                       "link": link, "series": r.get("type") or ""})
+    if not items:
+        raise ValueError("항목 0건 (페이지 구조 변경?)")
+    return items
+
+
+def fetch_clevelandfed_list(page):
+    """클리블랜드 연준 출판물 목록 페이지 (Economic Commentary, Working Paper 등).
+
+    최신순 결과 10건이 <search-results data-initialize="{...}"> 속성에 JSON 으로 들어있다.
+    """
+    soup = BeautifulSoup(http_get(page).text, "html.parser")
+    tag = soup.find("search-results", attrs={"data-initialize": True})
+    if tag is None:
+        raise ValueError("<search-results> 데이터를 찾지 못함 (페이지 구조 변경?)")
+    results = json.loads(tag["data-initialize"]).get("results") or []
+    items = []
+    for r in results:
+        if not r.get("url"):
+            continue
+        link = urljoin("https://www.clevelandfed.org", r["url"])
+        items.append({"id": link, "title": " ".join((r.get("title") or "").split()),
+                      "link": link, "series": r.get("issue") or r.get("publication") or ""})
     if not items:
         raise ValueError("항목 0건 (페이지 구조 변경?)")
     return items
