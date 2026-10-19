@@ -5,6 +5,7 @@
   TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID  필수 (DRY_RUN=1 이면 불필요)
   DRY_RUN=1   텔레그램 전송·상태 저장 없이 보낼 메시지를 화면에 출력
 """
+import hashlib
 import html
 import json
 import os
@@ -47,7 +48,47 @@ def fetch_source(src):
         return fetch_bostonfed(src["page"])
     if kind == "nyfed_research":
         return fetch_nyfed_research(src["page"])
+    if kind == "datawatch":
+        return fetch_datawatch(src)
     raise ValueError(f"알 수 없는 type: {kind}")
+
+
+def fetch_datawatch(src):
+    """데이터 업데이트 감지. 'watch' 방식에 따라 지문(fingerprint)을 만들어 항목으로 돌려준다.
+
+      files: [url, ...]          파일 내용이 바뀌면 업데이트 (여러 개면 합쳐서 하나의 지문)
+      regex: {url, pattern}      페이지에서 처음 일치하는 글자가 바뀌면 업데이트 (예: 'second quarter of 2026')
+      links: {url, pattern}      페이지에 패턴과 일치하는 새 링크가 생기면 업데이트 (링크마다 1건)
+    """
+    w, title, page = src["watch"], src["title"], src["page"]
+    if "files" in w:
+        h = hashlib.sha256()
+        for url in w["files"]:
+            h.update(http_get(url).content)
+        return [{"id": "sha256:" + h.hexdigest()[:20], "title": f"{title} 업데이트",
+                 "link": page, "series": ""}]
+    if "regex" in w:
+        m = re.search(w["regex"]["pattern"], http_get(w["regex"]["url"]).text, re.I)
+        if not m:
+            raise ValueError("업데이트 표시 문구를 찾지 못함 (페이지 구조 변경?)")
+        found = " ".join(m.group(0).split())
+        return [{"id": "text:" + found, "title": f"{title} 업데이트 ({found})",
+                 "link": page, "series": ""}]
+    if "links" in w:
+        url = w["links"]["url"]
+        hrefs = re.findall(r'href="([^"]*' + w["links"]["pattern"] + r'[^"]*)"', http_get(url).text, re.I)
+        links = list(dict.fromkeys(urljoin(url, html.unescape(x)) for x in hrefs))
+        if not links:
+            raise ValueError("일치하는 링크 0건 (페이지 구조 변경?)")
+        return [{"id": l, "title": f"{title}: {l.rstrip('/').rsplit('/', 1)[-1]}",
+                 "link": l, "series": ""} for l in links]
+    raise ValueError("watch 에 files / regex / links 중 하나가 필요")
+
+
+def http_get(url):
+    r = requests.get(url, headers={"User-Agent": UA}, timeout=60)
+    r.raise_for_status()
+    return r
 
 
 def fetch_rss(urls):
@@ -172,8 +213,8 @@ def send_blocks(header, blocks):
         send(msg)
 
 
-def render_source(name, items):
-    lines = [f"🏛 <b>{html.escape(name)}</b>"]
+def render_source(name, items, icon="🏛"):
+    lines = [f"{icon} <b>{html.escape(name)}</b>"]
     for it in items[:MAX_ITEMS_PER_SOURCE]:
         tag = f"<i>[{html.escape(it['series'])}]</i> " if it["series"] else ""
         lines.append(f"• {tag}<a href=\"{html.escape(it['link'], quote=True)}\">"
@@ -203,11 +244,13 @@ def main():
                if s.get("enabled", True)]
     state = load_state()
 
-    new_blocks, seeded, failed, warnings = [], [], [], []
+    seeded, failed, warnings = [], [], []
+    new_by_name = {}  # 표시 이름별 신규 항목 (같은 이름의 여러 대상을 한 블록으로 묶음)
     pending = {}  # 전송 성공 후에 seen 에 반영할 id
 
     for src in sources:
-        sid, name = src["id"], src["name"]
+        sid = src["id"]
+        name = src["name"] + (f" · {src['title']}" if src.get("title") else "")
         st = state.setdefault(sid, {"seen": [], "fails": 0})
         try:
             items = fetch_source(src)
@@ -225,7 +268,8 @@ def main():
         if not st["seen"]:
             # 처음 연결된 기관은 기존 항목을 '본 것'으로만 기록하고 보내지 않는다
             st["seen"] = ids[:SEEN_KEEP]
-            seeded.append(f"{name} ({len(items)}건)")
+            seeded.append(name if src.get("type") == "datawatch" and len(items) == 1
+                          else f"{name} ({len(items)}건)")
             print(f"[초기화] {name}: {len(items)}건")
             continue
 
@@ -233,7 +277,8 @@ def main():
         new = [it for it in items if it["id"] not in seen]
         print(f"[확인] {name}: 신규 {len(new)}건 / 피드 {len(items)}건")
         if new:
-            new_blocks.append(render_source(name, new))
+            icon = "📊" if src.get("type") == "datawatch" else "🏛"
+            new_by_name.setdefault((icon, src["name"]), []).extend(new)
             pending[sid] = [it["id"] for it in new]
 
     now = datetime.now(KST).strftime("%m/%d %H:%M")
@@ -249,8 +294,9 @@ def main():
     for w in warnings:
         send(w)
 
-    if new_blocks:
-        send_blocks(f"🌐 <b>새 리포트</b> ({now} KST)", new_blocks)
+    if new_by_name:
+        blocks = [render_source(name, items, icon) for (icon, name), items in new_by_name.items()]
+        send_blocks(f"🌐 <b>새 리포트·데이터</b> ({now} KST)", blocks)
 
     # 전송까지 끝난 것만 seen 에 반영 (전송 실패 시 다음 실행에서 다시 보냄)
     for sid, new_ids in pending.items():

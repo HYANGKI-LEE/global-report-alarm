@@ -7,12 +7,14 @@
 #               rss       → urls 의 RSS 주소를 위에서부터 시도해 처음 성공한 것 사용
 #               bostonfed → 보스턴 연준 검색 페이지. page 주소의 필터를 그대로 사용
 #               nyfed_research → 뉴욕 연준 Research 메인의 Recent Publications 칸
+#               datawatch → 데이터 업데이트 감지 (watch: files / regex / links, 자세한 건 main.py fetch_datawatch)
 #   enabled : false 로 두면 잠시 끔
 
 sources:
   # ── 국제기구 ──────────────────────────────
   - id: imf
     name: IMF
+    enabled: false   # 2026-10-19: RSS 403 차단 (로컬·GitHub 모두). 대체 경로 확인 후 켜기
     page: https://www.imf.org/en/publications
     type: rss
     urls:
@@ -36,3 +38,155 @@ sources:
     name: New York Fed
     page: https://www.newyorkfed.org/research
     type: nyfed_research
+
+  # ── 뉴욕 연준 데이터 (일간 제외, 주간은 CMDI 만) ─────────
+  # type datawatch: 데이터 파일/페이지 문구/새 링크가 바뀌면 알림. 같은 name 끼리 한 블록으로 묶여서 전송
+  - id: nyfed_data_cmdi
+    name: New York Fed 데이터
+    title: Corporate Bond Market Distress Index
+    page: https://www.newyorkfed.org/research/policy/cmdi
+    type: datawatch
+    watch: {files: [https://www.newyorkfed.org/medialibrary/research/interactives/data/cmdi/cmdi_interactive_data.xlsx]}
+
+  - id: nyfed_data_empire
+    name: New York Fed 데이터
+    title: Empire State Manufacturing Survey
+    page: https://www.newyorkfed.org/survey/empire/empiresurvey_overview
+    type: datawatch
+    watch: {files: [https://www.newyorkfed.org/medialibrary/media/survey/empire/data/esms_seasonallyadjusted_diffusion.csv]}
+
+  - id: nyfed_data_bls
+    name: New York Fed 데이터
+    title: Business Leaders Survey
+    page: https://www.newyorkfed.org/survey/business_leaders/bls_overview
+    type: datawatch
+    watch: {files: [https://www.newyorkfed.org/medialibrary/media/survey/business_leaders/data/bls_notseasonallyadjusted_diffusion.csv]}
+
+  - id: nyfed_data_supplemental
+    name: New York Fed 데이터
+    title: Supplemental Survey Report
+    page: https://www.newyorkfed.org/survey/business_leaders/Supplemental_Survey_Report
+    type: datawatch
+    watch:
+      links: {url: "https://www.newyorkfed.org/survey/business_leaders/Supplemental_Survey_Report", pattern: 'wp-content/uploads/[^"]*\.xlsx'}
+
+  - id: nyfed_data_earlybench
+    name: New York Fed 데이터
+    title: Early Benchmarked Employment Data
+    page: https://www.newyorkfed.org/research/regional_economy/early-benchmarked-employment
+    type: datawatch
+    watch: {files: [https://www.newyorkfed.org/medialibrary/media/research/regional_economy/charts/early-benchmarked-employment_data.csv]}
+
+  - id: nyfed_data_regemp
+    name: New York Fed 데이터
+    title: Regional Employment Trends
+    page: https://www.newyorkfed.org/research/regional_economy/regional-employment
+    type: datawatch
+    watch: {files: [https://www.newyorkfed.org/medialibrary/media/research/regional_economy/charts/regional-employment-trends_data.csv]}
+
+  - id: nyfed_data_homeprice
+    name: New York Fed 데이터
+    title: Home Price Changes
+    page: https://www.newyorkfed.org/research/home-price-index
+    type: datawatch
+    watch: {files: [https://www.newyorkfed.org/medialibrary/research/interactives/data/home-price/NationalYOY.csv]}
+
+  - id: nyfed_data_hhdc
+    name: New York Fed 데이터
+    title: Household Debt and Credit Report
+    page: https://www.newyorkfed.org/microeconomics/hhdc
+    type: datawatch
+    watch:
+      regex: {url: "https://www.newyorkfed.org/householdcredit/hhdc-iframe", pattern: '(first|second|third|fourth) quarter of \d{4}'}
+
+  - id: nyfed_data_sce
+    name: New York Fed 데이터
+    title: Survey of Consumer Expectations
+    page: https://www.newyorkfed.org/microeconomics/sce
+    type: datawatch
+    watch: {files: [https://www.newyorkfed.org/medialibrary/interactives/sce/sce/downloads/data/frbny-sce-data.xlsx]}
+
+  - id: nyfed_data_gscpi
+    name: New York Fed 데이터
+    title: Global Supply Chain Pressure Index
+    page: https://www.newyorkfed.org/research/policy/gscpi
+    type: datawatch
+    watch: {files: [https://www.newyorkfed.org/medialibrary/research/interactives/data/gscpi/gscpi_interactive_data.csv]}
+
+  - id: nyfed_data_lmt
+    name: New York Fed 데이터
+    title: Labor Market Tightness Index
+    page: https://www.newyorkfed.org/research/labor-market-tightness/
+    type: datawatch
+    watch: {files: [https://www.newyorkfed.org/medialibrary/Research/Interactives/Data/labor-market-tightness/HPW_monthly_share.csv]}
+
+  - id: nyfed_data_rstar
+    name: New York Fed 데이터
+    title: r-star (Natural Rate of Interest)
+    page: https://www.newyorkfed.org/research/policy/rstar
+    type: datawatch
+    watch: {files: [https://www.newyorkfed.org/medialibrary/media/research/economists/williams/data/Holston_Laubach_Williams_current_estimates.xlsx]}
+
+  - id: nyfed_data_mct
+    name: New York Fed 데이터
+    title: Multivariate Core Trend Inflation
+    page: https://www.newyorkfed.org/research/policy/mct
+    type: datawatch
+    watch: {files: [https://www.newyorkfed.org/medialibrary/Research/Interactives/Data/mct/mct-chart-data.csv]}
+
+  - id: nyfed_data_dsge
+    name: New York Fed 데이터
+    title: DSGE Model Forecast
+    page: https://www.newyorkfed.org/research/policy/dsge
+    type: datawatch
+    watch: {files: [https://www.newyorkfed.org/medialibrary/research/interactives/data/dsge/dsgeTableData.csv]}
+
+  - id: nyfed_data_oar
+    name: New York Fed 데이터
+    title: Outlook-at-Risk
+    page: https://www.newyorkfed.org/research/policy/outlook-at-risk
+    type: datawatch
+    watch: {files: [https://www.newyorkfed.org/medialibrary/Research/Interactives/Data/outlook-at-risk/oar-summary.csv]}
+
+  - id: nyfed_data_yieldcurve
+    name: New York Fed 데이터
+    title: Yield Curve as a Leading Indicator
+    page: https://www.newyorkfed.org/research/capital_markets/ycfaq
+    type: datawatch
+    watch: {files: [https://www.newyorkfed.org/medialibrary/media/research/capital_markets/allmonth.xls]}
+
+  - id: nyfed_data_college
+    name: New York Fed 데이터
+    title: Labor Market for Recent College Graduates
+    page: https://www.newyorkfed.org/research/college-labor-market
+    type: datawatch
+    watch: {files: [https://www.newyorkfed.org/medialibrary/research/interactives/data/college-labor-market/college-labor-unemployment-data.csv]}
+
+  - id: nyfed_data_disaster
+    name: New York Fed 데이터
+    title: Losses from Natural Disasters
+    page: https://www.newyorkfed.org/research/policy/natural-disaster-losses
+    type: datawatch
+    watch: {files: [https://www.newyorkfed.org/medialibrary/research/interactives/data/Natural-Disasters-Losses/ndl-config.json]}
+
+  - id: nyfed_data_forprofit
+    name: New York Fed 데이터
+    title: Private For-Profit Institutions in Higher Education
+    page: https://www.newyorkfed.org/regional/nonprofit-forprofit-colleges/
+    type: datawatch
+    watch: {files: [https://www.newyorkfed.org/medialibrary/interactives/nonprofit-forprofit-colleges/nonprofit-forprofit-colleges/data/xls/nonprofit-forprofit-colleges-macro.xlsx]}
+
+  - id: nyfed_data_rde
+    name: New York Fed 데이터
+    title: Reserve Demand Elasticity
+    page: https://www.newyorkfed.org/research/reserve-demand-elasticity
+    type: datawatch
+    watch: {files: [https://www.newyorkfed.org/medialibrary/research/interactives/data/elasticity/elasticity-data.csv]}
+
+  - id: fed_board_beigebook
+    name: Fed Board
+    title: Beige Book
+    page: https://www.federalreserve.gov/monetarypolicy/publications/beige-book-default.htm
+    type: datawatch
+    watch:
+      links: {url: "https://www.federalreserve.gov/monetarypolicy/publications/beige-book-default.htm", pattern: 'beigebook\d{6}-summary\.htm'}
