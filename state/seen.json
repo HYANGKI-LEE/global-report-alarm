@@ -1,7 +1,7 @@
 {
  "imf": {
   "seen": [],
-  "fails": 1
+  "fails": 2
  },
  "bis": {
   "seen": [
@@ -80,6 +80,19 @@
    "8807a47d-58c7-4563-8dc0-67f9625e170e",
    "b03298ed-3d12-4abe-8972-25f0069fc336",
    "ae7ea26d-4f54-4edf-a206-696a40102025"
+  ],
+  "fails": 0
+ },
+ "fed_newyork_research": {
+  "seen": [
+   "https://www.newyorkfed.org/research/staff_reports/sr1211",
+   "https://www.newyorkfed.org/research/staff_reports/sr1209",
+   "https://www.newyorkfed.org/research/staff_reports/sr1208",
+   "https://www.newyorkfed.org/research/staff_reports/sr1207",
+   "https://www.newyorkfed.org/research/staff_reports/sr1206",
+   "https://www.newyorkfed.org/research/epr/2026/epr_2026_banks-equity-capital_gordon",
+   "https://www.newyorkfed.org/research/staff_reports/sr1205",
+   "https://www.newyorkfed.org/research/staff_reports/sr1204"
   ],
   "fails": 0
  }
