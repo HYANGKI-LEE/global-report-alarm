@@ -6,6 +6,7 @@
 #   type    : 읽는 방식
 #               rss       → urls 의 RSS 주소를 위에서부터 시도해 처음 성공한 것 사용
 #               bostonfed → 보스턴 연준 검색 페이지. page 주소의 필터를 그대로 사용
+#               nyfed_research → 뉴욕 연준 Research 메인의 Recent Publications 칸
 #   enabled : false 로 두면 잠시 끔
 
 sources:
@@ -30,3 +31,8 @@ sources:
     name: Boston Fed
     page: "https://www.bostonfed.org/publications-and-data.aspx#/search?siteTpc=985b7a27053c4d21ab898cb07089a84e&topic=&jel=&type=&series=&dept=&focus=&program=&services=&center="
     type: bostonfed
+
+  - id: fed_newyork_research
+    name: New York Fed
+    page: https://www.newyorkfed.org/research
+    type: nyfed_research

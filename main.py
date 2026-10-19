@@ -8,6 +8,7 @@
 import html
 import json
 import os
+import re
 import sys
 import time
 from datetime import datetime, timedelta, timezone
@@ -17,6 +18,7 @@ from urllib.parse import parse_qsl, urljoin, urlsplit
 import feedparser
 import requests
 import yaml
+from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).parent
 SOURCES_FILE = ROOT / "sources.yaml"
@@ -41,6 +43,8 @@ def fetch_source(src):
         return fetch_rss(src["urls"])
     if kind == "bostonfed":
         return fetch_bostonfed(src["page"])
+    if kind == "nyfed_research":
+        return fetch_nyfed_research(src["page"])
     raise ValueError(f"알 수 없는 type: {kind}")
 
 
@@ -82,6 +86,34 @@ def fetch_bostonfed(page):
         "link": urljoin("https://www.bostonfed.org", p.get("url") or ""),
         "series": ((p.get("series") or {}).get("name") or "").strip(),
     } for p in pubs]
+
+
+def fetch_nyfed_research(page):
+    """뉴욕 연준 Research 메인의 'Recent Publications' 칸 (Staff Reports, EPR 등 최근 8건).
+
+    항목 아래 줄 예: "저자1 and 저자2, Staff Report 1211, October 2026" → 시리즈 "Staff Report"
+    """
+    r = requests.get(page, headers={"User-Agent": UA}, timeout=30)
+    r.raise_for_status()
+    soup = BeautifulSoup(r.text, "html.parser")
+    head = next((h for h in soup.select("div.ts-page-head-b")
+                 if "Recent Publications" in h.get_text()), None)
+    if head is None:
+        raise ValueError("'Recent Publications' 칸을 찾지 못함 (페이지 구조 변경?)")
+    box = head.find_parent("div", class_="frb-feature-content-wrapper")
+    items = []
+    for h in box.select("div.ts-story-headline"):
+        a = h.find("a", href=True)
+        if not a:
+            continue
+        meta = h.find_next_sibling("div", class_="catItalic")
+        found = re.findall(r"[,.]\s*([A-Z][A-Za-z’' ]+?)\s+\d", meta.get_text(" ", strip=True)) if meta else []
+        link = urljoin(page, a["href"])
+        items.append({"id": link, "title": " ".join(a.get_text().split()),
+                      "link": link, "series": found[-1] if found else ""})
+    if not items:
+        raise ValueError("항목 0건 (페이지 구조 변경?)")
+    return items
 
 
 def to_item(entry):
