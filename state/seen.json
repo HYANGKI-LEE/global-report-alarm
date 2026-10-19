@@ -95,5 +95,144 @@
    "https://www.newyorkfed.org/research/staff_reports/sr1204"
   ],
   "fails": 0
+ },
+ "nyfed_data_cmdi": {
+  "seen": [
+   "sha256:144fe650ed318269bb05"
+  ],
+  "fails": 0
+ },
+ "nyfed_data_empire": {
+  "seen": [
+   "sha256:33c525e5bd0a5179fa8c"
+  ],
+  "fails": 0
+ },
+ "nyfed_data_bls": {
+  "seen": [
+   "sha256:af5416fc3ecdcffad04b"
+  ],
+  "fails": 0
+ },
+ "nyfed_data_supplemental": {
+  "seen": [
+   "https://libertystreeteconomics.newyorkfed.org/wp-content/uploads/sites/2/2026/09/LSE_2026_AI_Survey_Charts_data_98b72a.xlsx",
+   "https://libertystreeteconomics.newyorkfed.org/wp-content/uploads/sites/2/2026/07/LSE2026_TariffPassThrough_ChartData.xlsx",
+   "https://libertystreeteconomics.newyorkfed.org/wp-content/uploads/sites/2/2026/02/LSE_2026-CostIncreasesPost1_Data.xlsx",
+   "https://libertystreeteconomics.newyorkfed.org/wp-content/uploads/sites/2/2026/02/LSE_2026_Health-Insurance-Costs_Post2_Data-RD-Edit.xlsx",
+   "https://libertystreeteconomics.newyorkfed.org/wp-content/uploads/sites/2/2026/02/LSE_2026-Prices-Inflation_Post3_Data.xlsx",
+   "https://libertystreeteconomics.newyorkfed.org/wp-content/uploads/sites/2/2025/08/2025_LSE_AI-Data.xlsx",
+   "https://libertystreeteconomics.newyorkfed.org/wp-content/uploads/sites/2/2025/06/LSE-2025-Tariff-Pass-Through_Chart-Data_e9c675.xlsx",
+   "https://libertystreeteconomics.newyorkfed.org/wp-content/uploads/sites/2/2025/03/2025_02_Regional-Business-Surveys-Special-Topics.xlsx"
+  ],
+  "fails": 0
+ },
+ "nyfed_data_earlybench": {
+  "seen": [
+   "sha256:8271150453f3397836af"
+  ],
+  "fails": 0
+ },
+ "nyfed_data_regemp": {
+  "seen": [
+   "sha256:8271150453f3397836af"
+  ],
+  "fails": 0
+ },
+ "nyfed_data_homeprice": {
+  "seen": [
+   "sha256:0053288218c0d3c6bc7c"
+  ],
+  "fails": 0
+ },
+ "nyfed_data_hhdc": {
+  "seen": [
+   "text:second quarter of 2026"
+  ],
+  "fails": 0
+ },
+ "nyfed_data_sce": {
+  "seen": [
+   "sha256:6512ecdeea161d2d96cc"
+  ],
+  "fails": 0
+ },
+ "nyfed_data_gscpi": {
+  "seen": [
+   "sha256:98aad77bbc4cedfe4c1c"
+  ],
+  "fails": 0
+ },
+ "nyfed_data_lmt": {
+  "seen": [
+   "sha256:f82b5ec634bd8d34b1f6"
+  ],
+  "fails": 0
+ },
+ "nyfed_data_rstar": {
+  "seen": [
+   "sha256:120f1587a5501d9623f0"
+  ],
+  "fails": 0
+ },
+ "nyfed_data_mct": {
+  "seen": [
+   "sha256:0e1c61076db5c9e733c5"
+  ],
+  "fails": 0
+ },
+ "nyfed_data_dsge": {
+  "seen": [
+   "sha256:269e5c78064bb2b6aab4"
+  ],
+  "fails": 0
+ },
+ "nyfed_data_oar": {
+  "seen": [
+   "sha256:6e903c545e360d3ec9aa"
+  ],
+  "fails": 0
+ },
+ "nyfed_data_yieldcurve": {
+  "seen": [
+   "sha256:e284d69260beb69f6a50"
+  ],
+  "fails": 0
+ },
+ "nyfed_data_college": {
+  "seen": [
+   "sha256:202e637b06568d3632f3"
+  ],
+  "fails": 0
+ },
+ "nyfed_data_disaster": {
+  "seen": [
+   "sha256:add93165c4d4d236ecf2"
+  ],
+  "fails": 0
+ },
+ "nyfed_data_forprofit": {
+  "seen": [
+   "sha256:ac6bb98a85f4d69e4c6f"
+  ],
+  "fails": 0
+ },
+ "nyfed_data_rde": {
+  "seen": [
+   "sha256:64e8e5b9bd47205f21a0"
+  ],
+  "fails": 0
+ },
+ "fed_board_beigebook": {
+  "seen": [
+   "https://www.federalreserve.gov/monetarypolicy/beigebook202601-summary.htm",
+   "https://www.federalreserve.gov/monetarypolicy/beigebook202602-summary.htm",
+   "https://www.federalreserve.gov/monetarypolicy/beigebook202604-summary.htm",
+   "https://www.federalreserve.gov/monetarypolicy/beigebook202605-summary.htm",
+   "https://www.federalreserve.gov/monetarypolicy/beigebook202607-summary.htm",
+   "https://www.federalreserve.gov/monetarypolicy/beigebook202608-summary.htm",
+   "https://www.federalreserve.gov/monetarypolicy/beigebook202610-summary.htm"
+  ],
+  "fails": 0
  }
 }
