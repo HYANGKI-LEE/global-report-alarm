@@ -50,6 +50,8 @@ def fetch_source(src):
         return fetch_nyfed_research(src["page"])
     if kind == "datawatch":
         return fetch_datawatch(src)
+    if kind == "phillyfed_search":
+        return fetch_phillyfed_search(src["page"])
     raise ValueError(f"알 수 없는 type: {kind}")
 
 
@@ -83,6 +85,31 @@ def fetch_datawatch(src):
         return [{"id": l, "title": f"{title}: {l.rstrip('/').rsplit('/', 1)[-1]}",
                  "link": l, "series": ""} for l in links]
     raise ValueError("watch 에 files / regex / links 중 하나가 필요")
+
+
+def fetch_phillyfed_search(page):
+    """필라델피아 연준 검색 목록 페이지.
+
+    검색 결과가 HTML 안의 FRBP.extend(... 'search-results' ...) 스크립트에 JSON(data: {...})으로
+    들어있다. 기본 정렬이 최신순이고 pageSize 로 건수를 늘릴 수 있다.
+    """
+    sep = "&" if "?" in page else "?"
+    text = http_get(page + sep + "pageSize=30").text
+    start = text.find("data: {", text.find("'search-results'"))
+    if start < 0:
+        raise ValueError("검색 결과 데이터를 찾지 못함 (페이지 구조 변경?)")
+    data, _ = json.JSONDecoder().raw_decode(text, start + len("data: "))
+    items = []
+    for r in data.get("results") or []:
+        a = r.get("attributes") or {}
+        if r.get("type") == "About" or not a.get("url"):  # 소개 페이지 등 발간물이 아닌 것 제외
+            continue
+        link = urljoin("https://www.philadelphiafed.org", a["url"])
+        items.append({"id": r.get("id") or link, "title": " ".join((a.get("title") or "").split()),
+                      "link": link, "series": r.get("type") or ""})
+    if not items:
+        raise ValueError("항목 0건 (페이지 구조 변경?)")
+    return items
 
 
 def http_get(url):

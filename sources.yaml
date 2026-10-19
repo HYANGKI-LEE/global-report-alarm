@@ -7,6 +7,7 @@
 #               rss       → urls 의 RSS 주소를 위에서부터 시도해 처음 성공한 것 사용
 #               bostonfed → 보스턴 연준 검색 페이지. page 주소의 필터를 그대로 사용
 #               nyfed_research → 뉴욕 연준 Research 메인의 Recent Publications 칸
+#               phillyfed_search → 필라델피아 연준 검색 목록 페이지 (최신 30건)
 #               datawatch → 데이터 업데이트 감지 (watch: files / regex / links, 자세한 건 main.py fetch_datawatch)
 #   enabled : false 로 두면 잠시 끔
 
@@ -38,6 +39,11 @@ sources:
     name: New York Fed
     page: https://www.newyorkfed.org/research
     type: nyfed_research
+
+  - id: fed_philadelphia_research
+    name: Philadelphia Fed
+    page: https://www.philadelphiafed.org/search-results/all-work?searchtype=all-work-the-economy
+    type: phillyfed_search
 
   # ── 뉴욕 연준 데이터 (일간 제외, 주간은 CMDI 만) ─────────
   # type datawatch: 데이터 파일/페이지 문구/새 링크가 바뀌면 알림. 같은 name 끼리 한 블록으로 묶여서 전송
