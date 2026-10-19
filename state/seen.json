@@ -5,6 +5,10 @@
  },
  "bis": {
   "seen": [
+   "https://www.bis.org/publications/working-paper-1384-inflation-after-iran-war",
+   "https://www.bis.org/publications/working-paper-1385-competing-rails-crossborder-payments-banks-fintechs-and-stablecoins",
+   "https://www.bis.org/publications/working-paper-1386-geoeconomic-pressure",
+   "https://www.bis.org/publications/paper-176-central-banks-and-macro-financial-stability-fragmented-global-economy",
    "https://www.bis.org/publications/working-paper-1383-offshore-forwards-and-exchange-rate-transmission-emerging-markets",
    "https://www.bis.org/publications/bulletin-138-chokepoint-disruptions-and-their-macroeconomic-consequences",
    "https://www.bis.org/publications/paper-175-money-and-architecture-trust",
@@ -232,6 +236,38 @@
    "https://www.federalreserve.gov/monetarypolicy/beigebook202607-summary.htm",
    "https://www.federalreserve.gov/monetarypolicy/beigebook202608-summary.htm",
    "https://www.federalreserve.gov/monetarypolicy/beigebook202610-summary.htm"
+  ],
+  "fails": 0
+ },
+ "fed_philadelphia_research": {
+  "seen": [
+   "{AF7D2194-4D8D-4725-866C-01FA58DB389C}",
+   "{C35725E2-6856-4814-A0EC-060F4034E6B0}",
+   "{7F255C00-C1E5-4DDB-BDA4-FC6A360DAC4F}",
+   "{58BDD4B1-8BD4-4823-933E-8FE74E9B065E}",
+   "{43A06D87-AD36-4023-8581-A91A3B70F44A}",
+   "{1768062F-91B0-4ADF-9FCD-B238420D5D47}",
+   "{8D7AD536-89FC-4344-8D79-B3812A797907}",
+   "{D7DB78B3-4C75-497E-9C22-4286390D8832}",
+   "{8DED5F98-1C66-4A6D-BD80-FF246C76D68E}",
+   "{7A1CE124-3955-43B0-80EF-2E7D8217592B}",
+   "{77A77758-78BC-4ED4-ABFE-75D11FF7BEDC}",
+   "{1FCDFE4B-652A-479E-8F31-2142F933E78A}",
+   "{5742A2EE-5787-49AB-9F1E-31F8555EBD0A}",
+   "{2777FDD9-C2EB-47AC-8DA1-D12CCDECEE05}",
+   "{070B392D-4255-4A52-8093-938F98F3794B}",
+   "{67739DED-C02C-4841-AE2B-A9D99E643C91}",
+   "{53458914-A2E1-458E-99F4-8D56282A14AD}",
+   "{A1CF12DF-7EE8-477E-A6CE-5106D3C764F0}",
+   "{A0584042-C219-4B5C-B055-7CCFF4C5A613}",
+   "{2740ABE5-9623-4F03-8AC2-6A779E0FFE74}",
+   "{E9DCE017-420F-42E5-9B78-BA3A07883A5E}",
+   "{9BAFCC4B-727D-42BB-AA38-9FCFFB5BE70A}",
+   "{6BC63DF6-AD50-4671-A213-578A7FCD79D1}",
+   "{867FD63D-C510-496A-A17D-81D75D77FDE8}",
+   "{28E36DAC-5738-4961-91DB-3FBB1E65C42A}",
+   "{48E105FF-599E-43A9-9974-05DCBA440DE6}",
+   "{71754910-AC4A-406E-8321-580A1259DCAD}"
   ],
   "fails": 0
  }
