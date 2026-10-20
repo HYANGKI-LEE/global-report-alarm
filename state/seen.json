@@ -943,5 +943,29 @@
    "sha256:0449144cf0da07f1f146"
   ],
   "fails": 0
+ },
+ "nyfed_data_nowcast": {
+  "seen": [
+   "sha256:f959f80bec2d82ef8efd"
+  ],
+  "fails": 0
+ },
+ "nyfed_data_primarydealer": {
+  "seen": [
+   "text:2026-10-07"
+  ],
+  "fails": 0
+ },
+ "nyfed_data_soma": {
+  "seen": [
+   "text:2026-10-14"
+  ],
+  "fails": 0
+ },
+ "clevelandfed_data_crediteasing": {
+  "seen": [
+   "sha256:020fd3cce537483de457"
+  ],
+  "fails": 0
  }
 }
