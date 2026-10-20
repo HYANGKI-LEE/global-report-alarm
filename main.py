@@ -63,6 +63,8 @@ def fetch_source(src):
         return fetch_clevelandfed_list(src["page"])
     if kind == "atlantafed_list":
         return fetch_atlantafed_list(src["page"])
+    if kind == "chicagofed_series":
+        return fetch_chicagofed_series(src["series_id"])
     raise ValueError(f"알 수 없는 type: {kind}")
 
 
@@ -180,6 +182,28 @@ def fetch_atlantafed_list(page):
                           "link": link, "series": ""})
     if not items:
         raise ValueError("목록 데이터(var feed_...)를 찾지 못함 (페이지 구조 변경?)")
+    return items
+
+
+def fetch_chicagofed_series(series_id):
+    """시카고 연준 출판물 시리즈 (Chicago Fed Letter, Working Papers 등).
+
+    목록 페이지가 POST /forms/NewsFeed/Index?seriesIds=<시리즈ID>&page=1 로 최신 10건을 JSON 으로 받아온다.
+    시리즈ID 는 각 시리즈 목록 페이지 HTML 의 seriesIds 값. (시카고 RSS 는 2023~24년에 멈춰 있음)
+    """
+    r = requests.post("https://www.chicagofed.org/forms/NewsFeed/Index",
+                      params={"seriesIds": series_id, "page": 1},
+                      headers={"User-Agent": UA, "X-Requested-With": "XMLHttpRequest"}, timeout=30)
+    r.raise_for_status()
+    items = []
+    for x in r.json() or []:
+        if not x.get("Url"):
+            continue
+        title = BeautifulSoup(x.get("Title") or "", "html.parser").get_text()  # 제목에 <i> 태그가 섞여 있음
+        items.append({"id": x.get("Id") or x["Url"], "title": " ".join(title.split()),
+                      "link": x["Url"], "series": (x.get("Series") or {}).get("Name") or ""})
+    if not items:
+        raise ValueError("항목 0건 (시리즈ID 변경?)")
     return items
 
 
