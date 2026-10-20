@@ -28,6 +28,7 @@
 browser_hosts:
   - www.kansascityfed.org
   - www.imf.org
+  - www.elibrary.imf.org
 
 sources:
   # ── 국제기구 ──────────────────────────────
