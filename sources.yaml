@@ -18,6 +18,7 @@
 #               clevelandfed_list → 클리블랜드 연준 출판물 목록 페이지 (최신 10건)
 #               atlantafed_list → 애틀랜타 연준 출판물 시리즈 페이지 (series 로 시리즈명 지정)
 #               chicagofed_series → 시카고 연준 출판물 시리즈 (series_id: 시리즈 목록 페이지 HTML 의 seriesIds 값)
+#               gmail     → 봇 전용 Gmail 로 받은 기관 공식 이메일 알림 (from: 보낸 주소·도메인 목록)
 #               datawatch → 데이터 업데이트 감지 (watch: files / regex / links, 자세한 건 main.py fetch_datawatch)
 #   series  : (선택) 시리즈명이 없는 항목에 붙일 이름
 #   series_map: (선택) 링크 주소 글자 → 시리즈명 (모든 type 공통)
@@ -1223,3 +1224,17 @@ sources:
     type: datawatch
     watch:
       regex: {url: "https://www.imf.org/en/research/commodity-prices", pattern: 'Excel Database:? [A-Z][a-z]+ \d{4}'}
+
+  # ── 메일 중계 — 사이트가 클라우드 서버 접속을 막는 기관은 공식 이메일 알림을 봇 전용 Gmail 로 받아 전달
+  #    (global.report.alarm@gmail.com, GitHub Secrets: GMAIL_ADDRESS / GMAIL_APP_PASSWORD)
+  - id: mail_imf
+    name: IMF
+    page: https://www.imf.org/en/publications
+    type: gmail
+    from: [imf.org]
+
+  - id: mail_stlouis
+    name: St. Louis Fed
+    page: https://www.stlouisfed.org/publications
+    type: gmail
+    from: [stlouisfed.org]

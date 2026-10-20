@@ -94,6 +94,8 @@ def fetch_by_type(src):
         return fetch_clevelandfed_list(src["page"])
     if kind == "atlantafed_list":
         return fetch_atlantafed_list(src["page"])
+    if kind == "gmail":
+        return fetch_gmail(src)
     if kind == "chicagofed_series":
         return fetch_chicagofed_series(src["series_id"])
     raise ValueError(f"알 수 없는 type: {kind}")
@@ -363,6 +365,70 @@ def fetch_wp_api(src):
                           "date": parse_date(x.get("date"))})
     if not items:
         raise ValueError("항목 0건")
+    return items
+
+
+# ── 메일 중계 (사이트가 클라우드 서버 접속을 막는 기관: IMF, 세인트루이스 연준) ──────────
+# 봇 전용 Gmail 이 기관의 공식 이메일 알림을 구독하고, 봇은 IMAP 으로 최근 메일만 읽는다(읽음 처리 안 함).
+# GitHub Secrets: GMAIL_ADDRESS, GMAIL_APP_PASSWORD (Google 앱 비밀번호)
+_imap = {}
+SKIP_LINK = re.compile(r"unsubscribe|preference|privacy|mailto:|view.{0,20}browser|manage|subscri|"
+                       r"facebook|twitter|x\.com|linkedin|youtube|instagram|bsky", re.I)
+
+
+def fetch_gmail(src):
+    """from 에 적은 주소(도메인)에서 최근 max_age_days 안에 온 메일을 글 단위로 돌려준다.
+
+    여러 글이 묶인 뉴스레터는 본문의 글 링크(링크 글자 25자 이상)를 하나씩 항목으로 만들고,
+    그런 링크가 없으면 메일 제목 하나를 항목으로 만든다.
+    """
+    import email
+    import imaplib
+    from email.header import decode_header, make_header
+    from email.utils import parsedate_to_datetime
+
+    if "conn" not in _imap:
+        addr, pw = os.environ.get("GMAIL_ADDRESS"), os.environ.get("GMAIL_APP_PASSWORD")
+        if not addr or not pw:
+            raise RuntimeError("GMAIL_ADDRESS / GMAIL_APP_PASSWORD 가 설정되지 않음")
+        conn = imaplib.IMAP4_SSL("imap.gmail.com")
+        conn.login(addr, pw.replace(" ", ""))
+        conn.select('"[Gmail]/All Mail"', readonly=True)  # 받은편지함·프로모션 탭 구분 없이 전부, 읽기 전용
+        _imap["conn"] = conn
+    conn = _imap["conn"]
+
+    since = (datetime.now(KST) - timedelta(days=src.get("max_age_days", MAX_AGE_DAYS))).strftime("%d-%b-%Y")
+    items = []
+    for sender in src["from"]:
+        typ, data = conn.search(None, "SINCE", since, "FROM", f'"{sender}"')
+        for num in (data[0].split() if typ == "OK" and data and data[0] else []):
+            typ, msg_data = conn.fetch(num, "(BODY.PEEK[])")
+            if typ != "OK":
+                continue
+            msg = email.message_from_bytes(msg_data[0][1])
+            subject = " ".join(str(make_header(decode_header(msg.get("Subject", "")))).split())
+            msg_id = msg.get("Message-ID", "").strip() or f"{sender}|{subject}"
+            try:
+                date = parsedate_to_datetime(msg.get("Date")).astimezone(KST).date()
+            except Exception:  # noqa: BLE001
+                date = None
+            html_part = next((part for part in msg.walk() if part.get_content_type() == "text/html"), None)
+            links = []
+            if html_part is not None:
+                body = html_part.get_payload(decode=True).decode(html_part.get_content_charset() or "utf-8", "replace")
+                for a in BeautifulSoup(body, "html.parser").find_all("a", href=True):
+                    text = " ".join(a.get_text().split())
+                    if len(text) >= 25 and a["href"].startswith("http") and not SKIP_LINK.search(a["href"] + " " + text):
+                        if a["href"] not in [l for _, l in links]:
+                            links.append((text, a["href"]))
+            if links:
+                for text, href in links[:src.get("max_links", 15)]:
+                    items.append({"id": f"{msg_id}|{text}", "title": text, "link": href,
+                                  "series": subject[:60], "date": date})
+            else:
+                items.append({"id": msg_id, "title": subject, "link": src["page"], "series": "", "date": date})
+    if not items and src.get("allow_empty", True):
+        return []
     return items
 
 
@@ -647,7 +713,7 @@ def main():
         ids = [it["id"] for it in items]
         if not st["seen"]:
             # 처음 연결된 기관은 기존 항목을 '본 것'으로만 기록하고 보내지 않는다
-            st["seen"] = ids[:SEEN_KEEP]
+            st["seen"] = ids[:SEEN_KEEP] or ["__connected__"]  # 0건이어도 연결 완료로 기록 (메일 중계 등)
             seeded.append(name if src.get("type") == "datawatch" and len(items) == 1
                           else f"{name} ({len(items)}건)")
             print(f"[초기화] {name}: {len(items)}건")
