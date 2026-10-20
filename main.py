@@ -731,26 +731,96 @@ def summarize(client, it):
 
 # ── 텔레그램 ──────────────────────────────────────────
 def send(text):
+    """보내고 텔레그램 메시지 번호를 돌려준다 (나중에 한국어 요약을 채워 넣을 때 사용)."""
+    return telegram("sendMessage", {"text": text})
+
+
+def edit(message_id, text):
+    """이미 보낸 메시지의 내용을 바꾼다. 내용이 같으면(이미 반영됨) 조용히 넘어간다."""
+    try:
+        telegram("editMessageText", {"message_id": message_id, "text": text})
+    except RuntimeError as e:
+        if "message is not modified" not in str(e):
+            raise
+
+
+def telegram(method, payload):
     if DRY_RUN:
-        print("─" * 60 + "\n" + text)
-        return
+        print("─" * 60 + f" [{method}]\n" + payload["text"])
+        return None
     token = os.environ["TELEGRAM_BOT_TOKEN"]
     chat_id = os.environ["TELEGRAM_CHAT_ID"]
     for attempt in range(3):
         r = requests.post(
-            f"https://api.telegram.org/bot{token}/sendMessage",
-            json={"chat_id": chat_id, "text": text, "parse_mode": "HTML",
-                  "disable_web_page_preview": True},
+            f"https://api.telegram.org/bot{token}/{method}",
+            json={"chat_id": chat_id, "parse_mode": "HTML", "disable_web_page_preview": True, **payload},
             timeout=30,
         )
         if r.status_code == 429:  # 전송 속도 제한 → 안내된 시간만큼 대기 후 재시도
             time.sleep(r.json().get("parameters", {}).get("retry_after", 5) + 1)
             continue
         if not r.ok:
-            raise RuntimeError(f"텔레그램 전송 실패 {r.status_code}: {r.text[:200]}")
+            raise RuntimeError(f"텔레그램 {method} 실패 {r.status_code}: {r.text[:200]}")
         time.sleep(3)  # 채널 전송 속도 제한(분당 약 20건) 대비 — 글마다 따로 보내므로 간격을 둔다
+        result = r.json().get("result")
+        return result.get("message_id") if isinstance(result, dict) else None
+    raise RuntimeError(f"텔레그램 {method} 실패: 속도 제한 반복")
+
+
+# ── 한국어 3줄 요약 (Claude Code 예약 작업과 연동, API 요금 없음) ──────────
+# 1) 봇이 리포트 알림을 보내면 state/pending_summaries.json 에 '요약 대기'로 기록
+# 2) Claude Code 예약 작업(매시간)이 대기 목록을 읽고 한국어 3줄 요약을 만들어
+#    claude/summaries 브랜치의 state/summaries.json 에 저장 (텔레그램 토큰 불필요)
+# 3) 봇이 다음 실행 때 그 요약으로 이미 보낸 메시지를 수정 (영어 초록 → 한국어 요약)
+PENDING_FILE = STATE_FILE.parent / "pending_summaries.json"
+SUMMARIES_URL = ("https://raw.githubusercontent.com/{repo}/claude/summaries/state/summaries.json")
+PENDING_KEEP_DAYS = 3
+_pending_new = []
+
+
+def apply_summaries():
+    """예약 작업이 만든 한국어 요약을 대기 중인 메시지에 반영하고, 반영된 건 대기 목록에서 뺀다."""
+    if not PENDING_FILE.exists():
         return
-    raise RuntimeError("텔레그램 전송 실패: 속도 제한 반복")
+    pending = json.loads(PENDING_FILE.read_text(encoding="utf-8"))
+    repo = os.environ.get("GITHUB_REPOSITORY", "HYANGKI-LEE/global-report-alarm")
+    try:
+        r = requests.get(SUMMARIES_URL.format(repo=repo), headers=HEADERS, timeout=30,
+                         params={"t": int(time.time())})  # 캐시 회피
+        summaries = r.json() if r.ok else {}
+    except Exception:  # noqa: BLE001 - 요약 브랜치가 아직 없거나 일시 오류면 다음에
+        summaries = {}
+    cutoff = (datetime.now(KST) - timedelta(days=PENDING_KEEP_DAYS)).isoformat()
+    keep = []
+    for p in pending:
+        s = summaries.get(str(p["message_id"]))
+        if s and s.get("bullets"):
+            it = {"title": p["title"], "link": p["link"], "series": p.get("series", ""),
+                  "summary": s["bullets"][:3]}
+            try:
+                edit(p["message_id"], f"{p['icon']} <b>{html.escape(p['name'])}</b>\n{render_item(it)}"[:TG_LIMIT])
+                print(f"[요약 반영] {p['title'][:50]}")
+                continue
+            except Exception as e:  # noqa: BLE001
+                print(f"[요약 반영 실패] {p['title'][:40]}: {e}", file=sys.stderr)
+        if p.get("sent_at", "") >= cutoff:   # 너무 오래된 대기 건은 버림
+            keep.append(p)
+    save_pending(keep)
+
+
+def save_pending(pending):
+    if DRY_RUN:
+        return
+    pending = pending + _pending_new
+    _pending_new.clear()
+    PENDING_FILE.write_text(json.dumps(pending, ensure_ascii=False, indent=1), encoding="utf-8")
+
+
+def flush_pending():
+    """이번 실행에서 새로 보낸 리포트 글을 요약 대기 목록에 추가해 저장."""
+    if _pending_new:
+        existing = json.loads(PENDING_FILE.read_text(encoding="utf-8")) if PENDING_FILE.exists() else []
+        save_pending(existing)
 
 
 def render_item(it):
@@ -768,7 +838,12 @@ def send_new(new_by_name):
         head = f"{icon} <b>{html.escape(name)}</b>"
         shown = items[:MAX_ITEMS_PER_SOURCE]
         for it in shown:
-            send(f"{head}\n{render_item(it)}"[:TG_LIMIT])
+            mid = send(f"{head}\n{render_item(it)}"[:TG_LIMIT])
+            if mid and icon != "📊":   # 리포트 글은 한국어 요약 대기 목록에 올림 (데이터 알림은 제목만)
+                _pending_new.append({"message_id": mid, "icon": icon, "name": name, "title": it["title"],
+                                     "link": it["link"], "series": it.get("series", ""),
+                                     "summary_en": it.get("summary") or [],
+                                     "sent_at": datetime.now(KST).isoformat()})
         if len(items) > len(shown):
             send(f"{head}\n… 외 {len(items) - len(shown)}건 (목록: {html.escape(items[0]['link'])})")
 
@@ -869,6 +944,7 @@ def run_test(sources):
     if new_by_name:
         summarize_all(new_by_name)
         send_new(new_by_name)
+        flush_pending()
     TEST_FILE.unlink()
 
 
@@ -881,6 +957,10 @@ def main():
     if TEST_FILE.exists():
         run_test(sources)
         return
+    try:
+        apply_summaries()   # 예약 작업이 만든 한국어 요약을 이미 보낸 메시지에 반영
+    except Exception as e:  # noqa: BLE001 - 요약 반영이 실패해도 새 글 확인은 계속
+        print(f"[요약 반영 오류] {e}", file=sys.stderr)
     state = load_state()
 
     seeded, failed, warnings = [], [], []
@@ -952,6 +1032,7 @@ def main():
     if new_by_name:
         summarize_all(new_by_name)
         send_new(new_by_name)
+        flush_pending()
 
     # 전송까지 끝난 것만 seen 에 반영 (전송 실패 시 다음 실행에서 다시 보냄)
     for sid, new_ids in pending.items():

@@ -1,0 +1,4 @@
+# 시험 발송 3차 — 한국어 요약 연동 확인용 (보낸 뒤 봇이 이 파일을 지움)
+fed_newyork_research
+bis_publications
+fed_kansascity_bulletin
