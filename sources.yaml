@@ -237,6 +237,20 @@ sources:
       /article/: Article
       /data-indicators/: New Data
 
+  # 캔자스시티 연준 — 이 PC(회사망)에서는 접속 차단. GitHub 서버 접속 가능 여부 시험용
+  - id: fed_kansascity_research
+    name: Kansas City Fed
+    page: https://www.kansascityfed.org/research/
+    type: page_links
+    link_pattern: '/research/(economic-bulletin|economic-review|research-working-papers|payments-system-research-briefings|charting-the-economy)/[^/]+'
+
+  - id: fed_kansascity_bulletin
+    name: Kansas City Fed
+    page: https://www.kansascityfed.org/research/economic-bulletin/
+    type: rss
+    urls: ["https://rss.app/feeds/7ZusMFl37gRokC2d.xml"]
+    series: Economic Bulletin
+
   # ── 뉴욕 연준 데이터 (일간 제외) ─────────
   # type datawatch: 데이터 파일/페이지 문구/새 링크가 바뀌면 알림. 같은 name 끼리 한 블록으로 묶여서 전송
   - id: nyfed_data_cmdi
