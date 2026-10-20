@@ -1817,8 +1817,8 @@
  },
  "imf_publications": {
   "seen": [],
-  "fails": 2,
-  "last_error": "405 Client Error: Not Allowed for url: https://www.elibrary.imf.org/search?sort=datedescending&pageSize=50&page=1"
+  "fails": 3,
+  "last_error": "Response.body: Protocol error (Network.getResponseBody): No resource with given identifier found"
  },
  "imf_data_commodity": {
   "seen": [
