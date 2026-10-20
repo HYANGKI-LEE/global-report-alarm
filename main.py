@@ -977,6 +977,11 @@ def run_test(sources):
         summarize_all(new_by_name)
         send_new(new_by_name)
         flush_pending()
+        if not DRY_RUN:  # 시험 결과(보낸 제목·불릿)를 기록 — 텔레그램을 못 보는 쪽에서도 확인용
+            (STATE_FILE.parent / "test_result.json").write_text(json.dumps(
+                [{"name": n, "title": it["title"], "summary": it.get("summary")}
+                 for (_, n), its in new_by_name.items() for it in its],
+                ensure_ascii=False, indent=1), encoding="utf-8")
     TEST_FILE.unlink()
 
 

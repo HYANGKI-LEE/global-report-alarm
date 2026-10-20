@@ -1,0 +1,5 @@
+# 시험 발송 4차 — DeepL 한국어 번역 확인 (보낸 뒤 봇이 이 파일을 지움)
+fed_cleveland_ec
+fed_dallas_pubs
+fed_chicago_letter
+bis_publications
