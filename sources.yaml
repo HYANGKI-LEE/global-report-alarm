@@ -5,7 +5,8 @@
 #   page    : 사용자가 고른 원본 페이지 주소 (참고용 + 일부 type 은 여기서 필터를 읽음)
 #   type    : 읽는 방식
 #               rss       → urls 의 RSS 주소를 위에서부터 시도해 처음 성공한 것 사용
-#                           (max_items: 최신 몇 건만 볼지, 기본 100 / series_map: 링크 글자 → 시리즈명)
+#                           (max_items: 최신 몇 건만 볼지, 기본 100 / series_map: 링크 글자 → 시리즈명
+#                            include: 링크에 이 글자가 들어간 항목만)
 #               bostonfed → 보스턴 연준 검색 페이지. page 주소의 필터를 그대로 사용
 #               nyfed_research → 뉴욕 연준 Research 메인의 Recent Publications 칸
 #               phillyfed_search → 필라델피아 연준 검색 목록 페이지 (최신 30건)
@@ -170,6 +171,50 @@ sources:
     page: https://www.chicagofed.org/publications/agletter/index
     type: chicagofed_series
     series_id: 88B3A2C2-A267-47C9-8780-52EE76B466D7
+
+  # 세인트루이스 연준 — 이 PC(회사망)에서는 접속 차단, GitHub 서버에서만 확인 가능
+  - id: fed_stlouis_ontheeconomy
+    name: St. Louis Fed
+    page: https://www.stlouisfed.org/on-the-economy
+    type: rss
+    urls: ["https://www.stlouisfed.org/rss/page%20resources/publications/blog-entries"]
+    series: On the Economy
+
+  - id: fed_stlouis_openvault
+    name: St. Louis Fed
+    page: https://www.stlouisfed.org/open-vault
+    type: rss
+    urls: ["https://www.stlouisfed.org/rss/page%20resources/publications/open-vault-blog"]
+    series: Open Vault
+
+  - id: fed_stlouis_pageone
+    name: St. Louis Fed
+    page: https://www.stlouisfed.org/publications/page-one-economics
+    type: rss
+    urls: ["https://www.stlouisfed.org/rss/page-resources/publications/page-one-economics"]
+    series: Page One Economics
+
+  - id: fed_stlouis_review
+    name: St. Louis Fed
+    page: https://www.stlouisfed.org/publications/review
+    type: rss
+    urls: ["https://www.stlouisfed.org/rss/page-resources/publications/review"]
+    series: Review
+
+  - id: fed_stlouis_wp
+    name: St. Louis Fed
+    page: https://www.stlouisfed.org/publications
+    type: rss
+    urls: ["https://fedinprint.org/rss/stlouis.rss"]
+    include: /fedlwp/
+    series: Working Paper
+
+  - id: fed_stlouis_fredblog
+    name: St. Louis Fed
+    page: https://fred.stlouisfed.org/blog/
+    type: rss
+    urls: ["https://fredblog.stlouisfed.org/feed/"]
+    series: FRED Blog
 
   # ── 뉴욕 연준 데이터 (일간 제외) ─────────
   # type datawatch: 데이터 파일/페이지 문구/새 링크가 바뀌면 알림. 같은 name 끼리 한 블록으로 묶여서 전송
@@ -631,3 +676,29 @@ sources:
     page: https://www.clevelandfed.org/indicators-and-data/credit-easing
     type: datawatch
     watch: {files: ["https://www.clevelandfed.org/-/media/files/webcharts/crediteasing/fedagencydebtmbs.csv"]}
+
+  # ── 세인트루이스 연준 데이터 (FRED 시리즈 페이지의 'Updated:' 날짜)
+  # Eighth District Beige Book 은 Fed Board Beige Book 알림(전 지역 동시 발표)으로 대신
+  - id: stlouisfed_data_ecs
+    name: St. Louis Fed 데이터
+    title: Economic Conditions Survey (Eighth District)
+    page: https://www.stlouisfed.org/research/economic-conditions-survey-results
+    type: datawatch
+    watch:
+      regex: {url: "https://www.stlouisfed.org/research/economic-conditions-survey-results", pattern: 'Current release:? [A-Z][a-z]{2,8}\.? \d{1,2}, \d{4}'}
+
+  - id: stlouisfed_data_stlfsi
+    name: St. Louis Fed 데이터
+    title: St. Louis Fed Financial Stress Index (STLFSI4)
+    page: https://fred.stlouisfed.org/series/STLFSI4
+    type: datawatch
+    watch:
+      regex: {url: "https://fred.stlouisfed.org/series/STLFSI4", pattern: 'Updated:? [A-Z][a-z]{2,8}\.? \d{1,2}, \d{4}'}
+
+  - id: stlouisfed_data_stlppm
+    name: St. Louis Fed 데이터
+    title: Price Pressures Measure (STLPPM)
+    page: https://fred.stlouisfed.org/series/STLPPM
+    type: datawatch
+    watch:
+      regex: {url: "https://fred.stlouisfed.org/series/STLPPM", pattern: 'Updated:? [A-Z][a-z]{2,8}\.? \d{1,2}, \d{4}'}

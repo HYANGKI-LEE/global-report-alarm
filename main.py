@@ -43,7 +43,10 @@ def fetch_source(src):
     """sources.yaml 항목 하나를 읽어 [{id, title, link, series}] 목록을 돌려준다 (최신순)."""
     kind = src.get("type", "rss")
     if kind == "rss":
-        items = fetch_rss(src["urls"])[:src.get("max_items", 100)]  # 오래된 글까지 다 들어있는 피드 대비
+        items = fetch_rss(src["urls"])
+        if src.get("include"):  # 링크에 이 글자가 들어간 항목만 (예: Fed in Print 에서 Working Paper 만)
+            items = [it for it in items if src["include"] in it["link"]]
+        items = items[:src.get("max_items", 100)]  # 오래된 글까지 다 들어있는 피드 대비
         for it in items:
             # series_map: 링크 주소에 들어있는 글자 → 시리즈명 (예: economic_brief → Economic Brief)
             for key, label in (src.get("series_map") or {}).items():
@@ -395,6 +398,7 @@ def main():
             items = fetch_source(src)
         except Exception as e:  # noqa: BLE001
             st["fails"] = st.get("fails", 0) + 1
+            st["last_error"] = str(e)[:300]  # GitHub 서버에서만 실패할 때 원인을 seen.json 에서 확인용
             failed.append(f"{name}: {e}")
             print(f"[실패] {name} ({st['fails']}회 연속) {e}", file=sys.stderr)
             if st["fails"] == FAIL_WARN_AFTER:
@@ -403,6 +407,7 @@ def main():
             continue
 
         st["fails"] = 0
+        st.pop("last_error", None)
         for it in items:  # sources.yaml 에 series 를 적어두면 시리즈명이 없는 항목에 붙인다
             it["series"] = it["series"] or src.get("series", "")
         ids = [it["id"] for it in items]
