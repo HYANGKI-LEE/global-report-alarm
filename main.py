@@ -584,6 +584,22 @@ def load_state():
     return {}
 
 
+def save_timing(t_start, timings):
+    """실행 시간 기록 (state/timing.json) — 확인 주기를 정할 때 참고용."""
+    if DRY_RUN:
+        return
+    job_start = float(os.environ.get("JOB_START", 0)) or None
+    now = time.time()
+    data = {
+        "run_at": datetime.now(KST).strftime("%Y-%m-%d %H:%M KST"),
+        "setup_seconds": round(t_start - job_start, 1) if job_start else None,   # 체크아웃·설치 등
+        "check_seconds": round(now - t_start, 1),                                # 전체 대상 확인
+        "slowest": dict(sorted(timings.items(), key=lambda kv: -kv[1])[:15]),
+        "sources": len(timings),
+    }
+    (STATE_FILE.parent / "timing.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
+
+
 def save_state(state):
     if DRY_RUN:
         return
@@ -601,6 +617,7 @@ def main():
     state = load_state()
 
     seeded, failed, warnings = [], [], []
+    t_start, timings = time.time(), {}
     new_by_name = {}  # 표시 이름별 신규 항목 (같은 이름의 여러 대상을 한 블록으로 묶음)
     pending = {}  # 전송 성공 후에 seen 에 반영할 id
 
@@ -608,9 +625,11 @@ def main():
         sid = src["id"]
         name = src["name"] + (f" · {src['title']}" if src.get("title") else "")
         st = state.setdefault(sid, {"seen": [], "fails": 0})
+        t0 = time.time()
         try:
             items = fetch_source(src)
         except Exception as e:  # noqa: BLE001
+            timings[sid] = round(time.time() - t0, 1)
             st["fails"] = st.get("fails", 0) + 1
             st["last_error"] = str(e)[:300]  # GitHub 서버에서만 실패할 때 원인을 seen.json 에서 확인용
             failed.append(f"{name}: {e}")
@@ -620,6 +639,7 @@ def main():
                                 f"수집에 실패했어요.\n<code>{html.escape(str(e)[:300])}</code>")
             continue
 
+        timings[sid] = round(time.time() - t0, 1)
         st["fails"] = 0
         st.pop("last_error", None)
         for it in items:  # sources.yaml 에 series 를 적어두면 시리즈명이 없는 항목에 붙인다
@@ -670,6 +690,7 @@ def main():
     for sid, new_ids in pending.items():
         state[sid]["seen"] = (new_ids + state[sid]["seen"])[:SEEN_KEEP]
     save_state(state)
+    save_timing(t_start, timings)
 
 
 if __name__ == "__main__":
