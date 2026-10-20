@@ -22,6 +22,7 @@
 #               datawatch → 데이터 업데이트 감지 (watch: files / regex / links, 자세한 건 main.py fetch_datawatch)
 #   series  : (선택) 시리즈명이 없는 항목에 붙일 이름
 #   series_map: (선택) 링크 주소 글자 → 시리즈명 (모든 type 공통)
+#   exclude : (선택) 링크에 이 글자(목록이면 그중 하나)가 들어간 항목은 뺌 (모든 type 공통)
 #   kind    : (선택) data 면 텔레그램에 📊 데이터로 표시
 #   enabled : false 로 두면 잠시 끔
 
@@ -945,6 +946,11 @@ sources:
     post_type: sffed_data
     mode: modified
     per_page: 60
+    exclude:                          # 2026-10-21 사용자 요청: 지역사회 자료(대부분 수년 전 자료, 문구 수정만으로 알림)·안내 페이지 제외
+      - /community-development-data
+      - /sf-fed-data-explorer
+      - /banking-and-economic-data
+      - /california-post-rda-affordable-housing
 
   # ── Fed Board 통계 발표 (각 발표 페이지의 'Last Update' 날짜)
   # 제외: H.15·Commercial Paper·Yield Curve(일간), 2008~2020년 이후 갱신 멈춘 통계(E.2, E.15, G.13, H.3,

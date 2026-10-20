@@ -52,6 +52,9 @@ MONTHS = {"January", "February", "March", "April", "May", "June", "July",
 def fetch_source(src):
     """sources.yaml 항목 하나를 읽어 [{id, title, link, series}] 목록을 돌려준다 (최신순)."""
     items = fetch_by_type(src)
+    if src.get("exclude"):  # exclude: 링크에 이 글자(목록이면 그중 하나)가 들어간 항목은 뺌
+        keys = src["exclude"] if isinstance(src["exclude"], list) else [src["exclude"]]
+        items = [it for it in items if not any(k in it["link"] for k in keys)]
     for it in items:
         # series_map: 링크 주소에 들어있는 글자 → 시리즈명 (예: economic_brief → Economic Brief)
         for key, label in (src.get("series_map") or {}).items():
