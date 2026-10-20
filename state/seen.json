@@ -1817,8 +1817,8 @@
  },
  "imf_publications": {
   "seen": [],
-  "fails": 3,
-  "last_error": "Response.body: Protocol error (Network.getResponseBody): No resource with given identifier found"
+  "fails": 4,
+  "last_error": "브라우저 접속 실패 405: https://www.elibrary.imf.org/search?sort=datedescending&pageSize=50&page=2"
  },
  "imf_data_commodity": {
   "seen": [
