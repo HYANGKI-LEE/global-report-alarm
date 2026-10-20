@@ -418,7 +418,13 @@ def browser_get(url):
     if resp is None or resp.status >= 400:
         raise RuntimeError(f"브라우저 접속 실패 {resp.status if resp else '-'}: {url}")
     time.sleep(1)  # 연속 접속 간격
-    return BrowserResponse(resp.status, resp.body())
+    try:
+        body = resp.body()
+    except Exception:  # noqa: BLE001 - 리다이렉트 등으로 원 응답 본문을 못 읽으면 다 그려진 화면 내용을 쓴다
+        page = _browser["page"]
+        page.wait_for_load_state("networkidle", timeout=30000)
+        body = page.content().encode("utf-8")
+    return BrowserResponse(resp.status, body)
 
 
 def close_browser():
