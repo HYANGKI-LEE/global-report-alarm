@@ -7,7 +7,7 @@ on:
   workflow_dispatch:   # Actions 탭에서 수동 실행 가능
   push:
     branches: [main]
-    paths: [sources.yaml, main.py, .github/workflows/poll.yml]
+    paths: [sources.yaml, main.py, .github/workflows/poll.yml, test_request.txt]
 
 permissions:
   contents: write
@@ -41,6 +41,7 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # 3줄 요약·번역 (없으면 요약 없이 전송)
         run: python main.py
 
       - name: 상태 저장
@@ -48,4 +49,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
           git add state/seen.json state/timing.json
+          git add -A test_request.txt 2>/dev/null || true   # 시험 발송 후 지운 요청 파일
           git diff --cached --quiet || (git commit -m "상태 갱신 [skip ci]" && git push)

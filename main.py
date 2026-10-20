@@ -614,6 +614,80 @@ def to_item(entry):
     }
 
 
+# ── 3줄 요약·번역 (Claude API) ─────────────────────────
+# GitHub Secrets 의 ANTHROPIC_API_KEY 가 있을 때만 동작. 없거나 실패하면 요약 없이 제목만 보낸다.
+SUMMARY_MODEL = "claude-opus-5-5"
+SUMMARY_LIMIT = 40          # 1회 실행당 최대 요약 건수 (비용 상한)
+SUMMARY_SYSTEM = (
+    "너는 중앙은행·국제기구 리포트를 한국 금융시장 실무자에게 소개하는 애널리스트다. "
+    "주어진 글(또는 데이터 페이지)의 핵심을 한국어 불릿 정확히 3개로 요약·번역한다. "
+    "각 불릿은 한 문장, 60자 안팎. 숫자·방향(상승/하락)·결론을 우선하고, 원문에 없는 내용은 쓰지 않는다. "
+    "본문이 거의 없으면 제목과 설명에서 알 수 있는 범위로만 쓴다."
+)
+
+
+def page_text(link):
+    """요약 재료: 메타 설명 + 본문 앞부분 (PDF·접속 실패는 빈 문자열)."""
+    if re.search(r"\.(pdf|xlsx?|csv|zip)(\?|$)", link, re.I):
+        return ""
+    try:
+        soup = BeautifulSoup(http_get(link).text, "html.parser")
+    except Exception:  # noqa: BLE001
+        return ""
+    metas = [m.get("content", "") for m in soup.find_all("meta")
+             if (m.get("name") or m.get("property") or "").lower() in ("description", "og:description")]
+    for t in soup(["script", "style", "nav", "header", "footer", "noscript"]):
+        t.decompose()
+    body = soup.find("main") or soup.find("article") or soup.body or soup
+    text = " ".join(body.get_text(" ", strip=True).split())
+    return ("\n".join(dict.fromkeys(m for m in metas if m)) + "\n\n" + text)[:8000]
+
+
+def summarize_all(items):
+    key = os.environ.get("ANTHROPIC_API_KEY")
+    if not key:
+        return
+    import anthropic
+
+    client = anthropic.Anthropic(api_key=key)
+    for it in items[:SUMMARY_LIMIT]:
+        try:
+            it["summary"] = summarize(client, it)
+        except Exception as e:  # noqa: BLE001 - 요약 실패해도 알림은 보낸다
+            print(f"[요약 실패] {it['title'][:40]}: {type(e).__name__}: {str(e)[:150]}", file=sys.stderr)
+
+
+def summarize(client, it):
+    content = page_text(it["link"])
+    prompt = (f"분류: {it.get('series') or '-'}\n제목: {it['title']}\n링크: {it['link']}\n\n"
+              f"본문:\n{content or '(본문을 가져오지 못함)'}")
+    response = client.beta.messages.create(
+        model=SUMMARY_MODEL,
+        max_tokens=4000,
+        betas=["server-side-fallback-2026-07-01"],
+        fallbacks="default",                     # 안전 분류기가 거절하면 서버에서 다른 모델로 재시도
+        system=SUMMARY_SYSTEM,
+        output_config={
+            "effort": "low",
+            "format": {
+                "type": "json_schema",
+                "schema": {
+                    "type": "object",
+                    "properties": {"bullets": {"type": "array", "items": {"type": "string"}}},
+                    "required": ["bullets"],
+                    "additionalProperties": False,
+                },
+            },
+        },
+        messages=[{"role": "user", "content": prompt}],
+    )
+    if response.stop_reason == "refusal":
+        return None
+    text = next((b.text for b in response.content if b.type == "text"), "")
+    bullets = [b.strip() for b in json.loads(text).get("bullets", []) if b.strip()]
+    return bullets[:3] or None
+
+
 # ── 텔레그램 ──────────────────────────────────────────
 def send(text):
     if DRY_RUN:
@@ -638,27 +712,36 @@ def send(text):
     raise RuntimeError("텔레그램 전송 실패: 속도 제한 반복")
 
 
-def send_blocks(header, blocks):
-    """여러 블록을 길이 제한에 맞춰 나눠서 보낸다."""
-    msg = header
-    for block in blocks:
-        if len(msg) + len(block) + 2 > TG_LIMIT and msg != header:
-            send(msg)
-            msg = header + " (계속)"
-        msg += "\n\n" + block
-    if msg not in (header, header + " (계속)"):
-        send(msg)
-
-
-def render_source(name, items, icon="🏛"):
-    lines = [f"{icon} <b>{html.escape(name)}</b>"]
-    for it in items[:MAX_ITEMS_PER_SOURCE]:
-        tag = f"<i>[{html.escape(it['series'])}]</i> " if it["series"] else ""
-        lines.append(f"• {tag}<a href=\"{html.escape(it['link'], quote=True)}\">"
-                     f"{html.escape(it['title'])}</a>")
-    if len(items) > MAX_ITEMS_PER_SOURCE:
-        lines.append(f"  … 외 {len(items) - MAX_ITEMS_PER_SOURCE}건")
+def render_item(it):
+    """• [분류] 제목(링크) + 그 아래 요약 불릿."""
+    tag = f"<i>[{html.escape(it['series'])}]</i> " if it.get("series") else ""
+    lines = [f"• {tag}<a href=\"{html.escape(it['link'], quote=True)}\">{html.escape(it['title'])}</a>"]
+    for b in it.get("summary") or []:
+        lines.append(f"   - {html.escape(b)}")
     return "\n".join(lines)
+
+
+def send_new(new_by_name):
+    """기관별로 묶어 보낸다. 상단 머리말 없이 바로 기관명부터. 길면 글 단위로 나눠 여러 메시지로."""
+    msg = ""
+    for (icon, name), items in new_by_name.items():
+        head = f"{icon} <b>{html.escape(name)}</b>"
+        shown = items[:MAX_ITEMS_PER_SOURCE]
+        chunks = [render_item(it) for it in shown]
+        if len(items) > len(shown):
+            chunks.append(f"  … 외 {len(items) - len(shown)}건")
+        block = head
+        for c in chunks:
+            if len(msg) + len(block) + len(c) + 3 > TG_LIMIT:   # 이번 글까지 넣으면 넘침 → 지금까지 보내고 새 메시지
+                if block != head:
+                    msg += ("\n\n" if msg else "") + block
+                if msg:
+                    send(msg)
+                msg, block = "", head + " (계속)"
+            block += "\n" + c
+        msg += ("\n\n" if msg else "") + block
+    if msg:
+        send(msg)
 
 
 # ── 상태 ──────────────────────────────────────────────
@@ -735,12 +818,40 @@ def fetch_all(sources):
     return results
 
 
+TEST_FILE = ROOT / "test_request.txt"
+
+
+def run_test(sources):
+    """시험 발송: test_request.txt 에 적은 대상 id(한 줄에 하나)의 가장 최근 글 1건씩을
+    실제 양식(요약 포함)으로 보낸다. 상태(seen)는 건드리지 않고, 끝나면 파일을 지운다(워크플로가 커밋)."""
+    wanted = [l.strip() for l in TEST_FILE.read_text(encoding="utf-8").splitlines()
+              if l.strip() and not l.startswith("#")]
+    by_id = {s["id"]: s for s in sources}
+    new_by_name = {}
+    for sid in wanted:
+        src = by_id.get(sid)
+        if not src:
+            print(f"[시험] 없는 대상: {sid}", file=sys.stderr)
+            continue
+        items = fetch_source(src)
+        if items:
+            icon = "📊" if src.get("type") == "datawatch" or src.get("kind") == "data" else "🏛"
+            new_by_name.setdefault((icon, src["name"]), []).append(items[0])
+    if new_by_name:
+        summarize_all([it for items in new_by_name.values() for it in items])
+        send_new(new_by_name)
+    TEST_FILE.unlink()
+
+
 def main():
     config = yaml.safe_load(SOURCES_FILE.read_text(encoding="utf-8"))
     BROWSER_HOSTS.update(config.get("browser_hosts") or [])
     RENDER_HOSTS.update(config.get("render_hosts") or [])
     BROWSER_HOSTS.update(RENDER_HOSTS)
     sources = [s for s in config["sources"] if s.get("enabled", True)]
+    if TEST_FILE.exists():
+        run_test(sources)
+        return
     state = load_state()
 
     seeded, failed, warnings = [], [], []
@@ -810,8 +921,8 @@ def main():
         send(w)
 
     if new_by_name:
-        blocks = [render_source(name, items, icon) for (icon, name), items in new_by_name.items()]
-        send_blocks(f"🌐 <b>새 리포트·데이터</b> ({now} KST)", blocks)
+        summarize_all([it for items in new_by_name.values() for it in items])
+        send_new(new_by_name)
 
     # 전송까지 끝난 것만 seen 에 반영 (전송 실패 시 다음 실행에서 다시 보냄)
     for sid, new_ids in pending.items():
