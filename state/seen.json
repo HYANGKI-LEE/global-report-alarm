@@ -1789,5 +1789,30 @@
    "sha256:0051346721dca087d112"
   ],
   "fails": 0
+ },
+ "bis_publications": {
+  "seen": [
+   "https://www.bis.org/publications/implementation-principles-effective-risk-data-aggregation-and-risk-reporting-bcbs-239-principles-0",
+   "https://www.bis.org/publications/working-paper-1384-inflation-after-iran-war",
+   "https://www.bis.org/publications/working-paper-1385-competing-rails-crossborder-payments-banks-fintechs-and-stablecoins",
+   "https://www.bis.org/publications/working-paper-1386-geoeconomic-pressure",
+   "https://www.bis.org/publications/paper-176-central-banks-and-macro-financial-stability-fragmented-global-economy",
+   "https://www.bis.org/publications/working-paper-1383-offshore-forwards-and-exchange-rate-transmission-emerging-markets",
+   "https://www.bis.org/publications/202610-standards-amendments-g-sib-framework-address-window-dressing",
+   "https://www.bis.org/publications/202610-consultation-global-systemically-important-banks-methodology-review",
+   "https://www.bis.org/publications/bulletin-138-chokepoint-disruptions-and-their-macroeconomic-consequences",
+   "https://www.bis.org/publications/final-report-fmis-management-general-business-risks-and-general-business-losses-further-guidance-pfmi",
+   "https://www.bis.org/publications/paper-175-money-and-architecture-trust",
+   "https://www.bis.org/publications/202610-implementation-reports-regulatory-rcap-assessment-basel-committees-leverage-ratio-framework-canada",
+   "https://www.bis.org/publications/202610-implementation-reports-regulatory-rcap-assessment-basel-committees-leverage-ratio-framework-australia",
+   "https://www.bis.org/publications/project-aurum-phase-2-exploring-privacy-enhancing-technologies-digital-cash",
+   "https://www.bis.org/publications/202610-implementation-reports-regulatory-rcap-assessment-basel-committees-leverage-ratio-framework-Japan",
+   "https://www.bis.org/publications/202610-implementation-reports-regulatory-rcap-assessment-basel-committees-leverage-ratio-framework-korea",
+   "https://www.bis.org/publications/202610-implementation-reports-regulatory-rcap-assessment-basel-committees-leverage-ratio-framework-switzerland",
+   "https://www.bis.org/publications/202610-implementation-reports-regulatory-rcap-assessment-basel-committees-leverage-ratio-framework-United%20Kingdom",
+   "https://www.bis.org/publications/working-paper-1382-are-stablecoins-and-bank-deposits-substitutes",
+   "https://www.bis.org/publications/working-paper-1381-transformative-ai-and-demand-bottlenecks"
+  ],
+  "fails": 0
  }
 }
