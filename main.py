@@ -64,8 +64,14 @@ def fetch_by_type(src):
     kind = src.get("type", "rss")
     if kind == "rss":
         items = fetch_rss(src["urls"])
-        if src.get("include"):  # 링크에 이 글자가 들어간 항목만 (예: Fed in Print 에서 Working Paper 만)
-            items = [it for it in items if src["include"] in it["link"]]
+        if src.get("include"):  # 링크에 이 글자(목록이면 그중 하나)가 들어간 항목만
+            keys = src["include"] if isinstance(src["include"], list) else [src["include"]]
+            items = [it for it in items if any(k in it["link"] for k in keys)]
+        if src.get("id_with_date"):
+            # 매번 같은 주소로 갱신 공지를 올리는 항목(예: 댈러스 WEI, Trimmed Mean PCE)은 발표 시각을 붙여 구분
+            for it in items:
+                if not re.search(r"/(19|20)\d\d", it["id"]) and it["published"]:
+                    it["id"] += "|" + it["published"]
         return items[:src.get("max_items", 100)]  # 오래된 글까지 다 들어있는 피드 대비
     if kind == "page_links":
         return fetch_page_links(src)
@@ -354,6 +360,7 @@ def to_item(entry):
         "title": " ".join(entry.get("title", "(제목 없음)").split()),
         "link": link,
         "series": series,
+        "published": entry.get("published", ""),
     }
 
 
@@ -461,7 +468,7 @@ def main():
         new = [it for it in items if it["id"] not in seen]
         print(f"[확인] {name}: 신규 {len(new)}건 / 피드 {len(items)}건")
         if new:
-            icon = "📊" if src.get("type") == "datawatch" else "🏛"
+            icon = "📊" if src.get("type") == "datawatch" or src.get("kind") == "data" else "🏛"
             new_by_name.setdefault((icon, src["name"]), []).extend(new)
             pending[sid] = [it["id"] for it in new]
 
