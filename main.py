@@ -748,7 +748,7 @@ def send(text):
             continue
         if not r.ok:
             raise RuntimeError(f"텔레그램 전송 실패 {r.status_code}: {r.text[:200]}")
-        time.sleep(1.5)
+        time.sleep(3)  # 채널 전송 속도 제한(분당 약 20건) 대비 — 글마다 따로 보내므로 간격을 둔다
         return
     raise RuntimeError("텔레그램 전송 실패: 속도 제한 반복")
 
@@ -763,26 +763,14 @@ def render_item(it):
 
 
 def send_new(new_by_name):
-    """기관별로 묶어 보낸다. 상단 머리말 없이 바로 기관명부터. 길면 글 단위로 나눠 여러 메시지로."""
-    msg = ""
+    """글 1건당 메시지 1개. 각 메시지는 기관명 줄 + [분류] 제목(링크) + 요약 불릿."""
     for (icon, name), items in new_by_name.items():
         head = f"{icon} <b>{html.escape(name)}</b>"
         shown = items[:MAX_ITEMS_PER_SOURCE]
-        chunks = [render_item(it) for it in shown]
+        for it in shown:
+            send(f"{head}\n{render_item(it)}"[:TG_LIMIT])
         if len(items) > len(shown):
-            chunks.append(f"  … 외 {len(items) - len(shown)}건")
-        block = head
-        for c in chunks:
-            if len(msg) + len(block) + len(c) + 3 > TG_LIMIT:   # 이번 글까지 넣으면 넘침 → 지금까지 보내고 새 메시지
-                if block != head:
-                    msg += ("\n\n" if msg else "") + block
-                if msg:
-                    send(msg)
-                msg, block = "", head + " (계속)"
-            block += "\n" + c
-        msg += ("\n\n" if msg else "") + block
-    if msg:
-        send(msg)
+            send(f"{head}\n… 외 {len(items) - len(shown)}건 (목록: {html.escape(items[0]['link'])})")
 
 
 # ── 상태 ──────────────────────────────────────────────
