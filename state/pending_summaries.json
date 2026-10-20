@@ -1,18 +1,5 @@
 [
  {
-  "message_id": 48,
-  "icon": "🏛",
-  "name": "BIS",
-  "title": "Bank liquidity regulation and the growth of private credit",
-  "link": "https://www.bis.org/publications/bank-liquidity-regulation-and-growth-private-credit",
-  "series": "BIS Working Paper No 1388",
-  "summary_en": [
-   "We study the role of bank liquidity regulation in the growth of private credit.",
-   "Following the introduction of the liquidity coverage ratio (LCR), private credit increases significantly more in U.S. counties with a larger footprint of banks subject to the LCR or of LCR banks with greater initial l…"
-  ],
-  "sent_at": "2026-10-20T21:42:07.931742+09:00"
- },
- {
   "message_id": 49,
   "icon": "🏛",
   "name": "Philadelphia Fed",
