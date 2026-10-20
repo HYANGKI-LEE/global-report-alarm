@@ -1,0 +1,22 @@
+name: probe-browser
+on:
+  push:
+    branches: [main]
+    paths: [probe/probe.py]
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install playwright==1.47.0 && python -m playwright install --with-deps chromium
+      - run: python probe/probe.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git pull -q --rebase || true
+          git add probe/result.json && git commit -m "probe 결과 [skip ci]" && git push
