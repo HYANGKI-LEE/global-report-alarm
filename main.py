@@ -429,7 +429,10 @@ def fetch_gmail(src):
                 body = html_part.get_payload(decode=True).decode(html_part.get_content_charset() or "utf-8", "replace")
                 for a in BeautifulSoup(body, "html.parser").find_all("a", href=True):
                     text = " ".join(a.get_text().split())
-                    if len(text) >= 25 and a["href"].startswith("http") and not SKIP_LINK.search(a["href"] + " " + text):
+                    if (len(text) >= 25 and a["href"].startswith("http")
+                            and not text.lower().startswith(("http", "www."))      # 주소만 적힌 링크(메일 하단 공통 링크)
+                            and urlsplit(a["href"]).path.strip("/") != ""            # 사이트 홈 링크
+                            and not SKIP_LINK.search(a["href"] + " " + text)):
                         if a["href"] not in [l for _, l in links]:
                             links.append((text, a["href"]))
             if links:
@@ -493,11 +496,15 @@ def browser_get(url):
         from playwright.sync_api import sync_playwright  # 필요할 때만 불러옴 (로컬엔 없어도 됨)
         pw = sync_playwright().start()
         _browser["pw"], _browser["b"] = pw, pw.chromium.launch()
-        _browser["page"] = _browser["b"].new_page(user_agent=UA)
+        page = _browser["b"].new_page(user_agent=UA)
+        # 글 목록만 필요하므로 이미지·글꼴·동영상은 받지 않음 (페이지가 훨씬 빨리 열림)
+        page.route("**/*", lambda route: route.abort()
+                   if route.request.resource_type in ("image", "font", "media") else route.continue_())
+        _browser["page"] = page
     resp = _browser["page"].goto(url, timeout=60000, wait_until="domcontentloaded")
     if resp is None or resp.status >= 400:
         raise RuntimeError(f"브라우저 접속 실패 {resp.status if resp else '-'}: {url}")
-    time.sleep(1)  # 연속 접속 간격
+    time.sleep(0.3)  # 연속 접속 간격
     if urlsplit(url).hostname in RENDER_HOSTS:
         page = _browser["page"]
         page.wait_for_load_state("networkidle", timeout=45000)
@@ -685,6 +692,49 @@ def save_state(state):
 
 
 # ── 메인 ──────────────────────────────────────────────
+def source_hosts(src):
+    """대상이 접속하는 호스트들 (page, urls, watch 안의 주소)."""
+    urls = [src.get("page", "")] + list(src.get("urls") or [])
+    for v in (src.get("watch") or {}).values():
+        urls += v if isinstance(v, list) else [v.get("url", "")] if isinstance(v, dict) else []
+    return {urlsplit(u).hostname for u in urls if u}
+
+
+def fetch_all(sources):
+    """모든 대상을 미리 수집해 {id: (items, 오류, 걸린초)} 로 돌려준다.
+
+    - 실제 브라우저·메일(한 연결을 공유)이 필요한 대상은 순서대로 한 줄로
+    - 나머지는 사이트(호스트)별로 묶어, 서로 다른 사이트끼리만 동시에 — 한 사이트에 동시 접속이 몰리지 않게
+    """
+    from concurrent.futures import ThreadPoolExecutor
+
+    def run(src):
+        t0 = time.time()
+        try:
+            return src["id"], (fetch_source(src), None, round(time.time() - t0, 1))
+        except Exception as e:  # noqa: BLE001
+            return src["id"], (None, e, round(time.time() - t0, 1))
+
+    def run_group(group):
+        return [run(src) for src in group]
+
+    serial, groups = [], {}
+    for src in sources:
+        hosts = source_hosts(src)
+        if src.get("type") == "gmail" or hosts & BROWSER_HOSTS:
+            serial.append(src)
+        else:
+            groups.setdefault(sorted(hosts)[0] if hosts else src["id"], []).append(src)
+
+    results = {}
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        futures = [pool.submit(run_group, g) for g in groups.values()]
+        results.update(run_group(serial))           # 브라우저·메일은 메인 스레드에서 (동시에 진행)
+        for f in futures:
+            results.update(f.result())
+    return results
+
+
 def main():
     config = yaml.safe_load(SOURCES_FILE.read_text(encoding="utf-8"))
     BROWSER_HOSTS.update(config.get("browser_hosts") or [])
@@ -695,6 +745,7 @@ def main():
 
     seeded, failed, warnings = [], [], []
     t_start, timings = time.time(), {}
+    results = fetch_all(sources)
     new_by_name = {}  # 표시 이름별 신규 항목 (같은 이름의 여러 대상을 한 블록으로 묶음)
     pending = {}  # 전송 성공 후에 seen 에 반영할 id
 
@@ -702,11 +753,11 @@ def main():
         sid = src["id"]
         name = src["name"] + (f" · {src['title']}" if src.get("title") else "")
         st = state.setdefault(sid, {"seen": [], "fails": 0})
-        t0 = time.time()
+        items, err, timings[sid] = results[sid]
         try:
-            items = fetch_source(src)
+            if err:
+                raise err
         except Exception as e:  # noqa: BLE001
-            timings[sid] = round(time.time() - t0, 1)
             st["fails"] = st.get("fails", 0) + 1
             st["last_error"] = str(e)[:300]  # GitHub 서버에서만 실패할 때 원인을 seen.json 에서 확인용
             failed.append(f"{name}: {e}")
@@ -716,7 +767,6 @@ def main():
                                 f"수집에 실패했어요.\n<code>{html.escape(str(e)[:300])}</code>")
             continue
 
-        timings[sid] = round(time.time() - t0, 1)
         st["fails"] = 0
         st.pop("last_error", None)
         for it in items:  # sources.yaml 에 series 를 적어두면 시리즈명이 없는 항목에 붙인다
