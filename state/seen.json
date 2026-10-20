@@ -1050,6 +1050,7 @@
  },
  "fed_kansascity_bulletin": {
   "seen": [
+   "https://www.kansascityfed.org/research/economic-bulletin/a-historical-analysis-of-the-federal-income-tax/",
    "https://www.kansascityfed.org/research/economic-bulletin/financially-distressed-consumers-may-have-turned-to-high-cost-credit-to-cope-with-inflation/",
    "https://www.kansascityfed.org/research/economic-bulletin/has-the-investment-boom-expanded-us-productive-capacity/",
    "https://www.kansascityfed.org/research/economic-bulletin/beyond-valuations-long-term-financial-risks-from-the-ai-build-out/",
@@ -1734,9 +1735,18 @@
   "fails": 0
  },
  "kansascityfed_data_databooks": {
-  "seen": [],
-  "fails": 1,
-  "last_error": "일치하는 링크 0건 (페이지 구조 변경?)"
+  "seen": [
+   "https://www.kansascityfed.org/data-and-trends/tenth-district-economic-databooks/tenth-district-economic-databooks-2026/",
+   "https://www.kansascityfed.org/data-and-trends/tenth-district-economic-databooks/tenth-district-economic-databooks-2025/",
+   "https://www.kansascityfed.org/data-and-trends/tenth-district-economic-databooks/tenth-district-economic-databooks-2024/",
+   "https://www.kansascityfed.org/data-and-trends/tenth-district-economic-databooks/tenth-district-economic-databooks-2023/",
+   "https://www.kansascityfed.org/data-and-trends/tenth-district-economic-databooks/tenth-district-economic-databooks-2022/",
+   "https://www.kansascityfed.org/data-and-trends/tenth-district-economic-databooks/tenth-district-economic-databooks-2021/",
+   "https://www.kansascityfed.org/data-and-trends/tenth-district-economic-databooks/tenth-district-economic-databooks-2020/",
+   "https://www.kansascityfed.org/data-and-trends/tenth-district-economic-databooks/tenth-district-economic-databooks-2019/",
+   "https://www.kansascityfed.org/data-and-trends/tenth-district-economic-databooks/tenth-district-economic-databooks-2018/"
+  ],
+  "fails": 0
  },
  "kansascityfed_data_beigebook": {
   "seen": [
