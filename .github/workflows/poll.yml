@@ -41,7 +41,8 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # 3줄 요약·번역 (없으면 요약 없이 전송)
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}           # 초록 3줄 한국어 번역 (없으면 영어 원문)
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # (미사용) Claude 한국어 요약
         run: python main.py
 
       - name: 상태 저장

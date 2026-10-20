@@ -16,8 +16,7 @@
 
 로컬 시험(전송·저장 없이 출력만): `DRY_RUN=1 python main.py`
 
-## 한국어 3줄 요약 (API 요금 없음)
-1. 봇이 리포트 알림을 보내면 `state/pending_summaries.json` 에 요약 대기로 기록 (메시지 번호 포함)
-2. Claude Code 예약 작업(routine, 매시 20분 UTC = 한국시간 매시 20분)이 대기 글을 읽고 한국어 3줄 요약을 만들어
-   `claude/summaries` 브랜치의 `state/summaries.json` 에 저장 — 텔레그램 토큰은 쓰지 않음
-3. 봇이 다음 실행 때 요약을 읽어 이미 보낸 메시지를 수정 (영어 초록 → 한국어 요약). 3일 지난 대기 건은 버림
+## 한국어 번역
+- 리포트 알림의 초록 3줄을 DeepL(API Free, 월 50만 자 무료)로 한국어 번역해서 보냄 — GitHub Secrets `DEEPL_API_KEY`
+- 키가 없거나 월 한도를 넘으면 영어 원문으로 보냄
+- (보관) Claude Code 예약 작업으로 한국어 요약을 붙이는 방식은 `ROUTINE_SUMMARY = False` 로 꺼둠

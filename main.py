@@ -646,8 +646,9 @@ def page_text(link):
 def summarize_all(new_by_name):
     """리포트(🏛) 글마다 제목 아래 붙일 불릿을 채운다. 데이터(📊) 알림은 제목만.
 
-    - 기본(무료): 글 페이지의 공식 소개문(초록) 앞 1~3문장을 원문 그대로
-    - ANTHROPIC_API_KEY 가 있으면: Claude 로 한국어 3줄 요약·번역 (유료)
+    - 기본: 글 페이지의 공식 소개문(초록) 앞 1~3문장
+      → DEEPL_API_KEY 가 있으면 DeepL 로 한국어 번역 (DeepL API Free: 월 50만 자 무료), 없으면 원문 그대로
+    - ANTHROPIC_API_KEY 가 있으면: Claude 로 한국어 3줄 요약·번역 (유료, 현재 미사용)
     """
     items = [it for (icon, _), its in new_by_name.items() if icon != "📊" for it in its][:SUMMARY_LIMIT]
     key = os.environ.get("ANTHROPIC_API_KEY")
@@ -657,9 +658,36 @@ def summarize_all(new_by_name):
         client = anthropic.Anthropic(api_key=key)
     for it in items:
         try:
-            it["summary"] = summarize(client, it) if client else excerpt(it)
+            if client:
+                it["summary"] = summarize(client, it)
+            else:
+                it["summary"] = excerpt(it)
+                if it["summary"]:
+                    it["summary"] = translate_ko(it["summary"])
         except Exception as e:  # noqa: BLE001 - 요약 실패해도 알림은 보낸다
             print(f"[요약 실패] {it['title'][:40]}: {type(e).__name__}: {str(e)[:150]}", file=sys.stderr)
+
+
+def translate_ko(texts):
+    """DeepL 로 영어 문장들을 한국어로. 키가 없거나 한도 초과(456)·오류면 원문 그대로 돌려준다."""
+    key = os.environ.get("DEEPL_API_KEY", "").strip()
+    if not key or not texts:
+        return texts
+    host = "api-free.deepl.com" if key.endswith(":fx") else "api.deepl.com"  # 무료 키는 :fx 로 끝남
+    try:
+        r = requests.post(f"https://{host}/v2/translate",
+                          headers={"Authorization": f"DeepL-Auth-Key {key}"},
+                          data=[("text", t) for t in texts] + [("source_lang", "EN"), ("target_lang", "KO")],
+                          timeout=30)
+        if r.status_code == 456:
+            print("[번역] DeepL 월 한도 초과 — 이번 달은 원문으로 보냄", file=sys.stderr)
+            return texts
+        r.raise_for_status()
+        out = [t.get("text", "") for t in r.json().get("translations", [])]
+        return out if len(out) == len(texts) and all(out) else texts
+    except Exception as e:  # noqa: BLE001
+        print(f"[번역 실패] {type(e).__name__}: {str(e)[:150]}", file=sys.stderr)
+        return texts
 
 
 def excerpt(it):
@@ -775,6 +803,7 @@ def telegram(method, payload):
 PENDING_FILE = STATE_FILE.parent / "pending_summaries.json"
 SUMMARIES_URL = ("https://raw.githubusercontent.com/{repo}/claude/summaries/state/summaries.json")
 PENDING_KEEP_DAYS = 3
+ROUTINE_SUMMARY = False   # 2026-10-21: 구독 사용량 절약을 위해 끔 → DeepL 번역(translate_ko)으로 대체. 다시 쓰려면 True + 예약 작업 켜기
 _pending_new = []
 
 
@@ -839,7 +868,7 @@ def send_new(new_by_name):
         shown = items[:MAX_ITEMS_PER_SOURCE]
         for it in shown:
             mid = send(f"{head}\n{render_item(it)}"[:TG_LIMIT])
-            if mid and icon != "📊":   # 리포트 글은 한국어 요약 대기 목록에 올림 (데이터 알림은 제목만)
+            if ROUTINE_SUMMARY and mid and icon != "📊":   # (예약 작업 요약을 쓸 때만) 요약 대기 목록에 올림
                 _pending_new.append({"message_id": mid, "icon": icon, "name": name, "title": it["title"],
                                      "link": it["link"], "series": it.get("series", ""),
                                      "summary_en": it.get("summary") or [],
