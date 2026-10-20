@@ -1,26 +1,36 @@
 [
  {
-  "url": "https://www.kansascityfed.org/research/",
+  "url": "https://www.imf.org/en/publications",
   "status": 200,
-  "title": "Research - Federal Reserve Bank of Kansas City",
-  "text": "Research Agriculture Banking Community Development Education TEN Magazine Jackson Hole Money Museum Research NATIONAL ECONOMY LOCAL ECONOMY SURVEYS NATIONAL DATA AND TRENDS LOCAL DATA AND TRENDS INDUS"
+  "title": "IMF Publications",
+  "body": "<!doctype html> <html lang=\"en\"> <head> <meta charset=\"utf-8\"> <title>IMF Publications</title> <meta name=\"description\" content=\"Access IMF Publications including: World Economic Outlook, Global Financial Stability Report, Fiscal Monitor, Regional Ec",
+  "issues_links": [
+   "World Economic Outlook | https://www.imf.org/en/publications/weo/issues/2026/07/08/world-economic-outlook-update-july-2026",
+   "Global Financial Stability Report | https://www.imf.org/en/publications/gfsr/issues/2026/04/14/global-financial-stability-report-april-2026?cid=ca-com-compd-pubs_belt-sm26-GFSREA2026001",
+   "Fiscal Monitor | https://www.imf.org/en/publications/fm/issues/2026/04/15/fiscal-monitor-april-2026?cid=ca-com-compd-pubs_belt-sm26-FMOEA2026001",
+   "GPA2026 pubs pageV3 | https://www.imf.org/en/publications/policy-papers/issues/2026/04/14/the-managing-director-s-global-policy-agenda-spring-meetings-2026-managing-shocks-and-575436?cid=ca-com-compd-pubs_rotator",
+   "External Sector Report | https://www.imf.org/en/publications/esr/issues/2026/07/30/external-sector-report-2026"
+  ]
  },
  {
-  "url": "https://www.kansascityfed.org/research/economic-bulletin/",
+  "url": "https://www.imf.org/en/Publications/RSS?language=eng",
+  "status": 404,
+  "title": "",
+  "body": "{ \"error\":\"Blob not found\" }",
+  "issues_links": []
+ },
+ {
+  "url": "https://www.imf.org/en/Publications/RSS?language=eng&series=IMF%20Working%20Papers",
+  "status": 404,
+  "title": "",
+  "body": "{ \"error\":\"Blob not found\" }",
+  "issues_links": []
+ },
+ {
+  "url": "https://www.imf.org/en/research/commodity-prices",
   "status": 200,
-  "title": "Economic Bulletin - Federal Reserve Bank of Kansas City",
-  "text": "Research Agriculture Banking Community Development Education TEN Magazine Jackson Hole Money Museum Research NATIONAL ECONOMY LOCAL ECONOMY SURVEYS NATIONAL DATA AND TRENDS LOCAL DATA AND TRENDS INDUS"
- },
- {
-  "url": "https://www.stlouisfed.org/research/economic-conditions-survey-results",
-  "error": "Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.stlouisfed.org/research/economic-conditions-survey-results\nCall log:\nnavigating to \"https://www.stlouisfed.org/research/economic-conditions-surv"
- },
- {
-  "url": "https://www.stlouisfed.org/rss/page-resources/publications/review",
-  "error": "Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.stlouisfed.org/rss/page-resources/publications/review\nCall log:\nnavigating to \"https://www.stlouisfed.org/rss/page-resources/publications/review"
- },
- {
-  "url": "https://fred.stlouisfed.org/series/STLFSI4",
-  "error": "Page.goto: Navigation to \"https://fred.stlouisfed.org/series/STLFSI4\" is interrupted by another navigation to \"chrome-error://chromewebdata/\"\nCall log:\nnavigating to \"https://fred.stlouisfed.org/serie"
+  "title": "IMF Primary Commodity Prices",
+  "body": "<!doctype html> <html lang=\"en\"> <head> <meta charset=\"utf-8\"> <title>IMF Primary Commodity Prices</title> <meta name=\"description\" content=\"Primary Commodity Prices data are updated monthly based on the IMF’s Primary Commodity Prices System\"> <meta ",
+  "issues_links": []
  }
 ]
