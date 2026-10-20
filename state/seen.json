@@ -970,47 +970,82 @@
  },
  "fed_stlouis_ontheeconomy": {
   "seen": [],
-  "fails": 1,
+  "fails": 2,
   "last_error": "https://www.stlouisfed.org/rss/page%20resources/publications/blog-entries → ReadTimeout: HTTPSConnectionPool(host='www.stlouisfed.org', port=443): Read timed out. (read timeout=30)"
  },
  "fed_stlouis_openvault": {
   "seen": [],
-  "fails": 1,
+  "fails": 2,
   "last_error": "https://www.stlouisfed.org/rss/page%20resources/publications/open-vault-blog → ReadTimeout: HTTPSConnectionPool(host='www.stlouisfed.org', port=443): Read timed out. (read timeout=30)"
  },
  "fed_stlouis_pageone": {
   "seen": [],
-  "fails": 1,
+  "fails": 2,
   "last_error": "https://www.stlouisfed.org/rss/page-resources/publications/page-one-economics → ReadTimeout: HTTPSConnectionPool(host='www.stlouisfed.org', port=443): Read timed out. (read timeout=30)"
  },
  "fed_stlouis_review": {
   "seen": [],
-  "fails": 1,
+  "fails": 2,
   "last_error": "https://www.stlouisfed.org/rss/page-resources/publications/review → ReadTimeout: HTTPSConnectionPool(host='www.stlouisfed.org', port=443): Read timed out. (read timeout=30)"
  },
  "fed_stlouis_wp": {
   "seen": [],
-  "fails": 1,
+  "fails": 2,
   "last_error": "https://fedinprint.org/rss/stlouis.rss → ReadTimeout: HTTPSConnectionPool(host='fedinprint.org', port=443): Read timed out. (read timeout=30)"
  },
  "fed_stlouis_fredblog": {
   "seen": [],
-  "fails": 1,
+  "fails": 2,
   "last_error": "https://fredblog.stlouisfed.org/feed/ → ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)"
  },
  "stlouisfed_data_ecs": {
   "seen": [],
-  "fails": 1,
+  "fails": 2,
   "last_error": "HTTPSConnectionPool(host='www.stlouisfed.org', port=443): Read timed out. (read timeout=60)"
  },
  "stlouisfed_data_stlfsi": {
   "seen": [],
-  "fails": 1,
+  "fails": 2,
   "last_error": "HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)"
  },
  "stlouisfed_data_stlppm": {
   "seen": [],
-  "fails": 1,
+  "fails": 2,
   "last_error": "HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)"
+ },
+ "fed_minneapolis_research": {
+  "seen": [
+   "https://www.minneapolisfed.org/research/community-development-working-papers/federal-oversight-and-benefit-payment-accuracy-evidence-from-the-unemployment-insurance-system",
+   "https://www.minneapolisfed.org/article/2026/why-has-the-us-economy-been-resilient-to-the-largest-increase-in-tariffs-since-the-great-depression",
+   "https://www.minneapolisfed.org/economic-research/data-indicators/qlmonthly-quits-and-layoffs-to-nonemployment",
+   "https://www.minneapolisfed.org/research/staff-reports/unbundling-labor",
+   "https://www.minneapolisfed.org/research/staff-reports/online-job-posts-contain-very-little-wage-information",
+   "https://www.minneapolisfed.org/article/2026/interview-with-ariel-pakes-to-understand-the-broader-economy-unlock-the-inner-workings-of-product-markets",
+   "https://www.minneapolisfed.org/research/staff-reports/labor-market-power-with-worker-and-firm-heterogeneity",
+   "https://www.minneapolisfed.org/research/institute-working-papers/what-quits-and-layoffs-reveal-about-the-business-cycle",
+   "https://www.minneapolisfed.org/research/working-papers/why-do-americans-no-longer-work-so-much-more-than-nonamericans",
+   "https://www.minneapolisfed.org/research/staff-reports/quantifying-market-power-and-business-dynamism-in-the-macroeconomy",
+   "https://www.minneapolisfed.org/research/working-papers/reconciling-micro-elasticities-with-the-macro-decline-in-labor-supply",
+   "https://www.minneapolisfed.org/research/recessions-in-perspective"
+  ],
+  "fails": 0
+ },
+ "minneapolisfed_data_aitrade": {
+  "seen": [
+   "sha256:6535ccd97c6174a0f638"
+  ],
+  "fails": 0
+ },
+ "minneapolisfed_data_qlmonthly": {
+  "seen": [
+   "sha256:b1e5d358160d1d5cb014"
+  ],
+  "fails": 0
+ },
+ "minneapolisfed_data_tpu": {
+  "seen": [
+   "sha256:7ec1c80d710a70167e72"
+  ],
+  "fails": 0
  }
 }
