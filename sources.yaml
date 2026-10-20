@@ -171,7 +171,7 @@ sources:
     type: chicagofed_series
     series_id: 88B3A2C2-A267-47C9-8780-52EE76B466D7
 
-  # ── 뉴욕 연준 데이터 (일간 제외, 주간은 CMDI 만) ─────────
+  # ── 뉴욕 연준 데이터 (일간 제외) ─────────
   # type datawatch: 데이터 파일/페이지 문구/새 링크가 바뀌면 알림. 같은 name 끼리 한 블록으로 묶여서 전송
   - id: nyfed_data_cmdi
     name: New York Fed 데이터
@@ -324,7 +324,7 @@ sources:
       links: {url: "https://www.federalreserve.gov/monetarypolicy/publications/beige-book-default.htm", pattern: 'beigebook\d{6}-summary\.htm'}
 
   # ── 클리블랜드 연준 데이터 (페이지의 'Last updated' 날짜가 바뀌면 알림)
-  # 제외: Inflation Nowcasting(일간), Credit Easing(주간), Systemic Risk Indicator·Consumers and COVID-19(업데이트 중단)
+  # 제외: Inflation Nowcasting(일간), Systemic Risk Indicator·Consumers and COVID-19(업데이트 중단)
   - id: clevelandfed_data_median_cpi
     name: Cleveland Fed 데이터
     title: "Median CPI"
@@ -423,7 +423,7 @@ sources:
     watch: {files: ["https://www.richmondfed.org/-/media/Files/charts/data/partisan_conflict_index.csv"]}
 
   # ── 애틀랜타 연준 데이터·서베이
-  # 제외: Market Probability Tracker(일간), Unemployment Claims Monitor(주간), Deflation Probabilities(2020년 중단),
+  # 제외: Market Probability Tracker(일간), Unemployment Claims Monitor(외부 shinyapps 앱이라 판별 불가), Deflation Probabilities(2020년 중단),
   #       Labor Force Explorer·Southeastern Rental Affordability(외부 앱), Spider Chart·GDP-Based Recession Indicator(사이트 내 데이터 없음),
   #       Labor Market Sliders(Labor Report First Look 과 같은 날 갱신), Jobs Calculator·CLIFF(계산기 도구)
   - id: atlantafed_data_gdpnow
@@ -600,3 +600,34 @@ sources:
     page: https://www.chicagofed.org/research/data/carts/current-data
     type: datawatch
     watch: {files: ["https://api.data.chicagofed.org/CARTS/carts-headline-and-blurb.html"]}
+
+  # ── 주간 데이터 (사용자 요청으로 추가)
+  - id: nyfed_data_nowcast
+    name: New York Fed 데이터
+    title: New York Fed Staff Nowcast
+    page: https://www.newyorkfed.org/research/policy/nowcast
+    type: datawatch
+    watch: {files: ["https://www.newyorkfed.org/medialibrary/Research/Interactives/Data/NowCast/data/{quarter}.csv", "https://www.newyorkfed.org/medialibrary/Research/Interactives/Data/NowCast/data/{prev_quarter}.csv"]}
+
+  - id: nyfed_data_primarydealer
+    name: New York Fed 데이터
+    title: Primary Dealer Statistics
+    page: https://www.newyorkfed.org/markets/counterparties/primary-dealers-statistics
+    type: datawatch
+    watch:
+      regex: {url: "https://markets.newyorkfed.org/api/pd/list/asof.json", pattern: '\d{4}-\d{2}-\d{2}'}
+
+  - id: nyfed_data_soma
+    name: New York Fed 데이터
+    title: SOMA Holdings
+    page: https://www.newyorkfed.org/markets/soma-holdings
+    type: datawatch
+    watch:
+      regex: {url: "https://markets.newyorkfed.org/api/soma/asofdates/latest.json", pattern: '\d{4}-\d{2}-\d{2}'}
+
+  - id: clevelandfed_data_crediteasing
+    name: Cleveland Fed 데이터
+    title: Credit Easing
+    page: https://www.clevelandfed.org/indicators-and-data/credit-easing
+    type: datawatch
+    watch: {files: ["https://www.clevelandfed.org/-/media/files/webcharts/crediteasing/fedagencydebtmbs.csv"]}

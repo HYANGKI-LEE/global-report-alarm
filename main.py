@@ -73,6 +73,7 @@ def fetch_datawatch(src):
 
       head: [url, ...]           파일의 Last-Modified/ETag 헤더가 바뀌면 업데이트 (큰 파일용)
       files: [url, ...]          파일 내용이 바뀌면 업데이트 (여러 개면 합쳐서 하나의 지문)
+                                 주소에 {quarter}/{prev_quarter} 를 쓰면 현재·직전 분기로 자동 치환
       regex: {url, pattern}      페이지에서 처음 일치하는 글자가 바뀌면 업데이트 (예: 'second quarter of 2026')
       links: {url, pattern}      페이지에 패턴과 일치하는 새 링크가 생기면 업데이트 (링크마다 1건)
     """
@@ -90,9 +91,16 @@ def fetch_datawatch(src):
         return [{"id": "head:" + " | ".join(marks), "title": f"{title} 업데이트",
                  "link": page, "series": ""}]
     if "files" in w:
-        h = hashlib.sha256()
-        for url in w["files"]:
-            h.update(http_get(url).content)
+        h, got = hashlib.sha256(), 0
+        for url in expand_quarters(w["files"]):
+            r = requests.get(url, headers={"User-Agent": UA}, timeout=60)
+            if r.status_code == 404 and "{" in str(w["files"]):
+                continue  # 분기 이름으로 만든 주소는 아직 파일이 없을 수 있음
+            r.raise_for_status()
+            h.update(r.content)
+            got += 1
+        if not got:
+            raise ValueError("받은 파일 0개")
         return [{"id": "sha256:" + h.hexdigest()[:20], "title": f"{title} 업데이트",
                  "link": page, "series": ""}]
     if "regex" in w:
@@ -205,6 +213,15 @@ def fetch_chicagofed_series(series_id):
     if not items:
         raise ValueError("항목 0건 (시리즈ID 변경?)")
     return items
+
+
+def expand_quarters(urls):
+    """주소 안의 {quarter} / {prev_quarter} 를 현재·직전 분기(예: 2026Q4 / 2026Q3)로 바꾼다."""
+    today = datetime.now(KST)
+    q = (today.month - 1) // 3 + 1
+    cur = f"{today.year}Q{q}"
+    prev = f"{today.year}Q{q - 1}" if q > 1 else f"{today.year - 1}Q4"
+    return [u.replace("{quarter}", cur).replace("{prev_quarter}", prev) for u in urls]
 
 
 def http_get(url):
