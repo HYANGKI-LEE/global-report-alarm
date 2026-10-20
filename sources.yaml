@@ -557,7 +557,7 @@ sources:
       links: {url: "https://www.atlantafed.org/research-and-data/surveys/survey-and-diary-of-consumer-payment-choice", pattern: 'survey-diary-consumer-payment-choice/\d{4}/[^"]*\.xlsx'}
 
   # ── 시카고 연준 데이터
-  # 제외: CARTS·NFCI(주간). Land Values 는 AgLetter(출판물)로도 함께 알림
+  # 주간인 NFCI·CARTS 도 사용자 요청으로 포함. Land Values 는 AgLetter(출판물)로도 함께 알림
   - id: chicagofed_data_cfnai
     name: Chicago Fed 데이터
     title: Chicago Fed National Activity Index (CFNAI)
@@ -586,3 +586,17 @@ sources:
     page: https://www.chicagofed.org/research/data/ag-conditions/index
     type: datawatch
     watch: {files: ["https://www.chicagofed.org/-/media/others/research/data/agconditions/land-values-7th-district-xls.xls"]}
+
+  - id: chicagofed_data_nfci
+    name: Chicago Fed 데이터
+    title: National Financial Conditions Index (NFCI)
+    page: https://www.chicagofed.org/research/data/nfci/current-data
+    type: datawatch
+    watch: {files: ["https://api.data.chicagofed.org/NFCI/nfci-headline-and-blurb.html"]}
+
+  - id: chicagofed_data_carts
+    name: Chicago Fed 데이터
+    title: Chicago Fed Advance Retail Trade Summary (CARTS)
+    page: https://www.chicagofed.org/research/data/carts/current-data
+    type: datawatch
+    watch: {files: ["https://api.data.chicagofed.org/CARTS/carts-headline-and-blurb.html"]}
