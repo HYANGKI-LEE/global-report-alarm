@@ -241,6 +241,7 @@
  },
  "fed_philadelphia_research": {
   "seen": [
+   "{EA62B3E1-24CD-4EF7-A861-A39876E3DDF2}",
    "{AF7D2194-4D8D-4725-866C-01FA58DB389C}",
    "{C35725E2-6856-4814-A0EC-060F4034E6B0}",
    "{7F255C00-C1E5-4DDB-BDA4-FC6A360DAC4F}",
@@ -729,6 +730,7 @@
  },
  "atlantafed_data_gdpnow": {
   "seen": [
+   "text:Updated: October 20, 2026",
    "text:Updated: October 15, 2026"
   ],
   "fails": 0
@@ -1297,6 +1299,7 @@
  },
  "sanfranciscofed_data": {
   "seen": [
+   "64475|2026-10-20T10:30:38",
    "62790|2026-10-14T12:30:56",
    "358970|2026-10-13T15:08:57",
    "217537|2026-10-13T14:31:00",
