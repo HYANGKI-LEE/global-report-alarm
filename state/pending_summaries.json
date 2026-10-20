@@ -1,0 +1,44 @@
+[
+ {
+  "message_id": 44,
+  "icon": "🏛",
+  "name": "New York Fed",
+  "title": "Remote Work from the Office",
+  "link": "https://www.newyorkfed.org/research/staff_reports/sr1211",
+  "series": "Staff Report",
+  "summary_en": [
+   "Roughly half of in-office days are spent entirely on Zoom calls or doing solo work according to a new survey of college-educated Americans.",
+   "These workers commute in just to work remotely from the office.",
+   "Existing measures of remote work that focus solely on working from home miss up to three quarters of its true prevalence."
+  ],
+  "sent_at": "2026-10-20T16:15:14.775482+09:00"
+ },
+ {
+  "message_id": 45,
+  "icon": "🏛",
+  "name": "BIS",
+  "title": "AML/CFT supervisory newsletter",
+  "link": "https://www.bis.org/publications/implementation-principles-effective-risk-data-aggregation-and-risk-reporting-bcbs-239-principles-0",
+  "series": "BCBS Newsletter No 37",
+  "summary_en": [
+   "This newsletter summarises key themes and challenges discussed in recent supervisory exchanges and workshops related to Anti-Money Laundering and Countering the Financing of Terrorism (AML/CFT).",
+   "These insights, drawn from supervisory stocktakes and an industry workshop, aim to provide useful perspectives for supervisors and financial institutions in their ongoing efforts to enhance risk management practices.",
+   "The Committee believes the information provided may be useful for both supervisors and banks in their day-to-day activities."
+  ],
+  "sent_at": "2026-10-20T16:15:18.257500+09:00"
+ },
+ {
+  "message_id": 46,
+  "icon": "🏛",
+  "name": "Kansas City Fed",
+  "title": "Financially Distressed Consumers May Have Turned to High-Cost Credit to Cope with Inflation",
+  "link": "https://www.kansascityfed.org/research/economic-bulletin/financially-distressed-consumers-may-have-turned-to-high-cost-credit-to-cope-with-inflation/",
+  "series": "",
+  "summary_en": [
+   "Many U.S. consumers, especially those who are financially distressed, have used various strategies to cope with rising prices last year.",
+   "Notably, financially distressed consumers were substantially more likely to have taken on additional debt to manage the financial strain of inflation; furthermore, they often borrowed at higher costs.",
+   "Higher inflation rates and cuts in federal financial aid this year may compel even more financially distressed consumers to rely on high-cost credit."
+  ],
+  "sent_at": "2026-10-20T16:15:21.763445+09:00"
+ }
+]
