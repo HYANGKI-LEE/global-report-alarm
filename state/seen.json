@@ -831,5 +831,104 @@
    "https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/research-and-data/surveys/consumer-payments/survey-diary-consumer-payment-choice/2025/dcpc2025-tables-confints-for-web.xlsx"
   ],
   "fails": 0
+ },
+ "fed_chicago_letter": {
+  "seen": [
+   "487a9753-d60e-4500-8795-88a764264ac4",
+   "2dd44d9f-0bbf-47e7-b901-e1071c7d5d79",
+   "896ed25e-41f1-47bb-b52f-c00aa895bfc0",
+   "3280e815-e0ce-4344-af17-58b9d1c1e3f0",
+   "788b2f7e-0d0c-4d19-9bae-9df81481bca0",
+   "74d9616c-d191-49f3-9840-f10b53e61548",
+   "cae34e03-46f8-4401-8216-a0a107846c1f",
+   "531e203c-421e-4caa-8c57-4172af46aeff",
+   "1a9ad568-63d6-4df7-b3d2-f0e7053b225f",
+   "f62205cf-36d1-4b5e-9d00-33d81a02b469"
+  ],
+  "fails": 0
+ },
+ "fed_chicago_insights": {
+  "seen": [
+   "989a444a-e450-48a1-8af9-1f51e260bac0",
+   "632f06c3-54ec-4873-8977-fa4eeafb64c4",
+   "01cf326f-6812-4444-b248-9bba2dce9268",
+   "add9facf-3dd0-4bac-82db-db2ff97943c8",
+   "b137bfe0-37a9-42db-8e16-3acd51d099b7",
+   "bc2b53c4-c06f-4c6a-bdb5-4b8535c56708",
+   "7b65f20f-9d4f-46a3-9ab0-6fcd412ad247",
+   "f012b53e-3f67-4d57-a99a-910e465a7ee3",
+   "65d0e35f-c94f-4e15-8526-df38ca605ed3",
+   "9f14ea80-2a2f-45e6-a282-165d302f2e9b"
+  ],
+  "fails": 0
+ },
+ "fed_chicago_wp": {
+  "seen": [
+   "01af1c65-9292-41f9-a5ec-257e8e793b81",
+   "4d3a9bc6-c359-4639-9563-d7d9e7e34cdc",
+   "4855cc61-53cf-4e00-9488-98a16a4d42c9",
+   "7f1f89cc-fff4-4626-89dc-0ec08f7d27ee",
+   "8102ca0d-cd39-40aa-a14d-a01936de96b6",
+   "f8da065b-6189-4573-941e-3d4272555669",
+   "0cfab1b4-3c3e-4769-80bd-61cb53a325fe",
+   "31802f80-9a15-49b2-a2e5-73232557d0c3",
+   "f8c6a88d-5073-4c7d-9288-6fb48e040e55",
+   "b37f10f2-83fd-44f5-b4ff-2c696700d509"
+  ],
+  "fails": 0
+ },
+ "fed_chicago_ep": {
+  "seen": [
+   "34cd6632-a68e-4394-9393-9a7cca926f2f",
+   "ae7018ad-2bff-4c74-b81d-d38d7d0417b7",
+   "e67ae468-4cc9-4c31-a828-12347a3f6e02",
+   "918f57c5-e4bc-420a-9407-544e4ab2d452",
+   "b6661b65-46f9-4974-b29b-c5bb84e16375",
+   "f1ab613e-2ea5-49b4-9cce-ba9fe1eecae0",
+   "a09b7a52-f3a6-4518-b09d-776df1071953",
+   "34e65677-53a1-41ab-9f78-69ea0421413d",
+   "a7561cef-f953-4e95-8da3-1a0c46d050e4",
+   "77c87e54-1e7f-48d0-a11a-bfd0b289c567"
+  ],
+  "fails": 0
+ },
+ "fed_chicago_agletter": {
+  "seen": [
+   "2ae4eec0-83e7-4ddd-bfb5-b5324ce3a5c3",
+   "830fc9c8-e452-48a0-a225-846fcd53b8f8",
+   "7bc20851-e533-4986-850e-9bb068b2b66d",
+   "c5147a1b-c405-4597-8f39-feadedaa8475",
+   "215f4970-6493-43a5-a26f-2d8e107ec818",
+   "dc1079db-521f-4355-90f4-63e81ecdc3b3",
+   "fbbdc88d-bf1f-4664-a216-becf7c3ab519",
+   "dcd62ad0-dc44-4751-9f31-992f2979047d",
+   "795c72cc-6e30-4e8f-b706-210ed8652bd1",
+   "e1194793-5ae2-4c80-873a-abb6cc9db14c"
+  ],
+  "fails": 0
+ },
+ "chicagofed_data_cfnai": {
+  "seen": [
+   "sha256:13666484d3dec9dea0ee"
+  ],
+  "fails": 0
+ },
+ "chicagofed_data_cfsec": {
+  "seen": [
+   "sha256:c9d2aa47887bfa118e7c"
+  ],
+  "fails": 0
+ },
+ "chicagofed_data_beigebook": {
+  "seen": [
+   "text:October 2026"
+  ],
+  "fails": 0
+ },
+ "chicagofed_data_landvalues": {
+  "seen": [
+   "sha256:f3a92491f9110ad07e9e"
+  ],
+  "fails": 0
  }
 }
