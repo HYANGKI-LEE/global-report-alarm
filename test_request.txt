@@ -1,0 +1,11 @@
+# 시험 발송 2차 (새 형식: 글 1건당 메시지 1개) — 보낸 뒤 봇이 이 파일을 지움
+fed_kansascity_psrb
+fed_kansascity_review
+fed_atlanta_wp
+fed_chicago_insights
+fed_chicago_wp
+fed_cleveland_wp
+fed_sanfrancisco_blog
+kansascityfed_data_mfg
+sanfranciscofed_data
+fedboard_data_h41
