@@ -1817,8 +1817,8 @@
  },
  "imf_publications": {
   "seen": [],
-  "fails": 4,
-  "last_error": "브라우저 접속 실패 405: https://www.elibrary.imf.org/search?sort=datedescending&pageSize=50&page=2"
+  "fails": 5,
+  "last_error": "항목 0건 (페이지 구조 변경?)"
  },
  "imf_data_commodity": {
   "seen": [
