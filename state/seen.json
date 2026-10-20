@@ -1814,5 +1814,16 @@
    "https://www.bis.org/publications/working-paper-1381-transformative-ai-and-demand-bottlenecks"
   ],
   "fails": 0
+ },
+ "imf_publications": {
+  "seen": [],
+  "fails": 1,
+  "last_error": "405 Client Error: Not Allowed for url: https://www.elibrary.imf.org/search?sort=datedescending&pageSize=50&page=1"
+ },
+ "imf_data_commodity": {
+  "seen": [
+   "text:Excel Database: September 2026"
+  ],
+  "fails": 0
  }
 }
