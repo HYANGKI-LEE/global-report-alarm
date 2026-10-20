@@ -1054,9 +1054,15 @@
   "last_error": "HTTPSConnectionPool(host='www.kansascityfed.org', port=443): Read timed out. (read timeout=60)"
  },
  "fed_kansascity_bulletin": {
-  "seen": [],
-  "fails": 1,
-  "last_error": "https://rss.app/feeds/7ZusMFl37gRokC2d.xml → HTTPError: 402 Client Error: Payment Required for url: https://rss.app/feeds/7ZusMFl37gRokC2d.xml"
+  "seen": [
+   "https://www.kansascityfed.org/research/economic-bulletin/financially-distressed-consumers-may-have-turned-to-high-cost-credit-to-cope-with-inflation/",
+   "https://www.kansascityfed.org/research/economic-bulletin/has-the-investment-boom-expanded-us-productive-capacity/",
+   "https://www.kansascityfed.org/research/economic-bulletin/beyond-valuations-long-term-financial-risks-from-the-ai-build-out/",
+   "https://www.kansascityfed.org/research/economic-bulletin/the-low-hire-low-fire-labor-market-is-calm-but-fragile/",
+   "https://www.kansascityfed.org/research/economic-bulletin/jackson-hole-economic-symposium-explored-innovation-in-financial-markets/",
+   "https://www.kansascityfed.org/research/economic-bulletin/private-nonprofit-colleges-growing-reliance-on-graduate-students-may-prove-unsustainable/"
+  ],
+  "fails": 0
  },
  "fed_dallas_pubs": {
   "seen": [
@@ -1492,6 +1498,290 @@
  "fedboard_data_scf": {
   "seen": [
    "text:October 9, 2026"
+  ],
+  "fails": 0
+ },
+ "fed_kansascity_review": {
+  "seen": [
+   "https://www.kansascityfed.org/research/economic-review/building-credit-with-rent-data-the-potential-effects-of-rent-reporting-on-the-credit-scores-of-us-renters/",
+   "https://www.kansascityfed.org/research/economic-review/determinants-of-de-novo-bank-formation/",
+   "https://www.kansascityfed.org/research/economic-review/what-explains-bank-asset-growth-since-the-global-financial-crisis/",
+   "https://www.kansascityfed.org/research/economic-review/catching-up-or-falling-behind-the-pace-of-income-convergence-in-rural-and-urban-america/",
+   "https://www.kansascityfed.org/research/economic-review/investigating-the-recent-decline-in-community-college-enrollment/",
+   "https://www.kansascityfed.org/research/economic-review/understanding-the-role-of-wealth-in-worker-flows/"
+  ],
+  "fails": 0
+ },
+ "fed_kansascity_rwp": {
+  "seen": [
+   "https://www.kansascityfed.org/research/research-working-papers/borrow-now-complain-later-payday-lending-laws-and-spillovers-across-consumer-finance/",
+   "https://www.kansascityfed.org/research/research-working-papers/fleeting-forbearance-in-a-world-of-persistent-financial-distress/",
+   "https://www.kansascityfed.org/research/research-working-papers/fixed-costs-in-the-us-banking-system/",
+   "https://www.kansascityfed.org/research/research-working-papers/bank-capital-and-deposit-insurance/",
+   "https://www.kansascityfed.org/research/research-working-papers/a-dual-mandate-can-support-price-stability/",
+   "https://www.kansascityfed.org/research/research-working-papers/cautious-careers-job-mobility-under-incomplete-markets/",
+   "https://www.kansascityfed.org/research/research-working-papers/introducing-trimmed-imports-and-exports/",
+   "https://www.kansascityfed.org/research/research-working-papers/the-dynamic-distribution-in-the-fixed-cost-model-an-analytical-solution/",
+   "https://www.kansascityfed.org/research/research-working-papers/is-the-ai-boom-volatility-biased-technological-change/"
+  ],
+  "fails": 0
+ },
+ "fed_kansascity_psrb": {
+  "seen": [
+   "https://www.kansascityfed.org/research/payments-system-research-briefings/a-brief-history-of-deposit-tokens-and-tokenized-deposits/",
+   "https://www.kansascityfed.org/research/payments-system-research-briefings/b2b-payments-business-processing-and-challenges-to-achieving-straight-through-processing/",
+   "https://www.kansascityfed.org/research/payments-system-research-briefings/b2b-payments-a-gradual-shift-from-checks-to-electronic-payment-methods/",
+   "https://www.kansascityfed.org/research/payments-system-research-briefings/open-banking-a-critical-piece-in-the-future-of-financial-services/",
+   "https://www.kansascityfed.org/research/payments-system-research-briefings/are-us-consumers-ready-to-use-pay-by-bank-at-the-point-of-sale/",
+   "https://www.kansascityfed.org/research/payments-system-research-briefings/what-are-stablecoins-used-for-today-estimating-the-distribution-of-stablecoins/"
+  ],
+  "fails": 0
+ },
+ "fed_kansascity_nebraska": {
+  "seen": [
+   "https://www.kansascityfed.org/omaha/nebraska-economist/despite-price-pressures-nebraska-households-have-maintained-a-savings-buffer/",
+   "https://www.kansascityfed.org/omaha/nebraska-economist/nebraskas-job-market-steady-but-uneven-and-facing-uncertainty/",
+   "https://www.kansascityfed.org/omaha/nebraska-economist/nebraska-health-care-under-pressure-increasing-costs-consolidation-and-growing-demand/",
+   "https://www.kansascityfed.org/omaha/nebraska-economist/artificial-intelligence-offers-an-opportunity-for-nebraska-firms/",
+   "https://www.kansascityfed.org/omaha/nebraska-economist/cooling-labor-markets-in-nebraska-present-some-challenges-for-younger-workers/",
+   "https://www.kansascityfed.org/omaha/nebraska-economist/uncertainty-clouding-a-conclusive-assessment-of-nebraskas-economy/",
+   "https://www.kansascityfed.org/omaha/nebraska-economist/labor-market-risk-associated-with-trade-uncertainty-more-limited-in-nebraska/",
+   "https://www.kansascityfed.org/omaha/nebraska-economist/post-secondary-education-helping-fill-job-openings-in-nebraska-with-room-to-grow/",
+   "https://www.kansascityfed.org/omaha/nebraska-economist/nebraskas-labor-market-still-strong-but-more-people-working-multiple-jobs/"
+  ],
+  "fails": 0
+ },
+ "fed_kansascity_oklahoma": {
+  "seen": [
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/in-a-tale-of-two-farm-economies-the-oklahoma-ag-economy-contrasts-with-the-rest-of-the-tenth-district/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/higher-oil-prices-may-not-meaningfully-boost-oklahomas-broader-economy/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/hiring-in-oklahoma-slows-but-unemployment-remains-low/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/oklahomas-trade-landscape-broadly-insulated-yet-exposed-in-key-sectors/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/increasingly-bullish-oklahoma-natural-gas-rebounds-on-rising-demand-and-infrastructure/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/oklahoma-tribal-area-economies-rising-incomes-falling-poverty/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/oklahomas-rising-labor-force-participation-driven-largely-by-native-americans/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/harvesting-the-wind-oklahomas-strong-electricity-growth-has-few-agricultural-tradeoffs/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/population-boom-where-are-oklahomas-newest-residents-living-and-working/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/oklahomas-changing-employment-mix-since-covid-more-warehouse-and-finance-jobs-fewer-energy-and-office-support-jobs/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/oklahoma-ag-economy-diverges-from-surrounding-states/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/oklahomas-evolving-energy-landscape/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/where-are-all-the-workers/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/2020q4-ok-housing-bright-horizon-or-cloudy-future/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/2020q3-ok-economy-1920-2020/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/2020q2-path-to-economic-recovery/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/2019q4-is-oklahoma-still-growing/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/2019q3-job-growth-lagged/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/2019q2-closer-look-oklahoma-brain-drain/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/2019q1-net-domestic-migration-reversal/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/2018q4-solid-expansion-in-2018/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/2018q3-tarrifs-affecting-mfg-economy/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/2018q2-oil-and-gas-productivity/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/2018q1-oklahoma-stock-market/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/2017q4-year-of-solid-recovery/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/2017q3-nonmetro-oklahoma/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/2017q2-resurgence-in-ok-wage-growth/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/2017q1-recovery-in-ok-oil-and-gas/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/4q-difficult-2016-optimism-for-2017/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/20163q-collapse-in-ok-manufacturing-ending/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/2016q2-comparing-oklahomas-economy/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/2016q1-economic-damage-large-earthquakes/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/real-estate-positioned-oil-downturn-2015-12-15/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/energy-activity-down-ok-sectors-2015-9-15/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/oil-downturn-okc-economy-2015-06-12/",
+   "https://www.kansascityfed.org/oklahomacity/oklahoma-economist/oke-03-11-15/"
+  ],
+  "fails": 0
+ },
+ "fed_kansascity_rockymtn": {
+  "seen": [
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/higher-oil-prices-likely-increase-severance-tax-revenues-in-rocky-mountain-states/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/colorados-distinct-trends-in-affordable-housing-development/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/businesses-in-the-rocky-mountains-report-steady-employment-outlooks-with-softer-wage-gains/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/colorados-current-employment-situation-driven-by-key-industries/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/poverty-thresholds-across-the-rocky-mountain-region/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/a-readers-digest-uncertainty-and-the-outlook/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/how-has-real-wage-growth-in-the-rocky-mountain-region-outpaced-other-states/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/more-households-are-tapping-into-their-home-equity-after-rapid-home-value-appreciation/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/regional-firms-are-disagreeing-about-how-to-react-to-current-economic-conditions/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/the-tight-labor-market-in-the-rocky-mountain-region-is-showing-some-signs-of-easing/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/inflation-hit-higher-peaks-in-the-rocky-mountain-region-but-is-following-the-national-descent/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/Rocky-Mountain-Job-Losses-Could-Be-Worse-Than-When-the-Tech-Bubble-Burst/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/Labor-Market-Indicators-to-Watch-in-the-Midst-of-Uncertainty/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/Is-Remote-Work-Turning-the-Screw-on-Labor-Market-Tightness/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/Household-Financial-Conditions-in-the-Rocky-Mountain-Region/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/A-Local-Look-at-Labors-Share-of-Income/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/How-More-Time-Spent-at-Home-is-Influencing-Housing-Prices/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/Regional-Investments-in-Renewable-Energy-Resources/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/Small-Business-Recovery-Rocky-Mountain-Region/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/recovery-in-rocky-mountain-leisure-and-hospitality-employment/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/where-is-essential-work-within-the-rocky-mountain-region/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/rme-3q-2020/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/public-pension-funds-rocky-mountain-states/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/export-activity-rocky-mountain-states/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/rme-2q-2020/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/rme-2019q4/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/rme-2019q3/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/rme-2019q2/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/rme-2019q1/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/rme-2018q4/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/rme-2018q3/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/rme-2018q2/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/rme-2018q1/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/rme-2017q4/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/rme-2017q3/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/rme-2017q2/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/employment-trends-in-metropolitan-and-non-metropolitan-areas-of-the-rocky-mountain-states/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/public-pension-funds-in-the-rocky-mountain-states/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/how-have-low-oil-prices-affected-the-rocky-mountain-states/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/export-activity-in-the-rocky-mountain-states/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/trends-in-income-growth-and-inequality-in-the-rocky-mountain-states/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/housing-affordability-in-the-rocky-mountain-states/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/employment-dynamics-a-comparison-of-jobs-and-wages-before-and-after-the-recent-recession/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/the-importance-of-the-energy-sector-in-the-mountain-states/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/boom-bust-and-recovery-mountain-states-housing-markets/",
+   "https://www.kansascityfed.org/denver/rocky-mountain-economist/the-boom-bust-and-recovery-in-the-mountain-states-housing-markets/"
+  ],
+  "fails": 0
+ },
+ "fed_kansascity_charting": {
+  "seen": [
+   "https://www.kansascityfed.org/documents/19630/frbkc_routh_chart_tokenized-treasuries_20261006.zip",
+   "https://www.kansascityfed.org/documents/19530/frbkc_brown_chart_diesel_inflation_data_20260930.zip",
+   "https://www.kansascityfed.org/documents/19115/frbkc_mccoy_chart_generational-LFPR_data_20260922.zip",
+   "https://www.kansascityfed.org/documents/19111/frbkc_mccoy_chart_price-pass-through_data_20260918.zip"
+  ],
+  "fails": 0
+ },
+ "kansascityfed_data_agcredit": {
+  "seen": [
+   "https://www.kansascityfed.org/agriculture/ag-credit-survey/steady-tightening-of-agricultural-credit-conditions-persists/",
+   "https://www.kansascityfed.org/agriculture/ag-credit-survey/sharp-growth-in-tenth-district-ranchland-values/",
+   "https://www.kansascityfed.org/agriculture/ag-credit-survey/farmland-values-remain-firm-despite-deterioration-in-farm-finances/",
+   "https://www.kansascityfed.org/agriculture/ag-credit-survey/disparate-conditions-in-crop-and-livestock-sectors-evident-in-credit-conditions/",
+   "https://www.kansascityfed.org/agriculture/ag-credit-survey/farm-financial-conditions-continue-to-deteriorate/",
+   "https://www.kansascityfed.org/agriculture/ag-credit-survey/subdued-farm-economy-weighs-on-land-values-and-credit-conditions/",
+   "https://www.kansascityfed.org/agriculture/ag-credit-survey/farmland-values-flattened-amid-modest-deterioration-in-credit-conditions/",
+   "https://www.kansascityfed.org/agriculture/ag-credit-survey/credit-conditions-tighten-gradually/",
+   "https://www.kansascityfed.org/agriculture/ag-credit-survey/early-signs-of-financial-pressure/",
+   "https://www.kansascityfed.org/agriculture/ag-credit-survey/thinner-crop-profits-and-tighter-credit-conditions/"
+  ],
+  "fails": 0
+ },
+ "kansascityfed_data_agfinance": {
+  "seen": [
+   "https://www.kansascityfed.org/agriculture/agfinance-updates/farm-loan-growth-remains-strong-as-lending-shifts-at-some-large-banks/",
+   "https://www.kansascityfed.org/agriculture/agfinance-updates/continued-resilience-in-farmland-values/",
+   "https://www.kansascityfed.org/agriculture/agfinance-updates/growth-in-farm-lending-activity-persists/",
+   "https://www.kansascityfed.org/agriculture/agfinance-updates/ag-finance-dbk-01-20-2017/",
+   "https://www.kansascityfed.org/agriculture/agfinance-updates/ag-finance-dbk-10-18-2017/",
+   "https://www.kansascityfed.org/agriculture/agfinance-updates/ag-finance-dbk-2-2-2018/",
+   "https://www.kansascityfed.org/agriculture/agfinance-updates/ag-finance-dbk-1-17-2019/",
+   "https://www.kansascityfed.org/agriculture/agfinance-updates/ag-finance-dbk-4-18-2019/",
+   "https://www.kansascityfed.org/agriculture/agfinance-updates/ag-finance-dbk-07-22-2016/",
+   "https://www.kansascityfed.org/agriculture/agfinance-updates/ag-finance-dbk-7-18-2019/",
+   "https://www.kansascityfed.org/agriculture/agfinance-updates/ag-finance-dbk-10-17-2019/",
+   "https://www.kansascityfed.org/agriculture/agfinance-updates/ag-finance-dbk-10-27-2015/",
+   "https://www.kansascityfed.org/agriculture/agfinance-updates/ag-finance-dbk-01-28-2016/",
+   "https://www.kansascityfed.org/agriculture/agfinance-updates/ag-finance-dbk-04-25-2016/",
+   "https://www.kansascityfed.org/agriculture/agfinance-updates/ag-finance-dbk-10-27-2016/"
+  ],
+  "fails": 0
+ },
+ "kansascityfed_data_community": {
+  "seen": [
+   "https://www.kansascityfed.org/surveys/community-conditions-survey/economic-mobility-for-lower-income-households-improved-slightly-in-fall-2025-but-overall-conditions-remained-poor/",
+   "https://www.kansascityfed.org/surveys/community-conditions-survey/community-conditions-generally-worsened-in-spring-2025-while-organization-financial-stress-increased/",
+   "https://www.kansascityfed.org/surveys/community-conditions-survey/community-conditions-survey-report-fall-2024/"
+  ],
+  "fails": 0
+ },
+ "kansascityfed_data_energy": {
+  "seen": [
+   "https://www.kansascityfed.org/surveys/energy-survey/tenth-district-energy-activity-continued-to-grow-in-q3-october-2026/",
+   "https://www.kansascityfed.org/surveys/energy-survey/tenth-district-energy-activity-increased-moderately-july-2026/",
+   "https://www.kansascityfed.org/surveys/energy-survey/energy-survey-release-dates/",
+   "https://www.kansascityfed.org/surveys/energy-survey/energy-survey-archive/",
+   "https://www.kansascityfed.org/surveys/energy-survey/energy-survey-methodology/"
+  ],
+  "fails": 0
+ },
+ "kansascityfed_data_mfg": {
+  "seen": [
+   "https://www.kansascityfed.org/surveys/manufacturing-survey/tenth-district-manufacturing-activity-continued-to-increase-in-september-2026/",
+   "https://www.kansascityfed.org/surveys/manufacturing-survey/manufacturing-survey-release-dates/",
+   "https://www.kansascityfed.org/surveys/manufacturing-survey/manufacturing-survey-methodology/",
+   "https://www.kansascityfed.org/surveys/manufacturing-survey/other-federal-reserve-bank-manufacturing-surveys/"
+  ],
+  "fails": 0
+ },
+ "kansascityfed_data_services": {
+  "seen": [
+   "https://www.kansascityfed.org/surveys/services-survey/growth-in-tenth-district-services-activity-was-flat-in-september/",
+   "https://www.kansascityfed.org/surveys/services-survey/tenth-district-services-activity-fell-in-august-2026/",
+   "https://www.kansascityfed.org/surveys/services-survey/services-survey-release-dates/",
+   "https://www.kansascityfed.org/surveys/services-survey/manufacturing-survey-methodology/",
+   "https://www.kansascityfed.org/surveys/services-survey/other-federal-reserve-bank-services-surveys/"
+  ],
+  "fails": 0
+ },
+ "kansascityfed_data_sbls": {
+  "seen": [
+   "https://www.kansascityfed.org/surveys/small-business-lending-survey/small-business-lending-q2-2026/",
+   "https://www.kansascityfed.org/surveys/small-business-lending-survey/small-business-lending-survey-archive/"
+  ],
+  "fails": 0
+ },
+ "kansascityfed_data_bankingcond": {
+  "seen": [
+   "https://www.kansascityfed.org/banking/district-banking-conditions/second-quarter-2026-banking-conditions/",
+   "https://www.kansascityfed.org/banking/district-banking-conditions/district-banking-conditions-archive/"
+  ],
+  "fails": 0
+ },
+ "kansascityfed_data_databooks": {
+  "seen": [],
+  "fails": 1,
+  "last_error": "일치하는 링크 0건 (페이지 구조 변경?)"
+ },
+ "kansascityfed_data_beigebook": {
+  "seen": [
+   "text:October 14, 2026"
+  ],
+  "fails": 0
+ },
+ "kansascityfed_data_econcond": {
+  "seen": [
+   "https://www.kansascityfed.org/documents/8551/September_Economic_Conditions_External.pdf"
+  ],
+  "fails": 0
+ },
+ "kansascityfed_data_lmci": {
+  "seen": [
+   "https://www.kansascityfed.org/documents/19597/lmcicharts-100626.xlsx"
+  ],
+  "fails": 0
+ },
+ "kansascityfed_data_divlmci": {
+  "seen": [
+   "https://www.kansascityfed.org/documents/18773/DIV-LMCI_Sept2026.xlsx"
+  ],
+  "fails": 0
+ },
+ "kansascityfed_data_cre": {
+  "seen": [
+   "https://www.kansascityfed.org/documents/19874/CRE_Index-2026Q4.xlsx"
+  ],
+  "fails": 0
+ },
+ "kansascityfed_data_kcfsi": {
+  "seen": [
+   "sha256:476b45fe1b7f820bd3d4"
+  ],
+  "fails": 0
+ },
+ "kansascityfed_data_rstar": {
+  "seen": [
+   "sha256:0051346721dca087d112"
   ],
   "fails": 0
  }
