@@ -43,7 +43,14 @@ def fetch_source(src):
     """sources.yaml 항목 하나를 읽어 [{id, title, link, series}] 목록을 돌려준다 (최신순)."""
     kind = src.get("type", "rss")
     if kind == "rss":
-        return fetch_rss(src["urls"])
+        items = fetch_rss(src["urls"])[:src.get("max_items", 100)]  # 오래된 글까지 다 들어있는 피드 대비
+        for it in items:
+            # series_map: 링크 주소에 들어있는 글자 → 시리즈명 (예: economic_brief → Economic Brief)
+            for key, label in (src.get("series_map") or {}).items():
+                if key in it["link"]:
+                    it["series"] = label
+                    break
+        return items
     if kind == "bostonfed":
         return fetch_bostonfed(src["page"])
     if kind == "nyfed_research":

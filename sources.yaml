@@ -5,6 +5,7 @@
 #   page    : 사용자가 고른 원본 페이지 주소 (참고용 + 일부 type 은 여기서 필터를 읽음)
 #   type    : 읽는 방식
 #               rss       → urls 의 RSS 주소를 위에서부터 시도해 처음 성공한 것 사용
+#                           (max_items: 최신 몇 건만 볼지, 기본 100 / series_map: 링크 글자 → 시리즈명)
 #               bostonfed → 보스턴 연준 검색 페이지. page 주소의 필터를 그대로 사용
 #               nyfed_research → 뉴욕 연준 Research 메인의 Recent Publications 칸
 #               phillyfed_search → 필라델피아 연준 검색 목록 페이지 (최신 30건)
@@ -55,6 +56,27 @@ sources:
     name: Cleveland Fed
     page: https://www.clevelandfed.org/publications/working-paper
     type: clevelandfed_list
+
+  - id: fed_richmond_research
+    name: Richmond Fed
+    page: https://www.richmondfed.org/publications/research
+    type: rss
+    urls: ["https://www.richmondfed.org/publications/research?cc_view=rss"]
+    series_map:
+      economic_brief: Economic Brief
+      econ_focus: Econ Focus
+      working_papers: Working Paper
+      peer_reviewed_pubs: Peer-Reviewed
+      doi.org: Peer-Reviewed
+
+  - id: fed_richmond_national_economy
+    name: Richmond Fed
+    page: https://www.richmondfed.org/research/national_economy
+    type: rss
+    urls: ["https://www.richmondfed.org/research/national_economy?cc_view=rss"]
+    series_map:
+      macro_minute: Macro Minute
+      cfo_survey: CFO Survey
 
   # ── 뉴욕 연준 데이터 (일간 제외, 주간은 CMDI 만) ─────────
   # type datawatch: 데이터 파일/페이지 문구/새 링크가 바뀌면 알림. 같은 name 끼리 한 블록으로 묶여서 전송
