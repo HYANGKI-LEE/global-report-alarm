@@ -1226,7 +1226,7 @@ sources:
       regex: {url: "https://www.imf.org/en/research/commodity-prices", pattern: 'Excel Database:? [A-Z][a-z]+ \d{4}'}
 
   # ── 메일 중계 — 사이트가 클라우드 서버 접속을 막는 기관은 공식 이메일 알림을 봇 전용 Gmail 로 받아 전달
-  #    (global.report.alarm@gmail.com, GitHub Secrets: GMAIL_ADDRESS / GMAIL_APP_PASSWORD)
+  #    (주소·앱 비밀번호는 GitHub Secrets: GMAIL_ADDRESS / GMAIL_APP_PASSWORD)
   - id: mail_imf
     name: IMF
     page: https://www.imf.org/en/publications
