@@ -1352,5 +1352,147 @@
    "64888|2023-11-27T15:19:43"
   ],
   "fails": 0
+ },
+ "fed_board_wp": {
+  "seen": [
+   "https://www.federalreserve.gov/econres/feds/a-macroeconomic-analysis-of-household-labor-supply-responses-to-large-fiscal-transfers.htm",
+   "https://www.federalreserve.gov/econres/feds/inattentive-price-setting-and-inflation-under-fiscal-policy-uncertainty.htm",
+   "https://www.federalreserve.gov/econres/feds/bells-and-whistles-of-nowcasting-models-which-matter-and-when.htm",
+   "https://www.federalreserve.gov/econres/feds/measuring-and-projecting-us-investment-in-semiconductor-manufacturing-capacity.htm",
+   "https://www.federalreserve.gov/econres/feds/how-did-cecl-affect-bank-lending.htm",
+   "https://www.federalreserve.gov/econres/feds/beyond-financial-conditions-measuring-structural-vulnerabilities-in-the-us-financial-system.htm",
+   "https://www.federalreserve.gov/econres/feds/optimal-pooling-in-taylor-rule-estimation-with-multiple-horizon-forecast-panels.htm",
+   "https://www.federalreserve.gov/econres/feds/premiums-or-peril.htm",
+   "https://www.federalreserve.gov/econres/ifdp/estimating-yield-impacts-of-treasury-demand-and-supply-changes.htm",
+   "https://www.federalreserve.gov/econres/ifdp/exchange-rate-transmission-through-multinational-firms-evidence-from-japan.htm",
+   "https://www.federalreserve.gov/econres/feds/the-flight-to-affordability-effects-of-pandemic-rent-increases-on-renters-by-geography.htm",
+   "https://www.federalreserve.gov/econres/feds/linear-and-nonlinear-econometric-models-against-machine-learning-models.htm",
+   "https://www.federalreserve.gov/econres/feds/risks-and-uncertainty-in-monetary-policy.htm",
+   "https://www.federalreserve.gov/econres/feds/united-states-of-u-star.htm",
+   "https://www.federalreserve.gov/econres/ifdp/pricing-risk-globally-intermediary-constraints-the-dollar-and-the-global-financial-cycle.htm"
+  ],
+  "fails": 0
+ },
+ "fed_board_fedsnotes": {
+  "seen": [
+   "https://www.federalreserve.gov/econres/notes/feds-notes/government-bonds-safe-haven-property-and-inflationary-pressures-20261016.html",
+   "https://www.federalreserve.gov/econres/notes/feds-notes/ripples-in-the-reserve-pool-unveiling-liquidity-signals-from-the-federal-funds-market-20261016.html",
+   "https://www.federalreserve.gov/econres/notes/feds-notes/introducing-private-credit-into-the-financial-accounts-of-the-united-states-20261016.html",
+   "https://www.federalreserve.gov/econres/notes/feds-notes/the-rise-of-semiliquid-funds-for-retail-investors-20261014.html",
+   "https://www.federalreserve.gov/econres/notes/feds-notes/convenience-yields-risk-premiums-and-the-interpretation-of-oil-futures-prices-during-geo-conflict-20261009.html",
+   "https://www.federalreserve.gov/econres/notes/feds-notes/beyond-the-current-account-u-s-financial-flows-and-global-imbalances-20261009.html",
+   "https://www.federalreserve.gov/econres/notes/feds-notes/assessing-monetary-policy-globally-evidence-from-llms-and-semi-structural-models-20261009.html",
+   "https://www.federalreserve.gov/econres/notes/feds-notes/measuring-spending-in-the-survey-of-consumer-finances-20261009.html",
+   "https://www.federalreserve.gov/econres/notes/feds-notes/informal-support-networks-in-the-survey-of-consumer-finances-20261009.html",
+   "https://www.federalreserve.gov/econres/notes/feds-notes/heterogeneity-in-the-marginal-propensity-to-consume-among-u-s-households-20261009.html",
+   "https://www.federalreserve.gov/econres/notes/feds-notes/beyond-the-factory-gate-the-continued-importance-of-goods-production-20261002.html",
+   "https://www.federalreserve.gov/econres/notes/feds-notes/pricing-sentiment-measuring-input-cost-pressure-from-ism-survey-responses-20261001.html",
+   "https://www.federalreserve.gov/econres/notes/feds-notes/beyond-aggregates-measuring-manufacturing-subsector-heterogeneity-business-trends-and-outlook-survey-20261001.html",
+   "https://www.federalreserve.gov/econres/notes/feds-notes/ai-on-the-factory-floor-evidence-from-manufacturing-job-postings-20260930.html",
+   "https://www.federalreserve.gov/econres/notes/feds-notes/when-the-chips-went-down-motor-vehicle-production-and-the-2021-2022-semiconductor-shortages-20260928.html"
+  ],
+  "fails": 0
+ },
+ "fedboard_data_h41": {
+  "seen": [
+   "text:Last Update: October 15, 2026"
+  ],
+  "fails": 0
+ },
+ "fedboard_data_h8": {
+  "seen": [
+   "text:Last Update: October 16, 2026"
+  ],
+  "fails": 0
+ },
+ "fedboard_data_h10": {
+  "seen": [
+   "text:Last Update: October 19, 2026"
+  ],
+  "fails": 0
+ },
+ "fedboard_data_h6": {
+  "seen": [
+   "text:Last Update: September 22, 2026"
+  ],
+  "fails": 0
+ },
+ "fedboard_data_g17": {
+  "seen": [
+   "text:Last Update: October 16, 2026"
+  ],
+  "fails": 0
+ },
+ "fedboard_data_g19": {
+  "seen": [
+   "text:Last Update: October 07, 2026"
+  ],
+  "fails": 0
+ },
+ "fedboard_data_g20": {
+  "seen": [
+   "text:Last Update: September 24, 2026"
+  ],
+  "fails": 0
+ },
+ "fedboard_data_z1": {
+  "seen": [
+   "text:Last Update: September 11, 2026"
+  ],
+  "fails": 0
+ },
+ "fedboard_data_chargeoff": {
+  "seen": [
+   "text:Last update: August 25, 2026"
+  ],
+  "fails": 0
+ },
+ "fedboard_data_sloos": {
+  "seen": [
+   "text:Last Update: August 03, 2026"
+  ],
+  "fails": 0
+ },
+ "fedboard_data_scoos": {
+  "seen": [
+   "text:Last Update: September 24, 2026"
+  ],
+  "fails": 0
+ },
+ "fedboard_data_dsr": {
+  "seen": [
+   "text:Last Update: September 22, 2026"
+  ],
+  "fails": 0
+ },
+ "fedboard_data_sfos": {
+  "seen": [
+   "text:Last Update: May 14, 2026"
+  ],
+  "fails": 0
+ },
+ "fedboard_data_mob": {
+  "seen": [
+   "text:Last Update: March 12, 2026"
+  ],
+  "fails": 0
+ },
+ "fedboard_data_iba": {
+  "seen": [
+   "text:Last Update: October 6, 2026"
+  ],
+  "fails": 0
+ },
+ "fedboard_data_lbr": {
+  "seen": [
+   "sha256:d62fc74fa5f6c276e646"
+  ],
+  "fails": 0
+ },
+ "fedboard_data_scf": {
+  "seen": [
+   "text:October 9, 2026"
+  ],
+  "fails": 0
  }
 }
