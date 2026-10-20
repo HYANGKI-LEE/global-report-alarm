@@ -50,19 +50,25 @@ MONTHS = {"January", "February", "March", "April", "May", "June", "July",
 # ── 수집 ──────────────────────────────────────────────
 def fetch_source(src):
     """sources.yaml 항목 하나를 읽어 [{id, title, link, series}] 목록을 돌려준다 (최신순)."""
+    items = fetch_by_type(src)
+    for it in items:
+        # series_map: 링크 주소에 들어있는 글자 → 시리즈명 (예: economic_brief → Economic Brief)
+        for key, label in (src.get("series_map") or {}).items():
+            if key in it["link"]:
+                it["series"] = label
+                break
+    return items
+
+
+def fetch_by_type(src):
     kind = src.get("type", "rss")
     if kind == "rss":
         items = fetch_rss(src["urls"])
         if src.get("include"):  # 링크에 이 글자가 들어간 항목만 (예: Fed in Print 에서 Working Paper 만)
             items = [it for it in items if src["include"] in it["link"]]
-        items = items[:src.get("max_items", 100)]  # 오래된 글까지 다 들어있는 피드 대비
-        for it in items:
-            # series_map: 링크 주소에 들어있는 글자 → 시리즈명 (예: economic_brief → Economic Brief)
-            for key, label in (src.get("series_map") or {}).items():
-                if key in it["link"]:
-                    it["series"] = label
-                    break
-        return items
+        return items[:src.get("max_items", 100)]  # 오래된 글까지 다 들어있는 피드 대비
+    if kind == "page_links":
+        return fetch_page_links(src)
     if kind == "bostonfed":
         return fetch_bostonfed(src["page"])
     if kind == "nyfed_research":
@@ -224,6 +230,29 @@ def fetch_chicagofed_series(series_id):
                       "link": x["Url"], "series": (x.get("Series") or {}).get("Name") or ""})
     if not items:
         raise ValueError("항목 0건 (시리즈ID 변경?)")
+    return items
+
+
+def fetch_page_links(src):
+    """범용: 서버에서 완성된 HTML 로 오는 목록 페이지에서, 주소가 link_pattern(정규식)과 맞는 링크를 글로 본다.
+
+    link_pattern 은 href 에 대해 검사하고, 글자 수가 15자 미만인 링크(사람 이름·'더보기' 등)는 버린다.
+    """
+    page = src["page"]
+    soup = BeautifulSoup(http_get(page).text, "html.parser")
+    root = soup.find("main") or soup
+    items, seen = [], set()
+    for a in root.find_all("a", href=True):
+        title = " ".join(a.get_text().split())
+        if not re.search(src["link_pattern"], a["href"]) or len(title) < 15:
+            continue
+        link = urljoin(page, a["href"]).split("#")[0]
+        if link in seen:
+            continue
+        seen.add(link)
+        items.append({"id": link, "title": title, "link": link, "series": ""})
+    if not items:
+        raise ValueError("일치하는 링크 0건 (페이지 구조 변경?)")
     return items
 
 
