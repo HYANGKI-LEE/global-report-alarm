@@ -582,5 +582,254 @@
    "sha256:9adf1f2e136ce897f495"
   ],
   "fails": 0
+ },
+ "fed_atlanta_wp": {
+  "seen": [
+   "https://www.atlantafed.org/research-and-data/publications/working-papers/2026/09/28/16-bailing-out-firms-uninsured-deposits-a-quantitative-analysis",
+   "https://www.atlantafed.org/research-and-data/publications/working-papers/2026/09/25/15-nowcasting-with-mixed-frequency-principal-components-when-not-all-months-are-the-same",
+   "https://www.atlantafed.org/research-and-data/publications/working-papers/2026/09/23/14-testing-for-contemporaneous-exogeneity-in-linear-time-series-models",
+   "https://www.atlantafed.org/research-and-data/publications/working-papers/2026/09/21/13-shipping-cost-shocks-and-us-producer-prices",
+   "https://www.atlantafed.org/research-and-data/publications/working-papers/2026/08/24/12-industrial-policy-and-capital-misallocation-in-exporting",
+   "https://www.atlantafed.org/research-and-data/publications/working-papers/2026/08/03/11-mortgage-lock-in-review-of-the-literature",
+   "https://www.atlantafed.org/research-and-data/publications/working-papers/2026/07/16/10-long-run-intergenerational-effects-of-social-security",
+   "https://www.atlantafed.org/research-and-data/publications/working-papers/2026/07/14/09-attention-dependent-monetary-transmission-to-household-beliefs",
+   "https://www.atlantafed.org/research-and-data/publications/working-papers/2026/07/06/08-innovation-booms-easy-financing-and-human-capital-accumulation",
+   "https://www.atlantafed.org/research-and-data/publications/working-papers/2026/06/22/07-anatomy-of-polarization-evidence-from-worker-flows"
+  ],
+  "fails": 0
+ },
+ "fed_atlanta_phpapers": {
+  "seen": [
+   "https://www.atlantafed.org/research-and-data/publications/policy-hub-papers/2026/10/14/09-measuring-maritime-disruptions-route-based-index-of-us-import-exposure",
+   "https://www.atlantafed.org/research-and-data/publications/policy-hub-papers/2026/09/30/08-declining-birth-rates-in-us-its-not-only-about-preferences",
+   "https://www.atlantafed.org/research-and-data/publications/policy-hub-papers/2026/09/22/07-shipping-cost-shocks-and-us-producer-prices-normal-versus-crisis-pass-through",
+   "https://www.atlantafed.org/research-and-data/publications/policy-hub-papers/2026/09/02/06-downside-risk-to-stock-market-and-consumption",
+   "https://www.atlantafed.org/research-and-data/publications/policy-hub-papers/2026/07/13/05-high-and-volatile-inflation-begets-more-volatile-business-cycle",
+   "https://www.atlantafed.org/research-and-data/publications/policy-hub-papers/2026/06/25/04-supply-disruptions-product-availability-and-strategic-pricing-during-pandemic",
+   "https://www.atlantafed.org/research-and-data/publications/policy-hub-papers/2026/05/18/03-k-shaped-economy-or-not-evidence-from-payments-survey",
+   "https://www.atlantafed.org/research-and-data/publications/policy-hub-papers/2026/03/31/02-fiat-backed-stablecoins-and-narrow-banking",
+   "https://www.atlantafed.org/research-and-data/publications/policy-hub-papers/2026/02/02/01-geographic-inequality-in-food-inflation",
+   "https://www.atlantafed.org/research-and-data/publications/policy-hub-papers/2025/09/25/05-how-credible-is-hong-kongs-currency-peg-insights-from-financial-market-prices"
+  ],
+  "fails": 0
+ },
+ "fed_atlanta_macroblog": {
+  "seen": [
+   "https://www.atlantafed.org/research-and-data/publications/policy-hub-macroblog/2026/10/13/beyond-health-care-has-labor-market-improvement-broadened-in-2026",
+   "https://www.atlantafed.org/research-and-data/publications/policy-hub-macroblog/2026/10/08/surveying-consumers-use-of-personal-checks",
+   "https://www.atlantafed.org/research-and-data/publications/policy-hub-macroblog/2026/10/06/rising-labor-market-anxiety-and-declining-quits",
+   "https://www.atlantafed.org/research-and-data/publications/policy-hub-macroblog/2026/09/29/what-happened-to-workers-who-joined-last-tech-boom",
+   "https://www.atlantafed.org/research-and-data/publications/policy-hub-macroblog/2026/09/21/how-are-firms-using-tariff-refunds",
+   "https://www.atlantafed.org/research-and-data/publications/policy-hub-macroblog/2026/08/18/monetary-policy-stance-and-financial-conditions",
+   "https://www.atlantafed.org/research-and-data/publications/policy-hub-macroblog/2026/08/04/parsing-relationship-between-demographics-and-inflation",
+   "https://www.atlantafed.org/research-and-data/publications/policy-hub-macroblog/2026/07/08/impact-of-tariff-refunds-on-business-activity",
+   "https://www.atlantafed.org/research-and-data/publications/policy-hub-macroblog/2026/06/02/firms-views-on-current-oil-price-shock-stable-for-now-risky-for-tomorrow",
+   "https://www.atlantafed.org/research-and-data/publications/policy-hub-macroblog/2026/05/06/how-much-firms-spending-on-ai-and-what-will-happen-to-headcounts"
+  ],
+  "fails": 0
+ },
+ "fed_atlanta_discussion": {
+  "seen": [
+   "https://www.atlantafed.org/research-and-data/publications/discussion-papers/2025/11/18/02-too-costly-to-work-the-childcare-burden-on-household-earnings",
+   "https://www.atlantafed.org/research-and-data/publications/discussion-papers/2025/05/13/01-through-the-eye-of-the-storm-post-hurricane-migration-in-floridas-panhandle",
+   "https://www.atlantafed.org/research-and-data/publications/discussion-papers/2024/06/18/02-risk-and-resilience-how-weather-related-disasters-impact-economically-marginalized-communities",
+   "https://www.atlantafed.org/research-and-data/publications/discussion-papers/2024/05/28/01-benefits-cliff-coaching-with-the-atlanta-feds-cliff-tools-implementation-evaluation-of-the-national-pilot",
+   "https://www.atlantafed.org/research-and-data/publications/discussion-papers/2023/10/17/02-sheltering-in-place-a-closer-look-at-pandemic-rental-instability-in-six-southern-states",
+   "https://www.atlantafed.org/research-and-data/publications/discussion-papers/2023/09/26/01-a-case-study-mitigating-benefits-cliffs-in-the-district-of-columbia",
+   "https://www.atlantafed.org/research-and-data/publications/discussion-papers/2022/07/12/01-partnerships-between-community-development-financial-institutions",
+   "https://www.atlantafed.org/research-and-data/publications/discussion-papers/2021/06/18/01-benefits-cliffs-and-childcare-affordability-in-florida"
+  ],
+  "fails": 0
+ },
+ "fed_atlanta_partners": {
+  "seen": [
+   "https://www.atlantafed.org/research-and-data/publications/partners-update/2026/10/14/how-many-households-in-the-southeast-are-low-to-moderate-income",
+   "https://www.atlantafed.org/research-and-data/publications/partners-update/2026/10/05/what-are-the-patterns-for-low-income-housing-tax-credit-use-across-the-southeast",
+   "https://www.atlantafed.org/research-and-data/publications/partners-update/2026/07/15/the-cost-of-working-childcare-affordability-analysis-of-florida-and-georgia",
+   "https://www.atlantafed.org/research-and-data/publications/partners-update/2026/06/25/how-are-small-businesses-doing-in-the-southeast-a-look-at-the-latest-survey-results",
+   "https://www.atlantafed.org/research-and-data/publications/partners-update/2026/03/24/fragile-job-market-rising-prices-increase-financial-stress-across-the-southeast",
+   "https://www.atlantafed.org/research-and-data/publications/partners-update/2026/02/20/financial-health-in-louisiana-atlanta-fed-event-yields-new-insights",
+   "https://www.atlantafed.org/research-and-data/publications/partners-update/2025/10/14/small-business-credit-survey-the-2025-southeast-insights",
+   "https://www.atlantafed.org/research-and-data/publications/partners-update/2025/07/15/where-are-the-affordable-rental-units",
+   "https://www.atlantafed.org/research-and-data/publications/partners-update/2025/06/25/miami-dades-strategic-approach-to-workforce-development",
+   "https://www.atlantafed.org/research-and-data/publications/partners-update/2025/01/14/southern-cities-economic-initiative-round-one-report-out"
+  ],
+  "fails": 0
+ },
+ "fed_atlanta_workforce": {
+  "seen": [
+   "https://www.atlantafed.org/research-and-data/publications/workforce-currents/2026/08/13/the-geography-of-ai-demand-in-the-southeast-patterns-of-growth-and-labor-market-structure",
+   "https://www.atlantafed.org/research-and-data/publications/workforce-currents/2026/08/04/from-barrier-to-bridge-approaches-to-address-benefits-cliffs",
+   "https://www.atlantafed.org/research-and-data/publications/workforce-currents/2026/04/08/02-what-enrollment-numbers-can-and-cannot-tell-us-about-access-to-postsecondary-training-programs",
+   "https://www.atlantafed.org/research-and-data/publications/workforce-currents/2026/03/31/01-atlanta-fed-analysis-of-jacksonville-job-market-reveals-regional-conditions",
+   "https://www.atlantafed.org/research-and-data/publications/workforce-currents/2025/11/05/02-will-tight-labor-markets-be-the-new-normal",
+   "https://www.atlantafed.org/research-and-data/publications/workforce-currents/2025/05/21/01-by-degrees-measuring-employer-demand-for-ai-skills-by-educational-requirements",
+   "https://www.atlantafed.org/research-and-data/publications/workforce-currents/2024/10/15/03-then-and-now-the-changing-landscape-of-education-outcomes-and-funding-in-the-21st-century",
+   "https://www.atlantafed.org/research-and-data/publications/workforce-currents/2024/08/21/02-the-power-of-anecdotal-data",
+   "https://www.atlantafed.org/research-and-data/publications/workforce-currents/2024/08/06/01-reconceptualilzing-workers-as-lifelong-learners",
+   "https://www.atlantafed.org/research-and-data/publications/workforce-currents/2023/11/08/03-the-labor-market-then-and-now-the-first-two-decades-of-the-21st-century-part-two"
+  ],
+  "fails": 0
+ },
+ "fed_atlanta_paymentsdata": {
+  "seen": [
+   "https://www.atlantafed.org/research-and-data/publications/payments-data-reports/2024/10/10/03-defining-households-that-are-underserved-in-digital-payment-services",
+   "https://www.atlantafed.org/research-and-data/publications/payments-data-reports/2024/10/07/02-consumer-payment-behavior-by-income-and-demographics",
+   "https://www.atlantafed.org/research-and-data/publications/payments-data-reports/2023/07/25/02-personality-traits-and-financial-outcomes",
+   "https://www.atlantafed.org/research-and-data/publications/payments-data-reports/2023/07/14/01-use-of-checks-in-selected-countries",
+   "https://www.atlantafed.org/research-and-data/publications/payments-data-reports/2022/02/07/01-has-covid-changed-consumer-payment-behavior"
+  ],
+  "fails": 0
+ },
+ "fed_atlanta_takeonpayments": {
+  "seen": [
+   "https://www.atlantafed.org/research-and-data/publications/take-on-payments/2026/05/13/new-fed-data-differences-in-payments-activity-at-large-and-smaller-institutions",
+   "https://www.atlantafed.org/research-and-data/publications/take-on-payments/2026/04/27/new-fed-data-differences-in-deposits-at-large-vs-small-us-institutions",
+   "https://www.atlantafed.org/research-and-data/publications/take-on-payments/2026/04/07/new-fed-data-number-and-value-of-payments-for-largest-dis-2015-to-2022",
+   "https://www.atlantafed.org/research-and-data/publications/take-on-payments/2026/03/09/do-discounts-make-an-impact-at-the-in-person-point-of-sale",
+   "https://www.atlantafed.org/research-and-data/publications/take-on-payments/2026/02/23/bank-security-act-report-for-2024-finds-drop-in-value-of-ransomware-payments",
+   "https://www.atlantafed.org/research-and-data/publications/take-on-payments/2026/02/09/payments-mix-you-dont-need-until-you-move",
+   "https://www.atlantafed.org/research-and-data/publications/take-on-payments/2026/02/02/promise-of-digital-identities-access-and-crime-prevention",
+   "https://www.atlantafed.org/research-and-data/publications/take-on-payments/2026/01/12/why-do-businesses-still-use-paper-checks",
+   "https://www.atlantafed.org/research-and-data/publications/take-on-payments/2025/12/08/big-firms-bet-on-agentic-artificial-intelligence-in-payments",
+   "https://www.atlantafed.org/research-and-data/publications/take-on-payments/2025/11/17/conversations-with-hundreds-of-depository-institutions"
+  ],
+  "fails": 0
+ },
+ "fed_atlanta_ardc": {
+  "seen": [
+   "https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/research-and-data/publications/atlanta-research-data-center-newsletters/2026/ardc-newsletter-vol-17-issue-3.pdf",
+   "https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/research-and-data/publications/atlanta-research-data-center-newsletters/2026/ardc-newsletter-vol-17-issue-1.pdf",
+   "https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/research-and-data/publications/atlanta-research-data-center-newsletters/2025/ardc-newsletter-vol-16-issue-4.pdf",
+   "https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/research-and-data/publications/atlanta-research-data-center-newsletters/2025/ardc-newsletter-vol-16-issue-3.pdf",
+   "https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/research-and-data/publications/atlanta-research-data-center-newsletters/2025/ardc-newsletter-vol-16-issue-2.pdf",
+   "https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/research-and-data/publications/atlanta-research-data-center-newsletters/2025/ardc-newsletter-vol-16-issue-1.pdf",
+   "https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/research-and-data/publications/atlanta-research-data-center-newsletters/2024/ardc-newsletter-vol-15-issue-4.pdf",
+   "https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/research-and-data/publications/atlanta-research-data-center-newsletters/2024/ardc-newsletter-vol-15-issue-3.pdf",
+   "https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/research-and-data/publications/atlanta-research-data-center-newsletters/2024/ardc-newsletter-vol-15-issue-2.pdf",
+   "https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/research-and-data/publications/atlanta-research-data-center-newsletters/2024/ardc-newsletter-vol-15-issue-1.pdf"
+  ],
+  "fails": 0
+ },
+ "fed_atlanta_special": {
+  "seen": [
+   "https://fedcommunities.org/research/2026-report-when-every-dollar-counts/",
+   "https://fedcommunities.org/research/small-business-strategies-supporting-employee-child-care-needs/",
+   "https://workforcerealigned.org/chapters/learner-perspectives-insights-from-participants-in-outcomes-based-training-programs/",
+   "https://fedcommunities.org/research/fostering-maximum-employment-why-federal-reserve-invests-americas-workforce/",
+   "https://fedcommunities.org/research/using-qualitative-research-understand-economy-toolkit/",
+   "https://fedcommunities.org/research/worker-voices/2024-self-employment-dreams-reality-special-brief/",
+   "https://www.richmondfed.org/publications/research/econ_focus/2024/q1-q2/district_digest",
+   "https://inequality.stanford.edu/covid/coping-hardship",
+   "https://fedcommunities.org/research/worker-voices/2023-pursuing-advancement-through-personal-investment-special-brief/",
+   "https://fedcommunities.org/research/worker-voices/2023-barriers-employment-special-brief/"
+  ],
+  "fails": 0
+ },
+ "atlantafed_data_gdpnow": {
+  "seen": [
+   "text:Updated: October 15, 2026"
+  ],
+  "fails": 0
+ },
+ "atlantafed_data_taylor": {
+  "seen": [
+   "text:Updated: October 14, 2026"
+  ],
+  "fails": 0
+ },
+ "atlantafed_data_wgt": {
+  "seen": [
+   "text:Updated: October 08, 2026"
+  ],
+  "fails": 0
+ },
+ "atlantafed_data_lrfl": {
+  "seen": [
+   "text:Updated: October 02, 2026"
+  ],
+  "fails": 0
+ },
+ "atlantafed_data_uid": {
+  "seen": [
+   "text:Updated: October 14, 2026"
+  ],
+  "fails": 0
+ },
+ "atlantafed_data_sticky": {
+  "seen": [
+   "text:Updated: October 14, 2026"
+  ],
+  "fails": 0
+ },
+ "atlantafed_data_oom": {
+  "seen": [
+   "text:updated: May 18, 2023"
+  ],
+  "fails": 0
+ },
+ "atlantafed_data_bie": {
+  "seen": [
+   "text:Updated: September 23, 2026"
+  ],
+  "fails": 0
+ },
+ "atlantafed_data_sbu": {
+  "seen": [
+   "text:Updated: September 30, 2026"
+  ],
+  "fails": 0
+ },
+ "atlantafed_data_chinagdp": {
+  "seen": [
+   "head:Thu, 03 Sep 2026 17:51:49 GMT"
+  ],
+  "fails": 0
+ },
+ "atlantafed_data_hoam": {
+  "seen": [
+   "head:Fri, 16 Oct 2026 17:46:57 GMT"
+  ],
+  "fails": 0
+ },
+ "atlantafed_data_cremi": {
+  "seen": [
+   "head:Wed, 26 Aug 2026 16:43:12 GMT"
+  ],
+  "fails": 0
+ },
+ "atlantafed_data_lfpd": {
+  "seen": [
+   "head:Tue, 26 Apr 2022 13:20:31 GMT"
+  ],
+  "fails": 0
+ },
+ "atlantafed_data_wuxia": {
+  "seen": [
+   "head:Sun, 04 Jun 2023 15:27:33 GMT"
+  ],
+  "fails": 0
+ },
+ "atlantafed_data_cbbs": {
+  "seen": [
+   "sha256:e2d0cc3276046352c19e"
+  ],
+  "fails": 0
+ },
+ "atlantafed_data_chinamacro": {
+  "seen": [
+   "https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/research-and-data/data/china-macroeconomy/data/2026-09-data.zip",
+   "https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/research-and-data/data/china-macroeconomy/data/2024-07-data.zip",
+   "https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/research-and-data/data/china-macroeconomy/data/2023-07-data.zip",
+   "https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/research-and-data/data/china-macroeconomy/data/2022-06.zip"
+  ],
+  "fails": 0
+ },
+ "atlantafed_data_sdcpc": {
+  "seen": [
+   "https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/research-and-data/surveys/consumer-payments/survey-diary-consumer-payment-choice/2025/dcpc2025-tables-for-web.xlsx",
+   "https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/research-and-data/surveys/consumer-payments/survey-diary-consumer-payment-choice/2025/dcpc2025-tables-confints-for-web.xlsx"
+  ],
+  "fails": 0
  }
 }
