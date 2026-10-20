@@ -287,3 +287,44 @@ sources:
     type: datawatch
     watch:
       regex: {url: "https://www.clevelandfed.org/indicators-and-data/survey-of-regional-conditions-and-expectations", pattern: 'Last updated:?\s*[A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  # ── 리치먼드 연준 데이터 (페이지의 'Last updated on' 날짜, PCI 는 데이터 파일 변화로 판별)
+  # 제외: National Economic Indicators(주간 지표 모음)
+  - id: richmondfed_data_sos
+    name: Richmond Fed 데이터
+    title: "SOS Recession Indicator"
+    page: https://www.richmondfed.org/research/national_economy/sos_recession_indicator
+    type: datawatch
+    watch:
+      regex: {url: "https://www.richmondfed.org/research/national_economy/sos_recession_indicator", pattern: 'Last updated on [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: richmondfed_data_rstar
+    name: Richmond Fed 데이터
+    title: "Lubik-Matthes Natural Rate of Interest"
+    page: https://www.richmondfed.org/research/national_economy/natural_rate_interest
+    type: datawatch
+    watch:
+      regex: {url: "https://www.richmondfed.org/research/national_economy/natural_rate_interest", pattern: 'Last updated on [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: richmondfed_data_nei
+    name: Richmond Fed 데이터
+    title: "Non-Employment Index"
+    page: https://www.richmondfed.org/research/national_economy/non_employment_index
+    type: datawatch
+    watch:
+      regex: {url: "https://www.richmondfed.org/research/national_economy/non_employment_index", pattern: 'Last updated on [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: richmondfed_data_srpi
+    name: Richmond Fed 데이터
+    title: "Inflation Scatterplot (Share of Relative Price Increases)"
+    page: https://www.richmondfed.org/research/national_economy/inflation_share_of_relative_price_increases
+    type: datawatch
+    watch:
+      regex: {url: "https://www.richmondfed.org/research/national_economy/inflation_share_of_relative_price_increases", pattern: 'Last updated on [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: richmondfed_data_pci
+    name: Richmond Fed 데이터
+    title: Partisan Conflict Index
+    page: https://www.richmondfed.org/research/national_economy/partisan_conflict_index
+    type: datawatch
+    watch: {files: ["https://www.richmondfed.org/-/media/Files/charts/data/partisan_conflict_index.csv"]}
