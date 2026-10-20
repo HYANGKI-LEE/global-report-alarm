@@ -28,6 +28,15 @@ STATE_FILE = ROOT / "state" / "seen.json"
 KST = timezone(timedelta(hours=9))
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
+# 일부 사이트(세인트루이스 연준 등)는 브라우저답지 않은 요청을 응답 없이 붙잡아 두므로 브라우저 헤더를 갖춰 보낸다
+HEADERS = {
+    "User-Agent": UA,
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,application/rss+xml,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "keep-alive",
+    "Upgrade-Insecure-Requests": "1",
+}
 SEEN_KEEP = 1000          # 기관별로 기억할 최근 항목 수
 MAX_ITEMS_PER_SOURCE = 20  # 한 번에 기관당 보낼 최대 건수 (넘치면 "외 N건")
 FAIL_WARN_AFTER = 3        # 연속 실패가 이 횟수가 되면 경고 1회 발송
@@ -85,7 +94,7 @@ def fetch_datawatch(src):
         # 파일을 받지 않고 서버가 알려주는 수정 시각(Last-Modified)/ETag 로만 판별 — 큰 파일용
         marks = []
         for url in w["head"]:
-            r = requests.head(url, headers={"User-Agent": UA}, timeout=60, allow_redirects=True)
+            r = requests.head(url, headers=HEADERS, timeout=60, allow_redirects=True)
             r.raise_for_status()
             mark = r.headers.get("Last-Modified") or r.headers.get("ETag")
             if not mark:
@@ -96,7 +105,7 @@ def fetch_datawatch(src):
     if "files" in w:
         h, got = hashlib.sha256(), 0
         for url in expand_quarters(w["files"]):
-            r = requests.get(url, headers={"User-Agent": UA}, timeout=60)
+            r = requests.get(url, headers=HEADERS, timeout=60)
             if r.status_code == 404 and "{" in str(w["files"]):
                 continue  # 분기 이름으로 만든 주소는 아직 파일이 없을 수 있음
             r.raise_for_status()
@@ -204,7 +213,7 @@ def fetch_chicagofed_series(series_id):
     """
     r = requests.post("https://www.chicagofed.org/forms/NewsFeed/Index",
                       params={"seriesIds": series_id, "page": 1},
-                      headers={"User-Agent": UA, "X-Requested-With": "XMLHttpRequest"}, timeout=30)
+                      headers={**HEADERS, "X-Requested-With": "XMLHttpRequest"}, timeout=30)
     r.raise_for_status()
     items = []
     for x in r.json() or []:
@@ -228,7 +237,7 @@ def expand_quarters(urls):
 
 
 def http_get(url):
-    r = requests.get(url, headers={"User-Agent": UA}, timeout=60)
+    r = requests.get(url, headers=HEADERS, timeout=60)
     r.raise_for_status()
     return r
 
@@ -238,7 +247,7 @@ def fetch_rss(urls):
     errors = []
     for url in urls:
         try:
-            r = requests.get(url, headers={"User-Agent": UA}, timeout=30)
+            r = requests.get(url, headers=HEADERS, timeout=30)
             r.raise_for_status()
             feed = feedparser.parse(r.content)
             if not feed.entries:
@@ -260,7 +269,7 @@ def fetch_bostonfed(page):
     params.update({"yrFrom": "", "yrTo": "", "d": "false", "dt": "false",
                    "srt": "0", "pgSz": "50", "pgN": "1"})  # srt=0: Newest
     r = requests.post("https://www.bostonfed.org/api/pubsanddata/publications",
-                      params=params, headers={"User-Agent": UA}, timeout=30)
+                      params=params, headers=HEADERS, timeout=30)
     r.raise_for_status()
     pubs = r.json().get("publications") or []
     if not pubs:
@@ -278,7 +287,7 @@ def fetch_nyfed_research(page):
 
     항목 아래 줄 예: "저자1 and 저자2, Staff Report 1211, October 2026" → 시리즈 "Staff Report"
     """
-    r = requests.get(page, headers={"User-Agent": UA}, timeout=30)
+    r = requests.get(page, headers=HEADERS, timeout=30)
     r.raise_for_status()
     soup = BeautifulSoup(r.text, "html.parser")
     head = next((h for h in soup.select("div.ts-page-head-b")
