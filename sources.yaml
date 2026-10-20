@@ -291,6 +291,22 @@ sources:
       /community-development/: Community Development Blog
       /around-the-district/: Around the District
 
+  - id: fed_board_wp
+    name: Fed Board
+    page: https://www.federalreserve.gov/econres.htm
+    type: rss
+    urls: ["https://www.federalreserve.gov/feeds/working_papers.xml"]
+    series_map:
+      /econres/feds/: FEDS Working Paper
+      /econres/ifdp/: IFDP Working Paper
+
+  - id: fed_board_fedsnotes
+    name: Fed Board
+    page: https://www.federalreserve.gov/econres/notes/feds-notes/default.htm
+    type: rss
+    urls: ["https://www.federalreserve.gov/feeds/feds_notes.xml"]
+    series: FEDS Notes
+
   # ── 뉴욕 연준 데이터 (일간 제외) ─────────
   # type datawatch: 데이터 파일/페이지 문구/새 링크가 바뀌면 알림. 같은 name 끼리 한 블록으로 묶여서 전송
   - id: nyfed_data_cmdi
@@ -844,3 +860,142 @@ sources:
     post_type: sffed_data
     mode: modified
     per_page: 60
+
+  # ── Fed Board 통계 발표 (각 발표 페이지의 'Last Update' 날짜)
+  # 제외: H.15·Commercial Paper·Yield Curve(일간), 2008~2020년 이후 갱신 멈춘 통계(E.2, E.15, G.13, H.3,
+  #       Assets & Liabilities of Foreign Banks, New Security Issues, Intl Summary, Securities Holdings,
+  #       Statistics by Banks/Nonbanks, Insured Commercial Banks, Mortgage Debt, Medium-Term Notes)
+  - id: fedboard_data_h41
+    name: Fed Board 데이터
+    title: "H.4.1 Factors Affecting Reserve Balances"
+    page: https://www.federalreserve.gov/releases/h41/current/
+    type: datawatch
+    watch:
+      regex: {url: "https://www.federalreserve.gov/releases/h41/current/", pattern: 'Last Update:? [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: fedboard_data_h8
+    name: Fed Board 데이터
+    title: "H.8 Assets and Liabilities of Commercial Banks"
+    page: https://www.federalreserve.gov/releases/h8/current/default.htm
+    type: datawatch
+    watch:
+      regex: {url: "https://www.federalreserve.gov/releases/h8/current/default.htm", pattern: 'Last Update:? [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: fedboard_data_h10
+    name: Fed Board 데이터
+    title: "H.10/G.5 Foreign Exchange Rates"
+    page: https://www.federalreserve.gov/releases/h10/current/
+    type: datawatch
+    watch:
+      regex: {url: "https://www.federalreserve.gov/releases/h10/current/", pattern: 'Last Update:? [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: fedboard_data_h6
+    name: Fed Board 데이터
+    title: "H.6 Money Stock Measures"
+    page: https://www.federalreserve.gov/releases/h6/current/default.htm
+    type: datawatch
+    watch:
+      regex: {url: "https://www.federalreserve.gov/releases/h6/current/default.htm", pattern: 'Last Update:? [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: fedboard_data_g17
+    name: Fed Board 데이터
+    title: "G.17 Industrial Production and Capacity Utilization"
+    page: https://www.federalreserve.gov/releases/g17/Current/default.htm
+    type: datawatch
+    watch:
+      regex: {url: "https://www.federalreserve.gov/releases/g17/Current/default.htm", pattern: 'Last Update:? [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: fedboard_data_g19
+    name: Fed Board 데이터
+    title: "G.19 Consumer Credit"
+    page: https://www.federalreserve.gov/releases/g19/current/default.htm
+    type: datawatch
+    watch:
+      regex: {url: "https://www.federalreserve.gov/releases/g19/current/default.htm", pattern: 'Last Update:? [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: fedboard_data_g20
+    name: Fed Board 데이터
+    title: "G.20 Finance Companies"
+    page: https://www.federalreserve.gov/releases/g20/current/default.htm
+    type: datawatch
+    watch:
+      regex: {url: "https://www.federalreserve.gov/releases/g20/current/default.htm", pattern: 'Last Update:? [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: fedboard_data_z1
+    name: Fed Board 데이터
+    title: "Z.1 Financial Accounts of the United States"
+    page: https://www.federalreserve.gov/releases/z1/default.htm
+    type: datawatch
+    watch:
+      regex: {url: "https://www.federalreserve.gov/releases/z1/default.htm", pattern: 'Last Update:? [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: fedboard_data_chargeoff
+    name: Fed Board 데이터
+    title: "Charge-Off and Delinquency Rates"
+    page: https://www.federalreserve.gov/releases/chargeoff/
+    type: datawatch
+    watch:
+      regex: {url: "https://www.federalreserve.gov/releases/chargeoff/", pattern: 'Last Update:? [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: fedboard_data_sloos
+    name: Fed Board 데이터
+    title: "Senior Loan Officer Opinion Survey (SLOOS)"
+    page: https://www.federalreserve.gov/data/sloos/sloos.htm
+    type: datawatch
+    watch:
+      regex: {url: "https://www.federalreserve.gov/data/sloos/sloos.htm", pattern: 'Last Update:? [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: fedboard_data_scoos
+    name: Fed Board 데이터
+    title: "Senior Credit Officer Opinion Survey (SCOOS)"
+    page: https://www.federalreserve.gov/data/scoos.htm
+    type: datawatch
+    watch:
+      regex: {url: "https://www.federalreserve.gov/data/scoos.htm", pattern: 'Last Update:? [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: fedboard_data_dsr
+    name: Fed Board 데이터
+    title: "Household Debt Service Ratios"
+    page: https://www.federalreserve.gov/releases/DSR/default.htm
+    type: datawatch
+    watch:
+      regex: {url: "https://www.federalreserve.gov/releases/DSR/default.htm", pattern: 'Last Update:? [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: fedboard_data_sfos
+    name: Fed Board 데이터
+    title: "Senior Financial Officer Survey"
+    page: https://www.federalreserve.gov/data/sfos/sfos.htm
+    type: datawatch
+    watch:
+      regex: {url: "https://www.federalreserve.gov/data/sfos/sfos.htm", pattern: 'Last Update:? [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: fedboard_data_mob
+    name: Fed Board 데이터
+    title: "Minority-Owned Depository Institutions"
+    page: https://www.federalreserve.gov/releases/mob/
+    type: datawatch
+    watch:
+      regex: {url: "https://www.federalreserve.gov/releases/mob/", pattern: 'Last Update:? [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: fedboard_data_iba
+    name: Fed Board 데이터
+    title: "Structure and Share Data for U.S. Offices of Foreign Banks"
+    page: https://www.federalreserve.gov/releases/iba/default.htm
+    type: datawatch
+    watch:
+      regex: {url: "https://www.federalreserve.gov/releases/iba/default.htm", pattern: 'Last Update:? [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: fedboard_data_lbr
+    name: Fed Board 데이터
+    title: Large Commercial Banks (LBR)
+    page: https://www.federalreserve.gov/releases/lbr/
+    type: datawatch
+    watch: {files: ["https://www.federalreserve.gov/releases/lbr/releaseDates.json"]}
+
+  - id: fedboard_data_scf
+    name: Fed Board 데이터
+    title: Survey of Consumer Finances (SCF)
+    page: https://www.federalreserve.gov/econres/scfindex.htm
+    type: datawatch
+    watch:
+      regex: {url: "https://www.federalreserve.gov/econres/scfindex.htm", pattern: '(January|February|March|April|May|June|July|August|September|October|November|December) \d{1,2}, \d{4}'}
