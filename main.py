@@ -393,7 +393,18 @@ def fetch_gmail(src):
             raise RuntimeError("GMAIL_ADDRESS / GMAIL_APP_PASSWORD 가 설정되지 않음")
         conn = imaplib.IMAP4_SSL("imap.gmail.com")
         conn.login(addr, pw.replace(" ", ""))
-        conn.select('"[Gmail]/All Mail"', readonly=True)  # 받은편지함·프로모션 탭 구분 없이 전부, 읽기 전용
+        # '전체 메일' 폴더(받은편지함·프로모션 탭 구분 없이)는 언어마다 이름이 달라서(\All 표시로 찾음)
+        # 예: [Gmail]/All Mail, [Gmail]/전체보관함 — 못 찾으면 받은편지함
+        folder = "INBOX"
+        typ, boxes = conn.list()
+        for line in boxes or []:
+            line = line.decode("utf-8", "replace")
+            if r"\All" in line:
+                folder = line.rsplit(' "/" ', 1)[-1].strip()
+                break
+        typ, _ = conn.select(folder, readonly=True)  # 읽기 전용 — 메일을 읽음 처리하지 않음
+        if typ != "OK":
+            raise RuntimeError(f"메일함 열기 실패: {folder}")
         _imap["conn"] = conn
     conn = _imap["conn"]
 
