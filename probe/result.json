@@ -1,0 +1,26 @@
+[
+ {
+  "url": "https://www.kansascityfed.org/research/",
+  "status": 200,
+  "title": "Research - Federal Reserve Bank of Kansas City",
+  "text": "Research Agriculture Banking Community Development Education TEN Magazine Jackson Hole Money Museum Research NATIONAL ECONOMY LOCAL ECONOMY SURVEYS NATIONAL DATA AND TRENDS LOCAL DATA AND TRENDS INDUS"
+ },
+ {
+  "url": "https://www.kansascityfed.org/research/economic-bulletin/",
+  "status": 200,
+  "title": "Economic Bulletin - Federal Reserve Bank of Kansas City",
+  "text": "Research Agriculture Banking Community Development Education TEN Magazine Jackson Hole Money Museum Research NATIONAL ECONOMY LOCAL ECONOMY SURVEYS NATIONAL DATA AND TRENDS LOCAL DATA AND TRENDS INDUS"
+ },
+ {
+  "url": "https://www.stlouisfed.org/research/economic-conditions-survey-results",
+  "error": "Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.stlouisfed.org/research/economic-conditions-survey-results\nCall log:\nnavigating to \"https://www.stlouisfed.org/research/economic-conditions-surv"
+ },
+ {
+  "url": "https://www.stlouisfed.org/rss/page-resources/publications/review",
+  "error": "Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.stlouisfed.org/rss/page-resources/publications/review\nCall log:\nnavigating to \"https://www.stlouisfed.org/rss/page-resources/publications/review"
+ },
+ {
+  "url": "https://fred.stlouisfed.org/series/STLFSI4",
+  "error": "Page.goto: Navigation to \"https://fred.stlouisfed.org/series/STLFSI4\" is interrupted by another navigation to \"chrome-error://chromewebdata/\"\nCall log:\nnavigating to \"https://fred.stlouisfed.org/serie"
+ }
+]
