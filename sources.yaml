@@ -176,6 +176,7 @@ sources:
 
   # 세인트루이스 연준 — 이 PC(회사망)에서는 접속 차단, GitHub 서버에서만 확인 가능
   - id: fed_stlouis_ontheeconomy
+    enabled: false   # 2026-10-20: GitHub 서버에서 세인트루이스 연준 계열 사이트 응답 없음 (대체 경로 확인 중)
     name: St. Louis Fed
     page: https://www.stlouisfed.org/on-the-economy
     type: rss
@@ -183,6 +184,7 @@ sources:
     series: On the Economy
 
   - id: fed_stlouis_openvault
+    enabled: false   # 2026-10-20: GitHub 서버에서 세인트루이스 연준 계열 사이트 응답 없음 (대체 경로 확인 중)
     name: St. Louis Fed
     page: https://www.stlouisfed.org/open-vault
     type: rss
@@ -190,6 +192,7 @@ sources:
     series: Open Vault
 
   - id: fed_stlouis_pageone
+    enabled: false   # 2026-10-20: GitHub 서버에서 세인트루이스 연준 계열 사이트 응답 없음 (대체 경로 확인 중)
     name: St. Louis Fed
     page: https://www.stlouisfed.org/publications/page-one-economics
     type: rss
@@ -197,6 +200,7 @@ sources:
     series: Page One Economics
 
   - id: fed_stlouis_review
+    enabled: false   # 2026-10-20: GitHub 서버에서 세인트루이스 연준 계열 사이트 응답 없음 (대체 경로 확인 중)
     name: St. Louis Fed
     page: https://www.stlouisfed.org/publications/review
     type: rss
@@ -204,6 +208,7 @@ sources:
     series: Review
 
   - id: fed_stlouis_wp
+    enabled: false   # 2026-10-20: GitHub 서버에서 세인트루이스 연준 계열 사이트 응답 없음 (대체 경로 확인 중)
     name: St. Louis Fed
     page: https://www.stlouisfed.org/publications
     type: rss
@@ -212,6 +217,7 @@ sources:
     series: Working Paper
 
   - id: fed_stlouis_fredblog
+    enabled: false   # 2026-10-20: GitHub 서버에서 세인트루이스 연준 계열 사이트 응답 없음 (대체 경로 확인 중)
     name: St. Louis Fed
     page: https://fred.stlouisfed.org/blog/
     type: rss
@@ -695,6 +701,7 @@ sources:
   # ── 세인트루이스 연준 데이터 (FRED 시리즈 페이지의 'Updated:' 날짜)
   # Eighth District Beige Book 은 Fed Board Beige Book 알림(전 지역 동시 발표)으로 대신
   - id: stlouisfed_data_ecs
+    enabled: false   # 2026-10-20: GitHub 서버에서 세인트루이스 연준 계열 사이트 응답 없음 (대체 경로 확인 중)
     name: St. Louis Fed 데이터
     title: Economic Conditions Survey (Eighth District)
     page: https://www.stlouisfed.org/research/economic-conditions-survey-results
@@ -703,6 +710,7 @@ sources:
       regex: {url: "https://www.stlouisfed.org/research/economic-conditions-survey-results", pattern: 'Current release:? [A-Z][a-z]{2,8}\.? \d{1,2}, \d{4}'}
 
   - id: stlouisfed_data_stlfsi
+    enabled: false   # 2026-10-20: GitHub 서버에서 세인트루이스 연준 계열 사이트 응답 없음 (대체 경로 확인 중)
     name: St. Louis Fed 데이터
     title: St. Louis Fed Financial Stress Index (STLFSI4)
     page: https://fred.stlouisfed.org/series/STLFSI4
@@ -711,6 +719,7 @@ sources:
       regex: {url: "https://fred.stlouisfed.org/series/STLFSI4", pattern: 'Updated:? [A-Z][a-z]{2,8}\.? \d{1,2}, \d{4}'}
 
   - id: stlouisfed_data_stlppm
+    enabled: false   # 2026-10-20: GitHub 서버에서 세인트루이스 연준 계열 사이트 응답 없음 (대체 경로 확인 중)
     name: St. Louis Fed 데이터
     title: Price Pressures Measure (STLPPM)
     page: https://fred.stlouisfed.org/series/STLPPM
