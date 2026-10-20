@@ -967,5 +967,50 @@
    "sha256:020fd3cce537483de457"
   ],
   "fails": 0
+ },
+ "fed_stlouis_ontheeconomy": {
+  "seen": [],
+  "fails": 1,
+  "last_error": "https://www.stlouisfed.org/rss/page%20resources/publications/blog-entries → ReadTimeout: HTTPSConnectionPool(host='www.stlouisfed.org', port=443): Read timed out. (read timeout=30)"
+ },
+ "fed_stlouis_openvault": {
+  "seen": [],
+  "fails": 1,
+  "last_error": "https://www.stlouisfed.org/rss/page%20resources/publications/open-vault-blog → ReadTimeout: HTTPSConnectionPool(host='www.stlouisfed.org', port=443): Read timed out. (read timeout=30)"
+ },
+ "fed_stlouis_pageone": {
+  "seen": [],
+  "fails": 1,
+  "last_error": "https://www.stlouisfed.org/rss/page-resources/publications/page-one-economics → ReadTimeout: HTTPSConnectionPool(host='www.stlouisfed.org', port=443): Read timed out. (read timeout=30)"
+ },
+ "fed_stlouis_review": {
+  "seen": [],
+  "fails": 1,
+  "last_error": "https://www.stlouisfed.org/rss/page-resources/publications/review → ReadTimeout: HTTPSConnectionPool(host='www.stlouisfed.org', port=443): Read timed out. (read timeout=30)"
+ },
+ "fed_stlouis_wp": {
+  "seen": [],
+  "fails": 1,
+  "last_error": "https://fedinprint.org/rss/stlouis.rss → ReadTimeout: HTTPSConnectionPool(host='fedinprint.org', port=443): Read timed out. (read timeout=30)"
+ },
+ "fed_stlouis_fredblog": {
+  "seen": [],
+  "fails": 1,
+  "last_error": "https://fredblog.stlouisfed.org/feed/ → ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)"
+ },
+ "stlouisfed_data_ecs": {
+  "seen": [],
+  "fails": 1,
+  "last_error": "HTTPSConnectionPool(host='www.stlouisfed.org', port=443): Read timed out. (read timeout=60)"
+ },
+ "stlouisfed_data_stlfsi": {
+  "seen": [],
+  "fails": 1,
+  "last_error": "HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)"
+ },
+ "stlouisfed_data_stlppm": {
+  "seen": [],
+  "fails": 1,
+  "last_error": "HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)"
  }
 }
