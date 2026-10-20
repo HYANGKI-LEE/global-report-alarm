@@ -30,6 +30,9 @@ jobs:
 
       - run: pip install -r requirements.txt
 
+      # 캔자스시티 연준 등 실제 브라우저로만 열리는 사이트용 (sources.yaml 의 browser_hosts)
+      - run: python -m playwright install --with-deps chromium
+
       - name: 신규 리포트 확인 및 전송
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}

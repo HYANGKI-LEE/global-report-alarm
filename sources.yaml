@@ -22,6 +22,10 @@
 #   kind    : (선택) data 면 텔레그램에 📊 데이터로 표시
 #   enabled : false 로 두면 잠시 끔
 
+# 실제 브라우저(헤드리스 크롬)로 여는 호스트 — 단순 요청은 응답하지 않는 사이트 (robots.txt 로 수집 허용 확인함)
+browser_hosts:
+  - www.kansascityfed.org
+
 sources:
   # ── 국제기구 ──────────────────────────────
   - id: imf
@@ -240,21 +244,6 @@ sources:
       /article/: Article
       /data-indicators/: New Data
 
-  # 캔자스시티 연준 — 회사망·GitHub 서버 모두 접속 차단(2026-10-20 확인), 공식 rss.app 피드는 402(구독 만료)
-  - id: fed_kansascity_research
-    enabled: false
-    name: Kansas City Fed
-    page: https://www.kansascityfed.org/research/
-    type: page_links
-    link_pattern: '/research/(economic-bulletin|economic-review|research-working-papers|payments-system-research-briefings|charting-the-economy)/[^/]+'
-
-  - id: fed_kansascity_bulletin
-    enabled: false
-    name: Kansas City Fed
-    page: https://www.kansascityfed.org/research/economic-bulletin/
-    type: rss
-    urls: ["https://rss.app/feeds/7ZusMFl37gRokC2d.xml"]
-    series: Economic Bulletin
 
   - id: fed_dallas_pubs
     name: Dallas Fed
@@ -306,6 +295,64 @@ sources:
     type: rss
     urls: ["https://www.federalreserve.gov/feeds/feds_notes.xml"]
     series: FEDS Notes
+
+  # 캔자스시티 연준 — 실제 브라우저로 접속 (browser_hosts)
+  - id: fed_kansascity_review
+    name: Kansas City Fed
+    page: https://www.kansascityfed.org/research/economic-review/
+    type: page_links
+    link_pattern: '^/research/economic-review/[^/]+/'
+    series: Economic Review
+
+  - id: fed_kansascity_bulletin
+    name: Kansas City Fed
+    page: https://www.kansascityfed.org/research/economic-bulletin/
+    type: page_links
+    link_pattern: '^/research/economic-bulletin/[^/]+/'
+    series: Economic Bulletin
+
+  - id: fed_kansascity_rwp
+    name: Kansas City Fed
+    page: https://www.kansascityfed.org/research/research-working-papers/
+    type: page_links
+    link_pattern: '^/research/research-working-papers/[^/]+/'
+    series: Research Working Paper
+
+  - id: fed_kansascity_psrb
+    name: Kansas City Fed
+    page: https://www.kansascityfed.org/research/payments-system-research-briefings/
+    type: page_links
+    link_pattern: '^/research/payments-system-research-briefings/[^/]+/'
+    series: Payments System Research Briefing
+
+  - id: fed_kansascity_nebraska
+    name: Kansas City Fed
+    page: https://www.kansascityfed.org/omaha/nebraska-economist/
+    type: page_links
+    link_pattern: '^/omaha/nebraska-economist/[^/]+/'
+    series: Nebraska Economist
+
+  - id: fed_kansascity_oklahoma
+    name: Kansas City Fed
+    page: https://www.kansascityfed.org/oklahomacity/oklahoma-economist/
+    type: page_links
+    link_pattern: '^/oklahomacity/oklahoma-economist/[^/]+/'
+    series: Oklahoma Economist
+
+  - id: fed_kansascity_rockymtn
+    name: Kansas City Fed
+    page: https://www.kansascityfed.org/denver/rocky-mountain-economist/
+    type: page_links
+    link_pattern: '^/denver/rocky-mountain-economist/[^/]+/'
+    series: Rocky Mountain Economist
+
+  - id: fed_kansascity_charting
+    name: Kansas City Fed
+    page: https://www.kansascityfed.org/research/charting-the-economy/
+    type: datawatch
+    title: Charting the Economy
+    watch:
+      links: {url: "https://www.kansascityfed.org/research/charting-the-economy/", pattern: '/documents/\d+/[^"]*\.zip'}
 
   # ── 뉴욕 연준 데이터 (일간 제외) ─────────
   # type datawatch: 데이터 파일/페이지 문구/새 링크가 바뀌면 알림. 같은 name 끼리 한 블록으로 묶여서 전송
@@ -999,3 +1046,132 @@ sources:
     type: datawatch
     watch:
       regex: {url: "https://www.federalreserve.gov/econres/scfindex.htm", pattern: '(January|February|March|April|May|June|July|August|September|October|November|December) \d{1,2}, \d{4}'}
+
+  # ── 캔자스시티 연준 서베이·데이터 (실제 브라우저로 접속)
+  # 제외: Policy Rate Uncertainty·Policy Rate Skew·Risk-On Risk-Off(일간), Consumer Credit Reports(2020년 중단),
+  #       Research Data Center·LMI Data Books(정기 발표 데이터 아님), Current Population Survey(외부 앱)
+  - id: kansascityfed_data_agcredit
+    name: Kansas City Fed 데이터
+    kind: data
+    page: https://www.kansascityfed.org/agriculture/ag-credit-survey/
+    type: page_links
+    link_pattern: '^/agriculture/ag-credit-survey/[^/]+/'
+    series: Agricultural Credit Survey
+
+  - id: kansascityfed_data_agfinance
+    name: Kansas City Fed 데이터
+    kind: data
+    page: https://www.kansascityfed.org/agriculture/agfinance-updates/
+    type: page_links
+    link_pattern: '^/agriculture/agfinance-updates/[^/]+/'
+    series: Agricultural Finance Updates
+
+  - id: kansascityfed_data_community
+    name: Kansas City Fed 데이터
+    kind: data
+    page: https://www.kansascityfed.org/surveys/community-conditions-survey/
+    type: page_links
+    link_pattern: '^/surveys/community-conditions-survey/[^/]+/'
+    series: Community Conditions Survey
+
+  - id: kansascityfed_data_energy
+    name: Kansas City Fed 데이터
+    kind: data
+    page: https://www.kansascityfed.org/surveys/energy-survey/
+    type: page_links
+    link_pattern: '^/surveys/energy-survey/[^/]+/'
+    series: Energy Survey
+
+  - id: kansascityfed_data_mfg
+    name: Kansas City Fed 데이터
+    kind: data
+    page: https://www.kansascityfed.org/surveys/manufacturing-survey/
+    type: page_links
+    link_pattern: '^/surveys/manufacturing-survey/[^/]+/'
+    series: Manufacturing Survey
+
+  - id: kansascityfed_data_services
+    name: Kansas City Fed 데이터
+    kind: data
+    page: https://www.kansascityfed.org/surveys/services-survey/
+    type: page_links
+    link_pattern: '^/surveys/services-survey/[^/]+/'
+    series: Services Survey
+
+  - id: kansascityfed_data_sbls
+    name: Kansas City Fed 데이터
+    kind: data
+    page: https://www.kansascityfed.org/surveys/small-business-lending-survey/
+    type: page_links
+    link_pattern: '^/surveys/small-business-lending-survey/[^/]+/'
+    series: Small Business Lending Survey
+
+  - id: kansascityfed_data_bankingcond
+    name: Kansas City Fed 데이터
+    kind: data
+    page: https://www.kansascityfed.org/banking/district-banking-conditions/
+    type: page_links
+    link_pattern: '^/banking/district-banking-conditions/[^/]+/'
+    series: District Banking Conditions
+
+  - id: kansascityfed_data_databooks
+    name: Kansas City Fed 데이터
+    kind: data
+    page: https://www.kansascityfed.org/data-and-trends/tenth-district-economic-databooks/
+    type: page_links
+    link_pattern: '^/data-and-trends/tenth-district-economic-databooks/[^/]+/'
+    series: Regional Economic Databooks
+
+  - id: kansascityfed_data_beigebook
+    name: Kansas City Fed 데이터
+    title: "Beige Book (Tenth District)"
+    page: https://www.kansascityfed.org/surveys/beige-book/
+    type: datawatch
+    watch:
+      regex: {url: "https://www.kansascityfed.org/surveys/beige-book/", pattern: '(January|February|March|April|May|June|July|August|September|October|November|December) \d{1,2}, \d{4}'}
+
+  - id: kansascityfed_data_econcond
+    name: Kansas City Fed 데이터
+    title: "Economic Conditions"
+    page: https://www.kansascityfed.org/data-and-trends/economic-conditions/
+    type: datawatch
+    watch:
+      links: {url: "https://www.kansascityfed.org/data-and-trends/economic-conditions/", pattern: '/documents/\d+/[^"]*\.pdf'}
+
+  - id: kansascityfed_data_lmci
+    name: Kansas City Fed 데이터
+    title: "Labor Market Conditions Indicators (LMCI)"
+    page: https://www.kansascityfed.org/data-and-trends/labor-market-conditions-indicators/
+    type: datawatch
+    watch:
+      links: {url: "https://www.kansascityfed.org/data-and-trends/labor-market-conditions-indicators/", pattern: 'lmcicharts-[^"]*\.xlsx'}
+
+  - id: kansascityfed_data_divlmci
+    name: Kansas City Fed 데이터
+    title: "Divisional LMCI"
+    page: https://www.kansascityfed.org/data-and-trends/div-lmci/
+    type: datawatch
+    watch:
+      links: {url: "https://www.kansascityfed.org/data-and-trends/div-lmci/", pattern: 'DIV-LMCI_[^"]*\.xlsx'}
+
+  - id: kansascityfed_data_cre
+    name: Kansas City Fed 데이터
+    title: "Commercial Real Estate Index"
+    page: https://www.kansascityfed.org/data-and-trends/kansas-city-cre-index/
+    type: datawatch
+    watch:
+      links: {url: "https://www.kansascityfed.org/data-and-trends/kansas-city-cre-index/", pattern: 'CRE_Index-[^"]*\.xlsx'}
+
+  - id: kansascityfed_data_kcfsi
+    name: Kansas City Fed 데이터
+    title: Kansas City Financial Stress Index (KCFSI)
+    page: https://www.kansascityfed.org/data-and-trends/kansas-city-financial-stress-index/
+    type: datawatch
+    watch: {files: ["https://kcresearch-share.kansascityfed.org/kc-fsi/kcfsi.csv"]}
+
+  - id: kansascityfed_data_rstar
+    name: Kansas City Fed 데이터
+    title: Model-Based Natural Rate of Interest and Natural Unemployment Rate
+    page: https://www.kansascityfed.org/data-and-trends/kansas-city-fed-model-based-natural-rate-of-interest-and-natural-unemployment-rate/
+    type: datawatch
+    watch: {files: ["https://kcresearch-share.kansascityfed.org/kc-mbnr/KCFed_ModelBased_Rstar_Ustar.csv"]}

@@ -250,7 +250,7 @@ def fetch_page_links(src):
     soup = BeautifulSoup(http_get(page).text, "html.parser")
     root = soup.find("main") or soup
     items, seen = [], set()
-    for a in root.find_all("a", href=True):
+    for a in root.find_all(["a", "mnt-link"], href=True):  # mnt-link: 캔자스시티 연준 사이트의 링크 태그
         title = " ".join(a.get_text().split())
         if not re.search(src["link_pattern"], a["href"]) or len(title) < 15:
             continue
@@ -304,9 +304,43 @@ def expand_quarters(urls):
 
 
 def http_get(url):
+    if urlsplit(url).hostname in BROWSER_HOSTS:
+        return browser_get(url)
     r = requests.get(url, headers=HEADERS, timeout=60)
     r.raise_for_status()
     return r
+
+
+# ── 실제 브라우저(헤드리스 크롬)로 여는 사이트 ─────────────────
+# 캔자스시티 연준처럼 단순 요청은 붙잡아 두고 실제 브라우저만 통과시키는 사이트용 (robots.txt 로 수집이 허용된 페이지만).
+# sources.yaml 의 browser_hosts 에 적은 호스트만 이 방식으로 연다.
+BROWSER_HOSTS = set()
+_browser = {}
+
+
+class BrowserResponse:
+    def __init__(self, status, content):
+        self.status_code, self.content = status, content
+        self.text = content.decode("utf-8", "replace")
+
+
+def browser_get(url):
+    if "page" not in _browser:
+        from playwright.sync_api import sync_playwright  # 필요할 때만 불러옴 (로컬엔 없어도 됨)
+        pw = sync_playwright().start()
+        _browser["pw"], _browser["b"] = pw, pw.chromium.launch()
+        _browser["page"] = _browser["b"].new_page(user_agent=UA)
+    resp = _browser["page"].goto(url, timeout=60000, wait_until="domcontentloaded")
+    if resp is None or resp.status >= 400:
+        raise RuntimeError(f"브라우저 접속 실패 {resp.status if resp else '-'}: {url}")
+    time.sleep(1)  # 연속 접속 간격
+    return BrowserResponse(resp.status, resp.body())
+
+
+def close_browser():
+    if "b" in _browser:
+        _browser["b"].close()
+        _browser["pw"].stop()
 
 
 def fetch_rss(urls):
@@ -459,8 +493,9 @@ def save_state(state):
 
 # ── 메인 ──────────────────────────────────────────────
 def main():
-    sources = [s for s in yaml.safe_load(SOURCES_FILE.read_text(encoding="utf-8"))["sources"]
-               if s.get("enabled", True)]
+    config = yaml.safe_load(SOURCES_FILE.read_text(encoding="utf-8"))
+    BROWSER_HOSTS.update(config.get("browser_hosts") or [])
+    sources = [s for s in config["sources"] if s.get("enabled", True)]
     state = load_state()
 
     seeded, failed, warnings = [], [], []
@@ -528,4 +563,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    finally:
+        close_browser()
