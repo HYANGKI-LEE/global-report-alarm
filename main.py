@@ -663,7 +663,9 @@ def summarize_all(new_by_name):
             else:
                 it["summary"] = excerpt(it)
                 if it["summary"]:
-                    it["summary"] = translate_ko(it["summary"])
+                    ko = translate_ko(it["summary"])
+                    # 번역되면 한국어 기준 140자, 원문(번역 실패·키 없음)이면 220자에서 자름
+                    it["summary"] = clip(ko, 140) if ko != it["summary"] else clip(ko, 220)
         except Exception as e:  # noqa: BLE001 - 요약 실패해도 알림은 보낸다
             print(f"[요약 실패] {it['title'][:40]}: {type(e).__name__}: {str(e)[:150]}", file=sys.stderr)
 
@@ -722,8 +724,13 @@ def excerpt(it):
     sentences = [s.replace("§", ".").strip() for s in re.split(r"(?<=[.!?])\s+(?=[A-Z0-9“\"(])", protected) if s.strip()]
     bullets = []
     for s in sentences[:3]:
-        bullets.append(s if len(s) <= 220 else s[:217].rstrip() + "…")
+        bullets.append(s[:600])   # 길이 자르기는 번역 뒤에 (잘린 문장을 번역하면 어색해짐) — clip()
     return bullets or None
+
+
+def clip(texts, limit):
+    """불릿마다 limit 자를 넘으면 자르고 … 를 붙인다."""
+    return [t if len(t) <= limit else t[:limit - 1].rstrip() + "…" for t in texts]
 
 
 def summarize(client, it):

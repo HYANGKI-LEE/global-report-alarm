@@ -1,0 +1,3 @@
+# 시험 발송 5차 — 완전한 문장 번역 후 길이 맞춤 확인 (보낸 뒤 봇이 이 파일을 지움)
+fed_cleveland_ec
+fed_chicago_letter
