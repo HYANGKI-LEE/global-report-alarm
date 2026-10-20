@@ -1831,13 +1831,17 @@
   "fails": 0
  },
  "mail_imf": {
-  "seen": [],
-  "fails": 1,
-  "last_error": "command SEARCH illegal in state AUTH, only allowed in states SELECTED"
+  "seen": [
+   "<39OUHZX3MUU4.HGOL83EI0B3M3@169.254.32.95>|https://www.elibrary.imf.org/",
+   "<39OUHZX3MUU4.HGOL83EI0B3M3@169.254.32.95>|https://bookstore.imf.org/",
+   "<39OUHZX3MUU4.HGOL83EI0B3M3@169.254.32.95>|https://www.imf.org/en/publications"
+  ],
+  "fails": 0
  },
  "mail_stlouis": {
-  "seen": [],
-  "fails": 1,
-  "last_error": "command SEARCH illegal in state AUTH, only allowed in states SELECTED"
+  "seen": [
+   "__connected__"
+  ],
+  "fails": 0
  }
 }
