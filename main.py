@@ -244,7 +244,7 @@ def fetch_chicagofed_series(series_id):
 def fetch_page_links(src):
     """범용: 서버에서 완성된 HTML 로 오는 목록 페이지에서, 주소가 link_pattern(정규식)과 맞는 링크를 글로 본다.
 
-    link_pattern 은 href 에 대해 검사하고, 글자 수가 15자 미만인 링크(사람 이름·'더보기' 등)는 버린다.
+    link_pattern 은 href 에 대해 검사하고, 글자 수가 min_title(기본 15)자 미만인 링크(사람 이름·'더보기' 등)는 버린다.
     """
     page = src["page"]
     soup = BeautifulSoup(http_get(page).text, "html.parser")
@@ -252,7 +252,7 @@ def fetch_page_links(src):
     items, seen = [], set()
     for a in root.find_all(["a", "mnt-link"], href=True):  # mnt-link: 캔자스시티 연준 사이트의 링크 태그
         title = " ".join(a.get_text().split())
-        if not re.search(src["link_pattern"], a["href"]) or len(title) < 15:
+        if not re.search(src["link_pattern"], a["href"]) or len(title) < src.get("min_title", 15):
             continue
         link = urljoin(page, a["href"]).split("#")[0]
         if link in seen:

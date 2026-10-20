@@ -1048,11 +1048,6 @@
   ],
   "fails": 0
  },
- "fed_kansascity_research": {
-  "seen": [],
-  "fails": 1,
-  "last_error": "HTTPSConnectionPool(host='www.kansascityfed.org', port=443): Read timed out. (read timeout=60)"
- },
  "fed_kansascity_bulletin": {
   "seen": [
    "https://www.kansascityfed.org/research/economic-bulletin/financially-distressed-consumers-may-have-turned-to-high-cost-credit-to-cope-with-inflation/",

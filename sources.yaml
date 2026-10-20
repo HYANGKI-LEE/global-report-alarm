@@ -1120,6 +1120,7 @@ sources:
     page: https://www.kansascityfed.org/data-and-trends/tenth-district-economic-databooks/
     type: page_links
     link_pattern: '^/data-and-trends/tenth-district-economic-databooks/[^/]+/'
+    min_title: 8
     series: Regional Economic Databooks
 
   - id: kansascityfed_data_beigebook
