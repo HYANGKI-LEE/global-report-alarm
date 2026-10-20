@@ -1820,5 +1820,14 @@
    "text:Excel Database: September 2026"
   ],
   "fails": 0
+ },
+ "imf_latest": {
+  "seen": [
+   "https://www.imf.org/en/publications/weo/issues/2026/07/08/world-economic-outlook-update-july-2026",
+   "https://www.imf.org/en/publications/gfsr/issues/2026/04/14/global-financial-stability-report-april-2026",
+   "https://www.imf.org/en/publications/policy-papers/issues/2026/04/14/the-managing-director-s-global-policy-agenda-spring-meetings-2026-managing-shocks-and-575436",
+   "https://www.imf.org/en/publications/esr/issues/2026/07/30/external-sector-report-2026"
+  ],
+  "fails": 0
  }
 }
