@@ -61,17 +61,32 @@ def fetch_source(src):
         return fetch_phillyfed_search(src["page"])
     if kind == "clevelandfed_list":
         return fetch_clevelandfed_list(src["page"])
+    if kind == "atlantafed_list":
+        return fetch_atlantafed_list(src["page"])
     raise ValueError(f"알 수 없는 type: {kind}")
 
 
 def fetch_datawatch(src):
     """데이터 업데이트 감지. 'watch' 방식에 따라 지문(fingerprint)을 만들어 항목으로 돌려준다.
 
+      head: [url, ...]           파일의 Last-Modified/ETag 헤더가 바뀌면 업데이트 (큰 파일용)
       files: [url, ...]          파일 내용이 바뀌면 업데이트 (여러 개면 합쳐서 하나의 지문)
       regex: {url, pattern}      페이지에서 처음 일치하는 글자가 바뀌면 업데이트 (예: 'second quarter of 2026')
       links: {url, pattern}      페이지에 패턴과 일치하는 새 링크가 생기면 업데이트 (링크마다 1건)
     """
     w, title, page = src["watch"], src["title"], src["page"]
+    if "head" in w:
+        # 파일을 받지 않고 서버가 알려주는 수정 시각(Last-Modified)/ETag 로만 판별 — 큰 파일용
+        marks = []
+        for url in w["head"]:
+            r = requests.head(url, headers={"User-Agent": UA}, timeout=60, allow_redirects=True)
+            r.raise_for_status()
+            mark = r.headers.get("Last-Modified") or r.headers.get("ETag")
+            if not mark:
+                raise ValueError(f"Last-Modified/ETag 헤더 없음: {url}")
+            marks.append(mark)
+        return [{"id": "head:" + " | ".join(marks), "title": f"{title} 업데이트",
+                 "link": page, "series": ""}]
     if "files" in w:
         h = hashlib.sha256()
         for url in w["files"]:
@@ -143,6 +158,28 @@ def fetch_clevelandfed_list(page):
                       "link": link, "series": r.get("issue") or r.get("publication") or ""})
     if not items:
         raise ValueError("항목 0건 (페이지 구조 변경?)")
+    return items
+
+
+def fetch_atlantafed_list(page):
+    """애틀랜타 연준 출판물 시리즈 페이지 (Working Papers, Macroblog 등).
+
+    목록이 HTML 안의 'var feed_<해시> = [ {Title, Date, Url, ...}, ... ]' 스크립트 변수에 JSON 으로 들어있다.
+    (애틀랜타 RSS 는 일부가 몇 달씩 갱신이 멈춰 있어 페이지를 직접 읽는다)
+    """
+    text = http_get(page).text
+    items = []
+    for m in re.finditer(r"var feed_\w+\s*=\s*", text):
+        arr, _ = json.JSONDecoder().raw_decode(text, m.end())
+        for r in arr:
+            link = r.get("Url") or ""
+            if not link:
+                continue
+            link = urljoin("https://www.atlantafed.org", link)
+            items.append({"id": link, "title": " ".join((r.get("Title") or "").split()),
+                          "link": link, "series": ""})
+    if not items:
+        raise ValueError("목록 데이터(var feed_...)를 찾지 못함 (페이지 구조 변경?)")
     return items
 
 
@@ -325,6 +362,8 @@ def main():
             continue
 
         st["fails"] = 0
+        for it in items:  # sources.yaml 에 series 를 적어두면 시리즈명이 없는 항목에 붙인다
+            it["series"] = it["series"] or src.get("series", "")
         ids = [it["id"] for it in items]
         if not st["seen"]:
             # 처음 연결된 기관은 기존 항목을 '본 것'으로만 기록하고 보내지 않는다

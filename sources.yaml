@@ -10,7 +10,9 @@
 #               nyfed_research → 뉴욕 연준 Research 메인의 Recent Publications 칸
 #               phillyfed_search → 필라델피아 연준 검색 목록 페이지 (최신 30건)
 #               clevelandfed_list → 클리블랜드 연준 출판물 목록 페이지 (최신 10건)
+#               atlantafed_list → 애틀랜타 연준 출판물 시리즈 페이지 (series 로 시리즈명 지정)
 #               datawatch → 데이터 업데이트 감지 (watch: files / regex / links, 자세한 건 main.py fetch_datawatch)
+#   series  : (선택) 시리즈명이 없는 항목에 붙일 이름
 #   enabled : false 로 두면 잠시 끔
 
 sources:
@@ -77,6 +79,66 @@ sources:
     series_map:
       macro_minute: Macro Minute
       cfo_survey: CFO Survey
+
+  - id: fed_atlanta_wp
+    name: Atlanta Fed
+    page: https://www.atlantafed.org/research-and-data/publications/working-papers
+    type: atlantafed_list
+    series: Working Paper
+
+  - id: fed_atlanta_phpapers
+    name: Atlanta Fed
+    page: https://www.atlantafed.org/research-and-data/publications/policy-hub-papers
+    type: atlantafed_list
+    series: Policy Hub Paper
+
+  - id: fed_atlanta_macroblog
+    name: Atlanta Fed
+    page: https://www.atlantafed.org/research-and-data/publications/policy-hub-macroblog
+    type: atlantafed_list
+    series: Macroblog
+
+  - id: fed_atlanta_discussion
+    name: Atlanta Fed
+    page: https://www.atlantafed.org/research-and-data/publications/discussion-papers
+    type: atlantafed_list
+    series: Discussion Paper
+
+  - id: fed_atlanta_partners
+    name: Atlanta Fed
+    page: https://www.atlantafed.org/research-and-data/publications/partners-update
+    type: atlantafed_list
+    series: Partners Update
+
+  - id: fed_atlanta_workforce
+    name: Atlanta Fed
+    page: https://www.atlantafed.org/research-and-data/publications/workforce-currents
+    type: atlantafed_list
+    series: Workforce Currents
+
+  - id: fed_atlanta_paymentsdata
+    name: Atlanta Fed
+    page: https://www.atlantafed.org/research-and-data/publications/payments-data-reports
+    type: atlantafed_list
+    series: Payments Data Report
+
+  - id: fed_atlanta_takeonpayments
+    name: Atlanta Fed
+    page: https://www.atlantafed.org/research-and-data/publications/take-on-payments
+    type: atlantafed_list
+    series: Take On Payments
+
+  - id: fed_atlanta_ardc
+    name: Atlanta Fed
+    page: https://www.atlantafed.org/research-and-data/publications/atlanta-research-data-center-newsletters
+    type: atlantafed_list
+    series: ARDC Newsletter
+
+  - id: fed_atlanta_special
+    name: Atlanta Fed
+    page: https://www.atlantafed.org/research-and-data/publications/special-publications
+    type: atlantafed_list
+    series: Special Publication
 
   # ── 뉴욕 연준 데이터 (일간 제외, 주간은 CMDI 만) ─────────
   # type datawatch: 데이터 파일/페이지 문구/새 링크가 바뀌면 알림. 같은 name 끼리 한 블록으로 묶여서 전송
@@ -328,3 +390,137 @@ sources:
     page: https://www.richmondfed.org/research/national_economy/partisan_conflict_index
     type: datawatch
     watch: {files: ["https://www.richmondfed.org/-/media/Files/charts/data/partisan_conflict_index.csv"]}
+
+  # ── 애틀랜타 연준 데이터·서베이
+  # 제외: Market Probability Tracker(일간), Unemployment Claims Monitor(주간), Deflation Probabilities(2020년 중단),
+  #       Labor Force Explorer·Southeastern Rental Affordability(외부 앱), Spider Chart·GDP-Based Recession Indicator(사이트 내 데이터 없음),
+  #       Labor Market Sliders(Labor Report First Look 과 같은 날 갱신), Jobs Calculator·CLIFF(계산기 도구)
+  - id: atlantafed_data_gdpnow
+    name: Atlanta Fed 데이터
+    title: "GDPNow"
+    page: https://www.atlantafed.org/research-and-data/data/gdpnow
+    type: datawatch
+    watch:
+      regex: {url: "https://www.atlantafed.org/research-and-data/data/gdpnow", pattern: 'Updated:? [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: atlantafed_data_taylor
+    name: Atlanta Fed 데이터
+    title: "Taylor Rule Utility"
+    page: https://www.atlantafed.org/research-and-data/data/taylor-rule
+    type: datawatch
+    watch:
+      regex: {url: "https://www.atlantafed.org/research-and-data/data/taylor-rule", pattern: 'Updated:? [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: atlantafed_data_wgt
+    name: Atlanta Fed 데이터
+    title: "Wage Growth Tracker"
+    page: https://www.atlantafed.org/research-and-data/data/wage-growth-tracker
+    type: datawatch
+    watch:
+      regex: {url: "https://www.atlantafed.org/research-and-data/data/wage-growth-tracker", pattern: 'Updated:? [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: atlantafed_data_lrfl
+    name: Atlanta Fed 데이터
+    title: "Labor Report First Look"
+    page: https://www.atlantafed.org/research-and-data/data/labor-report-first-look
+    type: datawatch
+    watch:
+      regex: {url: "https://www.atlantafed.org/research-and-data/data/labor-report-first-look", pattern: 'Updated:? [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: atlantafed_data_uid
+    name: Atlanta Fed 데이터
+    title: "Underlying Inflation Dashboard"
+    page: https://www.atlantafed.org/research-and-data/data/underlying-inflation-dashboard
+    type: datawatch
+    watch:
+      regex: {url: "https://www.atlantafed.org/research-and-data/data/underlying-inflation-dashboard", pattern: 'Updated:? [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: atlantafed_data_sticky
+    name: Atlanta Fed 데이터
+    title: "Sticky-Price CPI"
+    page: https://www.atlantafed.org/research-and-data/data/sticky-price-cpi
+    type: datawatch
+    watch:
+      regex: {url: "https://www.atlantafed.org/research-and-data/data/sticky-price-cpi", pattern: 'Updated:? [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: atlantafed_data_oom
+    name: Atlanta Fed 데이터
+    title: "Opportunity Occupations Monitor"
+    page: https://www.atlantafed.org/research-and-data/data/opportunity-occupations-monitor
+    type: datawatch
+    watch:
+      regex: {url: "https://www.atlantafed.org/research-and-data/data/opportunity-occupations-monitor", pattern: 'Updated:? [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: atlantafed_data_bie
+    name: Atlanta Fed 데이터
+    title: "Business Inflation Expectations"
+    page: https://www.atlantafed.org/research-and-data/surveys/business-inflation-expectations
+    type: datawatch
+    watch:
+      regex: {url: "https://www.atlantafed.org/research-and-data/surveys/business-inflation-expectations", pattern: 'Updated:? [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: atlantafed_data_sbu
+    name: Atlanta Fed 데이터
+    title: "Survey of Business Uncertainty"
+    page: https://www.atlantafed.org/research-and-data/surveys/business-uncertainty
+    type: datawatch
+    watch:
+      regex: {url: "https://www.atlantafed.org/research-and-data/surveys/business-uncertainty", pattern: 'Updated:? [A-Z][a-z]+ \d{1,2}, \d{4}'}
+
+  - id: atlantafed_data_chinagdp
+    name: Atlanta Fed 데이터
+    title: "China's GDP: Consumption and Other Components"
+    page: https://www.atlantafed.org/research-and-data/data/china-gdp-consumption
+    type: datawatch
+    watch: {head: ["https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/datafiles/cqer/research/china-gdp-consumption/QuarterlyChinaGDPDataset.xlsx"]}
+
+  - id: atlantafed_data_hoam
+    name: Atlanta Fed 데이터
+    title: "Home Ownership Affordability Monitor"
+    page: https://www.atlantafed.org/research-and-data/data/home-ownership-affordability-monitor
+    type: datawatch
+    watch: {head: ["https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/research-and-data/data/hoam/HOAM_US_Affordability_Index.xlsx"]}
+
+  - id: atlantafed_data_cremi
+    name: Atlanta Fed 데이터
+    title: "Commercial Real Estate Market Index"
+    page: https://www.atlantafed.org/research-and-data/data/commercial-real-estate-market-index
+    type: datawatch
+    watch: {head: ["https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/research-and-data/data/cremi/CREMI_CBSA_Results.csv"]}
+
+  - id: atlantafed_data_lfpd
+    name: Atlanta Fed 데이터
+    title: "Labor Force Participation Dynamics"
+    page: https://www.atlantafed.org/research-and-data/data/labor-force-participation-dynamics
+    type: datawatch
+    watch: {head: ["https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/datafiles/chcs/labor-force-participation-dynamics/labor-force-participation-dynamics-trends-over-time-data-download.xlsx"]}
+
+  - id: atlantafed_data_wuxia
+    name: Atlanta Fed 데이터
+    title: "Wu-Xia Shadow Federal Funds Rate"
+    page: https://www.atlantafed.org/research-and-data/data/wu-xia-shadow-federal-funds-rate
+    type: datawatch
+    watch: {head: ["https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/datafiles/cqer/research/wu-xia-shadow-federal-funds-rate/WuXiaShadowRate.xlsx"]}
+
+  - id: atlantafed_data_cbbs
+    name: Atlanta Fed 데이터
+    title: Central Bank Business Survey Database
+    page: https://www.atlantafed.org/research-and-data/surveys/central-bank-business-survey-and-liaison-program-group
+    type: datawatch
+    watch: {files: ["https://www.atlantafed.org/~/media/Project/Atlanta/FRBA/Page%20Specific%20Assets%20Folder/JS%20Assets/Highcharts/assets/central-bank/central-bank-business-survey-data.json"]}
+
+  - id: atlantafed_data_chinamacro
+    name: Atlanta Fed 데이터
+    title: "China's Macroeconomy: Time Series Data"
+    page: https://www.atlantafed.org/research-and-data/data/china-macroeconomy
+    type: datawatch
+    watch:
+      links: {url: "https://www.atlantafed.org/research-and-data/data/china-macroeconomy", pattern: 'china-macroeconomy/data/[^"]*\.zip'}
+
+  - id: atlantafed_data_sdcpc
+    name: Atlanta Fed 데이터
+    title: Survey and Diary of Consumer Payment Choice
+    page: https://www.atlantafed.org/research-and-data/surveys/survey-and-diary-of-consumer-payment-choice
+    type: datawatch
+    watch:
+      links: {url: "https://www.atlantafed.org/research-and-data/surveys/survey-and-diary-of-consumer-payment-choice", pattern: 'survey-diary-consumer-payment-choice/\d{4}/[^"]*\.xlsx'}
