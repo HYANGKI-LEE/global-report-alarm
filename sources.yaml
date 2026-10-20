@@ -4,6 +4,7 @@
 #   name    : 텔레그램 메시지에 표시될 이름
 #   page    : 사용자가 고른 원본 페이지 주소 (참고용 + 일부 type 은 여기서 필터를 읽음)
 #   type    : 읽는 방식
+#               imf_elibrary → IMF eLibrary 최신 발간 목록 (pages, exclude_title)
 #               bis_list  → BIS All publications 목록 (pages: 몇 쪽까지 볼지)
 #               wp_api    → 워드프레스 공개 API (api, post_type, mode: new|modified, series_after)
 #               page_links → 범용: 목록 페이지에서 link_pattern(정규식)에 맞는 링크를 글로 봄
@@ -26,17 +27,35 @@
 # 실제 브라우저(헤드리스 크롬)로 여는 호스트 — 단순 요청은 응답하지 않는 사이트 (robots.txt 로 수집 허용 확인함)
 browser_hosts:
   - www.kansascityfed.org
+  - www.imf.org
 
 sources:
   # ── 국제기구 ──────────────────────────────
   - id: imf
+    enabled: false   # 2026-10-20: imf.org RSS 폐지(404) → 아래 imf_elibrary 로 교체
     name: IMF
-    enabled: false   # 2026-10-19: RSS 403 차단 (로컬·GitHub 모두). 대체 경로 확인 후 켜기
     page: https://www.imf.org/en/publications
     type: rss
     urls:
       - https://www.imf.org/en/Publications/RSS?language=eng
-      - https://www.imf.org/external/rss/feeds.aspx?category=WHATSNEW
+
+  # IMF 출판물 — imf.org/en/publications 의 Latest Releases 와 같은 내용을 IMF eLibrary 에서 받음
+  - id: imf_publications
+    name: IMF
+    page: https://www.imf.org/en/publications
+    type: imf_elibrary
+    pages: 2
+    exclude_title: 'Terminology Bulletin'
+    series_map:
+      /journals/001/: Working Paper
+      /journals/002/: Country Report
+      /journals/007/: Policy Paper
+      /journals/018/: Selected Issues Paper
+      /journals/019/: Technical Assistance Report
+      /journals/029/: TA Report Summary
+      /journals/087/: Departmental Paper
+      /journals/005/: Technical Note
+      /display/book/: Book / Flagship
 
   - id: bis
     enabled: false   # 2026-10-20: 아래 bis_publications(사용자가 고른 All publications 페이지)로 교체
@@ -1184,3 +1203,12 @@ sources:
     page: https://www.kansascityfed.org/data-and-trends/kansas-city-fed-model-based-natural-rate-of-interest-and-natural-unemployment-rate/
     type: datawatch
     watch: {files: ["https://kcresearch-share.kansascityfed.org/kc-mbnr/KCFed_ModelBased_Rstar_Ustar.csv"]}
+
+  # ── IMF 데이터 (research 페이지 고유 항목) — imf.org 는 실제 브라우저로 접속
+  - id: imf_data_commodity
+    name: IMF 데이터
+    title: Primary Commodity Prices
+    page: https://www.imf.org/en/research/commodity-prices
+    type: datawatch
+    watch:
+      regex: {url: "https://www.imf.org/en/research/commodity-prices", pattern: 'Excel Database:? [A-Z][a-z]+ \d{4}'}
