@@ -843,6 +843,9 @@ def send_new(new_by_name):
                 _pending_new.append({"message_id": mid, "icon": icon, "name": name, "title": it["title"],
                                      "link": it["link"], "series": it.get("series", ""),
                                      "summary_en": it.get("summary") or [],
+                                     # 요약 예약 작업의 클라우드 환경은 일부 사이트에 접속하지 못하므로
+                                     # 봇이 미리 초록·본문 앞부분을 담아 둔다
+                                     "content": page_text(it["link"])[:4000],
                                      "sent_at": datetime.now(KST).isoformat()})
         if len(items) > len(shown):
             send(f"{head}\n… 외 {len(items) - len(shown)}건 (목록: {html.escape(items[0]['link'])})")
