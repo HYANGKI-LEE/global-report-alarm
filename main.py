@@ -75,6 +75,8 @@ def fetch_by_type(src):
         return items[:src.get("max_items", 100)]  # 오래된 글까지 다 들어있는 피드 대비
     if kind == "page_links":
         return fetch_page_links(src)
+    if kind == "wp_api":
+        return fetch_wp_api(src)
     if kind == "bostonfed":
         return fetch_bostonfed(src["page"])
     if kind == "nyfed_research":
@@ -259,6 +261,36 @@ def fetch_page_links(src):
         items.append({"id": link, "title": title, "link": link, "series": ""})
     if not items:
         raise ValueError("일치하는 링크 0건 (페이지 구조 변경?)")
+    return items
+
+
+def fetch_wp_api(src):
+    """워드프레스 공개 REST API (/wp-json/wp/v2/<post_type>) — 샌프란시스코 연준 등.
+
+      mode: new       새 글(발행일 최신순) — 글 하나가 항목 하나
+      mode: modified  글의 수정 시각이 바뀌면 업데이트 — 데이터 페이지용 (항목 id = 글id|수정시각)
+      series_after: 링크에서 이 경로 다음 단어를 시리즈명으로 (예: /publications/economic-letter/… → Economic Letter)
+    """
+    modified = src.get("mode") == "modified"
+    r = requests.get(f"{src['api']}/wp-json/wp/v2/{src['post_type']}", headers=HEADERS, timeout=40,
+                     params={"per_page": src.get("per_page", 30), "order": "desc",
+                             "orderby": "modified" if modified else "date",
+                             "_fields": "id,date,modified,link,title"})
+    r.raise_for_status()
+    items = []
+    for x in r.json():
+        title = " ".join(BeautifulSoup(x["title"]["rendered"], "html.parser").get_text().split())
+        series = ""
+        if src.get("series_after") and src["series_after"] in x["link"]:
+            seg = x["link"].split(src["series_after"], 1)[1].split("/")[0]
+            series = seg.replace("-", " ").title()
+        if modified:
+            items.append({"id": f"{x['id']}|{x['modified']}", "title": f"{title} 업데이트",
+                          "link": x["link"], "series": series})
+        else:
+            items.append({"id": str(x["id"]), "title": title, "link": x["link"], "series": series})
+    if not items:
+        raise ValueError("항목 0건")
     return items
 
 
