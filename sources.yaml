@@ -45,7 +45,7 @@ sources:
     name: IMF
     page: https://www.imf.org/en/publications
     type: imf_elibrary
-    pages: 2
+    pages: 1          # 2쪽째부터는 연속 요청으로 405 — 2시간마다 확인하므로 50건이면 충분
     exclude_title: 'Terminology Bulletin'
     series_map:
       /journals/001/: Working Paper
