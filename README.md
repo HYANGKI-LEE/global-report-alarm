@@ -3,7 +3,7 @@
 국제기구·연준 등 사용자가 고른 페이지에 새 리포트가 올라오면 텔레그램 채널로 알려주는 봇.
 
 - 대상 목록: `sources.yaml`
-- 실행: GitHub Actions(`.github/workflows/poll.yml`) — 매시간(매시 7분), Actions 탭에서 수동 실행 가능
+- 실행: GitHub Actions(`.github/workflows/poll.yml`) — 30분마다(매시 7분·37분), Actions 탭에서 수동 실행 가능
 - 이미 보낸 항목 기록: `state/seen.json` (자동 커밋)
 - 새로 추가된 페이지는 첫 실행 때 기존 글을 '본 것'으로만 기록하고, 그 이후 올라오는 글부터 알림
 - 발간일을 알 수 있는 글은 최근 3일 이내만 알림 (`MAX_AGE_DAYS`, 대상별 `max_age_days`)

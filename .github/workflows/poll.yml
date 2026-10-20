@@ -2,8 +2,8 @@ name: poll-reports
 
 on:
   schedule:
-    # 매시간 7분 (정각은 GitHub 일정 실행이 몰려 지연이 큼). 1회 약 2분 → 월 약 1,440분 (private 무료 2,000분 이내)
-    - cron: "7 * * * *"
+    # 30분마다 (매시 7분·37분 — 정각·30분은 GitHub 일정 실행이 몰려 지연이 큼). public 레포라 실행 시간 무제한
+    - cron: "7,37 * * * *"
   workflow_dispatch:   # Actions 탭에서 수동 실행 가능
   push:
     branches: [main]
