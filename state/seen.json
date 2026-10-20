@@ -585,6 +585,7 @@
  },
  "fed_atlanta_wp": {
   "seen": [
+   "https://www.atlantafed.org/research-and-data/publications/working-papers/2026/10/15/17-wisdom-of-the-crowd-firm-expectations-disagreement-and-real-gdp-forecast-accuracy",
    "https://www.atlantafed.org/research-and-data/publications/working-papers/2026/09/28/16-bailing-out-firms-uninsured-deposits-a-quantitative-analysis",
    "https://www.atlantafed.org/research-and-data/publications/working-papers/2026/09/25/15-nowcasting-with-mixed-frequency-principal-components-when-not-all-months-are-the-same",
    "https://www.atlantafed.org/research-and-data/publications/working-papers/2026/09/23/14-testing-for-contemporaneous-exogeneity-in-linear-time-series-models",
@@ -928,6 +929,18 @@
  "chicagofed_data_landvalues": {
   "seen": [
    "sha256:f3a92491f9110ad07e9e"
+  ],
+  "fails": 0
+ },
+ "chicagofed_data_nfci": {
+  "seen": [
+   "sha256:a3bc14a9bfd80420303d"
+  ],
+  "fails": 0
+ },
+ "chicagofed_data_carts": {
+  "seen": [
+   "sha256:0449144cf0da07f1f146"
   ],
   "fails": 0
  }
