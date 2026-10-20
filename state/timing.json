@@ -1,0 +1,23 @@
+{
+ "run_at": "2026-10-20 15:03 KST",
+ "setup_seconds": 29.3,
+ "check_seconds": 160.6,
+ "slowest": {
+  "fed_kansascity_rwp": 11.7,
+  "kansascityfed_data_agfinance": 11.5,
+  "kansascityfed_data_agcredit": 8.9,
+  "fed_kansascity_nebraska": 8.4,
+  "fed_richmond_research": 8.3,
+  "fed_kansascity_oklahoma": 7.6,
+  "fed_kansascity_psrb": 6.6,
+  "fed_kansascity_rockymtn": 4.8,
+  "kansascityfed_data_energy": 4.5,
+  "kansascityfed_data_divlmci": 4.4,
+  "fed_kansascity_review": 4.3,
+  "kansascityfed_data_mfg": 4.3,
+  "fed_kansascity_charting": 4.0,
+  "kansascityfed_data_cre": 3.9,
+  "kansascityfed_data_lmci": 3.8
+ },
+ "sources": 136
+}
