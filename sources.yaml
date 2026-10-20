@@ -46,6 +46,7 @@ sources:
   # IMF 출판물 — imf.org/en/publications 의 'Latest Releases' (화면이 그려진 뒤 읽음, 6건)
   # (IMF eLibrary 는 GitHub 서버에 보안 확인 화면을 보여줘서 사용 불가 — imf_elibrary type 은 남겨둠)
   - id: imf_latest
+    enabled: false   # 2026-10-20: GitHub 서버에는 imf.org 가 몇 달 지난 캐시 페이지로 보임 (지난 글 오알림 위험)
     name: IMF
     page: https://www.imf.org/en/publications
     type: page_links
@@ -1215,6 +1216,7 @@ sources:
 
   # ── IMF 데이터 (research 페이지 고유 항목) — imf.org 는 실제 브라우저로 접속
   - id: imf_data_commodity
+    enabled: false   # 2026-10-20: GitHub 서버에는 imf.org 가 몇 달 지난 캐시 페이지로 보임 (지난 글 오알림 위험)
     name: IMF 데이터
     title: Primary Commodity Prices
     page: https://www.imf.org/en/research/commodity-prices
