@@ -4,6 +4,7 @@
 #   name    : 텔레그램 메시지에 표시될 이름
 #   page    : 사용자가 고른 원본 페이지 주소 (참고용 + 일부 type 은 여기서 필터를 읽음)
 #   type    : 읽는 방식
+#               bis_list  → BIS All publications 목록 (pages: 몇 쪽까지 볼지)
 #               wp_api    → 워드프레스 공개 API (api, post_type, mode: new|modified, series_after)
 #               page_links → 범용: 목록 페이지에서 link_pattern(정규식)에 맞는 링크를 글로 봄
 #               rss       → urls 의 RSS 주소를 위에서부터 시도해 처음 성공한 것 사용
@@ -38,11 +39,18 @@ sources:
       - https://www.imf.org/external/rss/feeds.aspx?category=WHATSNEW
 
   - id: bis
+    enabled: false   # 2026-10-20: 아래 bis_publications(사용자가 고른 All publications 페이지)로 교체
     name: BIS
     page: https://www.bis.org/research/index.htm
     type: rss
     urls:
       - https://www.bis.org/doclist/bis_fsi_publs.rss
+
+  - id: bis_publications
+    name: BIS
+    page: https://www.bis.org/publications
+    type: bis_list
+    pages: 2
 
   # ── 연준 ──────────────────────────────────
   - id: fed_boston_research

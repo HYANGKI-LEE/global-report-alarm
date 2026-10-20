@@ -77,6 +77,8 @@ def fetch_by_type(src):
         return fetch_page_links(src)
     if kind == "wp_api":
         return fetch_wp_api(src)
+    if kind == "bis_list":
+        return fetch_bis_list(src)
     if kind == "bostonfed":
         return fetch_bostonfed(src["page"])
     if kind == "nyfed_research":
@@ -261,6 +263,31 @@ def fetch_page_links(src):
         items.append({"id": link, "title": title, "link": link, "series": ""})
     if not items:
         raise ValueError("일치하는 링크 0건 (페이지 구조 변경?)")
+    return items
+
+
+def fetch_bis_list(src):
+    """BIS 'All publications' 목록 (연구물 + BCBS·CPMI 등 기준서·보고서). 카드마다 유형 배지·제목·날짜가 있다.
+
+    한 페이지 약 10건이라 pages 쪽수(기본 2)만큼 함께 본다.
+    """
+    items, seen = [], set()
+    for n in range(src.get("pages", 2)):
+        url = src["page"] + (f"?page={n}" if n else "")
+        soup = BeautifulSoup(http_get(url).text, "html.parser")
+        for a in soup.select("a.card-link[href]"):
+            head = a.select_one(".card-heading")
+            if not head or not a.select_one(".card-date"):  # 날짜 없는 카드는 안내 페이지(저자 소개 등)
+                continue
+            link = urljoin("https://www.bis.org", a["href"])
+            if link in seen:
+                continue
+            seen.add(link)
+            badges = [" ".join(b.get_text().split()) for b in a.select(".card-header .badge")]
+            series = " ".join(badges[1:3]) if len(badges) > 1 else ""  # 예: "BIS Working Paper No 1384"
+            items.append({"id": link, "title": " ".join(head.get_text().split()), "link": link, "series": series})
+    if not items:
+        raise ValueError("항목 0건 (페이지 구조 변경?)")
     return items
 
 
