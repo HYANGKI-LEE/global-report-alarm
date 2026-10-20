@@ -1815,11 +1815,6 @@
   ],
   "fails": 0
  },
- "imf_publications": {
-  "seen": [],
-  "fails": 5,
-  "last_error": "항목 0건 (페이지 구조 변경?)"
- },
  "imf_data_commodity": {
   "seen": [
    "text:Excel Database: September 2026"

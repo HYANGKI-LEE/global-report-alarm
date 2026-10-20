@@ -28,7 +28,10 @@
 browser_hosts:
   - www.kansascityfed.org
   - www.imf.org
-  - www.elibrary.imf.org
+
+# 화면이 다 그려진 뒤 읽는 호스트 (목록을 자바스크립트로 불러오는 사이트, 자동으로 browser_hosts 에도 포함)
+render_hosts:
+  - www.imf.org
 
 sources:
   # ── 국제기구 ──────────────────────────────
@@ -40,23 +43,28 @@ sources:
     urls:
       - https://www.imf.org/en/Publications/RSS?language=eng
 
-  # IMF 출판물 — imf.org/en/publications 의 Latest Releases 와 같은 내용을 IMF eLibrary 에서 받음
-  - id: imf_publications
+  # IMF 출판물 — imf.org/en/publications 의 'Latest Releases' (화면이 그려진 뒤 읽음, 6건)
+  # (IMF eLibrary 는 GitHub 서버에 보안 확인 화면을 보여줘서 사용 불가 — imf_elibrary type 은 남겨둠)
+  - id: imf_latest
     name: IMF
     page: https://www.imf.org/en/publications
-    type: imf_elibrary
-    pages: 1          # 2쪽째부터는 연속 요청으로 405 — 2시간마다 확인하므로 50건이면 충분
-    exclude_title: 'Terminology Bulletin'
+    type: page_links
+    link_pattern: '/en/publications/[a-z0-9/-]+/issues/\d{4}/'
+    strip_query: true
     series_map:
-      /journals/001/: Working Paper
-      /journals/002/: Country Report
-      /journals/007/: Policy Paper
-      /journals/018/: Selected Issues Paper
-      /journals/019/: Technical Assistance Report
-      /journals/029/: TA Report Summary
-      /journals/087/: Departmental Paper
-      /journals/005/: Technical Note
-      /display/book/: Book / Flagship
+      /publications/wp/: Working Paper
+      /publications/cr/: Country Report
+      /selected-issues-papers/: Selected Issues Paper
+      /publications/weo/: World Economic Outlook
+      /publications/gfsr/: Global Financial Stability Report
+      /publications/fm/: Fiscal Monitor
+      /publications/reo/: Regional Economic Outlook
+      /publications/esr/: External Sector Report
+      /publications/sdn/: Staff Discussion Note
+      /publications/policy-papers/: Policy Paper
+      /publications/dp/: Departmental Paper
+      /publications/books/: Book
+      /publications/fandd/: F&D Magazine
 
   - id: bis
     enabled: false   # 2026-10-20: 아래 bis_publications(사용자가 고른 All publications 페이지)로 교체

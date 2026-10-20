@@ -261,6 +261,8 @@ def fetch_page_links(src):
         if not re.search(src["link_pattern"], a["href"]) or len(title) < src.get("min_title", 15):
             continue
         link = urljoin(page, a["href"]).split("#")[0]
+        if src.get("strip_query"):  # 추적용 ?cid=… 등이 붙어 같은 글이 다른 주소로 보이는 사이트
+            link = link.split("?")[0]
         if link in seen:
             continue
         seen.add(link)
@@ -399,6 +401,7 @@ def http_get(url):
 # 캔자스시티 연준처럼 단순 요청은 붙잡아 두고 실제 브라우저만 통과시키는 사이트용 (robots.txt 로 수집이 허용된 페이지만).
 # sources.yaml 의 browser_hosts 에 적은 호스트만 이 방식으로 연다.
 BROWSER_HOSTS = set()
+RENDER_HOSTS = set()   # 이 호스트는 화면이 다 그려진 뒤(자바스크립트로 불러오는 목록 포함)의 내용을 읽음
 _browser = {}
 
 
@@ -418,6 +421,11 @@ def browser_get(url):
     if resp is None or resp.status >= 400:
         raise RuntimeError(f"브라우저 접속 실패 {resp.status if resp else '-'}: {url}")
     time.sleep(1)  # 연속 접속 간격
+    if urlsplit(url).hostname in RENDER_HOSTS:
+        page = _browser["page"]
+        page.wait_for_load_state("networkidle", timeout=45000)
+        time.sleep(2)
+        return BrowserResponse(resp.status, page.content().encode("utf-8"))
     try:
         body = resp.body()
     except Exception:  # noqa: BLE001 - 리다이렉트 등으로 원 응답 본문을 못 읽으면 다 그려진 화면 내용을 쓴다
@@ -587,6 +595,8 @@ def save_state(state):
 def main():
     config = yaml.safe_load(SOURCES_FILE.read_text(encoding="utf-8"))
     BROWSER_HOSTS.update(config.get("browser_hosts") or [])
+    RENDER_HOSTS.update(config.get("render_hosts") or [])
+    BROWSER_HOSTS.update(RENDER_HOSTS)
     sources = [s for s in config["sources"] if s.get("enabled", True)]
     state = load_state()
 
