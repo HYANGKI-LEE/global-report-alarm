@@ -643,18 +643,59 @@ def page_text(link):
     return ("\n".join(dict.fromkeys(m for m in metas if m)) + "\n\n" + text)[:8000]
 
 
-def summarize_all(items):
-    key = os.environ.get("ANTHROPIC_API_KEY")
-    if not key:
-        return
-    import anthropic
+def summarize_all(new_by_name):
+    """리포트(🏛) 글마다 제목 아래 붙일 불릿을 채운다. 데이터(📊) 알림은 제목만.
 
-    client = anthropic.Anthropic(api_key=key)
-    for it in items[:SUMMARY_LIMIT]:
+    - 기본(무료): 글 페이지의 공식 소개문(초록) 앞 1~3문장을 원문 그대로
+    - ANTHROPIC_API_KEY 가 있으면: Claude 로 한국어 3줄 요약·번역 (유료)
+    """
+    items = [it for (icon, _), its in new_by_name.items() if icon != "📊" for it in its][:SUMMARY_LIMIT]
+    key = os.environ.get("ANTHROPIC_API_KEY")
+    client = None
+    if key:
+        import anthropic
+        client = anthropic.Anthropic(api_key=key)
+    for it in items:
         try:
-            it["summary"] = summarize(client, it)
+            it["summary"] = summarize(client, it) if client else excerpt(it)
         except Exception as e:  # noqa: BLE001 - 요약 실패해도 알림은 보낸다
             print(f"[요약 실패] {it['title'][:40]}: {type(e).__name__}: {str(e)[:150]}", file=sys.stderr)
+
+
+def excerpt(it):
+    """무료 방식: 페이지 메타 설명(초록)의 앞 1~3문장. 메타 설명이 없으면 None."""
+    if re.search(r"\.(pdf|xlsx?|csv|zip)(\?|$)", it["link"], re.I):
+        return None
+    try:
+        soup = BeautifulSoup(http_get(it["link"]).text, "html.parser")
+    except Exception:  # noqa: BLE001
+        return None
+    desc = ""
+    for m in soup.find_all("meta"):
+        if (m.get("name") or m.get("property") or "").lower() in ("description", "og:description"):
+            c = " ".join(BeautifulSoup(m.get("content") or "", "html.parser").get_text(" ").split())  # <cite> 등 태그 제거
+            if len(c) > len(desc):
+                desc = c
+    # 메타 설명이 없거나 너무 짧으면 본문의 첫 '긴 문단'(초록·도입부)을 쓴다
+    if len(desc) < 60 or desc.lower().startswith(it["title"].lower()[:40]):
+        desc = ""
+        body = soup.find("main") or soup.find("article") or soup.find(id="content") or soup.body or soup
+        for p in body.find_all("p"):
+            t = " ".join(p.get_text(" ").split())
+            if len(t) >= 120 and not re.search(r"cookie|subscribe|javascript|privacy|copyright|\.gov website|"
+                                               r"official website|secure websites", t, re.I):
+                desc = t
+                break
+    if len(desc) < 60:
+        return None
+    # 약어(U.S., e.g. 등)의 마침표에서 문장이 잘리지 않게 잠시 바꿔 두고 나눈다
+    protected = re.sub(r"\b([A-Z])\.(?=[A-Z]\.)|\b(U\.S|U\.K|e\.g|i\.e|vs|Dr|Mr|Ms|No|St)\.",
+                       lambda m: m.group(0).replace(".", "§"), desc)
+    sentences = [s.replace("§", ".").strip() for s in re.split(r"(?<=[.!?])\s+(?=[A-Z0-9“\"(])", protected) if s.strip()]
+    bullets = []
+    for s in sentences[:3]:
+        bullets.append(s if len(s) <= 220 else s[:217].rstrip() + "…")
+    return bullets or None
 
 
 def summarize(client, it):
@@ -838,7 +879,7 @@ def run_test(sources):
             icon = "📊" if src.get("type") == "datawatch" or src.get("kind") == "data" else "🏛"
             new_by_name.setdefault((icon, src["name"]), []).append(items[0])
     if new_by_name:
-        summarize_all([it for items in new_by_name.values() for it in items])
+        summarize_all(new_by_name)
         send_new(new_by_name)
     TEST_FILE.unlink()
 
@@ -921,7 +962,7 @@ def main():
         send(w)
 
     if new_by_name:
-        summarize_all([it for items in new_by_name.values() for it in items])
+        summarize_all(new_by_name)
         send_new(new_by_name)
 
     # 전송까지 끝난 것만 seen 에 반영 (전송 실패 시 다음 실행에서 다시 보냄)

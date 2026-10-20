@@ -1,0 +1,21 @@
+# 시험 발송: 아래 대상의 가장 최근 글 1건씩을 실제 양식으로 보냄 (보낸 뒤 봇이 이 파일을 지움)
+fed_kansascity_bulletin
+fed_newyork_research
+fed_boston_research
+fed_philadelphia_research
+fed_cleveland_ec
+fed_richmond_national_economy
+fed_atlanta_macroblog
+fed_chicago_letter
+fed_minneapolis_research
+fed_dallas_pubs
+fed_sanfrancisco_pubs
+fed_board_fedsnotes
+fed_board_wp
+bis_publications
+nyfed_data_empire
+chicagofed_data_cfnai
+clevelandfed_data_median_cpi
+atlantafed_data_gdpnow
+dallasfed_data_updates
+richmondfed_data_sos
