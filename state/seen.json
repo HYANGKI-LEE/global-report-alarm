@@ -287,7 +287,8 @@
    "https://www.clevelandfed.org/publications/economic-commentary/ec-202615-earnings-gaps-in-aftermath-of-covid-19",
    "https://www.clevelandfed.org/publications/economic-commentary/ec-202614-changes-in-wage-gaps-over-forty-years-in-the-us"
   ],
-  "fails": 0
+  "fails": 1,
+  "last_error": "항목 0건 (페이지 구조 변경?)"
  },
  "fed_cleveland_wp": {
   "seen": [
@@ -961,12 +962,14 @@
  },
  "nyfed_data_primarydealer": {
   "seen": [
+   "text:2026-10-14",
    "text:2026-10-07"
   ],
   "fails": 0
  },
  "nyfed_data_soma": {
   "seen": [
+   "text:2026-10-21",
    "text:2026-10-14"
   ],
   "fails": 0
@@ -1409,6 +1412,7 @@
  },
  "fedboard_data_h41": {
   "seen": [
+   "text:Last Update: October 22, 2026",
    "text:Last Update: October 15, 2026"
   ],
   "fails": 0
