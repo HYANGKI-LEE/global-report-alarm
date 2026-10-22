@@ -56,6 +56,8 @@ def fetch_source(src):
         keys = src["exclude"] if isinstance(src["exclude"], list) else [src["exclude"]]
         items = [it for it in items if not any(k in it["link"] for k in keys)]
     for it in items:
+        if src.get("link_to_page"):   # 제목 링크를 원문 대신 목록 페이지(page)로 (초록·날짜는 원문에서)
+            it["display_link"] = src["page"]
         # series_map: 링크 주소에 들어있는 글자 → 시리즈명 (예: economic_brief → Economic Brief)
         for key, label in (src.get("series_map") or {}).items():
             if key in it["link"]:
@@ -904,7 +906,8 @@ def flush_pending():
 def render_item(it):
     """• [분류] 제목(링크) + 그 아래 요약 불릿."""
     tag = f"<i>[{html.escape(it['series'])}]</i> " if it.get("series") else ""
-    lines = [f"• {tag}<a href=\"{html.escape(it['link'], quote=True)}\">{html.escape(it['title'])}</a>"]
+    href = it.get("display_link") or it["link"]   # link_to_page 대상은 목록 페이지로
+    lines = [f"• {tag}<a href=\"{html.escape(href, quote=True)}\">{html.escape(it['title'])}</a>"]
     for b in it.get("summary") or []:
         lines.append(f"   - {html.escape(b)}")
     return "\n".join(lines)
@@ -1104,7 +1107,7 @@ def main():
         stale = [it for it in new if it.get("date") and it["date"] < cutoff]
         # 목록 날짜가 최근이어도, 원문 페이지에 적힌 실제 발간일이 오래됐으면 제외
         # (예: 애틀랜타 연준이 9/22 원문을 10/22에 자기 목록에 새로 올린 경우) — 리포트 글만, 데이터 알림 제외
-        if source_icon(src) != "📊":
+        if source_icon(src) != "📊" and not src.get("link_to_page"):
             for it in new:
                 if it not in stale:
                     d = article_date(it["link"])

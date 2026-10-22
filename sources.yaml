@@ -22,6 +22,7 @@
 #               datawatch → 데이터 업데이트 감지 (watch: files / regex / links, 자세한 건 main.py fetch_datawatch)
 #   series  : (선택) 시리즈명이 없는 항목에 붙일 이름
 #   series_map: (선택) 링크 주소 글자 → 시리즈명 (모든 type 공통)
+#   link_to_page: (선택) true 면 제목 링크를 원문 대신 page(목록)로, 원문 발간일 확인 생략
 #   exclude : (선택) 링크에 이 글자(목록이면 그중 하나)가 들어간 항목은 뺌 (모든 type 공통)
 #   kind    : (선택) data 면 📊 데이터, private 면 💡 민간 리서치로 표시 (기본 🏛)
 #   enabled : false 로 두면 잠시 끔
@@ -189,6 +190,7 @@ sources:
     page: https://www.atlantafed.org/research-and-data/publications/special-publications
     type: atlantafed_list
     series: Special Publication
+    link_to_page: true     # 사용자 요청: 제목 링크를 목록 페이지로, 다른 기관 글을 새로 소개한 것도 알림 (원문 발간일 확인 안 함)
 
   - id: fed_chicago_letter
     name: Chicago Fed

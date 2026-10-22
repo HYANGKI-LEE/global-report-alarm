@@ -1,0 +1,2 @@
+# 시험 발송 — 애틀랜타 Special Publications 목록 링크 확인 (보낸 뒤 봇이 이 파일을 지움)
+fed_atlanta_special 1
