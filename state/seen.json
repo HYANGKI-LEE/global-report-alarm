@@ -558,6 +558,7 @@
  },
  "richmondfed_data_sos": {
   "seen": [
+   "text:Last updated on October 22, 2026",
    "text:Last updated on October 15, 2026"
   ],
   "fails": 0
@@ -921,6 +922,7 @@
  },
  "chicagofed_data_cfsec": {
   "seen": [
+   "sha256:cc8fc00ce529f63b7ee4",
    "sha256:c9d2aa47887bfa118e7c"
   ],
   "fails": 0
@@ -1124,6 +1126,7 @@
  },
  "dallasfed_data_updates": {
   "seen": [
+   "https://www.dallasfed.org/research/wei|Thu, 22 Oct 2026 10:30:00 CST",
    "https://www.dallasfed.org/research/forecast/2026/emp261019",
    "https://www.dallasfed.org/research/wei|Thu, 15 Oct 2026 10:30:00 CST",
    "https://www.dallasfed.org/research/indicators/tei/2026/tei2608",
@@ -1711,6 +1714,7 @@
  },
  "kansascityfed_data_mfg": {
   "seen": [
+   "https://www.kansascityfed.org/surveys/manufacturing-survey/tenth-district-manufacturing-activity-increased-steadily-in-october-2026/",
    "https://www.kansascityfed.org/surveys/manufacturing-survey/tenth-district-manufacturing-activity-continued-to-increase-in-september-2026/",
    "https://www.kansascityfed.org/surveys/manufacturing-survey/manufacturing-survey-release-dates/",
    "https://www.kansascityfed.org/surveys/manufacturing-survey/manufacturing-survey-methodology/",
