@@ -695,13 +695,52 @@ def translate_ko(texts):
         return texts
 
 
+_article_cache = {}
+
+
+def article_soup(link):
+    """원문 페이지 HTML (한 실행 안에서는 한 번만 받음 — 발간일 확인과 초록 추출이 같이 씀). 실패·PDF 는 None."""
+    if link not in _article_cache:
+        soup = None
+        if not re.search(r"\.(pdf|xlsx?|csv|zip)(\?|$)", link, re.I):
+            try:
+                soup = BeautifulSoup(http_get(link).text, "html.parser")
+            except Exception:  # noqa: BLE001
+                soup = None
+        _article_cache[link] = soup
+    return _article_cache[link]
+
+
+def article_date(link):
+    """원문 페이지에 적힌 발간일. 메타 태그(article:published_time 등) → JSON-LD datePublished → <time> 순.
+    날짜를 찾지 못하면 None (그때는 판단에서 뺌)."""
+    soup = article_soup(link)
+    if soup is None:
+        return None
+    for m in soup.find_all("meta"):
+        key = (m.get("property") or m.get("name") or m.get("itemprop") or "").lower()
+        if key in ("article:published_time", "og:published_time", "datepublished", "date", "pubdate",
+                   "publish_date", "publication_date", "citation_publication_date", "dc.date", "dcterms.date"):
+            d = parse_date(m.get("content"))
+            if d:
+                return d
+    for s in soup.find_all("script", type="application/ld+json"):
+        found = re.search(r'"datePublished"\s*:\s*"([^"]+)"', s.string or "")
+        if found and parse_date(found.group(1)):
+            return parse_date(found.group(1))
+    body = soup.find("main") or soup.find("article") or soup
+    t = body.find("time")
+    if t:
+        return parse_date(t.get("datetime") or t.get_text())
+    return None
+
+
 def excerpt(it):
     """무료 방식: 페이지 메타 설명(초록)의 앞 1~3문장. 메타 설명이 없으면 None."""
     if re.search(r"\.(pdf|xlsx?|csv|zip)(\?|$)", it["link"], re.I):
         return None
-    try:
-        soup = BeautifulSoup(http_get(it["link"]).text, "html.parser")
-    except Exception:  # noqa: BLE001
+    soup = article_soup(it["link"])
+    if soup is None:
         return None
     desc = ""
     for m in soup.find_all("meta"):
@@ -1063,6 +1102,15 @@ def main():
         # (사이트가 캐시된 옛 목록을 잠깐 내려줘서 지난 글이 새 글처럼 보이는 경우 등)
         cutoff = datetime.now(KST).date() - timedelta(days=src.get("max_age_days", MAX_AGE_DAYS))
         stale = [it for it in new if it.get("date") and it["date"] < cutoff]
+        # 목록 날짜가 최근이어도, 원문 페이지에 적힌 실제 발간일이 오래됐으면 제외
+        # (예: 애틀랜타 연준이 9/22 원문을 10/22에 자기 목록에 새로 올린 경우) — 리포트 글만, 데이터 알림 제외
+        if source_icon(src) != "📊":
+            for it in new:
+                if it not in stale:
+                    d = article_date(it["link"])
+                    if d and d < cutoff:
+                        print(f"[무시] {name}: 원문 발간일 {d} — {it['title'][:50]}")
+                        stale.append(it)
         if stale:
             print(f"[무시] {name}: 발간일 {cutoff} 이전 글 {len(stale)}건")
             st["seen"] = ([it["id"] for it in stale] + st["seen"])[:SEEN_KEEP]
