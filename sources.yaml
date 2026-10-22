@@ -23,7 +23,7 @@
 #   series  : (선택) 시리즈명이 없는 항목에 붙일 이름
 #   series_map: (선택) 링크 주소 글자 → 시리즈명 (모든 type 공통)
 #   exclude : (선택) 링크에 이 글자(목록이면 그중 하나)가 들어간 항목은 뺌 (모든 type 공통)
-#   kind    : (선택) data 면 텔레그램에 📊 데이터로 표시
+#   kind    : (선택) data 면 📊 데이터, private 면 💡 민간 리서치로 표시 (기본 🏛)
 #   enabled : false 로 두면 잠시 끔
 
 # 실제 브라우저(헤드리스 크롬)로 여는 호스트 — 단순 요청은 응답하지 않는 사이트 (robots.txt 로 수집 허용 확인함)
@@ -396,6 +396,7 @@ sources:
   # ── 민간 리서치 ───────────────────────────
   - id: private_junkbondinvestor
     name: JunkBondInvestor
+    kind: private          # 민간 리서치 → 텔레그램에 💡 표시
     page: https://www.junkbondinvestor.com/
     type: rss
     urls: ["https://www.junkbondinvestor.com/feed"]   # Substack 공식 RSS

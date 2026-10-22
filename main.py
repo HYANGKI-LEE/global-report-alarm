@@ -964,6 +964,15 @@ def fetch_all(sources):
     return results
 
 
+def source_icon(src):
+    """텔레그램 메시지 첫 줄 마크: 📊 데이터 / 💡 민간 리서치(kind: private) / 🏛 공공기관 리포트."""
+    if src.get("type") == "datawatch" or src.get("kind") == "data":
+        return "📊"
+    if src.get("kind") == "private":
+        return "💡"
+    return "🏛"
+
+
 TEST_FILE = ROOT / "test_request.txt"
 
 
@@ -982,7 +991,7 @@ def run_test(sources):
             continue
         items = fetch_source(src)
         if items:
-            icon = "📊" if src.get("type") == "datawatch" or src.get("kind") == "data" else "🏛"
+            icon = source_icon(src)
             new_by_name.setdefault((icon, src["name"]), []).extend(items[:count])
     if new_by_name:
         summarize_all(new_by_name)
@@ -1060,7 +1069,7 @@ def main():
             new = [it for it in new if it not in stale]
         print(f"[확인] {name}: 신규 {len(new)}건 / 피드 {len(items)}건")
         if new:
-            icon = "📊" if src.get("type") == "datawatch" or src.get("kind") == "data" else "🏛"
+            icon = source_icon(src)
             new_by_name.setdefault((icon, src["name"]), []).extend(new)
             pending[sid] = [it["id"] for it in new]
 
