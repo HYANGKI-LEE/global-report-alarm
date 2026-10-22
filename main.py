@@ -968,13 +968,14 @@ TEST_FILE = ROOT / "test_request.txt"
 
 
 def run_test(sources):
-    """시험 발송: test_request.txt 에 적은 대상 id(한 줄에 하나)의 가장 최근 글 1건씩을
-    실제 양식(요약 포함)으로 보낸다. 상태(seen)는 건드리지 않고, 끝나면 파일을 지운다(워크플로가 커밋)."""
-    wanted = [l.strip() for l in TEST_FILE.read_text(encoding="utf-8").splitlines()
+    """시험 발송: test_request.txt 에 적은 대상 id(한 줄에 하나, 뒤에 숫자를 쓰면 그 건수만큼 — 예: 'xxx 3')의
+    최근 글을 실제 양식(요약 포함)으로 보낸다. 상태(seen)는 건드리지 않고, 끝나면 파일을 지운다(워크플로가 커밋)."""
+    wanted = [l.split() for l in TEST_FILE.read_text(encoding="utf-8").splitlines()
               if l.strip() and not l.startswith("#")]
     by_id = {s["id"]: s for s in sources}
     new_by_name = {}
-    for sid in wanted:
+    for parts in wanted:
+        sid, count = parts[0], int(parts[1]) if len(parts) > 1 and parts[1].isdigit() else 1
         src = by_id.get(sid)
         if not src:
             print(f"[시험] 없는 대상: {sid}", file=sys.stderr)
@@ -982,7 +983,7 @@ def run_test(sources):
         items = fetch_source(src)
         if items:
             icon = "📊" if src.get("type") == "datawatch" or src.get("kind") == "data" else "🏛"
-            new_by_name.setdefault((icon, src["name"]), []).append(items[0])
+            new_by_name.setdefault((icon, src["name"]), []).extend(items[:count])
     if new_by_name:
         summarize_all(new_by_name)
         send_new(new_by_name)
