@@ -955,6 +955,7 @@
  },
  "nyfed_data_nowcast": {
   "seen": [
+   "sha256:31b05b91d55715d2fd09",
    "sha256:f959f80bec2d82ef8efd"
   ],
   "fails": 0
@@ -975,6 +976,7 @@
  },
  "clevelandfed_data_crediteasing": {
   "seen": [
+   "sha256:663ce3aa68e1c1de0751",
    "sha256:020fd3cce537483de457"
   ],
   "fails": 0
@@ -1656,6 +1658,8 @@
  },
  "fed_kansascity_charting": {
   "seen": [
+   "https://www.kansascityfed.org/documents/20150/frbkc_Bi-Vasiljevic_chart_10yryealdecomp_data_20261016.zip",
+   "https://www.kansascityfed.org/documents/20183/frbkc_cohen_chart_labor-scarcity_data_20261015.zip",
    "https://www.kansascityfed.org/documents/19630/frbkc_routh_chart_tokenized-treasuries_20261006.zip",
    "https://www.kansascityfed.org/documents/19530/frbkc_brown_chart_diesel_inflation_data_20260930.zip",
    "https://www.kansascityfed.org/documents/19115/frbkc_mccoy_chart_generational-LFPR_data_20260922.zip",
@@ -1728,6 +1732,7 @@
  },
  "kansascityfed_data_services": {
   "seen": [
+   "https://www.kansascityfed.org/surveys/services-survey/growth-in-tenth-district-services-activity-rose-moderately-in-october-2026/",
    "https://www.kansascityfed.org/surveys/services-survey/growth-in-tenth-district-services-activity-was-flat-in-september/",
    "https://www.kansascityfed.org/surveys/services-survey/tenth-district-services-activity-fell-in-august-2026/",
    "https://www.kansascityfed.org/surveys/services-survey/services-survey-release-dates/",
