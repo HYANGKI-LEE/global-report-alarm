@@ -1,9 +1,11 @@
 [
  {
-  "name": "Atlanta Fed",
-  "title": "Promise, anxiety, and change: What the Fed is learning about AI's impact on work",
+  "name": "Fed Board",
+  "title": "FEDS Note: Government Bonds’ Safe-Haven Property and Inflationary Pressures",
   "summary": [
-   "인공지능은 우리의 업무 방식에 영향을 미치고 있으며, 그 결과 인력 개발 생태계도 변화하고 있습니다."
+   "올해 초, 중동 지역의 분쟁이 격화되면서 에너지 가격이 상승하고 세계 경제 전망이 악화됨에 따라 주요 주가지수가 급락했으나, 주요 선진국의 장기 국채 가격도 하락했다(그림 1).",
+   "이에 따라 일부 논평가들은 위험 회피 심리가 고조될 때 이러한 주요 선진국의 국채 가격이 상승하고 투자자들에게 안전한 피난처 역할을 할 것이라는 전제에 의문을 제기했다(예를 들어, Kim, 2026 참조).",
+   "이 보고서에서는 채권이 포트폴리오 보험 기능을 제공하는지 여부와 투자자들이 채권의 위험도를 어떻게 평가하는지를 결정하는 데 있어, 경제 충격의 유형과 인플레이션 동향이 매우 중요한 역할을 한다고 주장한다."
   ]
  }
 ]

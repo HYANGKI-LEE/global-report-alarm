@@ -1,2 +1,0 @@
-# 시험 발송 — FEDS Note: Government Bonds Safe-Haven Property (보낸 뒤 봇이 이 파일을 지움)
-fed_board_fedsnotes 1
