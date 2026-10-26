@@ -1239,6 +1239,8 @@
  },
  "dallasfed_data_surveys": {
   "seen": [
+   "https://www.dallasfed.org/research/surveys/tmos/2026/2610",
+   "https://www.dallasfed.org/research/surveys/tbos/2026/2610q",
    "https://www.dallasfed.org/research/surveys/des/2026/2603",
    "https://www.dallasfed.org/research/surveys/tssos/2026/2609",
    "https://www.dallasfed.org/research/surveys/tmos/2026/2609",
@@ -1264,6 +1266,7 @@
  },
  "fed_sanfrancisco_pubs": {
   "seen": [
+   "430278",
    "430166",
    "424911",
    "424832",
