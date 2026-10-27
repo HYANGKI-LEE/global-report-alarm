@@ -735,6 +735,7 @@
  },
  "atlantafed_data_gdpnow": {
   "seen": [
+   "text:Updated: October 27, 2026",
    "text:Updated: October 20, 2026",
    "text:Updated: October 15, 2026"
   ],
@@ -1239,6 +1240,7 @@
  },
  "dallasfed_data_surveys": {
   "seen": [
+   "https://www.dallasfed.org/research/surveys/tssos/2026/2610",
    "https://www.dallasfed.org/research/surveys/tmos/2026/2610",
    "https://www.dallasfed.org/research/surveys/tbos/2026/2610q",
    "https://www.dallasfed.org/research/surveys/des/2026/2603",
@@ -1439,6 +1441,7 @@
  },
  "fedboard_data_h6": {
   "seen": [
+   "text:Last Update: October 27, 2026",
    "text:Last Update: September 22, 2026"
   ],
   "fails": 0
