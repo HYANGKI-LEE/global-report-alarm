@@ -925,8 +925,13 @@ sources:
     type: rss
     urls: ["https://www.dallasfed.org/rss/updates.xml"]
     id_with_date: true
+    # 도시·광역권별 지표는 지엽적이라 제외 (사용자 요청 2026-10-29). 텍사스 주 전체(tei)·에너지·멕시코는 유지
+    # hou 휴스턴, aus 오스틴, dal 댈러스, dfw 댈러스-포트워스, ftw 포트워스, sa 샌안토니오, ep 엘패소,
+    # rgv 리오그란데밸리, snm 남부 뉴멕시코, pb 퍼미안 분지
+    exclude: [/indicators/hou/, /indicators/aus/, /indicators/dal/, /indicators/dfw/, /indicators/ftw/,
+              /indicators/sa/, /indicators/ep/, /indicators/rgv/, /indicators/snm/, /indicators/pb/]
     series_map:
-      /research/indicators/: Regional Indicators
+      /research/indicators/: Texas Economic Indicators
       /research/forecast/: Texas Employment Forecast
       /research/wei: Weekly Economic Index
       /research/update/: International
