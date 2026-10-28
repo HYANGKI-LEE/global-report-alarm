@@ -244,11 +244,13 @@ def fetch_chicagofed_series(series_id):
     r.raise_for_status()
     items = []
     for x in r.json() or []:
-        if not x.get("Url"):
+        if not x.get("Url") or "/testpages" in x["Url"].lower():  # 시카고 쪽 시험용 복사본(옛 글이 새 Id 로 뜸)
             continue
         title = BeautifulSoup(x.get("Title") or "", "html.parser").get_text()  # 제목에 <i> 태그가 섞여 있음
+        d = x.get("Date") or ""  # 예: 20260813
         items.append({"id": x.get("Id") or x["Url"], "title": " ".join(title.split()),
-                      "link": x["Url"], "series": (x.get("Series") or {}).get("Name") or ""})
+                      "link": x["Url"], "series": (x.get("Series") or {}).get("Name") or "",
+                      "date": parse_date(f"{d[:4]}-{d[4:6]}-{d[6:8]}" if len(d) == 8 else None)})
     if not items:
         raise ValueError("항목 0건 (시리즈ID 변경?)")
     return items
