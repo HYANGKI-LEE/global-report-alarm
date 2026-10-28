@@ -102,6 +102,7 @@
  },
  "nyfed_data_cmdi": {
   "seen": [
+   "sha256:a4f3439f632425b280a5",
    "sha256:144fe650ed318269bb05"
   ],
   "fails": 0
@@ -348,6 +349,7 @@
  },
  "fed_richmond_research": {
   "seen": [
+   "https://www.richmondfed.org/publications/research/econ_focus/2026/q4_opinion",
    "https://doi.org/10.1093/jeea/jvag015",
    "https://www.richmondfed.org/publications/research/peer_reviewed_pubs/forthcoming/wang_technology_adoption",
    "https://www.richmondfed.org/publications/research/peer_reviewed_pubs/2026/wong_artificial_intel",
@@ -735,6 +737,7 @@
  },
  "atlantafed_data_gdpnow": {
   "seen": [
+   "text:Updated: October 28, 2026",
    "text:Updated: October 27, 2026",
    "text:Updated: October 20, 2026",
    "text:Updated: October 15, 2026"
@@ -786,6 +789,7 @@
  },
  "atlantafed_data_sbu": {
   "seen": [
+   "text:Updated: October 28, 2026",
    "text:Updated: September 30, 2026"
   ],
   "fails": 0
@@ -945,6 +949,7 @@
  },
  "chicagofed_data_nfci": {
   "seen": [
+   "sha256:904e3a76fde5a7910a23",
    "sha256:86e48f9d5ede868678af",
    "sha256:a3bc14a9bfd80420303d"
   ],
@@ -1825,6 +1830,7 @@
  },
  "bis_publications": {
   "seen": [
+   "https://www.bis.org/publications/ifc-report-19-ai-readiness-central-banks",
    "https://www.bis.org/publications/bulletin-140-building-ai-credit--structures-and-spillovers",
    "https://www.bis.org/publications/bulletin-139-chokepoints-global-supply-chains-lessons-rare-earths-and-hard-disk-drives",
    "https://www.bis.org/publications/working-paper-1389-news-shocks-and-inflation-theory-and-evidence-from-large-oil-discoveries",
