@@ -979,6 +979,7 @@
  },
  "nyfed_data_primarydealer": {
   "seen": [
+   "text:2026-10-21",
    "text:2026-10-14",
    "text:2026-10-07"
   ],
@@ -986,6 +987,7 @@
  },
  "nyfed_data_soma": {
   "seen": [
+   "text:2026-10-28",
    "text:2026-10-21",
    "text:2026-10-14"
   ],
@@ -1438,6 +1440,7 @@
  },
  "fedboard_data_h41": {
   "seen": [
+   "text:Last Update: October 29, 2026",
    "text:Last Update: October 22, 2026",
    "text:Last Update: October 15, 2026"
   ],
