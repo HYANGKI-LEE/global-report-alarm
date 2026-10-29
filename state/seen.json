@@ -313,6 +313,7 @@
  },
  "clevelandfed_data_median_pce": {
   "seen": [
+   "text:Last updated October 29, 2026",
    "text:Last updated September 30, 2026"
   ],
   "fails": 0
@@ -331,6 +332,7 @@
  },
  "clevelandfed_data_yieldcurve": {
   "seen": [
+   "text:Last updated October 29, 2026",
    "text:Last updated September 30, 2026"
   ],
   "fails": 0
@@ -560,6 +562,7 @@
  },
  "richmondfed_data_sos": {
   "seen": [
+   "text:Last updated on October 29, 2026",
    "text:Last updated on October 22, 2026",
    "text:Last updated on October 15, 2026"
   ],
@@ -737,6 +740,7 @@
  },
  "atlantafed_data_gdpnow": {
   "seen": [
+   "text:Updated: October 29, 2026",
    "text:Updated: October 28, 2026",
    "text:Updated: October 27, 2026",
    "text:Updated: October 20, 2026",
@@ -746,6 +750,7 @@
  },
  "atlantafed_data_taylor": {
   "seen": [
+   "text:Updated: October 29, 2026",
    "text:Updated: October 14, 2026"
   ],
   "fails": 0
@@ -764,6 +769,7 @@
  },
  "atlantafed_data_uid": {
   "seen": [
+   "text:Updated: October 29, 2026",
    "text:Updated: October 14, 2026"
   ],
   "fails": 0
@@ -1142,6 +1148,7 @@
  },
  "dallasfed_data_updates": {
   "seen": [
+   "https://www.dallasfed.org/research/wei|Thu, 29 Oct 2026 10:30:00 CST",
    "https://www.dallasfed.org/research/indicators/hou/2026/hou2606",
    "https://www.dallasfed.org/research/indicators/aus/2026/aus2606",
    "https://www.dallasfed.org/research/wei|Thu, 22 Oct 2026 10:30:00 CST",
@@ -1250,6 +1257,7 @@
  },
  "dallasfed_data_surveys": {
   "seen": [
+   "https://www.dallasfed.org/research/pce|Thu, 29 Oct 2026 12:24:00 CST",
    "https://www.dallasfed.org/research/surveys/tssos/2026/2610",
    "https://www.dallasfed.org/research/surveys/tmos/2026/2610",
    "https://www.dallasfed.org/research/surveys/tbos/2026/2610q",
