@@ -134,12 +134,14 @@
  },
  "nyfed_data_earlybench": {
   "seen": [
+   "sha256:e55ae94a4fe8958945e2",
    "sha256:8271150453f3397836af"
   ],
   "fails": 0
  },
  "nyfed_data_regemp": {
   "seen": [
+   "sha256:e55ae94a4fe8958945e2",
    "sha256:8271150453f3397836af"
   ],
   "fails": 0
@@ -977,6 +979,7 @@
  },
  "nyfed_data_nowcast": {
   "seen": [
+   "sha256:d44a10b2521c14a731ba",
    "sha256:31b05b91d55715d2fd09",
    "sha256:f959f80bec2d82ef8efd"
   ],
@@ -1053,6 +1056,7 @@
  },
  "fed_minneapolis_research": {
   "seen": [
+   "https://www.minneapolisfed.org/research/institute-working-papers/tax-productivity-and-economic-development-a-quantitative-macroeconomic-analysis",
    "https://www.minneapolisfed.org/research/staff-reports/the-macroeconomic-dynamics-of-labor-market-policies",
    "https://www.minneapolisfed.org/research/community-development-working-papers/federal-oversight-and-benefit-payment-accuracy-evidence-from-the-unemployment-insurance-system",
    "https://www.minneapolisfed.org/article/2026/why-has-the-us-economy-been-resilient-to-the-largest-increase-in-tariffs-since-the-great-depression",
@@ -1406,6 +1410,7 @@
  },
  "fed_board_wp": {
   "seen": [
+   "https://www.federalreserve.gov/econres/feds/measuring-consumption-with-credit-card-data-benchmarking-and-beyond.htm",
    "https://www.federalreserve.gov/econres/ifdp/when-and-for-whom-does-the-sovereign-bank-nexus-matter-evidence-from-post-crisis-europe.htm",
    "https://www.federalreserve.gov/econres/feds/a-macroeconomic-analysis-of-household-labor-supply-responses-to-large-fiscal-transfers.htm",
    "https://www.federalreserve.gov/econres/feds/inattentive-price-setting-and-inflation-under-fiscal-policy-uncertainty.htm",
@@ -1427,6 +1432,7 @@
  },
  "fed_board_fedsnotes": {
   "seen": [
+   "https://www.federalreserve.gov/econres/notes/feds-notes/treasury-issuance-and-dealer-balance-sheets-20261030.html",
    "https://www.federalreserve.gov/econres/notes/feds-notes/government-bonds-safe-haven-property-and-inflationary-pressures-20261016.html",
    "https://www.federalreserve.gov/econres/notes/feds-notes/ripples-in-the-reserve-pool-unveiling-liquidity-signals-from-the-federal-funds-market-20261016.html",
    "https://www.federalreserve.gov/econres/notes/feds-notes/introducing-private-credit-into-the-financial-accounts-of-the-united-states-20261016.html",
@@ -1455,6 +1461,7 @@
  },
  "fedboard_data_h8": {
   "seen": [
+   "text:Last Update: October 30, 2026",
    "text:Last Update: October 23, 2026",
    "text:Last Update: October 16, 2026"
   ],
@@ -1488,6 +1495,7 @@
  },
  "fedboard_data_g20": {
   "seen": [
+   "text:Last Update: October 30, 2026",
    "text:Last Update: September 24, 2026"
   ],
   "fails": 0
@@ -1579,6 +1587,7 @@
  },
  "fed_kansascity_psrb": {
   "seen": [
+   "https://www.kansascityfed.org/research/payments-system-research-briefings/b2b-payments-how-instant-payments-may-facilitate-straight-through-processing-for-businesses/",
    "https://www.kansascityfed.org/research/payments-system-research-briefings/a-brief-history-of-deposit-tokens-and-tokenized-deposits/",
    "https://www.kansascityfed.org/research/payments-system-research-briefings/b2b-payments-business-processing-and-challenges-to-achieving-straight-through-processing/",
    "https://www.kansascityfed.org/research/payments-system-research-briefings/b2b-payments-a-gradual-shift-from-checks-to-electronic-payment-methods/",
@@ -1879,7 +1888,8 @@
    "https://www.bis.org/publications/working-paper-1382-are-stablecoins-and-bank-deposits-substitutes",
    "https://www.bis.org/publications/working-paper-1381-transformative-ai-and-demand-bottlenecks"
   ],
-  "fails": 0
+  "fails": 1,
+  "last_error": "500 Server Error: 500 Service unavailable (with message) for url: https://www.bis.org/publications"
  },
  "imf_data_commodity": {
   "seen": [
