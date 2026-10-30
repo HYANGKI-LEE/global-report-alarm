@@ -146,6 +146,7 @@
  },
  "nyfed_data_homeprice": {
   "seen": [
+   "sha256:374275ede1ff89ed43ec",
    "sha256:0053288218c0d3c6bc7c"
   ],
   "fails": 0
@@ -182,6 +183,7 @@
  },
  "nyfed_data_mct": {
   "seen": [
+   "sha256:b353ba5fe4248b154fd8",
    "sha256:22735758b3da8950fbf8",
    "sha256:0e1c61076db5c9e733c5"
   ],
@@ -292,6 +294,7 @@
  },
  "fed_cleveland_wp": {
   "seen": [
+   "https://www.clevelandfed.org/publications/working-paper/wp-2632-place-based-federal-procurement-and-resident-jobs",
    "https://www.clevelandfed.org/publications/working-paper/wp-2631-consumers-attention-to-monetary-policy",
    "https://www.clevelandfed.org/publications/working-paper/wp-2630-a-behavioral-foundation-for-the-investment-wedge",
    "https://www.clevelandfed.org/publications/working-paper/wp-2629-causal-peer-effects-on-household-spending-beliefs-and-happiness",
@@ -351,6 +354,7 @@
  },
  "fed_richmond_research": {
   "seen": [
+   "https://www.richmondfed.org/publications/research/economic_brief/2026/eb_26-35",
    "https://www.richmondfed.org/publications/research/econ_focus/2026/q4_opinion",
    "https://doi.org/10.1093/jeea/jvag015",
    "https://www.richmondfed.org/publications/research/peer_reviewed_pubs/forthcoming/wang_technology_adoption",
@@ -582,6 +586,7 @@
  },
  "richmondfed_data_srpi": {
   "seen": [
+   "text:Last updated on October 30, 2026",
    "text:Last updated on September 30, 2026"
   ],
   "fails": 0
@@ -995,6 +1000,7 @@
  },
  "clevelandfed_data_crediteasing": {
   "seen": [
+   "sha256:14987ecfa1e03c700e04",
    "sha256:663ce3aa68e1c1de0751",
    "sha256:020fd3cce537483de457"
   ],
@@ -1400,6 +1406,7 @@
  },
  "fed_board_wp": {
   "seen": [
+   "https://www.federalreserve.gov/econres/ifdp/when-and-for-whom-does-the-sovereign-bank-nexus-matter-evidence-from-post-crisis-europe.htm",
    "https://www.federalreserve.gov/econres/feds/a-macroeconomic-analysis-of-household-labor-supply-responses-to-large-fiscal-transfers.htm",
    "https://www.federalreserve.gov/econres/feds/inattentive-price-setting-and-inflation-under-fiscal-policy-uncertainty.htm",
    "https://www.federalreserve.gov/econres/feds/bells-and-whistles-of-nowcasting-models-which-matter-and-when.htm",
