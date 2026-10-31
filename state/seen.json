@@ -1890,8 +1890,7 @@
    "https://www.bis.org/publications/working-paper-1382-are-stablecoins-and-bank-deposits-substitutes",
    "https://www.bis.org/publications/working-paper-1381-transformative-ai-and-demand-bottlenecks"
   ],
-  "fails": 4,
-  "last_error": "500 Server Error: 500 Service unavailable (with message) for url: https://www.bis.org/publications"
+  "fails": 0
  },
  "imf_data_commodity": {
   "seen": [
