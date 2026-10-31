@@ -1,23 +1,23 @@
 {
- "run_at": "2026-10-31 06:27 KST",
- "setup_seconds": 28.5,
- "check_seconds": 114.5,
+ "run_at": "2026-10-31 10:00 KST",
+ "setup_seconds": 22.0,
+ "check_seconds": 87.2,
  "slowest": {
-  "fed_richmond_research": 9.2,
-  "kansascityfed_data_agfinance": 7.0,
-  "fed_kansascity_review": 4.8,
+  "fed_richmond_research": 10.2,
+  "kansascityfed_data_agfinance": 6.2,
+  "fed_kansascity_nebraska": 4.9,
+  "fed_kansascity_review": 4.7,
+  "kansascityfed_data_agcredit": 4.7,
   "fed_kansascity_oklahoma": 4.6,
-  "kansascityfed_data_agcredit": 4.3,
-  "fed_kansascity_rockymtn": 4.2,
-  "fed_kansascity_nebraska": 4.0,
+  "fed_kansascity_rockymtn": 4.5,
   "kansascityfed_data_energy": 3.9,
   "kansascityfed_data_mfg": 3.8,
-  "fed_kansascity_bulletin": 3.0,
-  "kansascityfed_data_services": 2.9,
-  "fed_kansascity_charting": 2.8,
-  "kansascityfed_data_divlmci": 2.8,
-  "kansascityfed_data_lmci": 2.6,
-  "fed_kansascity_rwp": 2.5
+  "fed_kansascity_charting": 3.3,
+  "kansascityfed_data_services": 3.0,
+  "fed_kansascity_psrb": 2.9,
+  "fed_kansascity_bulletin": 2.8,
+  "fed_kansascity_rwp": 2.8,
+  "bis_publications": 2.7
  },
  "sources": 139
 }

@@ -1105,6 +1105,8 @@
  },
  "fed_dallas_pubs": {
   "seen": [
+   "https://www.dallasfed.org/research/papers/2026/wp2637",
+   "https://www.dallasfed.org/research/papers/2026/wp2636",
    "https://www.dallasfed.org/research/economics/2026/1016",
    "https://www.dallasfed.org/research/economics/2026/1015",
    "https://www.dallasfed.org/banking/pubs/dfb/2026/2610",
@@ -1888,8 +1890,8 @@
    "https://www.bis.org/publications/working-paper-1382-are-stablecoins-and-bank-deposits-substitutes",
    "https://www.bis.org/publications/working-paper-1381-transformative-ai-and-demand-bottlenecks"
   ],
-  "fails": 1,
-  "last_error": "500 Server Error: 500 Service unavailable (with message) for url: https://www.bis.org/publications"
+  "fails": 2,
+  "last_error": "500 Server Error: 500 Service unavailable (with message) for url: https://www.bis.org/publications?page=1"
  },
  "imf_data_commodity": {
   "seen": [
