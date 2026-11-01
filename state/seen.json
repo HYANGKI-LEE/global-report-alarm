@@ -677,6 +677,8 @@
  },
  "fed_atlanta_workforce": {
   "seen": [
+   "https://www.atlantafed.org/research-and-data/publications/workforce-currents/2026/08/13/04-the-geography-of-ai-demand-in-the-southeast-patterns-of-growth-and-labor-market-structure",
+   "https://www.atlantafed.org/research-and-data/publications/workforce-currents/2026/08/04/03-from-barrier-to-bridge-approaches-to-address-benefits-cliffs",
    "https://www.atlantafed.org/research-and-data/publications/workforce-currents/2026/08/13/the-geography-of-ai-demand-in-the-southeast-patterns-of-growth-and-labor-market-structure",
    "https://www.atlantafed.org/research-and-data/publications/workforce-currents/2026/08/04/from-barrier-to-bridge-approaches-to-address-benefits-cliffs",
    "https://www.atlantafed.org/research-and-data/publications/workforce-currents/2026/04/08/02-what-enrollment-numbers-can-and-cannot-tell-us-about-access-to-postsecondary-training-programs",
@@ -1891,8 +1893,7 @@
    "https://www.bis.org/publications/working-paper-1382-are-stablecoins-and-bank-deposits-substitutes",
    "https://www.bis.org/publications/working-paper-1381-transformative-ai-and-demand-bottlenecks"
   ],
-  "fails": 1,
-  "last_error": "500 Server Error: 500 Service unavailable (with message) for url: https://www.bis.org/publications"
+  "fails": 0
  },
  "imf_data_commodity": {
   "seen": [
