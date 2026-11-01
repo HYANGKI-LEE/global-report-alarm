@@ -1574,7 +1574,8 @@
    "https://www.kansascityfed.org/research/economic-review/investigating-the-recent-decline-in-community-college-enrollment/",
    "https://www.kansascityfed.org/research/economic-review/understanding-the-role-of-wealth-in-worker-flows/"
   ],
-  "fails": 0
+  "fails": 1,
+  "last_error": "일치하는 링크 0건 (페이지 구조 변경?)"
  },
  "fed_kansascity_rwp": {
   "seen": [
@@ -1927,6 +1928,7 @@
  },
  "private_junkbondinvestor": {
   "seen": [
+   "https://www.junkbondinvestor.com/p/credit-weekly-the-ccc-myth",
    "https://www.junkbondinvestor.com/p/coreweave-crwv-can-it-stop-growing",
    "https://www.junkbondinvestor.com/p/credit-weekly-rated-bb-priced-like",
    "https://www.junkbondinvestor.com/p/coreweave-crwv-34-billion-of-equity",
