@@ -633,6 +633,7 @@
  },
  "fed_atlanta_macroblog": {
   "seen": [
+   "https://www.atlantafed.org/research-and-data/publications/policy-hub-macroblog/2026/11/pending/introducing-survey-practitioners-corner",
    "https://www.atlantafed.org/research-and-data/publications/policy-hub-macroblog/2026/10/13/beyond-health-care-has-labor-market-improvement-broadened-in-2026",
    "https://www.atlantafed.org/research-and-data/publications/policy-hub-macroblog/2026/10/08/surveying-consumers-use-of-personal-checks",
    "https://www.atlantafed.org/research-and-data/publications/policy-hub-macroblog/2026/10/06/rising-labor-market-anxiety-and-declining-quits",
@@ -1890,7 +1891,8 @@
    "https://www.bis.org/publications/working-paper-1382-are-stablecoins-and-bank-deposits-substitutes",
    "https://www.bis.org/publications/working-paper-1381-transformative-ai-and-demand-bottlenecks"
   ],
-  "fails": 0
+  "fails": 1,
+  "last_error": "500 Server Error: 500 Service unavailable (with message) for url: https://www.bis.org/publications"
  },
  "imf_data_commodity": {
   "seen": [
