@@ -212,6 +212,7 @@
  },
  "nyfed_data_college": {
   "seen": [
+   "sha256:f7a508bb5d8091b2d67a",
    "sha256:202e637b06568d3632f3"
   ],
   "fails": 0
@@ -248,6 +249,7 @@
  },
  "fed_philadelphia_research": {
   "seen": [
+   "{4C616701-C6A1-49F1-815E-3D6DE0E690BF}",
    "{EA62B3E1-24CD-4EF7-A861-A39876E3DDF2}",
    "{AF7D2194-4D8D-4725-866C-01FA58DB389C}",
    "{C35725E2-6856-4814-A0EC-060F4034E6B0}",
@@ -281,6 +283,7 @@
  },
  "fed_cleveland_ec": {
   "seen": [
+   "https://www.clevelandfed.org/publications/economic-commentary/ec-202624-examining-the-beliefs-of-professional-forecasters",
    "https://www.clevelandfed.org/publications/economic-commentary/ec-202623-whos-driving-medicaids-enrollment-growth",
    "https://www.clevelandfed.org/publications/economic-commentary/ec-202622-will-us-firms-adopt-stablecoins",
    "https://www.clevelandfed.org/publications/economic-commentary/ec-202621-trends-in-manufacturing-in-the-united-states",
@@ -296,6 +299,8 @@
  },
  "fed_cleveland_wp": {
   "seen": [
+   "https://www.clevelandfed.org/publications/working-paper/wp-2608r-a-new-model-of-trend-inflation-using-disaggregates-survey-expectations-and-uncertainty",
+   "https://www.clevelandfed.org/publications/working-paper/wp-2633-firm-size-market-power-and-competition-in-a-frictional-market",
    "https://www.clevelandfed.org/publications/working-paper/wp-2632-place-based-federal-procurement-and-resident-jobs",
    "https://www.clevelandfed.org/publications/working-paper/wp-2631-consumers-attention-to-monetary-policy",
    "https://www.clevelandfed.org/publications/working-paper/wp-2630-a-behavioral-foundation-for-the-investment-wedge",
@@ -601,6 +606,7 @@
  },
  "fed_atlanta_wp": {
   "seen": [
+   "https://www.atlantafed.org/research-and-data/publications/working-papers/2026/11/02/18-free-school-meals-credit-access-and-household-debt",
    "https://www.atlantafed.org/research-and-data/publications/working-papers/2026/10/15/17-wisdom-of-the-crowd-firm-expectations-disagreement-and-real-gdp-forecast-accuracy",
    "https://www.atlantafed.org/research-and-data/publications/working-papers/2026/09/28/16-bailing-out-firms-uninsured-deposits-a-quantitative-analysis",
    "https://www.atlantafed.org/research-and-data/publications/working-papers/2026/09/25/15-nowcasting-with-mixed-frequency-principal-components-when-not-all-months-are-the-same",
@@ -633,6 +639,7 @@
  },
  "fed_atlanta_macroblog": {
   "seen": [
+   "https://www.atlantafed.org/research-and-data/publications/policy-hub-macroblog/2026/11/02/introducing-survey-practitioners-corner",
    "https://www.atlantafed.org/research-and-data/publications/policy-hub-macroblog/2026/11/pending/introducing-survey-practitioners-corner",
    "https://www.atlantafed.org/research-and-data/publications/policy-hub-macroblog/2026/10/13/beyond-health-care-has-labor-market-improvement-broadened-in-2026",
    "https://www.atlantafed.org/research-and-data/publications/policy-hub-macroblog/2026/10/08/surveying-consumers-use-of-personal-checks",
@@ -750,6 +757,7 @@
  },
  "atlantafed_data_gdpnow": {
   "seen": [
+   "text:Updated: November 02, 2026",
    "text:Updated: October 29, 2026",
    "text:Updated: October 28, 2026",
    "text:Updated: October 27, 2026",
@@ -1059,6 +1067,7 @@
  },
  "fed_minneapolis_research": {
   "seen": [
+   "https://www.minneapolisfed.org/research/community-development-working-papers/the-early-labor-market-impacts-of-minnesotas-2023-non-compete-enforcement-ban",
    "https://www.minneapolisfed.org/research/institute-working-papers/tax-productivity-and-economic-development-a-quantitative-macroeconomic-analysis",
    "https://www.minneapolisfed.org/research/staff-reports/the-macroeconomic-dynamics-of-labor-market-policies",
    "https://www.minneapolisfed.org/research/community-development-working-papers/federal-oversight-and-benefit-payment-accuracy-evidence-from-the-unemployment-insurance-system",
@@ -1303,6 +1312,7 @@
  },
  "fed_sanfrancisco_pubs": {
   "seen": [
+   "440940",
    "430278",
    "430166",
    "424911",
@@ -1415,6 +1425,7 @@
  },
  "fed_board_wp": {
   "seen": [
+   "https://www.federalreserve.gov/econres/feds/heterogeneity-in-service-fee-sensitivity-evidence-from-atm-surcharges.htm",
    "https://www.federalreserve.gov/econres/feds/measuring-consumption-with-credit-card-data-benchmarking-and-beyond.htm",
    "https://www.federalreserve.gov/econres/ifdp/when-and-for-whom-does-the-sovereign-bank-nexus-matter-evidence-from-post-crisis-europe.htm",
    "https://www.federalreserve.gov/econres/feds/a-macroeconomic-analysis-of-household-labor-supply-responses-to-large-fiscal-transfers.htm",
@@ -1519,6 +1530,7 @@
  },
  "fedboard_data_sloos": {
   "seen": [
+   "text:Last Update: November 02, 2026",
    "text:Last Update: August 03, 2026"
   ],
   "fails": 0
