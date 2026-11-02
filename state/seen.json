@@ -1574,8 +1574,7 @@
    "https://www.kansascityfed.org/research/economic-review/investigating-the-recent-decline-in-community-college-enrollment/",
    "https://www.kansascityfed.org/research/economic-review/understanding-the-role-of-wealth-in-worker-flows/"
   ],
-  "fails": 1,
-  "last_error": "일치하는 링크 0건 (페이지 구조 변경?)"
+  "fails": 0
  },
  "fed_kansascity_rwp": {
   "seen": [
@@ -1860,6 +1859,7 @@
  },
  "kansascityfed_data_rstar": {
   "seen": [
+   "sha256:39f14bbbd193a5c541b9",
    "sha256:0051346721dca087d112"
   ],
   "fails": 0
