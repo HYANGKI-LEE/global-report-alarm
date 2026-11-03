@@ -63,7 +63,40 @@ def fetch_source(src):
             if key in it["link"]:
                 it["series"] = label
                 break
+        if src.get("detail") == "gdpnow":   # 제목 뒤 (Updated: …) 대신 본문에 추정치·변동 이유를 붙임
+            it["title"], it["detail"] = f"{src['title']} 업데이트", "gdpnow"
     return items
+
+
+def gdpnow_detail():
+    """GDPNow 알림 본문 3줄: 추정치(직전 대비)·업데이트 날짜·변동 이유(DeepL 번역).
+
+    수치는 페이지 카드(…% / Updated / Next update), 설명은 공식 RSS(/en/rss/GDPNow) 최신 항목에서 가져온다.
+    """
+    page = "https://www.atlantafed.org/research-and-data/data/gdpnow"
+    card = " ".join(BeautifulSoup(http_get(page).text, "html.parser").get_text(" ", strip=True).split())
+    m = re.search(r"([-\d.]+)%+ \w+-Quarter GDPNow Estimate for (\d{4}):Q(\d) Updated:? (\w+ \d{1,2}), \d{4} "
+                  r"Next update:? (\w+ \d{1,2}), \d{4}", card)
+    if not m:
+        raise ValueError("GDPNow 카드 문구를 찾지 못함")
+    value, year, q, upd, nxt = m.groups()
+    md = lambda s: "{d.month}월 {d.day}일".format(d=datetime.strptime(s, "%B %d"))  # November 02 → 11월 2일
+    head = f"{year}년 {q}분기 추정치 {value}%"
+    entry = (feedparser.parse(http_get("https://www.atlantafed.org/en/rss/GDPNow").text).entries or [None])[0]
+    text = " ".join(BeautifulSoup(entry.get("summary", ""), "html.parser").get_text(" ").split()) if entry else ""
+    reason = []
+    # 첫 문장 "… is 3.7 percent on November 2, up from 3.2 percent on October 29." 이 카드 날짜와 같을 때만 사용
+    first = re.search(r"is ([-\d.]+) percent on (\w+ \d{1,2}), (up|down|unchanged) from ([-\d.]+) percent\s+on (\w+ \d{1,2})",
+                      text)
+    if first and md(first.group(2)) == md(upd):
+        prev = "{d.month}/{d.day}".format(d=datetime.strptime(first.group(5), "%B %d"))
+        head += f" ({prev} {first.group(4)}%" + {"up": "에서 상승)", "down": "에서 하락)", "unchanged": "에서 변동 없음)"}[first.group(3)]
+        rest = re.split(r"(?<=\.)\s+", text[first.end():].lstrip(". ").strip())
+        reason = [s for s in rest if s and not re.search(r"next GDPNow update|Release Dates|first GDPNow forecast", s, re.I)]
+    lines = [head, f"업데이트 {md(upd)} · 다음 업데이트 {md(nxt)}"]
+    if reason:
+        lines.append(clip(translate_ko([" ".join(reason)]), 220)[0])
+    return lines
 
 
 def fetch_by_type(src):
@@ -657,6 +690,11 @@ def summarize_all(new_by_name):
       → DEEPL_API_KEY 가 있으면 DeepL 로 한국어 번역 (DeepL API Free: 월 50만 자 무료), 없으면 원문 그대로
     - ANTHROPIC_API_KEY 가 있으면: Claude 로 한국어 3줄 요약·번역 (유료, 현재 미사용)
     """
+    for it in (it for its in new_by_name.values() for it in its if it.get("detail") == "gdpnow"):
+        try:
+            it["summary"] = gdpnow_detail()
+        except Exception as e:  # noqa: BLE001 - 본문을 못 붙여도 제목 알림은 보낸다
+            print(f"[GDPNow 본문 실패] {type(e).__name__}: {str(e)[:150]}", file=sys.stderr)
     items = [it for (icon, _), its in new_by_name.items() if icon != "📊" for it in its][:SUMMARY_LIMIT]
     key = os.environ.get("ANTHROPIC_API_KEY")
     client = None

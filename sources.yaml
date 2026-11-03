@@ -666,6 +666,7 @@ sources:
     title: "GDPNow"
     page: https://www.atlantafed.org/research-and-data/data/gdpnow
     type: datawatch
+    detail: gdpnow   # 알림 본문에 추정치·업데이트 날짜·변동 이유 (main.py gdpnow_detail)
     watch:
       regex: {url: "https://www.atlantafed.org/research-and-data/data/gdpnow", pattern: 'Updated:? [A-Z][a-z]+ \d{1,2}, \d{4}'}
 
