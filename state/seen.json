@@ -249,6 +249,7 @@
  },
  "fed_philadelphia_research": {
   "seen": [
+   "{F0889627-61A5-442F-9F65-07369DB5CD8E}",
    "{4C616701-C6A1-49F1-815E-3D6DE0E690BF}",
    "{EA62B3E1-24CD-4EF7-A861-A39876E3DDF2}",
    "{AF7D2194-4D8D-4725-866C-01FA58DB389C}",
@@ -299,6 +300,7 @@
  },
  "fed_cleveland_wp": {
   "seen": [
+   "https://www.clevelandfed.org/publications/working-paper/wp-2634-labor-market-tightness-and-minority-earnings-gaps",
    "https://www.clevelandfed.org/publications/working-paper/wp-2608r-a-new-model-of-trend-inflation-using-disaggregates-survey-expectations-and-uncertainty",
    "https://www.clevelandfed.org/publications/working-paper/wp-2633-firm-size-market-power-and-competition-in-a-frictional-market",
    "https://www.clevelandfed.org/publications/working-paper/wp-2632-place-based-federal-procurement-and-resident-jobs",
@@ -469,6 +471,7 @@
  },
  "fed_richmond_national_economy": {
   "seen": [
+   "https://www.richmondfed.org/research/national_economy/macro_minute/2026/home_sales_outlook_falls_still-high_prices_could_support_spending",
    "https://www.richmondfed.org/research/national_economy/macro_minute/2026/made_in_taiwan_measured_in_america_why_ai_boom_isnt_showing_us_fab_utilization",
    "https://www.richmondfed.org/research/national_economy/macro_minute/2026/sep_by_sep_how_fed_walks_inflation_back_to_2_percent",
    "https://www.richmondfed.org/research/national_economy/cfo_survey/data_and_results/2026/20260923_data_and_results",
@@ -1882,6 +1885,7 @@
  },
  "bis_publications": {
   "seen": [
+   "https://www.bis.org/publications/working-paper-1390-prewar-us-business-cycles-under-uncertainty-reconstructing-quarterly-gdp-1947",
    "https://www.bis.org/publications/202610-commentary-ibs-gli",
    "https://www.bis.org/publications/roles-central-banks-and-central-bank-money-evolving-payment-system",
    "https://www.bis.org/publications/ifc-report-19-ai-readiness-central-banks",
