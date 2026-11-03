@@ -361,6 +361,7 @@
  },
  "fed_richmond_research": {
   "seen": [
+   "https://doi.org/10.1002/jfi2.70004",
    "https://www.richmondfed.org/publications/research/economic_brief/2026/eb_26-35",
    "https://www.richmondfed.org/publications/research/econ_focus/2026/q4_opinion",
    "https://doi.org/10.1093/jeea/jvag015",
@@ -669,6 +670,7 @@
  },
  "fed_atlanta_partners": {
   "seen": [
+   "https://www.atlantafed.org/research-and-data/publications/partners-update/2026/11/02/two-innovative-models-expanding-affordable-housing-in-the-southeast",
    "https://www.atlantafed.org/research-and-data/publications/partners-update/2026/10/14/how-many-households-in-the-southeast-are-low-to-moderate-income",
    "https://www.atlantafed.org/research-and-data/publications/partners-update/2026/10/05/what-are-the-patterns-for-low-income-housing-tax-credit-use-across-the-southeast",
    "https://www.atlantafed.org/research-and-data/publications/partners-update/2026/07/15/the-cost-of-working-childcare-affordability-analysis-of-florida-and-georgia",
@@ -1174,6 +1176,7 @@
  },
  "dallasfed_data_updates": {
   "seen": [
+   "https://www.dallasfed.org/research/indicators/tei/2026/tei2609",
    "https://www.dallasfed.org/research/wei|Thu, 29 Oct 2026 10:30:00 CST",
    "https://www.dallasfed.org/research/indicators/hou/2026/hou2606",
    "https://www.dallasfed.org/research/indicators/aus/2026/aus2606",
@@ -1485,6 +1488,7 @@
  },
  "fedboard_data_h10": {
   "seen": [
+   "text:Last Update: November 02, 2026",
    "text:Last Update: October 26, 2026",
    "text:Last Update: October 19, 2026"
   ],
