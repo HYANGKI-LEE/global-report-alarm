@@ -173,6 +173,7 @@
  },
  "nyfed_data_lmt": {
   "seen": [
+   "sha256:a1b534ae10a181c2309f",
    "sha256:f82b5ec634bd8d34b1f6"
   ],
   "fails": 0
@@ -300,6 +301,7 @@
  },
  "fed_cleveland_wp": {
   "seen": [
+   "https://www.clevelandfed.org/publications/working-paper/wp-2635-minimum-wage-business-dynamism-and-the-life-cycle-of-firms",
    "https://www.clevelandfed.org/publications/working-paper/wp-2634-labor-market-tightness-and-minority-earnings-gaps",
    "https://www.clevelandfed.org/publications/working-paper/wp-2608r-a-new-model-of-trend-inflation-using-disaggregates-survey-expectations-and-uncertainty",
    "https://www.clevelandfed.org/publications/working-paper/wp-2633-firm-size-market-power-and-competition-in-a-frictional-market",
@@ -363,6 +365,7 @@
  },
  "fed_richmond_research": {
   "seen": [
+   "https://www.richmondfed.org/publications/research/economic_brief/2026/eb_26-36",
    "https://doi.org/10.1002/jfi2.70004",
    "https://www.richmondfed.org/publications/research/economic_brief/2026/eb_26-35",
    "https://www.richmondfed.org/publications/research/econ_focus/2026/q4_opinion",
@@ -763,6 +766,7 @@
  },
  "atlantafed_data_gdpnow": {
   "seen": [
+   "text:Updated: November 04, 2026",
    "text:Updated: November 02, 2026",
    "text:Updated: October 29, 2026",
    "text:Updated: October 28, 2026",
@@ -828,7 +832,8 @@
   "seen": [
    "head:Thu, 03 Sep 2026 17:51:49 GMT"
   ],
-  "fails": 0
+  "fails": 1,
+  "last_error": "404 Client Error: Not Found for url: https://www.atlantafed.org/error"
  },
  "atlantafed_data_hoam": {
   "seen": [
@@ -846,13 +851,15 @@
   "seen": [
    "head:Tue, 26 Apr 2022 13:20:31 GMT"
   ],
-  "fails": 0
+  "fails": 1,
+  "last_error": "404 Client Error: Not Found for url: https://www.atlantafed.org/error"
  },
  "atlantafed_data_wuxia": {
   "seen": [
    "head:Sun, 04 Jun 2023 15:27:33 GMT"
   ],
-  "fails": 0
+  "fails": 1,
+  "last_error": "404 Client Error: Not Found for url: https://www.atlantafed.org/error"
  },
  "atlantafed_data_cbbs": {
   "seen": [
@@ -982,6 +989,7 @@
  },
  "chicagofed_data_nfci": {
   "seen": [
+   "sha256:313b3bd7facbda0dcde7",
    "sha256:904e3a76fde5a7910a23",
    "sha256:86e48f9d5ede868678af",
    "sha256:a3bc14a9bfd80420303d"
@@ -1112,6 +1120,7 @@
  },
  "fed_kansascity_bulletin": {
   "seen": [
+   "https://www.kansascityfed.org/research/economic-bulletin/new-rural-labor-indicators-from-the-kansas-city-fed-highlight-key-differences-in-farming-concentrated-counties/",
    "https://www.kansascityfed.org/research/economic-bulletin/a-historical-analysis-of-the-federal-income-tax/",
    "https://www.kansascityfed.org/research/economic-bulletin/financially-distressed-consumers-may-have-turned-to-high-cost-credit-to-cope-with-inflation/",
    "https://www.kansascityfed.org/research/economic-bulletin/has-the-investment-boom-expanded-us-productive-capacity/",
@@ -1887,6 +1896,7 @@
  },
  "bis_publications": {
   "seen": [
+   "https://www.bis.org/publications/scenarios-future-banking-implications-profitability-liquidity-and-solvency",
    "https://www.bis.org/publications/working-paper-1390-prewar-us-business-cycles-under-uncertainty-reconstructing-quarterly-gdp-1947",
    "https://www.bis.org/publications/202610-commentary-ibs-gli",
    "https://www.bis.org/publications/roles-central-banks-and-central-bank-money-evolving-payment-system",
@@ -1950,6 +1960,7 @@
  },
  "private_junkbondinvestor": {
   "seen": [
+   "https://www.junkbondinvestor.com/p/the-exit-is-part-of-the-underwriting",
    "https://www.junkbondinvestor.com/p/credit-weekly-the-ccc-myth",
    "https://www.junkbondinvestor.com/p/coreweave-crwv-can-it-stop-growing",
    "https://www.junkbondinvestor.com/p/credit-weekly-rated-bb-priced-like",
