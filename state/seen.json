@@ -832,7 +832,7 @@
   "seen": [
    "head:Thu, 03 Sep 2026 17:51:49 GMT"
   ],
-  "fails": 1,
+  "fails": 2,
   "last_error": "404 Client Error: Not Found for url: https://www.atlantafed.org/error"
  },
  "atlantafed_data_hoam": {
@@ -851,14 +851,14 @@
   "seen": [
    "head:Tue, 26 Apr 2022 13:20:31 GMT"
   ],
-  "fails": 1,
+  "fails": 2,
   "last_error": "404 Client Error: Not Found for url: https://www.atlantafed.org/error"
  },
  "atlantafed_data_wuxia": {
   "seen": [
    "head:Sun, 04 Jun 2023 15:27:33 GMT"
   ],
-  "fails": 1,
+  "fails": 2,
   "last_error": "404 Client Error: Not Found for url: https://www.atlantafed.org/error"
  },
  "atlantafed_data_cbbs": {
@@ -915,6 +915,7 @@
  },
  "fed_chicago_wp": {
   "seen": [
+   "535b808d-85b8-4923-b6aa-e032525a97a9",
    "01af1c65-9292-41f9-a5ec-257e8e793b81",
    "4d3a9bc6-c359-4639-9563-d7d9e7e34cdc",
    "4855cc61-53cf-4e00-9488-98a16a4d42c9",
