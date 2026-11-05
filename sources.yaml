@@ -739,7 +739,7 @@ sources:
     title: "China's GDP: Consumption and Other Components"
     page: https://www.atlantafed.org/research-and-data/data/china-gdp-consumption
     type: datawatch
-    watch: {head: ["https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/datafiles/cqer/research/china-gdp-consumption/QuarterlyChinaGDPDataset.xlsx"]}
+    watch: {head: ["https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/research-and-data/data/china-gdp-consumption/QuarterlyChinaGDPDataset.xlsx"]}
 
   - id: atlantafed_data_hoam
     name: Atlanta Fed 데이터
@@ -760,14 +760,14 @@ sources:
     title: "Labor Force Participation Dynamics"
     page: https://www.atlantafed.org/research-and-data/data/labor-force-participation-dynamics
     type: datawatch
-    watch: {head: ["https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/datafiles/chcs/labor-force-participation-dynamics/labor-force-participation-dynamics-trends-over-time-data-download.xlsx"]}
+    watch: {head: ["https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/research-and-data/data/labor-force-participation-dynamics/labor-force-participation-dynamics-trends-over-time-data-download.xlsx"]}
 
   - id: atlantafed_data_wuxia
     name: Atlanta Fed 데이터
     title: "Wu-Xia Shadow Federal Funds Rate"
     page: https://www.atlantafed.org/research-and-data/data/wu-xia-shadow-federal-funds-rate
     type: datawatch
-    watch: {head: ["https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/datafiles/cqer/research/wu-xia-shadow-federal-funds-rate/WuXiaShadowRate.xlsx"]}
+    watch: {head: ["https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/research-and-data/data/wu-xia-shadow-federal-funds-rate/WuXiaShadowRate.xlsx"]}
 
   - id: atlantafed_data_cbbs
     name: Atlanta Fed 데이터
