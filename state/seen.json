@@ -1882,6 +1882,7 @@
  },
  "kansascityfed_data_kcfsi": {
   "seen": [
+   "sha256:8edb0853a6859f199089",
    "sha256:476b45fe1b7f820bd3d4"
   ],
   "fails": 0
@@ -1895,6 +1896,7 @@
  },
  "bis_publications": {
   "seen": [
+   "https://www.bis.org/publications/consolidated-guidelines-consequential-amendments",
    "https://www.bis.org/publications/scenarios-future-banking-implications-profitability-liquidity-and-solvency",
    "https://www.bis.org/publications/working-paper-1390-prewar-us-business-cycles-under-uncertainty-reconstructing-quarterly-gdp-1947",
    "https://www.bis.org/publications/202610-commentary-ibs-gli",
