@@ -832,8 +832,7 @@
   "seen": [
    "head:Thu, 03 Sep 2026 17:51:49 GMT"
   ],
-  "fails": 3,
-  "last_error": "404 Client Error: Not Found for url: https://www.atlantafed.org/error"
+  "fails": 0
  },
  "atlantafed_data_hoam": {
   "seen": [
@@ -852,15 +851,13 @@
    "head:Wed, 04 Nov 2026 16:14:50 GMT",
    "head:Tue, 26 Apr 2022 13:20:31 GMT"
   ],
-  "fails": 3,
-  "last_error": "404 Client Error: Not Found for url: https://www.atlantafed.org/error"
+  "fails": 0
  },
  "atlantafed_data_wuxia": {
   "seen": [
    "head:Sun, 04 Jun 2023 15:27:33 GMT"
   ],
-  "fails": 3,
-  "last_error": "404 Client Error: Not Found for url: https://www.atlantafed.org/error"
+  "fails": 0
  },
  "atlantafed_data_cbbs": {
   "seen": [
