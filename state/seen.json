@@ -34,6 +34,7 @@
  },
  "fed_boston_research": {
   "seen": [
+   "92278ba1-234e-402e-9026-5c75afb686aa",
    "8a2cb756-90b1-4622-bf7d-c94dd184590d",
    "c9c32aa9-ca7b-4307-bd2e-7965e42c4459",
    "268cef53-ae04-4c07-ba70-05470e87cdf1",
@@ -167,6 +168,7 @@
  },
  "nyfed_data_gscpi": {
   "seen": [
+   "sha256:ef5109319ee888d704a5",
    "sha256:98aad77bbc4cedfe4c1c"
   ],
   "fails": 0
@@ -250,6 +252,7 @@
  },
  "fed_philadelphia_research": {
   "seen": [
+   "{F0056636-D322-4050-B628-BFA953125530}",
    "{F0889627-61A5-442F-9F65-07369DB5CD8E}",
    "{4C616701-C6A1-49F1-815E-3D6DE0E690BF}",
    "{EA62B3E1-24CD-4EF7-A861-A39876E3DDF2}",
@@ -301,6 +304,7 @@
  },
  "fed_cleveland_wp": {
   "seen": [
+   "https://www.clevelandfed.org/publications/working-paper/wp-2636-information-effect-policy-rule-ambiguity-and-decomposition-of-monetary-policy-surprises",
    "https://www.clevelandfed.org/publications/working-paper/wp-2635-minimum-wage-business-dynamism-and-the-life-cycle-of-firms",
    "https://www.clevelandfed.org/publications/working-paper/wp-2634-labor-market-tightness-and-minority-earnings-gaps",
    "https://www.clevelandfed.org/publications/working-paper/wp-2608r-a-new-model-of-trend-inflation-using-disaggregates-survey-expectations-and-uncertainty",
@@ -580,6 +584,7 @@
  },
  "richmondfed_data_sos": {
   "seen": [
+   "text:Last updated on November 5, 2026",
    "text:Last updated on October 29, 2026",
    "text:Last updated on October 22, 2026",
    "text:Last updated on October 15, 2026"
@@ -898,6 +903,7 @@
  },
  "fed_chicago_insights": {
   "seen": [
+   "917eca69-84fc-4b69-8d75-e8facc535e78",
    "989a444a-e450-48a1-8af9-1f51e260bac0",
    "632f06c3-54ec-4873-8977-fa4eeafb64c4",
    "01cf326f-6812-4444-b248-9bba2dce9268",
@@ -1103,7 +1109,8 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 0
+  "fails": 1,
+  "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
   "seen": [
@@ -1115,10 +1122,12 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 0
+  "fails": 1,
+  "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
   "seen": [
+   "https://www.kansascityfed.org/research/economic-bulletin/downstream-bottlenecks-in-the-oil-supply-chain-are-contributing-to-historically-high-refinery-margins-and-fuel-prices/",
    "https://www.kansascityfed.org/research/economic-bulletin/new-rural-labor-indicators-from-the-kansas-city-fed-highlight-key-differences-in-farming-concentrated-counties/",
    "https://www.kansascityfed.org/research/economic-bulletin/a-historical-analysis-of-the-federal-income-tax/",
    "https://www.kansascityfed.org/research/economic-bulletin/financially-distressed-consumers-may-have-turned-to-high-cost-credit-to-cope-with-inflation/",
@@ -1189,6 +1198,7 @@
  },
  "dallasfed_data_updates": {
   "seen": [
+   "https://www.dallasfed.org/research/wei|Thu, 05 Nov 2026 10:30:00 CST",
    "https://www.dallasfed.org/research/indicators/tei/2026/tei2609",
    "https://www.dallasfed.org/research/wei|Thu, 29 Oct 2026 10:30:00 CST",
    "https://www.dallasfed.org/research/indicators/hou/2026/hou2606",
