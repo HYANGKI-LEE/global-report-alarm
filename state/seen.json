@@ -288,6 +288,7 @@
  },
  "fed_cleveland_ec": {
   "seen": [
+   "https://www.clevelandfed.org/publications/economic-commentary/ec-202625-reciprocal-deposits-an-update",
    "https://www.clevelandfed.org/publications/economic-commentary/ec-202624-examining-the-beliefs-of-professional-forecasters",
    "https://www.clevelandfed.org/publications/economic-commentary/ec-202623-whos-driving-medicaids-enrollment-growth",
    "https://www.clevelandfed.org/publications/economic-commentary/ec-202622-will-us-firms-adopt-stablecoins",
@@ -1017,6 +1018,7 @@
  },
  "nyfed_data_primarydealer": {
   "seen": [
+   "text:2026-10-28",
    "text:2026-10-21",
    "text:2026-10-14",
    "text:2026-10-07"
@@ -1025,6 +1027,7 @@
  },
  "nyfed_data_soma": {
   "seen": [
+   "text:2026-11-04",
    "text:2026-10-28",
    "text:2026-10-21",
    "text:2026-10-14"
@@ -1086,6 +1089,7 @@
  },
  "fed_minneapolis_research": {
   "seen": [
+   "https://www.minneapolisfed.org/research/institute-working-papers/inequality-risk-and-business-cycles",
    "https://www.minneapolisfed.org/article/2026/sparse-vague-and-potentially-selected-assessing-wage-data-from-online-job-listings",
    "https://www.minneapolisfed.org/research/community-development-working-papers/the-early-labor-market-impacts-of-minnesotas-2023-non-compete-enforcement-ban",
    "https://www.minneapolisfed.org/research/institute-working-papers/tax-productivity-and-economic-development-a-quantitative-macroeconomic-analysis",
@@ -1109,7 +1113,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 1,
+  "fails": 2,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1122,7 +1126,7 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 1,
+  "fails": 2,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
@@ -1495,6 +1499,7 @@
  },
  "fedboard_data_h41": {
   "seen": [
+   "text:Last Update: November 05, 2026",
    "text:Last Update: October 29, 2026",
    "text:Last Update: October 22, 2026",
    "text:Last Update: October 15, 2026"
