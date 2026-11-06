@@ -209,6 +209,7 @@
  },
  "nyfed_data_yieldcurve": {
   "seen": [
+   "sha256:2fe39a1698a8c58e4918",
    "sha256:e284d69260beb69f6a50"
   ],
   "fails": 0
@@ -797,6 +798,7 @@
  },
  "atlantafed_data_lrfl": {
   "seen": [
+   "text:Updated: November 06, 2026",
    "text:Updated: October 02, 2026"
   ],
   "fails": 0
@@ -1004,6 +1006,7 @@
  },
  "chicagofed_data_carts": {
   "seen": [
+   "sha256:a83d76bc4fb1bb20ba1c",
    "sha256:0449144cf0da07f1f146"
   ],
   "fails": 0
@@ -1036,6 +1039,7 @@
  },
  "clevelandfed_data_crediteasing": {
   "seen": [
+   "sha256:4e15b9e13b585dacf1b8",
    "sha256:14987ecfa1e03c700e04",
    "sha256:663ce3aa68e1c1de0751",
    "sha256:020fd3cce537483de457"
@@ -1113,7 +1117,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 3,
+  "fails": 4,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1126,7 +1130,7 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 3,
+  "fails": 4,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
@@ -1911,6 +1915,7 @@
  },
  "bis_publications": {
   "seen": [
+   "https://www.bis.org/publications/working-paper-1392-gaining-and-losing-currency-global-database-currencies-1850-2026",
    "https://www.bis.org/publications/consolidated-guidelines-consequential-amendments",
    "https://www.bis.org/publications/scenarios-future-banking-implications-profitability-liquidity-and-solvency",
    "https://www.bis.org/publications/working-paper-1390-prewar-us-business-cycles-under-uncertainty-reconstructing-quarterly-gdp-1947",
