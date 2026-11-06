@@ -1013,6 +1013,7 @@
  },
  "nyfed_data_nowcast": {
   "seen": [
+   "sha256:f87e563b84e303a692b1",
    "sha256:d44a10b2521c14a731ba",
    "sha256:31b05b91d55715d2fd09",
    "sha256:f959f80bec2d82ef8efd"
@@ -1093,6 +1094,7 @@
  },
  "fed_minneapolis_research": {
   "seen": [
+   "https://www.minneapolisfed.org/article/2026/welfare-gains-from-technology-substantially-reduced-by-tech-driven-rise-in-market-power",
    "https://www.minneapolisfed.org/research/institute-working-papers/inequality-risk-and-business-cycles",
    "https://www.minneapolisfed.org/article/2026/sparse-vague-and-potentially-selected-assessing-wage-data-from-online-job-listings",
    "https://www.minneapolisfed.org/research/community-development-working-papers/the-early-labor-market-impacts-of-minnesotas-2023-non-compete-enforcement-ban",
@@ -1117,7 +1119,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 4,
+  "fails": 5,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1130,7 +1132,7 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 4,
+  "fails": 5,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
@@ -1206,6 +1208,7 @@
  },
  "dallasfed_data_updates": {
   "seen": [
+   "https://www.dallasfed.org/research/update/mex/2026/2607",
    "https://www.dallasfed.org/research/wei|Thu, 05 Nov 2026 10:30:00 CST",
    "https://www.dallasfed.org/research/indicators/tei/2026/tei2609",
    "https://www.dallasfed.org/research/wei|Thu, 29 Oct 2026 10:30:00 CST",
@@ -1512,6 +1515,7 @@
  },
  "fedboard_data_h8": {
   "seen": [
+   "text:Last Update: November 06, 2026",
    "text:Last Update: October 30, 2026",
    "text:Last Update: October 23, 2026",
    "text:Last Update: October 16, 2026"
@@ -1541,6 +1545,7 @@
  },
  "fedboard_data_g19": {
   "seen": [
+   "text:Last Update: November 06, 2026",
    "text:Last Update: October 07, 2026"
   ],
   "fails": 0
