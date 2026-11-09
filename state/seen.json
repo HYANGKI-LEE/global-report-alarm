@@ -162,6 +162,7 @@
  },
  "nyfed_data_sce": {
   "seen": [
+   "sha256:7dddb0eb6d17cd77070c",
    "sha256:6512ecdeea161d2d96cc"
   ],
   "fails": 0
@@ -253,6 +254,8 @@
  },
  "fed_philadelphia_research": {
   "seen": [
+   "{E9C3CB06-CA1A-47A9-8DD2-07D31C21972B}",
+   "{F9E53F33-8C61-4436-9AE4-3627DD4DB429}",
    "{F0056636-D322-4050-B628-BFA953125530}",
    "{F0889627-61A5-442F-9F65-07369DB5CD8E}",
    "{4C616701-C6A1-49F1-815E-3D6DE0E690BF}",
@@ -289,6 +292,7 @@
  },
  "fed_cleveland_ec": {
   "seen": [
+   "https://www.clevelandfed.org/publications/economic-commentary/ec-202626-job-finding-and-unemployment-in-the-age-of-ai",
    "https://www.clevelandfed.org/publications/economic-commentary/ec-202625-reciprocal-deposits-an-update",
    "https://www.clevelandfed.org/publications/economic-commentary/ec-202624-examining-the-beliefs-of-professional-forecasters",
    "https://www.clevelandfed.org/publications/economic-commentary/ec-202623-whos-driving-medicaids-enrollment-growth",
@@ -306,6 +310,7 @@
  },
  "fed_cleveland_wp": {
   "seen": [
+   "https://www.clevelandfed.org/publications/working-paper/wp-2637-a-certified-howard-algorithm-for-epstein-zin-preferences",
    "https://www.clevelandfed.org/publications/working-paper/wp-2636-information-effect-policy-rule-ambiguity-and-decomposition-of-monetary-policy-surprises",
    "https://www.clevelandfed.org/publications/working-paper/wp-2635-minimum-wage-business-dynamism-and-the-life-cycle-of-firms",
    "https://www.clevelandfed.org/publications/working-paper/wp-2634-labor-market-tightness-and-minority-earnings-gaps",
@@ -773,6 +778,7 @@
  },
  "atlantafed_data_gdpnow": {
   "seen": [
+   "text:Updated: November 09, 2026",
    "text:Updated: November 04, 2026",
    "text:Updated: November 02, 2026",
    "text:Updated: October 29, 2026",
@@ -1119,7 +1125,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 16,
+  "fails": 17,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1132,7 +1138,7 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 16,
+  "fails": 17,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
@@ -1320,6 +1326,7 @@
  },
  "dallasfed_data_surveys": {
   "seen": [
+   "https://www.dallasfed.org/research/surveys/bcs/2026/bcs2607",
    "https://www.dallasfed.org/research/pce|Thu, 29 Oct 2026 12:24:00 CST",
    "https://www.dallasfed.org/research/surveys/tssos/2026/2610",
    "https://www.dallasfed.org/research/surveys/tmos/2026/2610",
@@ -1349,6 +1356,7 @@
  },
  "fed_sanfrancisco_pubs": {
   "seen": [
+   "446293",
    "440940",
    "430278",
    "430166",
@@ -1485,6 +1493,10 @@
  },
  "fed_board_fedsnotes": {
   "seen": [
+   "https://www.federalreserve.gov/econres/notes/feds-notes/a-common-pattern-behind-diverging-fortunes-u-s-tariffs-and-exports-from-canada-and-mexico-20261109.html",
+   "https://www.federalreserve.gov/econres/notes/feds-notes/u-s-private-credit-vehicles-institutional-structure-and-aggregate-balance-sheets-20261109.html",
+   "https://www.federalreserve.gov/econres/notes/feds-notes/gold-reserve-relocations-are-they-always-bad-news-for-u-s-dollar-reserves-20261109.html",
+   "https://www.federalreserve.gov/econres/notes/feds-notes/the-effect-of-oil-prices-on-core-inflation-recent-evidence-from-the-advanced-economies-20261109.html",
    "https://www.federalreserve.gov/econres/notes/feds-notes/treasury-issuance-and-dealer-balance-sheets-20261030.html",
    "https://www.federalreserve.gov/econres/notes/feds-notes/government-bonds-safe-haven-property-and-inflationary-pressures-20261016.html",
    "https://www.federalreserve.gov/econres/notes/feds-notes/ripples-in-the-reserve-pool-unveiling-liquidity-signals-from-the-federal-funds-market-20261016.html",
@@ -1920,6 +1932,8 @@
  },
  "bis_publications": {
   "seen": [
+   "https://www.bis.org/publications/interest-rate-risk-banking-book---additional-pillar-2-guidance",
+   "https://www.bis.org/publications/statement-account-31-october-2026",
    "https://www.bis.org/publications/working-paper-1392-gaining-and-losing-currency-global-database-currencies-1850-2026",
    "https://www.bis.org/publications/consolidated-guidelines-consequential-amendments",
    "https://www.bis.org/publications/scenarios-future-banking-implications-profitability-liquidity-and-solvency",
