@@ -1125,7 +1125,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 17,
+  "fails": 18,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1138,7 +1138,7 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 17,
+  "fails": 18,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
@@ -1157,6 +1157,7 @@
  },
  "fed_dallas_pubs": {
   "seen": [
+   "https://www.dallasfed.org/research/papers/2026/wp2638",
    "https://www.dallasfed.org/research/papers/2026/wp2637",
    "https://www.dallasfed.org/research/papers/2026/wp2636",
    "https://www.dallasfed.org/research/economics/2026/1016",
@@ -1409,6 +1410,7 @@
  },
  "sanfranciscofed_data": {
   "seen": [
+   "62816|2026-11-09T12:59:58",
    "64475|2026-10-20T10:30:38",
    "62790|2026-10-14T12:30:56",
    "358970|2026-10-13T15:08:57",
@@ -1536,6 +1538,7 @@
  },
  "fedboard_data_h10": {
   "seen": [
+   "text:Last Update: November 09, 2026",
    "text:Last Update: November 02, 2026",
    "text:Last Update: October 26, 2026",
    "text:Last Update: October 19, 2026"
@@ -1797,7 +1800,8 @@
    "https://www.kansascityfed.org/agriculture/ag-credit-survey/early-signs-of-financial-pressure/",
    "https://www.kansascityfed.org/agriculture/ag-credit-survey/thinner-crop-profits-and-tighter-credit-conditions/"
   ],
-  "fails": 0
+  "fails": 1,
+  "last_error": "일치하는 링크 0건 (페이지 구조 변경?)"
  },
  "kansascityfed_data_agfinance": {
   "seen": [
