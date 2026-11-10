@@ -1125,7 +1125,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 18,
+  "fails": 19,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1138,7 +1138,7 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 18,
+  "fails": 19,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
@@ -1800,8 +1800,7 @@
    "https://www.kansascityfed.org/agriculture/ag-credit-survey/early-signs-of-financial-pressure/",
    "https://www.kansascityfed.org/agriculture/ag-credit-survey/thinner-crop-profits-and-tighter-credit-conditions/"
   ],
-  "fails": 1,
-  "last_error": "일치하는 링크 0건 (페이지 구조 변경?)"
+  "fails": 0
  },
  "kansascityfed_data_agfinance": {
   "seen": [
