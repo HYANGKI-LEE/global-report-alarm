@@ -333,6 +333,7 @@
  },
  "clevelandfed_data_median_cpi": {
   "seen": [
+   "text:Last updated November 10, 2026",
    "text:Last updated October 14, 2026"
   ],
   "fails": 0
@@ -346,6 +347,7 @@
  },
  "clevelandfed_data_inflexp": {
   "seen": [
+   "text:Last updated November 10, 2026",
    "text:Last updated October 14, 2026"
   ],
   "fails": 0
@@ -622,6 +624,7 @@
  },
  "richmondfed_data_pci": {
   "seen": [
+   "sha256:01781a4ac332736bfa00",
    "sha256:9adf1f2e136ce897f495"
   ],
   "fails": 0
@@ -794,6 +797,7 @@
  },
  "atlantafed_data_taylor": {
   "seen": [
+   "text:Updated: November 10, 2026",
    "text:Updated: October 29, 2026",
    "text:Updated: October 14, 2026"
   ],
@@ -814,6 +818,7 @@
  },
  "atlantafed_data_uid": {
   "seen": [
+   "text:Updated: November 10, 2026",
    "text:Updated: October 29, 2026",
    "text:Updated: October 14, 2026"
   ],
@@ -901,6 +906,7 @@
  },
  "fed_chicago_letter": {
   "seen": [
+   "b525fe47-8755-4c97-9db4-dff60652c758",
    "487a9753-d60e-4500-8795-88a764264ac4",
    "2dd44d9f-0bbf-47e7-b901-e1071c7d5d79",
    "896ed25e-41f1-47bb-b52f-c00aa895bfc0",
@@ -1104,6 +1110,7 @@
  },
  "fed_minneapolis_research": {
   "seen": [
+   "https://www.minneapolisfed.org/article/2026/welfare-gains-from-top-firms-productivity-substantially-reduced-by-their-increased-market-power",
    "https://www.minneapolisfed.org/article/2026/welfare-gains-from-technology-substantially-reduced-by-tech-driven-rise-in-market-power",
    "https://www.minneapolisfed.org/research/institute-working-papers/inequality-risk-and-business-cycles",
    "https://www.minneapolisfed.org/article/2026/sparse-vague-and-potentially-selected-assessing-wage-data-from-online-job-listings",
@@ -1129,7 +1136,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 20,
+  "fails": 21,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1142,11 +1149,12 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 20,
+  "fails": 21,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
   "seen": [
+   "https://www.kansascityfed.org/research/economic-bulletin/new-trimmed-import-and-export-growth-rates-offer-a-better-perspective-on-underlying-trends/",
    "https://www.kansascityfed.org/research/economic-bulletin/downstream-bottlenecks-in-the-oil-supply-chain-are-contributing-to-historically-high-refinery-margins-and-fuel-prices/",
    "https://www.kansascityfed.org/research/economic-bulletin/new-rural-labor-indicators-from-the-kansas-city-fed-highlight-key-differences-in-farming-concentrated-counties/",
    "https://www.kansascityfed.org/research/economic-bulletin/a-historical-analysis-of-the-federal-income-tax/",
@@ -1797,6 +1805,7 @@
  },
  "kansascityfed_data_agcredit": {
   "seen": [
+   "https://www.kansascityfed.org/agriculture/ag-credit-survey/signs-of-easing-pressure-on-farm-finances/",
    "https://www.kansascityfed.org/agriculture/ag-credit-survey/steady-tightening-of-agricultural-credit-conditions-persists/",
    "https://www.kansascityfed.org/agriculture/ag-credit-survey/sharp-growth-in-tenth-district-ranchland-values/",
    "https://www.kansascityfed.org/agriculture/ag-credit-survey/farmland-values-remain-firm-despite-deterioration-in-farm-finances/",
