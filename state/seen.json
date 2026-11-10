@@ -156,6 +156,7 @@
  },
  "nyfed_data_hhdc": {
   "seen": [
+   "text:third quarter of 2026",
    "text:second quarter of 2026"
   ],
   "fails": 0
@@ -376,6 +377,7 @@
  },
  "fed_richmond_research": {
   "seen": [
+   "https://www.richmondfed.org/publications/research/econ_focus/2026/q4_feature1",
    "https://www.richmondfed.org/publications/research/economic_brief/2026/eb_26-36",
    "https://doi.org/10.1002/jfi2.70004",
    "https://www.richmondfed.org/publications/research/economic_brief/2026/eb_26-35",
@@ -485,6 +487,7 @@
  },
  "fed_richmond_national_economy": {
   "seen": [
+   "https://www.richmondfed.org/research/national_economy/macro_minute/2026/cap_gown_waiting_around_recent_college_grads_job-hunting_longer",
    "https://www.richmondfed.org/research/national_economy/macro_minute/2026/home_sales_outlook_falls_still-high_prices_could_support_spending",
    "https://www.richmondfed.org/research/national_economy/macro_minute/2026/made_in_taiwan_measured_in_america_why_ai_boom_isnt_showing_us_fab_utilization",
    "https://www.richmondfed.org/research/national_economy/macro_minute/2026/sep_by_sep_how_fed_walks_inflation_back_to_2_percent",
@@ -818,6 +821,7 @@
  },
  "atlantafed_data_sticky": {
   "seen": [
+   "text:Updated: November 10, 2026",
    "text:Updated: October 14, 2026"
   ],
   "fails": 0
@@ -1125,7 +1129,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 19,
+  "fails": 20,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1138,7 +1142,7 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 19,
+  "fails": 20,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
@@ -1157,6 +1161,7 @@
  },
  "fed_dallas_pubs": {
   "seen": [
+   "https://www.dallasfed.org/research/economics/2026/1110",
    "https://www.dallasfed.org/research/papers/2026/wp2638",
    "https://www.dallasfed.org/research/papers/2026/wp2637",
    "https://www.dallasfed.org/research/papers/2026/wp2636",
@@ -1472,6 +1477,9 @@
  },
  "fed_board_wp": {
   "seen": [
+   "https://www.federalreserve.gov/econres/ifdp/who-built-the-service-economy.htm",
+   "https://www.federalreserve.gov/econres/ifdp/trade-deflection-the-spillover-effects-of-us-tariffs-on-import-prices-in-bystander-countries.htm",
+   "https://www.federalreserve.gov/econres/feds/costly-misdemeanours-labour-market-effects-of-low-level-drink-driving-violations.htm",
    "https://www.federalreserve.gov/econres/feds/heterogeneity-in-service-fee-sensitivity-evidence-from-atm-surcharges.htm",
    "https://www.federalreserve.gov/econres/feds/measuring-consumption-with-credit-card-data-benchmarking-and-beyond.htm",
    "https://www.federalreserve.gov/econres/ifdp/when-and-for-whom-does-the-sovereign-bank-nexus-matter-evidence-from-post-crisis-europe.htm",
@@ -1903,6 +1911,7 @@
  },
  "kansascityfed_data_lmci": {
   "seen": [
+   "https://www.kansascityfed.org/documents/20456/lmcicharts-111026.xlsx",
    "https://www.kansascityfed.org/documents/19597/lmcicharts-100626.xlsx"
   ],
   "fails": 0
@@ -1935,6 +1944,7 @@
  },
  "bis_publications": {
   "seen": [
+   "https://www.bis.org/publications/working-paper-1393-us-monetary-policy-macroeconomic-news-and-global-secular-decline-interest-rates",
    "https://www.bis.org/publications/interest-rate-risk-banking-book---additional-pillar-2-guidance",
    "https://www.bis.org/publications/statement-account-31-october-2026",
    "https://www.bis.org/publications/working-paper-1392-gaining-and-losing-currency-global-database-currencies-1850-2026",
