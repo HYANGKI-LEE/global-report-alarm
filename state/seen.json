@@ -255,6 +255,7 @@
  },
  "fed_philadelphia_research": {
   "seen": [
+   "{D1DCBE3E-431F-41AD-A2A0-647DA39EF97A}",
    "{4AEA1056-FC7C-4B17-B507-5B942A21B409}",
    "{E9C3CB06-CA1A-47A9-8DD2-07D31C21972B}",
    "{F9E53F33-8C61-4436-9AE4-3627DD4DB429}",
@@ -380,6 +381,7 @@
  },
  "fed_richmond_research": {
   "seen": [
+   "https://www.richmondfed.org/publications/research/economic_brief/2026/eb_26-37",
    "https://www.richmondfed.org/publications/research/econ_focus/2026/q4_feature1",
    "https://www.richmondfed.org/publications/research/economic_brief/2026/eb_26-36",
    "https://doi.org/10.1002/jfi2.70004",
@@ -1014,6 +1016,7 @@
  },
  "chicagofed_data_nfci": {
   "seen": [
+   "sha256:f140c4f2300f0dc7eda8",
    "sha256:313b3bd7facbda0dcde7",
    "sha256:904e3a76fde5a7910a23",
    "sha256:86e48f9d5ede868678af",
@@ -1137,7 +1140,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 26,
+  "fails": 27,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1150,7 +1153,7 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 26,
+  "fails": 27,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
@@ -1486,6 +1489,7 @@
  },
  "fed_board_wp": {
   "seen": [
+   "https://www.federalreserve.gov/econres/feds/artificial-intelligence-and-the-us-economy-current-evidence.htm",
    "https://www.federalreserve.gov/econres/ifdp/who-built-the-service-economy.htm",
    "https://www.federalreserve.gov/econres/ifdp/trade-deflection-the-spillover-effects-of-us-tariffs-on-import-prices-in-bystander-countries.htm",
    "https://www.federalreserve.gov/econres/feds/costly-misdemeanours-labour-market-effects-of-low-level-drink-driving-violations.htm",
@@ -1954,6 +1958,8 @@
  },
  "bis_publications": {
   "seen": [
+   "https://www.bis.org/publications/paper-177-gig-economy-and-digital-payments",
+   "https://www.bis.org/publications/working-paper-1395-marcobis-ai-agentic-econometric-analysis-central-bankers",
    "https://www.bis.org/publications/working-paper-1394-ready-to-run-global-liquidity-stress-tests-banks-and-banking-systems",
    "https://www.bis.org/publications/working-paper-1393-us-monetary-policy-macroeconomic-news-and-global-secular-decline-interest-rates",
    "https://www.bis.org/publications/interest-rate-risk-banking-book---additional-pillar-2-guidance",
