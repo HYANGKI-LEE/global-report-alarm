@@ -1137,7 +1137,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 24,
+  "fails": 25,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1150,7 +1150,7 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 24,
+  "fails": 25,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
@@ -2024,6 +2024,7 @@
  },
  "private_junkbondinvestor": {
   "seen": [
+   "https://www.junkbondinvestor.com/p/coreweave-crwv-what-do-you-have-to",
    "https://www.junkbondinvestor.com/p/credit-weekly-who-funds-the-delay",
    "https://www.junkbondinvestor.com/p/the-exit-is-part-of-the-underwriting",
    "https://www.junkbondinvestor.com/p/credit-weekly-the-ccc-myth",
