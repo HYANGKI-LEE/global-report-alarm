@@ -90,6 +90,7 @@
  },
  "fed_newyork_research": {
   "seen": [
+   "https://www.newyorkfed.org/research/staff_reports/sr1212",
    "https://www.newyorkfed.org/research/staff_reports/sr1211",
    "https://www.newyorkfed.org/research/staff_reports/sr1209",
    "https://www.newyorkfed.org/research/staff_reports/sr1208",
@@ -871,6 +872,7 @@
  },
  "atlantafed_data_cremi": {
   "seen": [
+   "head:Thu, 12 Nov 2026 19:59:48 GMT",
    "head:Wed, 26 Aug 2026 16:43:12 GMT"
   ],
   "fails": 0
@@ -944,6 +946,7 @@
  },
  "fed_chicago_wp": {
   "seen": [
+   "dea888ac-9b87-411e-b876-80c818c19da3",
    "535b808d-85b8-4923-b6aa-e032525a97a9",
    "01af1c65-9292-41f9-a5ec-257e8e793b81",
    "4d3a9bc6-c359-4639-9563-d7d9e7e34cdc",
@@ -1037,6 +1040,7 @@
  },
  "nyfed_data_nowcast": {
   "seen": [
+   "sha256:17fe66309dcba38ebc41",
    "sha256:f87e563b84e303a692b1",
    "sha256:d44a10b2521c14a731ba",
    "sha256:31b05b91d55715d2fd09",
@@ -1066,6 +1070,7 @@
  },
  "clevelandfed_data_crediteasing": {
   "seen": [
+   "sha256:3ef85371a6096bcc0526",
    "sha256:4e15b9e13b585dacf1b8",
    "sha256:14987ecfa1e03c700e04",
    "sha256:663ce3aa68e1c1de0751",
@@ -1146,7 +1151,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 30,
+  "fails": 31,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1159,7 +1164,7 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 30,
+  "fails": 31,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
@@ -1434,6 +1439,7 @@
  },
  "sanfranciscofed_data": {
   "seen": [
+   "451681|2026-11-13T15:12:40",
    "62816|2026-11-09T12:59:58",
    "64475|2026-10-20T10:30:38",
    "62790|2026-10-14T12:30:56",
@@ -1558,6 +1564,7 @@
  },
  "fedboard_data_h8": {
   "seen": [
+   "text:Last Update: November 13, 2026",
    "text:Last Update: November 06, 2026",
    "text:Last Update: October 30, 2026",
    "text:Last Update: October 23, 2026",
@@ -1702,6 +1709,7 @@
  },
  "fed_kansascity_nebraska": {
   "seen": [
+   "https://www.kansascityfed.org/omaha/nebraska-economist/6-regions-6-economies/",
    "https://www.kansascityfed.org/omaha/nebraska-economist/despite-price-pressures-nebraska-households-have-maintained-a-savings-buffer/",
    "https://www.kansascityfed.org/omaha/nebraska-economist/nebraskas-job-market-steady-but-uneven-and-facing-uncertainty/",
    "https://www.kansascityfed.org/omaha/nebraska-economist/nebraska-health-care-under-pressure-increasing-costs-consolidation-and-growing-demand/",
@@ -1831,7 +1839,8 @@
    "https://www.kansascityfed.org/agriculture/ag-credit-survey/early-signs-of-financial-pressure/",
    "https://www.kansascityfed.org/agriculture/ag-credit-survey/thinner-crop-profits-and-tighter-credit-conditions/"
   ],
-  "fails": 0
+  "fails": 1,
+  "last_error": "일치하는 링크 0건 (페이지 구조 변경?)"
  },
  "kansascityfed_data_agfinance": {
   "seen": [
@@ -1967,6 +1976,7 @@
  },
  "bis_publications": {
   "seen": [
+   "https://www.bis.org/publications/working-paper-1396-eppur-si-muove-convergence-within-and-between-countries",
    "https://www.bis.org/publications/paper-177-gig-economy-and-digital-payments",
    "https://www.bis.org/publications/working-paper-1395-marcobis-ai-agentic-econometric-analysis-central-bankers",
    "https://www.bis.org/publications/working-paper-1394-ready-to-run-global-liquidity-stress-tests-banks-and-banking-systems",
