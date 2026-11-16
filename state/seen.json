@@ -111,6 +111,7 @@
  },
  "nyfed_data_empire": {
   "seen": [
+   "sha256:6645192c2772e0b3274b",
    "sha256:33c525e5bd0a5179fa8c"
   ],
   "fails": 0
@@ -150,6 +151,7 @@
  },
  "nyfed_data_homeprice": {
   "seen": [
+   "sha256:552e516a1a78737d2c31",
    "sha256:374275ede1ff89ed43ec",
    "sha256:0053288218c0d3c6bc7c"
   ],
@@ -296,6 +298,7 @@
  },
  "fed_cleveland_ec": {
   "seen": [
+   "https://www.clevelandfed.org/publications/economic-commentary/ec-202627-school-quality-and-housing-affordability-in-the-best-performing-school-districts",
    "https://www.clevelandfed.org/publications/economic-commentary/ec-202626-job-finding-and-unemployment-in-the-age-of-ai",
    "https://www.clevelandfed.org/publications/economic-commentary/ec-202625-reciprocal-deposits-an-update",
    "https://www.clevelandfed.org/publications/economic-commentary/ec-202624-examining-the-beliefs-of-professional-forecasters",
@@ -357,6 +360,7 @@
  },
  "clevelandfed_data_sofie": {
   "seen": [
+   "text:Last updated November 16, 2026",
    "text:Last updated August 10, 2026"
   ],
   "fails": 0
@@ -1033,6 +1037,7 @@
  },
  "chicagofed_data_carts": {
   "seen": [
+   "sha256:36785d9235820ec3f677",
    "sha256:a83d76bc4fb1bb20ba1c",
    "sha256:0449144cf0da07f1f146"
   ],
@@ -1151,7 +1156,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 41,
+  "fails": 42,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1164,7 +1169,7 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 41,
+  "fails": 42,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
@@ -1386,6 +1391,7 @@
  },
  "fed_sanfrancisco_pubs": {
   "seen": [
+   "451598",
    "446293",
    "440940",
    "430278",
@@ -1603,6 +1609,7 @@
  },
  "fedboard_data_g20": {
   "seen": [
+   "text:Last Update: November 16, 2026",
    "text:Last Update: October 30, 2026",
    "text:Last Update: September 24, 2026"
   ],
