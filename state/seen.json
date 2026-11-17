@@ -118,6 +118,7 @@
  },
  "nyfed_data_bls": {
   "seen": [
+   "sha256:7407449437a0be05e1bc",
    "sha256:af5416fc3ecdcffad04b"
   ],
   "fails": 0
@@ -498,6 +499,7 @@
  },
  "fed_richmond_national_economy": {
   "seen": [
+   "https://www.richmondfed.org/research/national_economy/macro_minute/2026/wages_are_cooling_while_supercore_inflation_isnt",
    "https://www.richmondfed.org/research/national_economy/macro_minute/2026/cap_gown_waiting_around_recent_college_grads_job-hunting_longer",
    "https://www.richmondfed.org/research/national_economy/macro_minute/2026/home_sales_outlook_falls_still-high_prices_could_support_spending",
    "https://www.richmondfed.org/research/national_economy/macro_minute/2026/made_in_taiwan_measured_in_america_why_ai_boom_isnt_showing_us_fab_utilization",
@@ -795,6 +797,7 @@
  },
  "atlantafed_data_gdpnow": {
   "seen": [
+   "text:Updated: November 17, 2026",
    "text:Updated: November 09, 2026",
    "text:Updated: November 04, 2026",
    "text:Updated: November 02, 2026",
@@ -1156,7 +1159,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 44,
+  "fails": 45,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1169,7 +1172,7 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 44,
+  "fails": 45,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
@@ -1447,6 +1450,7 @@
  },
  "sanfranciscofed_data": {
   "seen": [
+   "451681|2026-11-17T10:57:22",
    "451681|2026-11-16T15:29:26",
    "451681|2026-11-13T15:12:40",
    "62816|2026-11-09T12:59:58",
@@ -1600,6 +1604,7 @@
  },
  "fedboard_data_g17": {
   "seen": [
+   "text:Last Update: November 17, 2026",
    "text:Last Update: October 16, 2026"
   ],
   "fails": 0
@@ -1987,6 +1992,7 @@
  },
  "bis_publications": {
   "seen": [
+   "https://www.bis.org/publications/working-paper-1397-immigrants-skills-and-capital-deepening-evidence-chile",
    "https://www.bis.org/publications/working-paper-1396-eppur-si-muove-convergence-within-and-between-countries",
    "https://www.bis.org/publications/paper-177-gig-economy-and-digital-payments",
    "https://www.bis.org/publications/working-paper-1395-marcobis-ai-agentic-econometric-analysis-central-bankers",
