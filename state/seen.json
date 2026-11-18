@@ -208,6 +208,7 @@
  },
  "nyfed_data_oar": {
   "seen": [
+   "sha256:8070eecd66d347bf6e53",
    "sha256:ba3e3dcccfd8cf03f00c",
    "sha256:6e903c545e360d3ec9aa"
   ],
@@ -259,6 +260,8 @@
  },
  "fed_philadelphia_research": {
   "seen": [
+   "{1A51D35B-7D76-42D0-A14D-831A93995139}",
+   "{CAAE8ABE-CC5B-4DF8-9E5D-D4E0B58B4A4F}",
    "{D1DCBE3E-431F-41AD-A2A0-647DA39EF97A}",
    "{4AEA1056-FC7C-4B17-B507-5B942A21B409}",
    "{E9C3CB06-CA1A-47A9-8DD2-07D31C21972B}",
@@ -388,6 +391,7 @@
  },
  "fed_richmond_research": {
   "seen": [
+   "https://www.richmondfed.org/publications/research/economic_brief/2026/eb_26-38",
    "https://www.richmondfed.org/publications/research/economic_brief/2026/eb_26-37",
    "https://www.richmondfed.org/publications/research/econ_focus/2026/q4_feature1",
    "https://www.richmondfed.org/publications/research/economic_brief/2026/eb_26-36",
@@ -798,6 +802,7 @@
  },
  "atlantafed_data_gdpnow": {
   "seen": [
+   "text:Updated: November 18, 2026",
    "text:Updated: November 17, 2026",
    "text:Updated: November 09, 2026",
    "text:Updated: November 04, 2026",
@@ -854,6 +859,7 @@
  },
  "atlantafed_data_bie": {
   "seen": [
+   "text:Updated: November 18, 2026",
    "text:Updated: October 21, 2026",
    "text:Updated: September 23, 2026"
   ],
@@ -922,6 +928,7 @@
  },
  "fed_chicago_letter": {
   "seen": [
+   "600ca943-491e-4ac6-a1c5-dbb05dee3792",
    "b525fe47-8755-4c97-9db4-dff60652c758",
    "487a9753-d60e-4500-8795-88a764264ac4",
    "2dd44d9f-0bbf-47e7-b901-e1071c7d5d79",
@@ -1031,6 +1038,7 @@
  },
  "chicagofed_data_nfci": {
   "seen": [
+   "sha256:1e38123d2f26294f26d9",
    "sha256:f140c4f2300f0dc7eda8",
    "sha256:313b3bd7facbda0dcde7",
    "sha256:904e3a76fde5a7910a23",
@@ -1160,7 +1168,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 47,
+  "fails": 48,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1173,7 +1181,7 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 47,
+  "fails": 48,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
