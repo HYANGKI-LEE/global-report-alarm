@@ -34,6 +34,7 @@
  },
  "fed_boston_research": {
   "seen": [
+   "028bc363-f739-4e08-a037-22e7dbc680ee",
    "92278ba1-234e-402e-9026-5c75afb686aa",
    "8a2cb756-90b1-4622-bf7d-c94dd184590d",
    "c9c32aa9-ca7b-4307-bd2e-7965e42c4459",
@@ -90,6 +91,7 @@
  },
  "fed_newyork_research": {
   "seen": [
+   "https://www.newyorkfed.org/research/staff_reports/sr1213",
    "https://www.newyorkfed.org/research/staff_reports/sr1212",
    "https://www.newyorkfed.org/research/staff_reports/sr1211",
    "https://www.newyorkfed.org/research/staff_reports/sr1209",
@@ -242,6 +244,7 @@
  },
  "nyfed_data_rde": {
   "seen": [
+   "sha256:829219525508adea8ca0",
    "sha256:64e8e5b9bd47205f21a0"
   ],
   "fails": 0
@@ -611,6 +614,7 @@
  },
  "richmondfed_data_sos": {
   "seen": [
+   "text:Last updated on November 19, 2026",
    "text:Last updated on November 12, 2026",
    "text:Last updated on November 5, 2026",
    "text:Last updated on October 29, 2026",
@@ -627,6 +631,7 @@
  },
  "richmondfed_data_nei": {
   "seen": [
+   "text:Last updated on November 19, 2026",
    "text:Last updated on October 8, 2026"
   ],
   "fails": 0
@@ -928,6 +933,7 @@
  },
  "fed_chicago_letter": {
   "seen": [
+   "add23c9c-6ebd-4db4-aafc-65d022a07f12",
    "600ca943-491e-4ac6-a1c5-dbb05dee3792",
    "b525fe47-8755-4c97-9db4-dff60652c758",
    "487a9753-d60e-4500-8795-88a764264ac4",
@@ -1168,7 +1174,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 50,
+  "fails": 51,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1181,7 +1187,7 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 50,
+  "fails": 51,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
@@ -1202,6 +1208,7 @@
  },
  "fed_dallas_pubs": {
   "seen": [
+   "https://www.dallasfed.org/research/economics/2026/1119",
    "https://www.dallasfed.org/research/papers/2026/wp2640",
    "https://www.dallasfed.org/research/papers/2026/wp2639",
    "https://www.dallasfed.org/research/economics/2026/1110",
@@ -1911,6 +1918,7 @@
  },
  "kansascityfed_data_mfg": {
   "seen": [
+   "https://www.kansascityfed.org/surveys/manufacturing-survey/tenth-district-manufacturing-growth-accelerated-in-november-2026/",
    "https://www.kansascityfed.org/surveys/manufacturing-survey/tenth-district-manufacturing-activity-increased-steadily-in-october-2026/",
    "https://www.kansascityfed.org/surveys/manufacturing-survey/tenth-district-manufacturing-activity-continued-to-increase-in-september-2026/",
    "https://www.kansascityfed.org/surveys/manufacturing-survey/manufacturing-survey-release-dates/",
