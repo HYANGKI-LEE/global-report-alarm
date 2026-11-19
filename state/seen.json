@@ -263,6 +263,7 @@
  },
  "fed_philadelphia_research": {
   "seen": [
+   "{BC68B320-2D65-41B6-96FD-34258ACD265E}",
    "{1A51D35B-7D76-42D0-A14D-831A93995139}",
    "{CAAE8ABE-CC5B-4DF8-9E5D-D4E0B58B4A4F}",
    "{D1DCBE3E-431F-41AD-A2A0-647DA39EF97A}",
@@ -1073,6 +1074,7 @@
  },
  "nyfed_data_primarydealer": {
   "seen": [
+   "text:2026-11-11",
    "text:2026-11-04",
    "text:2026-10-28",
    "text:2026-10-21",
@@ -1083,6 +1085,7 @@
  },
  "nyfed_data_soma": {
   "seen": [
+   "text:2026-11-18",
    "text:2026-11-10",
    "text:2026-11-04",
    "text:2026-10-28",
@@ -1174,7 +1177,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 51,
+  "fails": 52,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1187,7 +1190,7 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 51,
+  "fails": 52,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
@@ -1270,6 +1273,7 @@
  },
  "dallasfed_data_updates": {
   "seen": [
+   "https://www.dallasfed.org/research/wei|Thu, 19 Nov 2026 10:30:00 CST",
    "https://www.dallasfed.org/research/wei|Thu, 12 Nov 2026 10:30:00 CST",
    "https://www.dallasfed.org/research/update/mex/2026/2607",
    "https://www.dallasfed.org/research/wei|Thu, 05 Nov 2026 10:30:00 CST",
@@ -1470,6 +1474,7 @@
  },
  "sanfranciscofed_data": {
   "seen": [
+   "451681|2026-11-19T15:43:53",
    "451681|2026-11-17T10:57:22",
    "451681|2026-11-16T15:29:26",
    "451681|2026-11-13T15:12:40",
@@ -1587,6 +1592,7 @@
  },
  "fedboard_data_h41": {
   "seen": [
+   "text:Last Update: November 19, 2026",
    "text:Last Update: November 12, 2026",
    "text:Last Update: November 05, 2026",
    "text:Last Update: October 29, 2026",
@@ -2087,6 +2093,7 @@
  },
  "private_junkbondinvestor": {
   "seen": [
+   "https://www.junkbondinvestor.com/p/is-cipher-digital-cifr-actually-cheap",
    "https://www.junkbondinvestor.com/p/credit-weekly-4-things-credit-investors",
    "https://www.junkbondinvestor.com/p/coreweave-crwv-what-do-you-have-to",
    "https://www.junkbondinvestor.com/p/credit-weekly-who-funds-the-delay",
