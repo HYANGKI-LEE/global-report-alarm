@@ -1096,6 +1096,7 @@
  },
  "clevelandfed_data_crediteasing": {
   "seen": [
+   "sha256:e9b69f8c9e58b09882f5",
    "sha256:3ef85371a6096bcc0526",
    "sha256:4e15b9e13b585dacf1b8",
    "sha256:14987ecfa1e03c700e04",
@@ -1177,7 +1178,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 53,
+  "fails": 54,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1190,7 +1191,7 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 53,
+  "fails": 54,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
@@ -1684,6 +1685,7 @@
  },
  "fedboard_data_sfos": {
   "seen": [
+   "text:Last Update: November 20, 2026",
    "text:Last Update: May 14, 2026"
   ],
   "fails": 0
