@@ -382,6 +382,7 @@
  },
  "clevelandfed_data_policyrules": {
   "seen": [
+   "text:Last updated November 20, 2026",
    "text:Last updated September 4, 2026"
   ],
   "fails": 0
@@ -1064,6 +1065,7 @@
  },
  "nyfed_data_nowcast": {
   "seen": [
+   "sha256:430a5e16bffd2ed3f3e9",
    "sha256:17fe66309dcba38ebc41",
    "sha256:f87e563b84e303a692b1",
    "sha256:d44a10b2521c14a731ba",
@@ -1178,7 +1180,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 54,
+  "fails": 55,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1191,7 +1193,7 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 54,
+  "fails": 55,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
@@ -1212,6 +1214,7 @@
  },
  "fed_dallas_pubs": {
   "seen": [
+   "https://www.dallasfed.org/research/swe/2026/swe2621",
    "https://www.dallasfed.org/research/economics/2026/1119",
    "https://www.dallasfed.org/research/papers/2026/wp2640",
    "https://www.dallasfed.org/research/papers/2026/wp2639",
@@ -1274,6 +1277,8 @@
  },
  "dallasfed_data_updates": {
   "seen": [
+   "https://www.dallasfed.org/research/forecast/2026/emp261120",
+   "https://www.dallasfed.org/research/energy/indicators/2026/en2604",
    "https://www.dallasfed.org/research/wei|Thu, 19 Nov 2026 10:30:00 CST",
    "https://www.dallasfed.org/research/wei|Thu, 12 Nov 2026 10:30:00 CST",
    "https://www.dallasfed.org/research/update/mex/2026/2607",
@@ -1475,6 +1480,7 @@
  },
  "sanfranciscofed_data": {
   "seen": [
+   "451681|2026-11-20T11:26:57",
    "451681|2026-11-19T15:43:53",
    "451681|2026-11-17T10:57:22",
    "451681|2026-11-16T15:29:26",
@@ -1568,6 +1574,9 @@
  },
  "fed_board_fedsnotes": {
   "seen": [
+   "https://www.federalreserve.gov/econres/notes/feds-notes/when-productivity-booms-do-interest-rates-rise-20261120.html",
+   "https://www.federalreserve.gov/econres/notes/feds-notes/europes-natural-gas-outlook-for-the-upcoming-winter-2026-2027-20261120.html",
+   "https://www.federalreserve.gov/econres/notes/feds-notes/increasing-international-interdependence-global-supply-chains-and-cross-border-macroeconomic-spillovers-20261120.html",
    "https://www.federalreserve.gov/econres/notes/feds-notes/a-common-pattern-behind-diverging-fortunes-u-s-tariffs-and-exports-from-canada-and-mexico-20261109.html",
    "https://www.federalreserve.gov/econres/notes/feds-notes/u-s-private-credit-vehicles-institutional-structure-and-aggregate-balance-sheets-20261109.html",
    "https://www.federalreserve.gov/econres/notes/feds-notes/gold-reserve-relocations-are-they-always-bad-news-for-u-s-dollar-reserves-20261109.html",
@@ -1604,6 +1613,7 @@
  },
  "fedboard_data_h8": {
   "seen": [
+   "text:Last Update: November 20, 2026",
    "text:Last Update: November 13, 2026",
    "text:Last Update: November 06, 2026",
    "text:Last Update: October 30, 2026",
@@ -1937,6 +1947,7 @@
  },
  "kansascityfed_data_services": {
   "seen": [
+   "https://www.kansascityfed.org/surveys/services-survey/growth-in-tenth-district-services-activity-cooled-in-november-2026/",
    "https://www.kansascityfed.org/surveys/services-survey/growth-in-tenth-district-services-activity-rose-moderately-in-october-2026/",
    "https://www.kansascityfed.org/surveys/services-survey/growth-in-tenth-district-services-activity-was-flat-in-september/",
    "https://www.kansascityfed.org/surveys/services-survey/tenth-district-services-activity-fell-in-august-2026/",
