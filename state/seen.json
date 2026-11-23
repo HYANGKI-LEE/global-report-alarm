@@ -34,6 +34,7 @@
  },
  "fed_boston_research": {
   "seen": [
+   "83298fbd-78f9-4e57-9d9f-2041a4b31e39",
    "028bc363-f739-4e08-a037-22e7dbc680ee",
    "92278ba1-234e-402e-9026-5c75afb686aa",
    "8a2cb756-90b1-4622-bf7d-c94dd184590d",
@@ -306,6 +307,7 @@
  },
  "fed_cleveland_ec": {
   "seen": [
+   "https://www.clevelandfed.org/publications/economic-commentary/ec-202628-where-did-the-ohio-public-school-students-go",
    "https://www.clevelandfed.org/publications/economic-commentary/ec-202627-school-quality-and-housing-affordability-in-the-best-performing-school-districts",
    "https://www.clevelandfed.org/publications/economic-commentary/ec-202626-job-finding-and-unemployment-in-the-age-of-ai",
    "https://www.clevelandfed.org/publications/economic-commentary/ec-202625-reciprocal-deposits-an-update",
@@ -396,6 +398,7 @@
  },
  "fed_richmond_research": {
   "seen": [
+   "https://www.richmondfed.org/publications/research/econ_focus/2026/q4_interview",
    "https://www.richmondfed.org/publications/research/economic_brief/2026/eb_26-38",
    "https://www.richmondfed.org/publications/research/economic_brief/2026/eb_26-37",
    "https://www.richmondfed.org/publications/research/econ_focus/2026/q4_feature1",
@@ -1020,6 +1023,7 @@
  },
  "chicagofed_data_cfnai": {
   "seen": [
+   "sha256:4b62d9f0c51aedc082fa",
    "sha256:70ec05bd3455f5988812",
    "sha256:13666484d3dec9dea0ee"
   ],
@@ -1027,6 +1031,7 @@
  },
  "chicagofed_data_cfsec": {
   "seen": [
+   "sha256:f2c08f12773e017e8dad",
    "sha256:cc8fc00ce529f63b7ee4",
    "sha256:c9d2aa47887bfa118e7c"
   ],
@@ -1154,6 +1159,7 @@
  },
  "fed_minneapolis_research": {
   "seen": [
+   "https://www.minneapolisfed.org/research/working-papers/how-small-is-small-nonlinearities-in-heterogeneous-agent-models",
    "https://www.minneapolisfed.org/article/2026/welfare-gains-from-top-firms-productivity-substantially-reduced-by-their-increased-market-power",
    "https://www.minneapolisfed.org/article/2026/welfare-gains-from-technology-substantially-reduced-by-tech-driven-rise-in-market-power",
    "https://www.minneapolisfed.org/research/institute-working-papers/inequality-risk-and-business-cycles",
@@ -1180,7 +1186,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 64,
+  "fails": 65,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1193,7 +1199,7 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 64,
+  "fails": 65,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
@@ -1214,6 +1220,8 @@
  },
  "fed_dallas_pubs": {
   "seen": [
+   "https://www.dallasfed.org/research/papers/2026/wp2641",
+   "https://www.dallasfed.org/research/swe/2026/swe2620",
    "https://www.dallasfed.org/research/swe/2026/swe2621",
    "https://www.dallasfed.org/research/economics/2026/1119",
    "https://www.dallasfed.org/research/papers/2026/wp2640",
@@ -1423,6 +1431,7 @@
  },
  "fed_sanfrancisco_pubs": {
   "seen": [
+   "457066",
    "456937",
    "456930",
    "456922",
@@ -1480,6 +1489,8 @@
  },
  "sanfranciscofed_data": {
   "seen": [
+   "62801|2026-11-23T13:52:08",
+   "440855|2026-11-23T13:37:44",
    "451681|2026-11-20T11:26:57",
    "451681|2026-11-19T15:43:53",
    "451681|2026-11-17T10:57:22",
@@ -1547,6 +1558,8 @@
  },
  "fed_board_wp": {
   "seen": [
+   "https://www.federalreserve.gov/econres/feds/the-welfare-effects-of-bank-liquidity-and-capital-requirements.htm",
+   "https://www.federalreserve.gov/econres/feds/wheres-the-bank-banking-access-in-the-era-of-branch-consolidation.htm",
    "https://www.federalreserve.gov/econres/feds/artificial-intelligence-and-the-us-economy-current-evidence.htm",
    "https://www.federalreserve.gov/econres/ifdp/who-built-the-service-economy.htm",
    "https://www.federalreserve.gov/econres/ifdp/trade-deflection-the-spillover-effects-of-us-tariffs-on-import-prices-in-bystander-countries.htm",
@@ -1624,6 +1637,7 @@
  },
  "fedboard_data_h10": {
   "seen": [
+   "text:Last Update: November 23, 2026",
    "text:Last Update: November 16, 2026",
    "text:Last Update: November 09, 2026",
    "text:Last Update: November 02, 2026",
