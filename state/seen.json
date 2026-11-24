@@ -1159,6 +1159,7 @@
  },
  "fed_minneapolis_research": {
   "seen": [
+   "https://www.minneapolisfed.org/research/working-papers/fiscal-and-monetary-unions",
    "https://www.minneapolisfed.org/research/working-papers/how-small-is-small-nonlinearities-in-heterogeneous-agent-models",
    "https://www.minneapolisfed.org/article/2026/welfare-gains-from-top-firms-productivity-substantially-reduced-by-their-increased-market-power",
    "https://www.minneapolisfed.org/article/2026/welfare-gains-from-technology-substantially-reduced-by-tech-driven-rise-in-market-power",
@@ -1186,7 +1187,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 65,
+  "fails": 66,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1199,7 +1200,7 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 65,
+  "fails": 66,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
