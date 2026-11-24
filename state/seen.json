@@ -34,6 +34,7 @@
  },
  "fed_boston_research": {
   "seen": [
+   "0566bbd4-86b8-4eb4-9b72-b240c1a8ab80",
    "83298fbd-78f9-4e57-9d9f-2041a4b31e39",
    "028bc363-f739-4e08-a037-22e7dbc680ee",
    "92278ba1-234e-402e-9026-5c75afb686aa",
@@ -92,6 +93,8 @@
  },
  "fed_newyork_research": {
   "seen": [
+   "https://www.newyorkfed.org/research/staff_reports/sr1215",
+   "https://www.newyorkfed.org/research/staff_reports/sr1214",
    "https://www.newyorkfed.org/research/staff_reports/sr1213",
    "https://www.newyorkfed.org/research/staff_reports/sr1212",
    "https://www.newyorkfed.org/research/staff_reports/sr1211",
@@ -264,6 +267,7 @@
  },
  "fed_philadelphia_research": {
   "seen": [
+   "{580DE26D-E6E7-4D41-A447-F8481BF9B89D}",
    "{BC68B320-2D65-41B6-96FD-34258ACD265E}",
    "{1A51D35B-7D76-42D0-A14D-831A93995139}",
    "{CAAE8ABE-CC5B-4DF8-9E5D-D4E0B58B4A4F}",
@@ -398,6 +402,7 @@
  },
  "fed_richmond_research": {
   "seen": [
+   "https://www.richmondfed.org/publications/research/economic_brief/2026/eb_26-39",
    "https://www.richmondfed.org/publications/research/econ_focus/2026/q4_interview",
    "https://www.richmondfed.org/publications/research/economic_brief/2026/eb_26-38",
    "https://www.richmondfed.org/publications/research/economic_brief/2026/eb_26-37",
@@ -1187,7 +1192,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 66,
+  "fails": 67,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1200,7 +1205,7 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 66,
+  "fails": 67,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
@@ -1221,6 +1226,7 @@
  },
  "fed_dallas_pubs": {
   "seen": [
+   "https://www.dallasfed.org/research/economics/2026/1124",
    "https://www.dallasfed.org/research/papers/2026/wp2641",
    "https://www.dallasfed.org/research/swe/2026/swe2620",
    "https://www.dallasfed.org/research/swe/2026/swe2621",
@@ -2047,6 +2053,8 @@
  },
  "bis_publications": {
   "seen": [
+   "https://www.bis.org/publications/project-danu-monitoring-emerging-risks-leveraging-concept-digital-twin",
+   "https://www.bis.org/publications/working-paper-1398-when-unthinkable-happens-perceptions-monetary-policy-tail-events",
    "https://www.bis.org/publications/working-paper-1397-immigrants-skills-and-capital-deepening-evidence-chile",
    "https://www.bis.org/publications/working-paper-1396-eppur-si-muove-convergence-within-and-between-countries",
    "https://www.bis.org/publications/paper-177-gig-economy-and-digital-payments",
