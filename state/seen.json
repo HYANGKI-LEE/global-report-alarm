@@ -144,6 +144,7 @@
  },
  "nyfed_data_earlybench": {
   "seen": [
+   "sha256:1a57d64f85f4065a6163",
    "sha256:e55ae94a4fe8958945e2",
    "sha256:8271150453f3397836af"
   ],
@@ -151,6 +152,7 @@
  },
  "nyfed_data_regemp": {
   "seen": [
+   "sha256:1a57d64f85f4065a6163",
    "sha256:e55ae94a4fe8958945e2",
    "sha256:8271150453f3397836af"
   ],
@@ -961,6 +963,7 @@
  },
  "fed_chicago_insights": {
   "seen": [
+   "bcc411f0-f87d-4791-951c-5b1babbdd826",
    "917eca69-84fc-4b69-8d75-e8facc535e78",
    "989a444a-e450-48a1-8af9-1f51e260bac0",
    "632f06c3-54ec-4873-8977-fa4eeafb64c4",
@@ -1192,7 +1195,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 67,
+  "fails": 68,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1205,7 +1208,7 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 67,
+  "fails": 68,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
@@ -1226,6 +1229,7 @@
  },
  "fed_dallas_pubs": {
   "seen": [
+   "https://www.dallasfed.org/research/papers/2026/wp2642",
    "https://www.dallasfed.org/research/economics/2026/1124",
    "https://www.dallasfed.org/research/papers/2026/wp2641",
    "https://www.dallasfed.org/research/swe/2026/swe2620",
@@ -1565,6 +1569,7 @@
  },
  "fed_board_wp": {
   "seen": [
+   "https://www.federalreserve.gov/econres/feds/collateral-mobility-and-the-lender-of-last-resort.htm",
    "https://www.federalreserve.gov/econres/feds/the-welfare-effects-of-bank-liquidity-and-capital-requirements.htm",
    "https://www.federalreserve.gov/econres/feds/wheres-the-bank-banking-access-in-the-era-of-branch-consolidation.htm",
    "https://www.federalreserve.gov/econres/feds/artificial-intelligence-and-the-us-economy-current-evidence.htm",
@@ -1594,6 +1599,7 @@
  },
  "fed_board_fedsnotes": {
   "seen": [
+   "https://www.federalreserve.gov/econres/notes/feds-notes/why-has-global-trade-remained-resilient-despite-high-trade-policy-uncertainty-20261124.html",
    "https://www.federalreserve.gov/econres/notes/feds-notes/when-productivity-booms-do-interest-rates-rise-20261120.html",
    "https://www.federalreserve.gov/econres/notes/feds-notes/europes-natural-gas-outlook-for-the-upcoming-winter-2026-2027-20261120.html",
    "https://www.federalreserve.gov/econres/notes/feds-notes/increasing-international-interdependence-global-supply-chains-and-cross-border-macroeconomic-spillovers-20261120.html",
@@ -1655,6 +1661,7 @@
  },
  "fedboard_data_h6": {
   "seen": [
+   "text:Last Update: November 24, 2026",
    "text:Last Update: October 27, 2026",
    "text:Last Update: September 22, 2026"
   ],
@@ -1758,6 +1765,7 @@
  },
  "fed_kansascity_rwp": {
   "seen": [
+   "https://www.kansascityfed.org/research/research-working-papers/structural-breaks-in-time-varying-parameters-of-panel-models-a-bayesian-approach/",
    "https://www.kansascityfed.org/research/research-working-papers/consumers-financial-vulnerability-and-their-buy-now-pay-later-bnpl-use-and-repayment-behaviors/",
    "https://www.kansascityfed.org/research/research-working-papers/borrow-now-complain-later-payday-lending-laws-and-spillovers-across-consumer-finance/",
    "https://www.kansascityfed.org/research/research-working-papers/fleeting-forbearance-in-a-world-of-persistent-financial-distress/",
@@ -1987,6 +1995,7 @@
  },
  "kansascityfed_data_bankingcond": {
   "seen": [
+   "https://www.kansascityfed.org/banking/district-banking-conditions/third-quarter-2026-banking-conditions/",
    "https://www.kansascityfed.org/banking/district-banking-conditions/second-quarter-2026-banking-conditions/",
    "https://www.kansascityfed.org/banking/district-banking-conditions/district-banking-conditions-archive/"
   ],
