@@ -110,6 +110,7 @@
  },
  "nyfed_data_cmdi": {
   "seen": [
+   "sha256:a1f2fd99d46e551e7751",
    "sha256:a4f3439f632425b280a5",
    "sha256:144fe650ed318269bb05"
   ],
@@ -257,6 +258,7 @@
  },
  "fed_board_beigebook": {
   "seen": [
+   "https://www.federalreserve.gov/monetarypolicy/beigebook202611-summary.htm",
    "https://www.federalreserve.gov/monetarypolicy/beigebook202601-summary.htm",
    "https://www.federalreserve.gov/monetarypolicy/beigebook202602-summary.htm",
    "https://www.federalreserve.gov/monetarypolicy/beigebook202604-summary.htm",
@@ -362,6 +364,7 @@
  },
  "clevelandfed_data_median_pce": {
   "seen": [
+   "text:Last updated November 25, 2026",
    "text:Last updated October 29, 2026",
    "text:Last updated September 30, 2026"
   ],
@@ -383,6 +386,7 @@
  },
  "clevelandfed_data_yieldcurve": {
   "seen": [
+   "text:Last updated November 25, 2026",
    "text:Last updated October 29, 2026",
    "text:Last updated September 30, 2026"
   ],
@@ -626,6 +630,7 @@
  },
  "richmondfed_data_sos": {
   "seen": [
+   "text:Last updated on November 25, 2026",
    "text:Last updated on November 19, 2026",
    "text:Last updated on November 12, 2026",
    "text:Last updated on November 5, 2026",
@@ -819,6 +824,7 @@
  },
  "atlantafed_data_gdpnow": {
   "seen": [
+   "text:Updated: November 25, 2026",
    "text:Updated: November 18, 2026",
    "text:Updated: November 17, 2026",
    "text:Updated: November 09, 2026",
@@ -834,6 +840,7 @@
  },
  "atlantafed_data_taylor": {
   "seen": [
+   "text:Updated: November 25, 2026",
    "text:Updated: November 10, 2026",
    "text:Updated: October 29, 2026",
    "text:Updated: October 14, 2026"
@@ -855,6 +862,7 @@
  },
  "atlantafed_data_uid": {
   "seen": [
+   "text:Updated: November 25, 2026",
    "text:Updated: November 10, 2026",
    "text:Updated: October 29, 2026",
    "text:Updated: October 14, 2026"
@@ -884,6 +892,7 @@
  },
  "atlantafed_data_sbu": {
   "seen": [
+   "text:Updated: November 25, 2026",
    "text:Updated: October 28, 2026",
    "text:Updated: September 30, 2026"
   ],
@@ -1047,6 +1056,7 @@
  },
  "chicagofed_data_beigebook": {
   "seen": [
+   "text:November 2026",
    "text:October 2026"
   ],
   "fails": 0
@@ -1059,6 +1069,7 @@
  },
  "chicagofed_data_nfci": {
   "seen": [
+   "sha256:d2fe3ae62b1f84c964c6",
    "sha256:1e38123d2f26294f26d9",
    "sha256:f140c4f2300f0dc7eda8",
    "sha256:313b3bd7facbda0dcde7",
@@ -1195,7 +1206,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 69,
+  "fails": 70,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1208,7 +1219,7 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 69,
+  "fails": 70,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
@@ -1296,6 +1307,7 @@
  },
  "dallasfed_data_updates": {
   "seen": [
+   "https://www.dallasfed.org/research/wei|Thu, 26 Nov 2026 10:30:00 CST",
    "https://www.dallasfed.org/research/forecast/2026/emp261120",
    "https://www.dallasfed.org/research/energy/indicators/2026/en2604",
    "https://www.dallasfed.org/research/wei|Thu, 19 Nov 2026 10:30:00 CST",
@@ -1442,6 +1454,7 @@
  },
  "fed_sanfrancisco_pubs": {
   "seen": [
+   "457184",
    "457066",
    "456937",
    "456930",
@@ -2017,6 +2030,7 @@
  },
  "kansascityfed_data_beigebook": {
   "seen": [
+   "text:November 25, 2026",
    "text:October 14, 2026"
   ],
   "fails": 0
@@ -2138,6 +2152,7 @@
  },
  "private_junkbondinvestor": {
   "seen": [
+   "https://www.junkbondinvestor.com/p/where-the-ai-credit-crunch-shows",
    "https://www.junkbondinvestor.com/p/credit-weekly-a-goldilocks-slowdown",
    "https://www.junkbondinvestor.com/p/is-cipher-digital-cifr-actually-cheap",
    "https://www.junkbondinvestor.com/p/credit-weekly-4-things-credit-investors",
