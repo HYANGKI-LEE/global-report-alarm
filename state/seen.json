@@ -1206,7 +1206,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 70,
+  "fails": 71,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1219,7 +1219,7 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 70,
+  "fails": 71,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
@@ -1513,6 +1513,7 @@
  },
  "sanfranciscofed_data": {
   "seen": [
+   "440855|2026-11-25T15:15:13",
    "62801|2026-11-23T13:52:08",
    "440855|2026-11-23T13:37:44",
    "451681|2026-11-20T11:26:57",
@@ -1612,6 +1613,7 @@
  },
  "fed_board_fedsnotes": {
   "seen": [
+   "https://www.federalreserve.gov/econres/notes/feds-notes/the-surprising-stability-of-hedge-fund-repo-haircuts-20261125.html",
    "https://www.federalreserve.gov/econres/notes/feds-notes/why-has-global-trade-remained-resilient-despite-high-trade-policy-uncertainty-20261124.html",
    "https://www.federalreserve.gov/econres/notes/feds-notes/when-productivity-booms-do-interest-rates-rise-20261120.html",
    "https://www.federalreserve.gov/econres/notes/feds-notes/europes-natural-gas-outlook-for-the-upcoming-winter-2026-2027-20261120.html",
