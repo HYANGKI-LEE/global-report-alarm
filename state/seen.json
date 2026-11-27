@@ -1206,7 +1206,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 74,
+  "fails": 75,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1219,7 +1219,7 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 74,
+  "fails": 75,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
@@ -2078,6 +2078,7 @@
  },
  "bis_publications": {
   "seen": [
+   "https://www.bis.org/publications/working-paper-1400-banking-across-borders-where-lend-differs-sector",
    "https://www.bis.org/publications/working-paper-1399-inflation-expectations-context-climate-change-and-green-transition",
    "https://www.bis.org/publications/fsi-insight-guidelines-counterparty-credit-risk-management-executive-summary",
    "https://www.bis.org/publications/bis-residential-property-price-statistics-q2-2026",
