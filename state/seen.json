@@ -203,6 +203,7 @@
  },
  "nyfed_data_mct": {
   "seen": [
+   "sha256:01703eb63e0b69ca7e2f",
    "sha256:b353ba5fe4248b154fd8",
    "sha256:22735758b3da8950fbf8",
    "sha256:0e1c61076db5c9e733c5"
@@ -655,6 +656,7 @@
  },
  "richmondfed_data_srpi": {
   "seen": [
+   "text:Last updated on November 27, 2026",
    "text:Last updated on October 30, 2026",
    "text:Last updated on September 30, 2026"
   ],
@@ -1089,6 +1091,7 @@
  },
  "nyfed_data_nowcast": {
   "seen": [
+   "sha256:c06c19c26b07a7cf58b7",
    "sha256:430a5e16bffd2ed3f3e9",
    "sha256:17fe66309dcba38ebc41",
    "sha256:f87e563b84e303a692b1",
@@ -1100,6 +1103,7 @@
  },
  "nyfed_data_primarydealer": {
   "seen": [
+   "text:2026-11-18",
    "text:2026-11-11",
    "text:2026-11-04",
    "text:2026-10-28",
@@ -1111,6 +1115,7 @@
  },
  "nyfed_data_soma": {
   "seen": [
+   "text:2026-11-25",
    "text:2026-11-18",
    "text:2026-11-10",
    "text:2026-11-04",
@@ -1122,6 +1127,7 @@
  },
  "clevelandfed_data_crediteasing": {
   "seen": [
+   "sha256:1105d154e618b1379433",
    "sha256:e9b69f8c9e58b09882f5",
    "sha256:3ef85371a6096bcc0526",
    "sha256:4e15b9e13b585dacf1b8",
@@ -1206,7 +1212,7 @@
   "seen": [
    "sha256:6535ccd97c6174a0f638"
   ],
-  "fails": 75,
+  "fails": 76,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "minneapolisfed_data_qlmonthly": {
@@ -1219,7 +1225,7 @@
   "seen": [
    "sha256:7ec1c80d710a70167e72"
   ],
-  "fails": 75,
+  "fails": 76,
   "last_error": "404 Client Error: Not Found for url: https://www.minneapolisfed.org/404"
  },
  "fed_kansascity_bulletin": {
@@ -1424,6 +1430,7 @@
  },
  "dallasfed_data_surveys": {
   "seen": [
+   "https://www.dallasfed.org/research/pce|Fri, 27 Nov 2026 08:44:00 CST",
    "https://www.dallasfed.org/research/surveys/bcs/2026/bcs2607",
    "https://www.dallasfed.org/research/pce|Thu, 29 Oct 2026 12:24:00 CST",
    "https://www.dallasfed.org/research/surveys/tssos/2026/2610",
@@ -1643,6 +1650,7 @@
  },
  "fedboard_data_h41": {
   "seen": [
+   "text:Last Update: November 27, 2026",
    "text:Last Update: November 19, 2026",
    "text:Last Update: November 12, 2026",
    "text:Last Update: November 05, 2026",
@@ -1654,6 +1662,7 @@
  },
  "fedboard_data_h8": {
   "seen": [
+   "text:Last Update: November 27, 2026",
    "text:Last Update: November 20, 2026",
    "text:Last Update: November 13, 2026",
    "text:Last Update: November 06, 2026",
